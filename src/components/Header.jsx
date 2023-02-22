@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Header = () => {
     return (
-        <div className=''>
+        <div className=' bg-purple'>
             Header Lily
         </div>
     )
