@@ -1,4 +1,4 @@
-# Programate School - front
+# Programate School - Front 🎒📚
 A student Landing Page was created where students will be allowed to enter, register for the available calls and be able to follow up on the process carried out within the program and administrators to see progress and details of the process of the students who applied.
 
 
@@ -44,11 +44,12 @@ https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 The tools that were used to create this project are:
 
-### Frontend 
- - [React.Js] : Used for the content of the page that the user will observe.
+### Frontend 🎨
+ - React.Js 
+    · Used for the content of the page that the user will observe.
  
  - Framework
-  Tailwind
+  · Tailwind
  
 
 ## Authors✒️
