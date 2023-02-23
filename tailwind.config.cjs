@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+      },
       colors: {
         'yellow': '#FBC209',
         'red': '#D22A49',
