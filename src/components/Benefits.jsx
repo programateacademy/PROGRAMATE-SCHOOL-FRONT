@@ -2,16 +2,16 @@ import React from "react";
 
 export const Benefist = () => {
   return (
-    <div className="container">
-      <div className="">
+    <section className="container">
+      <article className="">
         <h1 className="text-dark m-3 font-bold">Beneficios del programa</h1>
         <hr className="text-yellow m-2" />
         <p className="m-3 font-thin">
           Creemos que la educación cambia <br /> vidas
         </p>
-      </div>
+      </article>
 
-      <div>
+      <article>
         <div className="rounded-full border-[36px] m-10 border-yellow/50 ">
           <h2 className="text-center text-2xl text-dark m-3 font-bold">
             Cero costo
@@ -21,9 +21,9 @@ export const Benefist = () => {
             becado <br /> mientras terminas tus <br /> estudios
           </p>
         </div>
-      </div>
+      </article>
 
-      <div>
+      <article>
         <div className="rounded-full border-[36px] m-10 border-yellow/50 ">
           <h2 className="text-center text-2xl text-dark m-3 font-bold">
             Cero costo
@@ -33,9 +33,9 @@ export const Benefist = () => {
             becado <br /> mientras terminas tus <br /> estudios
           </p>
         </div>
-      </div>
+      </article>
 
-      <div>
+      <article>
         <div className="rounded-full border-[36px] m-10 border-yellow/50 ">
           <h2 className="text-center text-2xl text-dark m-3 font-bold">
             Cero costo
@@ -45,9 +45,9 @@ export const Benefist = () => {
             becado <br /> mientras terminas tus <br /> estudios
           </p>
         </div>
-      </div>
+      </article>
 
-      <div>
+      <article className="mx-2">
         <div>
           <h3 className="text-dark m-3 font-bold">
             Comienza YA a estudiar sobre el <br /> futuro que es la tecnologia
@@ -66,14 +66,32 @@ export const Benefist = () => {
             feugiat.
           </p>
         </div>
-      </div>
+      </article>
 
-      <div className="">
+      <article className="mx-2">
         <div className="">
-            <h1 className="font-bold text-center m-4">DURACIÓN TOTAL <br /> <span className="text-yellow"> 8 MESES</span></h1>
+          <h1 className="font-bold text-2xl mx-12">
+            DURACIÓN TOTAL <br /> <span className="text-yellow"> 8 MESES</span>
+          </h1>
+          <p className="text-center m-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+          </p>
+          <br />
+          <p className="text-center m-2">
+            incididunt ut labore et dolore.{" "}
+          </p>{" "}
+          <br />
+          <p className="text-center m-2">
+            Aliquam ultrices sagittis orci{" "}
+          </p>{" "}
+          <br />
+          <p className="text-center m-2">
+            purus semper eget duis. Eget sit amet tellus.{" "}
+          </p>{" "}
+          <br />
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
