@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Header from '../components/Home/Header'
-import Benefits from '../components/Home/Benefits'
-import Requirements from '../components/Home/Requirements'
+import Header from '../components/Header'
+import Benefits from '../components/Benefits'
+import Requirements from '../components/Requirements'
 import Footer from '../components/Footer'
 
 
