@@ -14,9 +14,10 @@ export const Navbar = () => {
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-1/3 '></img>
 
                 {/* menu which appears when the media cueri responsive is set to min-width: 768px - tailwind md*/}
-                    <div className=' px-12 text-lg font-Poppins  hidden md:block  md:text-base lg:text-lg
+                <div className=' px-12 text-lg font-Poppins  hidden md:block  md:text-base lg:text-lg
                     xl:text-xl
                     2xl:text-2xl'>
+                    <div className=' flex flex-row'>
                         {/* <Link to=""> */}
                             <h1 className='px-3' alt="Convocatorias">Convocatorias</h1>
                         {/* </Link>
@@ -24,7 +25,7 @@ export const Navbar = () => {
                             <h1 className='px-3' alt="Contáctanos">Contáctanos</h1>
                         {/* </Link> */}
                     </div>
-
+                </div>
                 {/* hamburger menu button which if true shows the menu display */}
                     <HiMenu
                         className=' md:hidden text-yellow text-3xl my-2'
