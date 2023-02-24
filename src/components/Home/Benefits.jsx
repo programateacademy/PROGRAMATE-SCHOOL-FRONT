@@ -83,8 +83,8 @@ export const Benefist = () => {
             <p className="text-center m-2 font-Nunito">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </p>
-            <p className="text-center m-2 font-Nunito">incididunt ut labore et dolore. </p>{" "}
-            <p className="text-center m-2 font-Nunito">Aliquam ultrices sagittis orci </p>{" "}
+            <p className="text-center m-2 font-Nunito">incididunt ut labore et dolore. </p>
+            <p className="text-center m-2 font-Nunito">Aliquam ultrices sagittis orci </p>
             <p className="text-center m-2 font-Nunito">
               purus semper eget duis. Eget sit amet tellus.
             </p>
