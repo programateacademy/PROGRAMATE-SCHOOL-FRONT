@@ -8,7 +8,7 @@ export const Benefist = () => {
           <h1 className="text-dark m-3 font-bold font-Poppins">
             Beneficios del programa
           </h1>
-          <hr className="border-2 bg-yellow w-48 ml-4" />
+          <hr className="border-2 border-yellow w-48 ml-4" />
           <p className="m-3 pb-6 font-light font-Nunito">
             Creemos que la educación cambia vidas
           </p>
@@ -103,7 +103,7 @@ export const Benefist = () => {
 
         <object>
             <article className="flex justify-center p-16">
-                <button className="bg-yellow shadow-inner shadow-3xl rounded w-32 text-light font-Poppins font-bold">Aplicar Ahora!</button>
+                <button className="bg-yellow shadow-md shadow-dark/50 rounded w-32 text-light font-Poppins font-bold">Aplicar Ahora!</button>
             </article>
         </object>
       </section>
