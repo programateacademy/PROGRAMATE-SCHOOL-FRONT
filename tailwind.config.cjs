@@ -17,6 +17,9 @@ module.exports = {
         Poppins: ['Poppins'],
         Nunito: ['Nunito']
       },
+      backgroundImage: {
+        'header': "url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true')"
+      }
     },
   },
   plugins: [],

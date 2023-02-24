@@ -7,14 +7,14 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='container'>
-            
-            <div className='w-full fixed flex flex-row  p-4 items-center justify-between mx-auto '>
-                {/* //logo Programate school */}
-                <div className=' w-40 h-14 bg-orange-600 sm:w-44 sm:h-16 lg:w-56 lg:h-24'> logo school</div>
-                <div className='flex flex-row'>
-                    {/* //menu responsive */}
-                    <div className=' fixed px-12 text-lg font-Poppins flex invisible sm:visible sm:text-sm md:text-base lg:text-lg
+        <nav className='container'>
+            <section className='w-full fixed flex flex-row  p-4 items-center justify-between mx-auto '>
+                
+                {/* logo Programate school */}
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-1/3 '></img>
+
+                {/* menu which appears when the media cueri responsive is set to min-width: 768px - tailwind md*/}
+                    <div className=' px-12 text-lg font-Poppins  hidden md:block  md:text-base lg:text-lg
                     xl:text-xl
                     2xl:text-2xl'>
                         {/* <Link to=""> */}
@@ -25,9 +25,9 @@ export const Navbar = () => {
                         {/* </Link> */}
                     </div>
 
-                    {/* //menu hamburger */}
+                {/* hamburger menu button which if true shows the menu display */}
                     <HiMenu
-                        className=' sm:hidden text-yellow text-3xl my-2'
+                        className=' md:hidden text-yellow text-3xl my-2'
                         onClick={() => setIsOpen(!isOpen)}
                     />
                     {isOpen === true ? (
@@ -41,9 +41,8 @@ export const Navbar = () => {
                         </div>
                     ) : null
                     }
-                </div>    
-            </div>
-        </div>
+            </section>
+        </nav>
     )
 }
 
