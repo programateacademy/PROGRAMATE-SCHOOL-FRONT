@@ -8,7 +8,7 @@ export const Navbar = () => {
 
     return (
         <nav className='container'>
-            <section className='w-full fixed flex flex-row  p-4 items-center justify-between mx-auto '>
+            <section className='w-full absolute z-40 flex flex-row  p-4 items-center justify-between mx-auto '>
                 
                 {/* logo Programate school */}
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-1/3 '></img>
@@ -26,6 +26,7 @@ export const Navbar = () => {
                         {/* </Link> */}
                     </div>
                 </div>
+                <button className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-center text-light text-sm font-Poppins font-medium'>Ingresar</button>
                 {/* hamburger menu button which if true shows the menu display */}
                     <HiMenu
                         className=' md:hidden text-yellow text-3xl my-2'
