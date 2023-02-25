@@ -5,8 +5,8 @@ export const Singup = () => {
     return (
         <div className='relative'>
         <img className='absolute w-1/6 left-6 top-4' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados'/>
-        <div className='h-full grid grid-rows-3 md:grid-rows-1 md:grid-cols-2'>
-            <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-cover bg-center'>
+        <div className='h-full grid grid-rows-3 md:h-screen md:grid-rows-1 md:grid-cols-2'>
+            <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-full bg-center'>
             </div>
             <div className='row-span-2 bg-light py-6 my-auto'>
                 <h1 className='mx-12 sm:mx-52 md:mx-12 lg:mx-26 pb-5 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'>¡Da el primer paso<br/>e inscribete!</h1>
