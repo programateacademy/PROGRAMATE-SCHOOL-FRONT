@@ -16,8 +16,8 @@ export const Footer = () => {
                         <h2 className='flex justify-center items-center text-xs text-light font-Poppins font-semibold' >Sobre el programa</h2>
                         <h3 className=' flex justify-center items-center  text-xs text-light font-Poppins font-semibold' >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis .</h3>
                     </sub>
-                 <BsFillTelephoneFill />
-                   {/* <FaMapMarkerAlt/> */}
+                    <BsFillTelephoneFill />
+                    {/* <FaMapMarkerAlt/> */}
                 </section>
             </footer>
         </>
