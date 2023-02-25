@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+      },
       colors: {
         'yellow': '#FBC209',
         'red': '#D22A49',
@@ -17,6 +20,9 @@ module.exports = {
         Poppins: ['Poppins'],
         Nunito: ['Nunito']
       },
+      backgroundImage: {
+        'header': "url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true')"
+      }
     },
   },
   plugins: [],
