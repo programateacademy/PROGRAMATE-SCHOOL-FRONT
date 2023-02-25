@@ -3,6 +3,9 @@ import React from "react";
 export const Benefist = () => {
   return (
     <main className="container">
+
+      // beneficios que optiene el programa
+
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
         <object className="">
           <h1 className="text-dark m-3 font-bold font-Poppins">
@@ -53,6 +56,8 @@ export const Benefist = () => {
           </div>
         </object>
 
+        //Descripción del programa...
+
         <object className="mx-2">
           <div>
             <h3 className="text-dark m-6 font-bold font-Poppins">
@@ -74,6 +79,8 @@ export const Benefist = () => {
           </div>
         </object>
 
+        //Tiempo de duración del programa
+
         <object className="mx-2">
           <div className="">
             <h1 className="font-bold text-2xl m-10 font-Poppins">
@@ -83,28 +90,50 @@ export const Benefist = () => {
             <p className="text-center m-2 font-Nunito">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </p>
-            <p className="text-center m-2 font-Nunito">incididunt ut labore et dolore. </p>
-            <p className="text-center m-2 font-Nunito">Aliquam ultrices sagittis orci </p>
+            <p className="text-center m-2 font-Nunito">
+              incididunt ut labore et dolore.{" "}
+            </p>
+            <p className="text-center m-2 font-Nunito">
+              Aliquam ultrices sagittis orci{" "}
+            </p>
             <p className="text-center m-2 font-Nunito">
               purus semper eget duis. Eget sit amet tellus.
             </p>
-            <p className="text-center m-6 font-Nunito text-yellow">Ac orci phasellus egestas</p>
+            <p className="text-center m-6 font-Nunito text-yellow">
+              Ac orci phasellus egestas
+            </p>
           </div>
         </object>
 
+        //logos del programa
+
         <object className="flex justify-around items-center mt-16">
-            <article>
-                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-color.png?raw=true'} alt="Logo-Educamas" />
-            </article>
-            <article>
-                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-color.png?raw=true'} alt="" />
-            </article>
+          <article>
+            <img
+              src={
+                "https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-color.png?raw=true"
+              }
+              alt="Logo-Educamas"
+            />
+          </article>
+          <article>
+            <img
+              src={
+                "https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-color.png?raw=true"
+              }
+              alt=""
+            />
+          </article>
         </object>
 
+        //Boton para aplicar en el programa
+
         <object>
-            <article className="flex justify-center p-16">
-                <button className="bg-yellow shadow-md shadow-dark/50 rounded w-32 text-light font-Poppins font-bold">Aplicar Ahora!</button>
-            </article>
+          <article className="flex justify-center p-16">
+            <button className="bg-yellow shadow-md shadow-dark/50 rounded w-32 text-light font-Poppins font-bold">
+              Aplicar Ahora!
+            </button>
+          </article>
         </object>
       </section>
     </main>
