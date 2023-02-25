@@ -4,20 +4,20 @@ export const Benefist = () => {
   return (
     <main className="container">
 
-      // beneficios que optiene el programa
+      {/*beneficios que optiene el programa*/}
 
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-        <object className="">
-          <h1 className="text-dark m-3 font-bold font-Poppins">
+        <object className="lg:my-20 lg:items-center lg:w[200px]">
+          <h1 className="text-dark m-3 font-bold font-Poppins lg:text-2xl  lg:my-6">
             Beneficios del programa
           </h1>
-          <hr className="border-2 border-yellow w-48 ml-4" />
+          <hr className="border-2 border-yellow w-48 ml-4 lg:w-56" />
           <p className="m-3 pb-6 font-light font-Nunito">
             Creemos que la educación cambia vidas
           </p>
         </object>
 
-        <object className="flex justify-center">
+        <object className="flex justify-center lg:pt-52">
           <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
           <div className="w-40 h-36 z-40 m-4">
             <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
@@ -30,7 +30,7 @@ export const Benefist = () => {
           </div>
         </object>
 
-        <object className="flex justify-center">
+        <object className="flex justify-center lg:pt-20">
           <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
           <div className="w-40 h-36 z-40 m-4">
             <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
@@ -43,7 +43,7 @@ export const Benefist = () => {
           </div>
         </object>
 
-        <object className="flex justify-center">
+        <object className="flex justify-center lg:pt-52">
           <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
           <div className="w-40 h-36 z-40 m-4">
             <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
@@ -56,7 +56,7 @@ export const Benefist = () => {
           </div>
         </object>
 
-        //Descripción del programa...
+        {/*Descripción del programa...*/}
 
         <object className="mx-2">
           <div>
@@ -79,7 +79,7 @@ export const Benefist = () => {
           </div>
         </object>
 
-        //Tiempo de duración del programa
+        {/*Tiempo de duración del programa*/}
 
         <object className="mx-2">
           <div className="">
@@ -105,7 +105,7 @@ export const Benefist = () => {
           </div>
         </object>
 
-        //logos del programa
+        {/*logos del programa*/}
 
         <object className="flex justify-around items-center mt-16">
           <article>
@@ -126,7 +126,7 @@ export const Benefist = () => {
           </article>
         </object>
 
-        //Boton para aplicar en el programa
+        {/*Boton para aplicar en el programa*/}
 
         <object>
           <article className="flex justify-center p-16">
