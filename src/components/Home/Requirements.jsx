@@ -6,14 +6,14 @@ const Requirements = () => {
 
             {/* requirements sections */}
 
-            <h2 className=' font-Poppins text-dark font-bold my-3 sm:text-2xl'>
+            <h2 className=' font-Poppins text-dark font-bold my-3 sm:text-2xl md:ml-6 lg:ml-10'>
                 ¿Cuales son los requerimientos para participar?
             </h2>
             <br />
             <section className='container m-auto sm:flex items-center md:grid grid-cols-4 gap-14'>
 
                 {/* First requirement */}
-                <article className='flex justify-center sd:flex items-center flex-col md:'>
+                <article className='flex justify-center sd:flex items-center flex-col '>
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-uno.png?raw=true' />
                     </p>
@@ -23,7 +23,7 @@ const Requirements = () => {
                 </article>
 
                 {/* Second requirement */}
-                <article className='flex justify-center items-center sm:flex flex-col md:row-span-6'>
+                <article className='flex justify-center items-center  sm:flex flex-col md:row-span-6'>
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-dos.png?raw=true' />
                     </p>
@@ -49,8 +49,7 @@ const Requirements = () => {
                     </p>
                 </article>
             </section>
-            <br />
-            <h2 className='font-Poppins text-dark font-bold sm:text-2xl'>
+            <h2 className='font-Poppins text-dark font-bold sm:text-2xl md:ml-6 lg:ml-10'>
                 El proceso para aplicar es muy sencillo
             </h2>
 
@@ -60,7 +59,7 @@ const Requirements = () => {
                     {/* first process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' />
                             
                         </div>
                         <div>
@@ -130,7 +129,7 @@ const Requirements = () => {
                     {/* fifth process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='md:mr-3 lg:mr-9'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-6'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
                         </div>
                         <div>
                             <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
@@ -143,7 +142,9 @@ const Requirements = () => {
                             15 min
                         </h5>
                     </article>
-
+                    <div className='flex justify-end pb-9'>
+                        <img width={100} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-blanco-y-negro.png?raw=true'/>
+                    </div>
                 </section>
             </div>
         </div>
