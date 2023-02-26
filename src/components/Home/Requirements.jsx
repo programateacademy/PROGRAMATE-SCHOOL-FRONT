@@ -60,7 +60,7 @@ const Requirements = () => {
                     {/* first process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='z-0' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' />
                             
                         </div>
                         <div>
@@ -78,7 +78,7 @@ const Requirements = () => {
                     {/* second process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='z-0'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A12-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-9'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A12-amarilla.png?raw=true' />
                             
                         </div>
                         <div>
@@ -88,7 +88,7 @@ const Requirements = () => {
                             </p>
                             <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
-                        <h5 className=' font-Poppins font-extrabold'>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
                             15 min
                         </h5>
                     </article>
@@ -96,7 +96,7 @@ const Requirements = () => {
                     {/* third process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A13-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A13-amarilla.png?raw=true' />
                         </div>
                         <div>
                             <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
@@ -105,7 +105,7 @@ const Requirements = () => {
                             </p>
                             <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
-                        <h5 className=' font-Poppins font-extrabold'>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
                             15 min
                         </h5>
                     </article>
@@ -113,7 +113,7 @@ const Requirements = () => {
                     {/* fourth process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='z-0' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A14-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A14-amarilla.png?raw=true' />
                         </div>
                         <div>
                             <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
@@ -122,7 +122,7 @@ const Requirements = () => {
                             </p>
                             <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
-                        <h5 className=' font-Poppins font-extrabold'>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
                             15 min
                         </h5>
                     </article>
@@ -130,7 +130,7 @@ const Requirements = () => {
                     {/* fifth process */}
                     <article className='flex flex-row my-8'>
                         <div className=''>
-                            <img className='z-0'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-9'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
                         </div>
                         <div>
                             <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
@@ -139,7 +139,7 @@ const Requirements = () => {
                             </p>
                             <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
-                        <h5 className=' font-Poppins font-extrabold'>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
                             15 min
                         </h5>
                     </article>
