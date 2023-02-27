@@ -6,14 +6,14 @@ const Requirements = () => {
 
             {/* requirements sections */}
 
-            <h2 className=' font-Poppins text-dark font-bold sm:text-2xl'>
+            <h2 className=' font-Poppins text-dark font-bold my-3 sm:text-2xl md:ml-6 lg:ml-10'>
                 ¿Cuales son los requerimientos para participar?
             </h2>
             <br />
             <section className='container m-auto sm:flex items-center md:grid grid-cols-4 gap-14'>
 
                 {/* First requirement */}
-                <article className='flex justify-center sd:flex items-center flex-col md:'>
+                <article className='flex justify-center sd:flex items-center flex-col '>
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-uno.png?raw=true' />
                     </p>
@@ -23,7 +23,7 @@ const Requirements = () => {
                 </article>
 
                 {/* Second requirement */}
-                <article className='flex justify-center items-center sm:flex flex-col md:row-span-6'>
+                <article className='flex justify-center items-center  sm:flex flex-col md:row-span-6'>
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-dos.png?raw=true' />
                     </p>
@@ -49,105 +49,104 @@ const Requirements = () => {
                     </p>
                 </article>
             </section>
-            <br />
-            <h2 className='font-Poppins text-dark  font-bold sm:text-2xl'>
+            <h2 className='font-Poppins text-dark font-bold sm:text-2xl md:ml-6 lg:ml-10'>
                 El proceso para aplicar es muy sencillo
             </h2>
-            <br/>
 
             {/* process section to apply */}
-            <section>
-            {/* first process */}
-                <article className='flex flex-row'>
-                    <div className=''>
-                        <img className='z-0' src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true' />
-                        <p className=' font-Poppins font-extrabold z-10 text-3xl'>1</p>
-                    </div>
-                    <div>
-                    <h5 className=' text-dark text-2xl font-bold indent-8'> Regístrate al programa</h5>
-                    <p className=' indent-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                    <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
-                    </div>
-                    <h5 className=' font-Poppins font-extrabold'>
-                        15 min
-                    </h5>
-                </article>
+            <div className='flex justify-around items-center'>
+                <section className=''>
+                    {/* first process */}
+                    <article className='flex flex-row my-8'>
+                        <div className=''>
+                            <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' />
+                            
+                        </div>
+                        <div>
+                            <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl '> Regístrate al programa</h5>
+                            <p className=' font-Nunito sm:m-6 text-sm ml-6 mb-2 md:text-xl md:my-2'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                            </p>
+                            <button className=' flex m-auto ml-6 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                        </div>
+                        <h5 className=' font-Poppins font-extrabold sm:m-5 items-center'>
+                            15 min
+                        </h5>
+                    </article>
 
-                {/* second process */}
-                <article className='flex flex-row'>
-                    <div className=''>
-                        <img className='z-0' src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true' />
-                        <p className=' font-Poppins font-extrabold z-10 text-3xl'>2</p>
-                    </div>
-                    <div>
-                    <h5 className=' text-dark text-2xl font-bold indent-8'> Regístrate al programa</h5>
-                    <p className=' indent-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                    <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
-                    </div>
-                    <h5 className=' font-Poppins font-extrabold'>
-                        15 min
-                    </h5>
-                </article>
+                    {/* second process */}
+                    <article className='flex flex-row my-8'>
+                        <div className=''>
+                            <img className='md:mr-3 lg:mr-9'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A12-amarilla.png?raw=true' />
+                            
+                        </div>
+                        <div>
+                            <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
+                            <p className='font-Nunito sm:m-6 text-sm ml-6 mb-2 md:text-xl md:my-2'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                            </p>
+                            <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                        </div>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
+                            15 min
+                        </h5>
+                    </article>
 
-                {/* third process */}
-                <article className='flex flex-row'>
-                    <div className=''>
-                        <img className='z-0' src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true' />
-                        <p className=' font-Poppins font-extrabold z-10 text-3xl'>3</p>
-                    </div>
-                    <div>
-                    <h5 className=' text-dark text-2xl font-bold indent-8'> Regístrate al programa</h5>
-                    <p className=' indent-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                    <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
-                    </div>
-                    <h5 className=' font-Poppins font-extrabold'>
-                        15 min
-                    </h5>
-                </article>
+                    {/* third process */}
+                    <article className='flex flex-row my-8'>
+                        <div className=''>
+                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A13-amarilla.png?raw=true' />
+                        </div>
+                        <div>
+                            <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
+                            <p className='font-Nunito sm:m-6 text-sm ml-6 mb-2 md:text-xl md:my-2'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                            </p>
+                            <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                        </div>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
+                            15 min
+                        </h5>
+                    </article>
 
-                {/* fourth process */}
-                <article className='flex flex-row'>
-                    <div className=''>
-                        <img className='z-0' src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true' />
-                        <p className=' font-Poppins font-extrabold z-10 text-3xl'>4</p>
-                    </div>
-                    <div>
-                    <h5 className=' text-dark text-2xl font-bold indent-8'> Regístrate al programa</h5>
-                    <p className=' indent-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                    <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
-                    </div>
-                    <h5 className=' font-Poppins font-extrabold'>
-                        15 min
-                    </h5>
-                </article>
+                    {/* fourth process */}
+                    <article className='flex flex-row my-8'>
+                        <div className=''>
+                            <img className='md:mr-3 lg:mr-9' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A14-amarilla.png?raw=true' />
+                        </div>
+                        <div>
+                            <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
+                            <p className='font-Nunito sm:m-6 text-sm ml-6 mb-2 md:text-xl md:my-2'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                            </p>
+                            <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                        </div>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
+                            15 min
+                        </h5>
+                    </article>
 
-                {/* fifth process */}
-                <article className='flex flex-row'>
-                    <div className=''>
-                        <img className='z-0' src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true' />
-                        <p className=' font-Poppins font-extrabold z-10 text-3xl'>5</p>
+                    {/* fifth process */}
+                    <article className='flex flex-row my-8'>
+                        <div className=''>
+                            <img className='md:mr-3 lg:mr-6'width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
+                        </div>
+                        <div>
+                            <h5 className=' text-dark font-bold sm:text-2xl ml-6 my-2 md:text-3xl xl:text-4xl 2xl:text-5xl'> Regístrate al programa</h5>
+                            <p className='font-Nunito sm:m-6 text-sm ml-6 mb-2 md:text-xl md:my-2'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                            </p>
+                            <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                        </div>
+                        <h5 className='font-Poppins font-extrabold sm:m-5 items-center'>
+                            15 min
+                        </h5>
+                    </article>
+                    <div className='flex justify-end pb-9'>
+                        <img width={100} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-blanco-y-negro.png?raw=true'/>
                     </div>
-                    <div>
-                    <h5 className=' text-dark text-2xl font-bold indent-8'> Regístrate al programa</h5>
-                    <p className=' indent-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                    <button className=' flex m-auto ml-2 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
-                    </div>
-                    <h5 className=' font-Poppins font-extrabold'>
-                        15 min
-                    </h5>
-                </article>
-
-            </section>
+                </section>
+            </div>
         </div>
     )
 }
