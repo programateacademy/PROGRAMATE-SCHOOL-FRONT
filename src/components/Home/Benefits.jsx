@@ -2,24 +2,24 @@ import React from "react";
 
 export const Benefist = () => {
   return (
-    <main className="container pt-6">
+    <main className="mx-6 md:mx-12 pt-6">
       {/*beneficios que optiene el programa*/}
 
       <section className="">
         <object className="md:my-10 md:absolute lg:my-20 lg:items-center lg:absolute">
-          <h1 className="text-dark m-3 font-bold font-Poppins md:text-xl lg:text-3xl">
+          <h1 className="text-dark mx-4 pb-4 font-bold font-Poppins text-lg md:text-2xl lg:text-3xl">
             Beneficios del programa
           </h1>
           <hr className="border-2 border-yellow w-48 ml-4 lg:w-64"/>
-          <p className="m-3 pb-6 font-light font-Nunito lg:text-xl">
+          <p className="mx-4 pt-4 pb-6 font-light font-Nunito text-base lg:text-xl">
             Creemos que la educación cambia vidas
           </p>
         </object>
 
         <object className="md:grid md:grid-cols-3 md:pt-36 lg:grid lg:grid-cols-3 lg:pt-40">
-          <figure className="flex justify-center md:pt-10 lg:pt-16">
+          <figure className="flex justify-center md:pt-10 lg:pt-16 pb-4 lg:pb-0">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-36 z-40 m-4">
+            <div className="w-40 h-30 z-40 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -30,9 +30,9 @@ export const Benefist = () => {
             </div>
           </figure>
 
-          <figure className="flex justify-center lg:pb-16">
+          <figure className="flex justify-center lg:pb-16 pb-4">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-36 z-40 m-4">
+            <div className="w-40 h-30 z-40 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -45,7 +45,7 @@ export const Benefist = () => {
 
           <figure className="flex justify-center md:pt-10 lg:pt-16">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-36 z-40 m-4">
+            <div className="w-40 h-30 z-40 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -60,26 +60,22 @@ export const Benefist = () => {
         {/*Tiempo de duración del programa*/}
 
         <object className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          <object className="mx-2">
+          <object className="">
             <div className="lg:my-16">
-              <h1 className="font-bold text-2xl m-10 font-Poppins lg:py-16 lg:text-4xl">
+              <h1 className="font-bold mx-4 pt-10 font-Poppins lg:py-16 text-lg md:text-2xl lg:text-3xl">
                 DURACIÓN TOTAL <br />
                 <span className="text-yellow"> 8 MESES</span>
               </h1>
-              <p className="text-center m-2 font-Nunito md:my-6 md:text-lg lg:my-8 lg:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-              </p>
-              <p className="text-center m-2 font-Nunito md:my-6 md:text-lg lg:my-8 lg:text-lg">
-                incididunt ut labore et dolore.{" "}
-              </p>
-              <p className="text-center m-2 font-Nunito md:my-6 md:text-lg lg:my-8 lg:text-lg">
-                Aliquam ultrices sagittis orci{" "}
-              </p>
-              <p className="text-center m-2 font-Nunito md:my-6 md:text-lg lg:my-8 lg:text-lg">
-                purus semper eget duis. Eget sit amet tellus.
-              </p>
-              <p className="text-center m-6 font-Nunito text-yellow md:my-6 md:text-lg md:py-4 lg:text-lg lg:py-4">
-                Ac orci phasellus egestas
+              <p className="text-left mx-4 py-6 font-Nunito md:my-6 md:text-lg lg:my-8 lg:text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.<br/> <br/>
+              
+                incididunt ut labore et dolore.<br/> <br/>
+                
+                Aliquam ultrices sagittis orci<br/> <br/>
+                
+                purus semper eget duis. Eget sit amet tellus.<br/> <br/>
+                
+                <span className="text-yellow">Ac orci phasellus egestas</span>
               </p>
             </div>
 
@@ -105,8 +101,8 @@ export const Benefist = () => {
             {/*Boton para aplicar en el programa*/}
 
             <object>
-              <article className="flex justify-center p-16">
-                <button className="bg-yellow shadow-md shadow-dark/50 rounded w-32 text-light font-Poppins font-bold md:h-8 md:w-36 lg:h-10 lg:w-40 lg:text-lg">
+              <article className="flex justify-center pt-8 pb-1">
+                <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-center text-light text-sm font-Poppins font-medium">
                   Aplicar Ahora!
                 </button>
               </article>
@@ -119,10 +115,10 @@ export const Benefist = () => {
 
           <object className="mx-2 ">
             <div>
-              <h3 className="text-dark m-6 font-bold font-Poppins md:text-lg lg:py-28 lg:text-2xl">
+              <h3 className="text-dark mx-4 font-bold font-Poppins pt-10 lg:py-28 text-lg md:text-2xl lg:text-3xl text-right">
                 Comienza YA a estudiar sobre el futuro que es la tecnologia
               </h3>
-              <p className="text-center m-4 font-Nunito lg:text-lg">
+              <p className="m-4 font-Nunito lg:text-lg text-right">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Aliquam ultrices sagittis orci a scelerisque purus semper eget
@@ -133,7 +129,7 @@ export const Benefist = () => {
                 venenatis tellus in. Nam aliquam sem et tortor consequat id
                 porta nibh venenatis. Pretium vulputate sapien nec sagittis
                 aliquam malesuada bibendum. Consectetur libero id faucibus nisl.
-                Tincidunt id aliquet risus feugiat.<br /><br /> 
+                Tincidunt id aliquet risus feugiat.<br/> <br/>
                 Viverra nam libero justo laoreet. Purus ut faucibus pulvinar elementum integer enim. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Ac tincidunt vitae semper quis. Donec ultrices tincidunt arcu non sodales neque sodales. Sodales ut etiam sit amet nisl purus in. Donec ac odio tempor orci dapibus ultrices in. 
               </p>
             </div>
