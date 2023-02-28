@@ -31,22 +31,8 @@ export const Footer = () => {
                         <button className="bg-yellow text-light py-2 m-2 w-32 relative left-24 md:left-52">Participa ya!</button>
 
                     </sub>
-                    {/*icons and contact*/}
-                    <address className=' flex justify-center items-center flex-col   text-light font-Poppins font-semibold text-lg text-center m-2 sm:m-1 sm:w-56 '>
-                        <div className='m-2 lg:m-0'><BsFillTelephoneFill /><p className='sm:w-56'>Cra. 13 #90-17</p> </div>
-                        <div ><FaMapMarkerAlt /><p className='sm:w-56'>Cra. 13 #90-17</p></div>
-
-                        {/*social media icons*/}
-                        <span className='flex justify-evenly flex-row  text-light text-2xl  '>
-                            <p className='p-3' > <MdFacebook /></p>
-                            <p className='p-3' > <SlSocialInstagram /></p>
-                            <p className='p-3' > <SiTiktok /></p>
-                            <p className='p-3' ><GrLinkedinOption /></p>
-                            <p className='p-3' ><ImSpotify /></p>
-                        </span>
-
-                    </address>
-
+                 <BsFillTelephoneFill />
+                    <FaMapMarkerAlt/> 
                 </section>
 
             </footer>
