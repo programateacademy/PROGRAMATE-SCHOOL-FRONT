@@ -5,6 +5,15 @@ import Login from './pages/Login'
 import Singup from './pages/Singup'
 import Form from './pages/Form'
 import StudentSpace from './pages/StudentSpace'
+{/* routes for registration form */ }
+import Student from './components/Form/Student'
+import Social from './components/Form/Social'
+import Residence from './components/Form/Residence'
+import Guardian from './components/Form/Guardian'
+import Psychological from './components/Form/Psychological'
+import Interest from './components/Form/Interest'
+import Logic from './components/Form/Logic'
+
 
 function App() {
 
@@ -16,7 +25,15 @@ function App() {
           <Route path='/Login' element={<Login/>} exact></Route>
           <Route path='/Singup' element={<Singup/>} exact></Route>
           <Route path='/Form' element={<Form/>} exact></Route>
-          <Route path='/Studentspace' element={<StudentSpace/>} exact></Route>
+          <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
+          {/* routes for registration form */}
+          <Route path='/Student' element={<Student />} exact></Route>
+          <Route path='/Social' element={<Social />} exact></Route>
+          <Route path='/Residence' element={<Residence />} exact></Route>
+          <Route path='/Guardian' element={<Guardian />} exact></Route>
+          <Route path='/Psychological' element={<Psychological />} exact></Route>
+          <Route path='/Interest' element={<Interest />} exact></Route>
+          <Route path='/Logic' element={<Logic />} exact></Route>
         </Routes>
       </BrowserRouter>
     </div>
