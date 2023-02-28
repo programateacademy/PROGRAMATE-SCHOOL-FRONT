@@ -1,17 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Modal from '../components/Modal'
+import { useState } from 'react'
 
 export const Singup = () => {
 
+    const [showModal, setShowModal] = useState(false)
+
+    const handleOnClose = () => setShowModal(false)
+
     return (
-        <div className='relative'>
-        <Link to='/'><img className='absolute w-1/6 left-6 top-4 hidden md:block' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados'/></Link>
         <div className='h-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
-            <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-cover bg-center'>
+            <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO_50.png?raw=true")] bg-cover bg-center grid'>
+                <div className='w-7/12 sm:w-5/12 md:w-9/12 m-auto'>
+                    <img className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'}/>
+                </div>
             </div>
-            <div className='row-span-4 bg-light py-10 my-auto'>
+            <div className='row-span-4 bg-light py-6 my-auto'>
                 <h1 className='mx-12 sm:mx-52 md:mx-12 lg:mx-26 pb-5 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'>¡Da el primer paso<br/>y regístrate!</h1>
-                <Link to='/Singup'><img className='mx-auto w-[25%] pb-6 md:hidden' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados'/></Link>
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-2 gap-x-2'>
                     <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</h3>
                     <input type='text' placeholder='1er nombre' className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
@@ -44,13 +49,13 @@ export const Singup = () => {
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</h3>
                     <input type='number' placeholder='00' className='w-full px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
                 </div>
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 flex-row'>
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 flex flex-row justify-center'>
                     <input type='checkbox' className='w-3 h-3 accent-red self-center'></input>
-                    <label className='ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <a href='https://github.com/programateacademy/PROGRAMATE-SCHOOL-FRONT' target='_blank' className='text-red'><b>términos y condiciones</b></a>.</label>
+                    <label className='ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='text-red'><b>términos y condiciones</b></button>.</label>
+                    <Modal onClose={handleOnClose} visible={showModal}/>
                 </div>
-                <button className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-center text-light text-sm font-Poppins font-medium'>Registrarse</button>
+                <button className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Registrarse</button>
             </div>
-        </div>
         </div>
     )
 }

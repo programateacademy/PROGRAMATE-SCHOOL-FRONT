@@ -67,7 +67,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
@@ -84,7 +84,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
@@ -101,7 +101,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
@@ -118,7 +118,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
@@ -135,7 +135,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
+                            <button className=' flex m-auto mx-3 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>button-Primary</button>
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
