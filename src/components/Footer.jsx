@@ -31,8 +31,9 @@ export const Footer = () => {
                         <button className="bg-yellow text-light py-2 m-2 w-32 relative left-24 md:left-52">Participa ya!</button>
 
                     </sub>
-                 <BsFillTelephoneFill />
-                    <FaMapMarkerAlt/> 
+                    <BsFillTelephoneFill />
+                    <FaMapMarkerAlt /> 
+                 
                 </section>
 
             </footer>
