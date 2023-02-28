@@ -3,9 +3,9 @@ import Student from '../components/Form/Student'
 import Social from '../components/Form/Social'
 import Residence from '../components/Form/Residence'
 import Guardian from '../components/Form/Guardian'
-import Psychological from '../components/Form/Psychological'
-import Interest from '../components/Form/Interest'
+import Motivation from '../components/Form/Motivation'
 import Logic from '../components/Form/Logic'
+import Vocation from '../components/Form/Vocation'
 
 
 function Form() {
@@ -16,8 +16,8 @@ function Form() {
             <Social/>
             <Residence/>
             <Guardian/>
-            <Psychological/>
-            <Interest/>
+            <Vocation/>
+            <Motivation/>
             <Logic/>
         </div>
     )
