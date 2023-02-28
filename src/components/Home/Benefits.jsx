@@ -102,7 +102,7 @@ export const Benefist = () => {
 
             <object>
               <article className="flex justify-center pt-8 pb-1">
-                <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-red text-center text-light text-sm font-Poppins font-medium">
+                <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
                   Aplicar Ahora!
                 </button>
               </article>
