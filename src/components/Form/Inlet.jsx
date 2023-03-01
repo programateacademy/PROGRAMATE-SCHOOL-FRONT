@@ -1,17 +1,17 @@
 import React from 'react'
 
-const Input = ({ state, changeStatus, type, label, placeholder, id, error, question, funcion  }) => {
+const Input = ({ state, modifyStatus, type, label, placeholder, id, error, question, funcion  }) => {
     
     const onChange = (e) => {
-        changeStatus({ ...state, camp: e.target.value });
+        modifyStatus({ ...state, camp: e.target.value });
     }
 
     const validation = () => {
         if (question) {
             if (question.test(state.camp)) {
-                changeStatus({ ...state, valid: 'true' })
+                modifyStatus({ ...state, valid: 'true' })
             } else {
-                changeStatus({ ...state, valid: 'false' });
+                modifyStatus({ ...state, valid: 'false' });
             }
         }
         if (funcion) {

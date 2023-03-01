@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Residence = () => {
     
-    const [rural, changeRural] = useState(false);
-    const [addressStudent, changeAddressStudent] = useState({ camp: '', valid: null });
+    const [rural, modifyRural] = useState(false);
+    const [addressStudent, modifyAddressStudent] = useState({ camp: '', valid: null });
     
     const questions = {
         addressStudent: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
@@ -14,7 +14,7 @@ const Residence = () => {
 
     
     const onChangeRural = (e) => {
-        changeRural(e.target.checked)
+        modifyRural(e.target.checked)
     }
 
     // const onSubmit = (e) => {
@@ -23,7 +23,7 @@ const Residence = () => {
     //     if(
     //         addressStudent.valid == 'true' &&
     //     ){
-    //         changeAddressStudent({ camp: '', valid: '' });
+    //         modifyAddressStudent({ camp: '', valid: '' });
     //     };
     // }
 
@@ -35,7 +35,7 @@ const Residence = () => {
             </Link> 
             <Inlet
                 state={addressStudent}
-                changeState={changeAddressStudent}
+                modifyState={modifyAddressStudent}
                 type="text"
                 label="Dirección permanente / recurrente de residencia"
                 placeholder="Dirección permanente / recurrente de residencia"
