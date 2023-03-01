@@ -3,7 +3,7 @@ import Inlet from './Inlet'
 
 const Student = () => {
     return (
-        <div>Student
+        <div>yo
             <Inlet />
         </div>
     )
