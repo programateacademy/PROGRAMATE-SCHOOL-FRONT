@@ -4,29 +4,32 @@ import Call from '../components/StudentSpace/CallComp'
 const StudentSpace = () => {
     return (
         <main className='container py-10'>
+
             {/* session convocations */}
-            <section className='flex justify-around'>
 
-                <h1 className='font-bold font-Poppins'>Convocatorias abiertas</h1>
+            <section className='flex flex-col items-center'>
+                <h1 className='font-bold font-Poppins text-md'>Convocatorias abiertas</h1>
 
-                <figure className='flex flex-col justify-end items-center'>
-                    <h3 className='font-Poppins font-semibold'>¿Tienes algún problema o dificultad con tu proceso?</h3>
-                    
-                    <p className=' font-Nunito py-4'>No dude en contáctarnos estaremos pendiente a darte una pronta solución</p>
-                    <button className='bg-yellow shadow-md shadow-dark/50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold'>Contáctanos</button>
+                <figure className='flex flex-col items-center'>
+                    <h3 className='font-Poppins font-semibold m-2 text-sm'>¿Tienes algún problema o dificultad con tu proceso?</h3>
+                    <p className=' font-Nunito m-2'>No dude en contáctarnos estaremos pendiente a darte una pronta solución</p>
+                    <button className='bg-yellow shadow-md shadow-dark/50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-8'>Contáctanos</button>
+                </figure>
 
-                    <hr className='border-2 rounded border-yellow w-48' />
-                    <p>Agradecemos a nuestros sponsor por brindar apoyo a este programa</p>
-                    <img className=''
+                <figure className='flex flex-col items-center'>
+                    <hr className='border-2 rounded border-yellow w-60 my-4' />
+                    <p className='font-Nunito m-3'>Agradecemos a nuestros sponsor por brindar apoyo a este programa</p>
+                    <img className='my-10'
                         src={
                             "https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-color.png?raw=true"
                         }
                         alt="logo-brillas"
                     />
-
                 </figure>
             </section>
+
             <Call />
+
         </main>
     )
 }
