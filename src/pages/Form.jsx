@@ -14,7 +14,7 @@ function Form() {
         <div>
             <Student/>
             <Social/>
-            {/* <Residence/> */}
+            <Residence/>
             <Guardian/>
             <Vocation/>
             <Motivation/>

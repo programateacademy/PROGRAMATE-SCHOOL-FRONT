@@ -1,10 +1,10 @@
 import React from 'react'
-import Inlet from './Inlet'
+// import Inlet from './Inlet'
 
 const Student = () => {
     return (
         <div>Student
-            <Inlet />
+            
         </div>
     )
 }
