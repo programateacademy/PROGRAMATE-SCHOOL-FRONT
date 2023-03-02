@@ -8,10 +8,11 @@ const StudentSpace = () => {
             {/* session convocations */}
 
             <section className='flex flex-col items-center'>
-                <h1 className='font-bold font-Poppins text-md'>Convocatorias abiertas</h1>
+                <h1 className='font-bold font-Poppins text-md md:text-lg lg:text-3xl'>Convocatorias abiertas</h1>
+                <Call />
 
                 <figure className='flex flex-col items-center'>
-                    <h3 className='font-Poppins font-semibold m-2 text-sm'>¿Tienes algún problema o dificultad con tu proceso?</h3>
+                    <h3 className='font-Poppins font-semibold m-2 mt-10 text-sm'>¿Tienes algún problema o dificultad con tu proceso?</h3>
                     <p className=' font-Nunito m-2'>No dude en contáctarnos estaremos pendiente a darte una pronta solución</p>
                     <button className='bg-yellow shadow-md shadow-dark/50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-8'>Contáctanos</button>
                 </figure>
@@ -28,7 +29,6 @@ const StudentSpace = () => {
                 </figure>
             </section>
 
-            <Call />
 
         </main>
     )
