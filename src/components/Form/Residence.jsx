@@ -1,5 +1,4 @@
 import {React, useState} from 'react'
-import Inlet from './Inlet'
 import { Link } from 'react-router-dom';
 
 
@@ -40,7 +39,7 @@ const Residence = () => {
             <Link to='/Social'>
                 <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
             </Link> 
-            <Inlet
+            <input
                 state={addressStudent}
                 modifyState={modifyAddressStudent}
                 type="text"
