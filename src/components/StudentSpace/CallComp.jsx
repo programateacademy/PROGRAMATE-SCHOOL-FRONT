@@ -1,12 +1,29 @@
 import React from 'react'
 
 const CallComp = () => {
- 
+    function fillId(id) {
+        const numerator = 0;
+        const denominator = 6;
+        const fraction = numerator + '/' + denominator;
+        document.getElementById(id).innerHTML = fraction;
+
+        const interval = setInterval(function () {
+            numerator++;
+            if (numerator > denominator) {
+                clearInterval(interval);
+            } else {
+                fraction = numerator + '/' + denominator;
+                document.getElementById(id).innerHTML = fraction;
+            }
+        }, 1000); // delay between iterations (in milliseconds)
+    }
+
+    fillId('Numbers');
 
     return (
         <main className='shadow shadow-yellow/50 rounded p-3 md:w-5/12 lg:w-4/12'>
             <section className='flex flex-col items-center '>
-                    <h1 className='font-bold font-Poppins my-4'>Desarrollador Frontend Web Jr</h1>
+                <h1 className='font-bold font-Poppins my-4'>Desarrollador Frontend Web Jr</h1>
                 <figure className='flex flex-col justify-around '>
                     <p className='font-nonito my-4'>Estado de la aplicación <span className='text-dark font-bold ml-10'>En progreso</span></p>
                     <p className='font-nonito my-4'>Etapas de la selección <span id='Numbers' className='text-dark font-bold ml-20'>2/6</span></p>
