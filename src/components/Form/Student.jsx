@@ -65,13 +65,13 @@ const Student = () => {
                                     className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-red'
                                     type="name"
                                     id='name'
-                                    name=''
+                                    name='name'
                                     placeholder='Nombre'
                                     value={values.name}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.name && errors.name && <div className=" text-center font-Nunito text-red text-sm">{errors.name}</div>}
+                                {touched.name && errors.name && <div className="mx-9 font-Nunito text-red text-sm">{errors.name}</div>}
                             </div>
 
                             {/* the middle name input has id but no other properties */}
@@ -96,7 +96,7 @@ const Student = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.Surname && errors.Surname && <div className="text-center font-Nunito text-red text-sm">{errors.Surname}</div>}
+                                {touched.Surname && errors.Surname && <div className="mx-9 font-Nunito text-red text-sm">{errors.Surname}</div>}
                             </div>
 
                             {/* the input of the second last name has an id but no other properties */}
@@ -120,7 +120,7 @@ const Student = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.Birthdate && errors.Birthdate && <div className="text-center font-Nunito text-red text-sm">{errors.Birthdate}</div>}
+                                {touched.Birthdate && errors.Birthdate && <div className="mx-9 font-Nunito text-red text-sm">{errors.Birthdate}</div>}
                             </div>
 
                             {/* the Age input with the id AGE */}
@@ -136,7 +136,7 @@ const Student = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.Age && errors.Age && <div className="text-center font-Nunito text-red text-sm">{errors.Age}</div>}
+                                {touched.Age && errors.Age && <div className="mx-9 font-Nunito text-red text-sm">{errors.Age}</div>}
                             </div>
 
                             {/* the gender input with the options it gives */}
@@ -179,12 +179,14 @@ const Student = () => {
                         </Form>
                     )}
                 </Formik>
+                {/* line that divides the form */}
                 <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6" />
                 {/* Form validation */}
                 <Formik
                     initialValues={{
                         Email: '',
                         Phone: '',
+                        sena: '',
                     }}
                     validate={(valores) => {
                         let errores = {};
@@ -195,6 +197,11 @@ const Student = () => {
                         if (!valores.Phone) {
                             errores.Phone = 'Ingresa tu numero de celular'
                         }
+
+                        if (!valores.sena) {
+                            errores.sena = 'Seleciona una opción'
+                        }
+
                         return errores;
                     }}
                     onSubmit={(valores, { resetForm }) => {
@@ -243,12 +250,13 @@ const Student = () => {
                                 </select>
                                 </div>
                                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género?</h3>
+                                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Te encuentras cursando SENA u Horas sociales?</h3>
                                     <label className='flex flex-row font-Nunito'>
                                         <Field
                                             type="radio"
-                                            name="picked"
-                                            value="One"
+                                            id="sena"
+                                            name="sena"
+                                            value="Yes"
                                             className="accent-red
                                     focus:accent-yellow" />
                                         Si
@@ -256,7 +264,8 @@ const Student = () => {
                                     <label>
                                         <Field
                                             type="radio"
-                                            name="picked"
+                                            id="sena"
+                                            name="sena"
                                             value="No"
                                             className="accent-red
                                     focus:accent-yellow"
@@ -270,8 +279,9 @@ const Student = () => {
                                     <label className='flex flex-row font-Nunito'>
                                         <Field
                                             type="radio"
-                                            name="picked"
-                                            value="One"
+                                            id="Availability"
+                                            name="Availability"
+                                            value="Yes"
                                             className="accent-red
                                     focus:accent-yellow" />
                                         Si
@@ -279,7 +289,8 @@ const Student = () => {
                                     <label>
                                         <Field
                                             type="radio"
-                                            name="picked"
+                                            id="Availability"
+                                            name="Availability"
                                             value="No"
                                             className="accent-red
                                     focus:accent-yellow"
@@ -290,9 +301,9 @@ const Student = () => {
 
                                 <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
                                     <label for="Email" className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
-                                    <p className=' font-Nunito text-sm '> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
+                                    <p className=' font-Nunito text-sm text-dark/60'> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
                                     <input
-                                        className=' w-1/2 p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                        className=' w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow md:w-1/2'
                                         type="Email"
                                         id='Email'
                                         name='Email'
@@ -318,15 +329,15 @@ const Student = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                     ></input>
-                                    {touched.Phone && errors.Phone && <div className="text-center font-Nunito text-red text-sm">{errors.Phone}</div>}
+                                    {touched.Phone && errors.Phone && <div className="mx-9 font-Nunito text-red text-sm">{errors.Phone}</div>}
                                 </div>
 
                                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                    <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
+                                    <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular Secundario</label>
                                     <input
                                         className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
                                         type="Phone"
-                                        id='Phone'
+                                        id='PhoneTwo'
                                         name='Phone'
                                         placeholder='000 000 00 00'
                                     ></input>

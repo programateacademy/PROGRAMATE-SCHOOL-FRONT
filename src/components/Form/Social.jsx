@@ -20,17 +20,9 @@ const Social = () => {
             <Formik
                 initialValues={{
                     Email: '',
-                    Phone: '',
                 }}
                 validate={(valores) => {
                     let errores = {};
-                    if (!valores.Email) {
-                        errores.Email = 'Ingresa tu correo electronico'
-                    }
-
-                    if (!valores.Phone) {
-                        errores.Phone = 'Ingresa tu numero de celular'
-                    }
                     return errores;
                 }}
                 onSubmit={(valores, { resetForm }) => {
@@ -47,12 +39,13 @@ const Social = () => {
                         className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'
                         onSubmit={handleSubmit}>
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="school" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén?</label>
+                            <label for="sisben" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén?</label>
                             <label className='flex flex-row font-Nunito'>
                                 <Field
                                     type="radio"
-                                    name="picked"
-                                    value="One"
+                                    id="sisben"
+                                    name="sisben"
+                                    value="Yes"
                                     className="accent-red
                                     focus:accent-yellow" />
                                 Si
@@ -60,7 +53,8 @@ const Social = () => {
                             <label>
                                 <Field
                                     type="radio"
-                                    name="picked"
+                                    id="sisben"
+                                    name="sisben"
                                     value="No"
                                     className="accent-red
                                     focus:accent-yellow"
@@ -71,7 +65,7 @@ const Social = () => {
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico?</h3>
-                            <select id='course'
+                            <select id='ethnicGroup'
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
@@ -89,13 +83,56 @@ const Social = () => {
                                     Ninguna de las anteriores </option>
                             </select>
                         </div>
+
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género?</h3>
+                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?</h3>
+                            <select id='Nationality'
+                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                <option className='font-medium text-dark'>
+                                    Selecciona una opción </option>
+                                <option className='font-medium text-dark'>
+                                    Venezolan@ </option>
+                                <option className='font-medium text-dark'>
+                                    Colombian@</option>
+                                <option className='font-medium text-dark'>
+                                    Otra </option>
+                            </select>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
+            {/* line that divides the form */}
+            <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6" />
+
+            <Formik
+                initialValues={{
+                    Email: '',
+                }}
+                validate={(valores) => {
+                    let errores = {};
+                    return errores;
+                }}
+                onSubmit={(valores, { resetForm }) => {
+                    resetForm();
+                    console.log('formulario enviado');
+                }}
+            >
+
+
+                {/*the name input with the id NAME*/}
+                {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+
+                    <Form
+                        className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'
+                        onSubmit={handleSubmit}>
+                        <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label for="disability" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces a población en situación de discapacidad?</label>
                             <label className='flex flex-row font-Nunito'>
                                 <Field
                                     type="radio"
-                                    name="picked"
-                                    value="One"
+                                    name="disability"
+                                    id="disability"
+                                    value="Yes"
                                     className="accent-red
                                     focus:accent-yellow" />
                                 Si
@@ -103,7 +140,8 @@ const Social = () => {
                             <label>
                                 <Field
                                     type="radio"
-                                    name="picked"
+                                    name="disability"
+                                    id="disability"
                                     value="No"
                                     className="accent-red
                                     focus:accent-yellow"
@@ -113,70 +151,30 @@ const Social = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con Disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM?</h3>
-                            <label className='flex flex-row font-Nunito'>
-                                <Field
-                                    type="radio"
-                                    name="picked"
-                                    value="One"
-                                    className="accent-red
-                                    focus:accent-yellow" />
-                                Si
-                            </label>
-                            <label>
-                                <Field
-                                    type="radio"
-                                    name="picked"
-                                    value="No"
-                                    className="accent-red
-                                    focus:accent-yellow"
-                                />
-                                No
-                            </label>
-                        </div>
-
-                        <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
-                            <label for="Email" className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
-                            <p className=' font-Nunito text-sm '> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
-                            <input
-                                className=' w-1/2 p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
-                                type="Email"
-                                id='Email'
-                                name='Email'
-                                placeholder='Correo@correo.edu'
-                                value={values.Email}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                            ></input>
-                            {touched.Email && errors.Email && <div className="mx-9 font-Nunito text-red text-sm">{errors.Email}</div>}
-                        </div>
-
-                        {/* the birth input with the id BIRTHDATE */}
-
-                        <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
-                            <input
-                                className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
-                                type="Phone"
-                                id='Phone'
-                                name='Phone'
-                                placeholder='000 000 00 00'
-                                value={values.Phone}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                            ></input>
-                            {touched.Phone && errors.Phone && <div className="text-center font-Nunito text-red text-sm">{errors.Phone}</div>}
-                        </div>
-
-                        <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular secundario</label>
-                            <input
-                                className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
-                                type="Phone"
-                                id='Phone'
-                                name='Phone'
-                                placeholder='000 000 00 00'
-                            ></input>
+                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
+                            <select id='Disability'
+                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                <option className='font-medium text-dark'>
+                                    Selecciona una opción </option>
+                                <option className='font-medium text-dark'>
+                                    Fisica </option>
+                                <option className='font-medium text-dark'>
+                                    Auditiva </option>
+                                <option className='font-medium text-dark'>
+                                    Visual </option>
+                                <option className='font-medium text-dark'>
+                                    Intelectual / Cognitiva </option>
+                                <option className='font-medium text-dark'>
+                                    SordoCegera </option>
+                                <option className='font-medium text-dark'>
+                                    Pisicosocial </option>
+                                <option className='font-medium text-dark'>
+                                    Multiple </option>
+                                <option className='font-medium text-dark'>
+                                    Otra </option>
+                                <option className='font-medium text-dark'>
+                                    Ninguno de los anteriores </option>
+                            </select>
                         </div>
                     </Form>
                 )}
@@ -185,6 +183,7 @@ const Social = () => {
             <Link to="/Residence" className='flex justify-end mr-8' >
                 <button className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
             </Link>
+            <br/>
         </div>
     )
 }
