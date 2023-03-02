@@ -27,11 +27,40 @@ const Student = () => {
                 <Formik
                     initialValues={{
                         name: '',
+                        Surname: '',
+                        Birthdate: '',
+                        Age: '',
+                        Email: '',
+                        Phone: '',
+                        sena: '',
                     }}
                     validate={(valores) => {
                         let errores = {};
                         if (!valores.name) {
-                            errores.name = ''
+                            errores.name = 'Ingresa tu nombre'
+                        }
+
+                        if (!valores.Surname) {
+                            errores.Surname = 'Ingresa tu Apellido'
+                        }
+
+                        if (!valores.Birthdate) {
+                            errores.Birthdate = 'Ingresa tu fecha de Nacimiento'
+                        }
+                        if (!valores.Age) {
+                            errores.Age = 'Ingresa tu edad en numero "18"'
+                        }
+
+                        if (!valores.Email) {
+                            errores.Email = 'Ingresa tu correo electronico'
+                        }
+
+                        if (!valores.Phone) {
+                            errores.Phone = 'Ingresa tu numero de celular'
+                        }
+
+                        if (!valores.sena) {
+                            errores.sena = 'Seleciona una opción'
                         }
 
                         return errores;
@@ -158,10 +187,9 @@ const Student = () => {
                                         PTP </option>
                                 </select>
                             </div>
-
+                            
                                 {/* the break line in the form */}
                                 <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
-
                             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                                 <label for="school" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cual el tu colegio?</label>
                                 <select id='school'
