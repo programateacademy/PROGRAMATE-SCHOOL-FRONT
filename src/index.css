@@ -4,16 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.input-form {
-    width: 100%;
-    padding-left: 1px;
-    padding-right: 1px;
-    border-width: 2px;
-    border: yellow;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
-
-;
-/* w-full px-1 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins outline-none */

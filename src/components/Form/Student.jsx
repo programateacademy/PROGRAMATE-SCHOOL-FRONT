@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Formik, Form } from 'formik'
+import { Formik, Form, Field, } from 'formik'
 
 
 const Student = () => {
@@ -26,31 +26,25 @@ const Student = () => {
                 <Formik
                     initialValues={{
                         name: '',
-                        tel: '',
-                        email: '',
-                        theme: '',
-                        amount: '',
-                        descrip: '',
+                        Surname: '',
+                        Birthdate: '',
+                        Age: '',
                     }}
                     validate={(valores) => {
                         let errores = {};
                         if (!valores.name) {
-                            errores.name = 'Ingresa tu nombre completo'
+                            errores.name = 'Ingresa tu nombre'
                         }
+
+                        if (!valores.Surname) {
+                            errores.Surname = 'Ingresa tu Apellido'
+                        }
+
                         if (!valores.Birthdate) {
-                            errores.Birthdate = 'ingresa tu fecha de Nacimiento'
+                            errores.Birthdate = 'Ingresa tu fecha de Nacimiento'
                         }
                         if (!valores.Age) {
-                            errores.Age = 'ingresa tu edad en numero "18"'
-                        }
-                        if (!valores.theme) {
-                            errores.theme = 'ingresa tu temática'
-                        }
-                        if (!valores.amount) {
-                            errores.amount = 'ingresa la cantidad que necesitas'
-                        }
-                        if (!valores.descrip) {
-                            errores.descrip = 'ingresa una descripción de tu proyecto '
+                            errores.Age = 'Ingresa tu edad en numero "18"'
                         }
                         return errores;
                     }}
@@ -66,18 +60,50 @@ const Student = () => {
                             className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'
                             onSubmit={handleSubmit}>
                             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                <label for="name" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres y apellidos (completos)</label>
+                                <label for="name" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Primer Nombre</label>
                                 <input
-                                    className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                    className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-red'
                                     type="name"
                                     id='name'
                                     name=''
-                                    placeholder='Nombre Completo'
+                                    placeholder='Nombre'
                                     value={values.name}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
                                 {touched.name && errors.name && <div className=" text-center font-Nunito text-red text-sm">{errors.name}</div>}
+                            </div>
+
+                            {/* the middle name input has id but no other properties */}
+
+                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <label for="secondName" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Segundo Nombre</label>
+                                <input
+                                    className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                </input>
+                            </div>
+
+                            {/*the Surname input with the id Surname*/}
+                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <label for="Surname" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Primer Apellido</label>
+                                <input
+                                    className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                    type="Surname"
+                                    id='Surname'
+                                    name='Surname'
+                                    placeholder='Apellido'
+                                    value={values.Surname}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                ></input>
+                                {touched.Surname && errors.Surname && <div className="text-center font-Nunito text-red text-sm">{errors.Surname}</div>}
+                            </div>
+
+                            {/* the input of the second last name has an id but no other properties */}
+                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <label for="secondSurname" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Segundo apellido</label>
+                                <input
+                                    className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                             </div>
 
                             {/* the birth input with the id BIRTHDATE */}
@@ -94,7 +120,7 @@ const Student = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.Birthdate && errors.Birthdate && <div className="">{errors.Birthdate}</div>}
+                                {touched.Birthdate && errors.Birthdate && <div className="text-center font-Nunito text-red text-sm">{errors.Birthdate}</div>}
                             </div>
 
                             {/* the Age input with the id AGE */}
@@ -110,13 +136,14 @@ const Student = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 ></input>
-                                {touched.Age && errors.Age && <div className="">{errors.Age}</div>}
+                                {touched.Age && errors.Age && <div className="text-center font-Nunito text-red text-sm">{errors.Age}</div>}
                             </div>
 
+                            {/* the gender input with the options it gives */}
                             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                                 <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género?</h3>
-                                <select id='Genero' 
-                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                <select id='Gender'
+                                    data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                     <option className='font-medium text-dark'>
                                         Selecciona una opción </option>
                                     <option className='font-medium text-dark'>
@@ -128,25 +155,189 @@ const Student = () => {
                                 </select>
                             </div>
 
+                            {/* the document input with the options it gives */}
                             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                                 <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Tipo de documento</h3>
-                                <select id='instituciones' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                <select id='Document'
+                                    data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                     <option className='font-medium text-dark'>
                                         Selecciona una opción </option>
                                     <option className='font-medium text-dark'>
-                                        Femenino </option>
+                                        Cédula de Ciudadania </option>
                                     <option className='font-medium text-dark'>
-                                        Masculino </option>
+                                        Cédula de extranjería </option>
                                     <option className='font-medium text-dark'>
-                                        Otro </option>
+                                        Tarjeta de identidad </option>
+                                    <option className='font-medium text-dark'>
+                                        Pasaporte </option>
+                                    <option className='font-medium text-dark'>
+                                        PEP </option>
+                                    <option className='font-medium text-dark'>
+                                        PTP </option>
                                 </select>
-                            </div>
-                            <div className='flex flex-row items-center'>
-                                <label for="amount">Cantidad</label>
                             </div>
                         </Form>
                     )}
                 </Formik>
+                <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6" />
+                {/* Form validation */}
+                <Formik
+                    initialValues={{
+                        Email: '',
+                        Phone: '',
+                    }}
+                    validate={(valores) => {
+                        let errores = {};
+                        if (!valores.Email) {
+                            errores.Email = 'Ingresa tu correo electronico'
+                        }
+
+                        if (!valores.Phone) {
+                            errores.Phone = 'Ingresa tu numero de celular'
+                        }
+                        return errores;
+                    }}
+                    onSubmit={(valores, { resetForm }) => {
+                        resetForm();
+                        console.log('formulario enviado');
+                    }}
+                >
+
+
+                    {/*the name input with the id NAME*/}
+                    {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+
+                        <Form
+                            className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'
+                            onSubmit={handleSubmit}>
+                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <label for="school" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cual el tu colegio?</label>
+                                <select id='school'
+                                    data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                    <option className='font-medium text-dark'>
+                                        Selecciona una opción </option>
+                                    <option className='font-medium text-dark'>
+                                        IE El Jardín - Ibagué </option>
+                                    <option className='font-medium text-dark'>
+                                        El Olivo School - Santa Marta </option>
+                                    <option className='font-medium text-dark'>
+                                        Colegio Integrada La Candelaria </option>
+                                    <option className='font-medium text-dark'>
+                                        Técnica Agropecuaria Luruaco - Atlantico </option>
+                                    <option className='font-medium text-dark'>
+                                        Colegio Campo de la Cruz - Atlantico</option>
+                                </select>
+                            </div>
+
+                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estas cursando Actualmente?</h3>
+                                <select id='course'
+                                    data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                    <option className='font-medium text-dark'>
+                                        Selecciona una opción </option>
+                                    <option className='font-medium text-dark'>
+                                        11° </option>
+                                    <option className='font-medium text-dark'>
+                                        Otro </option>
+
+                                </select>
+                                </div>
+                                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género?</h3>
+                                    <label className='flex flex-row font-Nunito'>
+                                        <Field
+                                            type="radio"
+                                            name="picked"
+                                            value="One"
+                                            className="accent-red
+                                    focus:accent-yellow" />
+                                        Si
+                                    </label>
+                                    <label>
+                                        <Field
+                                            type="radio"
+                                            name="picked"
+                                            value="No"
+                                            className="accent-red
+                                    focus:accent-yellow"
+                                        />
+                                        No
+                                    </label>
+                                </div>
+
+                                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con Disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM?</h3>
+                                    <label className='flex flex-row font-Nunito'>
+                                        <Field
+                                            type="radio"
+                                            name="picked"
+                                            value="One"
+                                            className="accent-red
+                                    focus:accent-yellow" />
+                                        Si
+                                    </label>
+                                    <label>
+                                        <Field
+                                            type="radio"
+                                            name="picked"
+                                            value="No"
+                                            className="accent-red
+                                    focus:accent-yellow"
+                                        />
+                                        No
+                                    </label>
+                                </div>
+
+                                <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
+                                    <label for="Email" className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
+                                    <p className=' font-Nunito text-sm '> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
+                                    <input
+                                        className=' w-1/2 p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                        type="Email"
+                                        id='Email'
+                                        name='Email'
+                                        placeholder='Correo@correo.edu'
+                                        value={values.Email}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                    ></input>
+                                    {touched.Email && errors.Email && <div className="mx-9 font-Nunito text-red text-sm">{errors.Email}</div>}
+                                </div>
+
+                                {/* the birth input with the id BIRTHDATE */}
+
+                                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                    <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
+                                    <input
+                                        className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                        type="Phone"
+                                        id='Phone'
+                                        name='Phone'
+                                        placeholder='000 000 00 00'
+                                        value={values.Phone}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                    ></input>
+                                    {touched.Phone && errors.Phone && <div className="text-center font-Nunito text-red text-sm">{errors.Phone}</div>}
+                                </div>
+
+                                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                    <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
+                                    <input
+                                        className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
+                                        type="Phone"
+                                        id='Phone'
+                                        name='Phone'
+                                        placeholder='000 000 00 00'
+                                    ></input>
+                                </div>
+                        </Form>
+                    )}
+                </Formik>
+                <Link to="/Social" className='flex justify-end mr-8' >
+                <button className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                </Link>
+                <br/>
             </div>
         </div>
     );
