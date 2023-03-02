@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik'
 const Residence = () => {
     
     return (
+        <div>
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className=' flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
