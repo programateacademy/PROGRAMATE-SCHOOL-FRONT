@@ -14,6 +14,7 @@ function LoginPerson() {
     const navigator = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
 
+
     function loginPerson() {
         var loginP = {
             emailPerson: emailPerson,
@@ -39,20 +40,20 @@ function LoginPerson() {
                 <h1 className='mx-12 sm:mx-12 md:mx-12 lg:mx-26 pb-3 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'>¡Sigue educándote<br/>para el futuro!</h1>
                 <Link to='/Singup'><img className='mx-auto w-[25%] pb-6 md:hidden' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt=''/></Link>
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Usuario:</h3>
-                    <input value={emailPerson} onChange={(e) => {setEmailPerson(e.target.value)}} type='email' placeholder='correo@correo.edu.co' className='w-full px-1 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
+                    <label for='email' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Usuario:</label>
+                    <input value={emailPerson} onChange={(e) => {setEmailPerson(e.target.value)}} type='email' required  placeholder='correo@correo.edu.co' className='w-full px-1 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
                 </div>
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 relative'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Contraseña:</h3>
-                    <input value={passwordPerson}  onChange={(e) => {setPasswordPerson(e.target.value)}} type={showPassword ? 'text' : 'password'} placeholder='∗∗∗∗∗∗∗∗∗∗∗∗∗' className='w-full px-1 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
-                        <div className='absolute top-8 right-2' onClick={() => setShowPassword(!showPassword)}>
-                            {showPassword ? <AiOutlineEye className='fill-dark'/> : <AiOutlineEyeInvisible className='fill-dark'/>}
-                        </div>
+                    <label for='password' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Contraseña:</label>
+                    <input value={passwordPerson}  onChange={(e) => {setPasswordPerson(e.target.value)}} type={showPassword ? 'text' : 'password'} required placeholder='∗∗∗∗∗∗∗∗∗∗∗∗∗' className='w-full pl-1 pr-8 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
+                        <button className='absolute top-8 right-2 px-1 bg-light' onClick={() => setShowPassword(!showPassword)}>
+                            {showPassword ? <AiOutlineEye className='fill-dark hover:fill-red'/> : <AiOutlineEyeInvisible className='fill-dark hover:fill-red'/>}
+                        </button>
                     <h5 className='pt-1 text-center text-dark text-xs font-Nunito italic '>Olvidaste tu contraseña, <a href='https://github.com/programateacademy/PROGRAMATE-SCHOOL-FRONT' target='_blank'><b className='hover:text-red'>recupérala aquí</b></a></h5>
                 </div>
                 <button onClick={loginPerson} className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Ingresar</button>
                 <h4 className='mx-20 md:mx-16 pt-6 text-center text-dark text-sm font-Nunito'>¿No tienes una cuenta?</h4>
-                <Link to='/Singup'><h4 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito hover:text-red'><b>Ingresa aquí</b>.</h4></Link>
+                <Link to='/Singup'><h4 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito hover:text-red'><b>Regístrate aquí</b>.</h4></Link>
             </div>
         </div>
         </div>
