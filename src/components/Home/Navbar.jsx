@@ -8,7 +8,7 @@ export const Navbar = () => {
 
     return (
         <nav className=''>
-            <section className='w-full absolute z-40 flex flex-row md:grid md:grid-cols-5 p-4 items-center justify-between m-auto'>
+            <section className='absolute z-40 flex flex-row md:grid md:grid-cols-5 px-4 py-2 items-center justify-between m-auto md:mx-14 md:mt-3'>
                 
                 {/* Logo Programate school */}
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-2/6 flex md:col-span-1 md:w-full'></img>
