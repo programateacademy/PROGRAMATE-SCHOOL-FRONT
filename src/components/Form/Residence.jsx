@@ -17,71 +17,88 @@ const Residence = () => {
                 <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
             </Link> 
             <Formik
-            initialValues={{
+                initialValues={{
                     addressStudent: '',
-                    departamentoStudent: '',
-                    rural: '',
-                    bogota: '',
-                    stratum:'',
+                    // departamentoStudent: '',
+                    // rural: '',
+                    // bogota: '',
+                    // stratum:'',
+                    
+                }}                
+                onSubmit={(values, { resetForm }) => {
+                    resetForm();
+                    console.log(initialValues)
+                    console.log(values)
                 }}
-
-                validate={(valores) => {
+                validate={(values) => {
                     let errores = {};
-                    if (!valores.addressStudent) {
+                    if (!values.addressStudent) {
                         errores.addressStudent = 'ingresa tu dirección permanente / recurrente de residencia'
                     }
-                    if (!valores.departamentoStudent) {
+                    if (!values.departamentoStudent) {
                         errores.departamentoStudent = 'ingresa el departamento de residencia'
                     }
-                    if (!valores.rural) {
+                    if (!values.rural) {
                         errores.rural = 'Selecciona una opción'
                     }
-                    if (!valores.bogota) {
+                    if (!values.bogota) {
                         errores.bogota = 'ingresa la localidad de residencia'
                     }
-                    if (!valores.stratum) {
+                    if (!values.stratum) {
                         errores.stratum = 'ingresa el estrato de residencia'
                     }
                     
                     return errores;
                 }}
-                onSubmit={(valores, { resetForm }) => {
-                    resetForm();
-                    console.log('formulario enviado');
-                    // console.log(valores)
-                }}
+                
             >
                 {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
                     <Form className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' onSubmit={handleSubmit}>
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                             <label htmlFor='addressStudent' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
-                            <input
+                            <Field
                                 className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-re'
                                 type="text"
                                 id='addressStudent'
-                                name=''
+                                name='addressStudent'
                                 placeholder="Dirección permanente / recurrente de residencia"
                                 value={values.addressStudent}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                            ></input>
+                            ></Field>
                             {touched.addressStudent && errors.addressStudent && <div className="text-center font-Nunito text-red text-sm">{errors.addressStudent}</div>}
                         </div>
 
                         <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
-                            <select id='departamentoStudent' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
-                                    <option className='font-medium text-dark'>Selecciona una opción</option>
+                            <Field
+                            as='select'    id='departamentoStudent'
+                                name='departamentoStudent'
+                                value={values.departamentoStudent}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                <option
+                                    value=''
+                                    className='font-medium text-dark'>Selecciona una opción</option>
                                     <option className='font-medium text-dark'>Atlántico</option>
-                                    <option className='font-medium text-dark'>Bogotá</option>
-                                    <option className='font-medium text-dark'>Magdalena</option>
-                                    <option className='font-medium text-dark'>Tolima</option>
-                                </select>
+                                <option
+                                    value='Bogotá' className='font-medium text-dark'>Bogotá</option>
+                                <option
+                                    value='Magdalena' className='font-medium text-dark'>Magdalena</option>
+                                <option
+                                    value='Tolima'
+                                    className='font-medium text-dark'>Tolima</option>
+                                </Field>
                             </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu Departamento?</label>
-                            <label className='flex flex-row font-Nunito'>
+                            <label className='flex flex-row font-Nunito'
+                                name='rural'
+                                value={values.rural}
+                                onChange={handleChange}
+                                onBlur={handleBlur}>
                                 <Field
                                     type="radio"
                                     id="rural"
@@ -106,7 +123,11 @@ const Residence = () => {
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
-                            <select id='bogota' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                            <select id='bogota'
+                                name='bogota'
+                                value={values.bogota}
+                                onChange={handleChange}
+                                onBlur={handleBlur}    data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                     <option className='font-medium text-dark'>Selecciona una opción</option>
                                     <option className='font-medium text-dark'>localidad de Antonio Nariño</option>
                                     <option className='font-medium text-dark'>localidad de Barrios Unidos</option>
@@ -126,7 +147,11 @@ const Residence = () => {
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico? 
                                 (De acuerdo con la estratificación reportada en los recibos de servicios públicos)</label>
-                            <select id='stratum' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                            <select id='stratum'
+                                name='stratum'
+                                value={values.stratum}
+                                onChange={handleChange}
+                                onBlur={handleBlur} data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>Selecciona una opción</option>
                                 <option className='font-medium text-dark'>1</option>
                                 <option className='font-medium text-dark'>2</option>
@@ -137,9 +162,9 @@ const Residence = () => {
                             </select>
                         </div>
 
-                        <Link className='flex justify-end' to='/Guardian'>
+                        {/* <Link type='submit' className='flex justify-end' to='/Guardian'> */}
                             <button type='submit' disabled="" className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                        </Link> 
+                        {/* </Link>  */}
                     </Form>
                 )}
             </Formik>
