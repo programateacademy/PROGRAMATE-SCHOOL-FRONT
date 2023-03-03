@@ -1,9 +1,54 @@
 import { React } from 'react'
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field } from 'formik'
+
 
 const Guardian = () => {
 
+    let rate = 0;
+
+    const [addressStudent, setAddressStudent] = useState("");
+    const [departamentoStudent, setDepartamentoStudent] = useState("");
+    const [rural, setRural] = useState("");
+    const [bogota, setBogota] = useState("");
+    const [stratum, setStratum] = useState("");
+
+    function formAnnouncement() {
+        var formAn = {
+            addressStudent: addressStudent,
+            departamentoStudent: departamentoStudent,
+            rural: rural,
+            bogota: bogota,
+            stratum: stratum
+        }
+        console.log(formAn)
+        // axios.post("http://localhost:3000/", formAn)
+        // .then(res => {alert("hola mundo") })
+    }
+
+    const validateForm = () => {
+        //Logica de las preguntas para sumar puntajes
+        if (!addressStudent) {
+            const errorAddressStudent = "true"
+        }
+        if (!departamentoStudent) {
+            const validateForm = "true"
+        }
+        if (!rural) {
+            const validateForm = "true"
+        }
+        if (!bogota) {
+            const validateForm = "true"
+        }
+        if (!stratum) {
+            const validateForm = "true"
+        }
+        else {
+            if (addressStudent == "femenino") {
+                rate = rate + 1
+            }
+        }
+    }
+    
     return (
         <div>Guardian
             <div className='flex h-72 '>

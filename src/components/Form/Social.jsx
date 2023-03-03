@@ -152,7 +152,7 @@ const Social = () => {
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
-                            <select id='Disability'
+                            <select id='tipeDisability'
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
