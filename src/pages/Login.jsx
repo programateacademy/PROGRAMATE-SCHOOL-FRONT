@@ -31,7 +31,7 @@ function LoginPerson() {
     return (
         <div className='relative'>
         <img className='absolute w-1/6 left-6 top-4' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados'/>
-        <div className='h-full grid grid-rows-3 md:grid-rows-1 md:grid-cols-2'>
+        <div className='h-full md:h-screen grid grid-rows-3 md:grid-rows-1 md:grid-cols-2'>
             <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-cover bg-center'>
             </div>
             <div className='row-span-2 bg-light py-6 my-auto'>
