@@ -1,9 +1,7 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
-import { useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link,  } from 'react-router-dom'
+import defaultApi from '../apis/index'
 
 
 function LoginPerson() {
@@ -14,21 +12,30 @@ function LoginPerson() {
     const navigator = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
 
-
-    function loginPerson() {
-        var loginP = {
-            emailPerson: emailPerson,
-            passwordPerson: passwordPerson
+function loginPerson() {
+    var loginP = {
+        emailPerson: emailPerson,
+        passwordPerson: passwordPerson,
+    };
+    console.log(loginP);
+    defaultApi
+    .post("/login", loginP)
+    .then((res) => {
+        alert("OK");
+        // navigator("/")
+    })
+    .then((err) => {
+        console.log(err);
+    })
+    .catch((err) => {
+        if (err.response.status === 401) {
+            alert("Usuario no encontrado");
+        } else if (err.response.status === 403) {
+            alert("Contraseña incorrecta");
         }
-        console.log(loginP)
-        axios.post("http://localhost:3000/api/login", loginP)
-        .then(res => {
-            alert("OK")
-            // navigator("/")
-        })
-        .then(err => {console.log(err)})
-    }
-
+    });
+}
+    
 
     return (
         <div className='relative'>
@@ -53,7 +60,7 @@ function LoginPerson() {
                 </div>
                 <button onClick={loginPerson} className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Ingresar</button>
                 <h4 className='mx-20 md:mx-16 pt-6 text-center text-dark text-sm font-Nunito'>¿No tienes una cuenta?</h4>
-                <Link to='/Singup'><h4 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito hover:text-red'><b>Regístrate aquí</b>.</h4></Link>
+                <Link to='/Singup'><h5 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito'><b><button className='text-dark hover:text-red'>Regístrate aquí</button></b>.</h5></Link>
             </div>
         </div>
         </div>

@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import Modal from '../components/Modal'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import defaultApi from '../apis/index'
 
 function Singup() {
 
@@ -21,26 +21,36 @@ function Singup() {
 
     const navigator = useNavigate();
 
-    function signUp() {
-        var signP = {
-            name1Person: name1Person,
-            name2Person: name2Person,
-            lastname1Person: lastname1Person,
-            lastname2Person: lastname2Person,
-            documentPerson: documentPerson,
-            emailPerson: emailPerson,
-            profilePerson: 3,
-            agePerson: agePerson,
-            institutionPerson: institutionPerson             
+function signUp() {
+    var signP = {
+        name1Person: name1Person,
+        name2Person: name2Person,
+        lastname1Person: lastname1Person,
+        lastname2Person: lastname2Person,
+        documentPerson: documentPerson,
+        emailPerson: emailPerson,
+        profilePerson: 3,
+        agePerson: agePerson,
+        institutionPerson: institutionPerson,
+    };
+    console.log(signP);
+    defaultApi
+    .post("/signUp", signP)
+    .then((res) => {
+        alert("Se ha registrado en PROGRAMATE SCHOOL");
+        //  navigator("/")
+    })
+    .then(err => {
+        console.log(err)
+    })
+    .catch(err => {
+        if (err.response.status === 409) {
+            alert("Ya existe un usuario con este documento");
+        } else if (err.response.status === 408) {
+            alert("Ya existe un usuario con este Correo");
         }
-        console.log(signP)
-        axios.post("http://localhost:3000/api/signUp", signP)
-        .then(res => {
-            alert("Se ha registrado en PROGRAMATE SCHOOL")
-            //  navigator("/")
-        })
-        .then(err => {console.log(err)})
-    }
+    })
+}
 
     return (
         <div className='h-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
@@ -88,10 +98,11 @@ function Singup() {
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Institución:</h3>
                     <select value={institutionPerson} onChange={(e) => {setInstitutionPerson(e.target.value)}} id='instituciones' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                         <option className='font-medium text-dark'>Selecciona una opción</option>
-                        <option className='font-medium text-dark'>Uno</option>
-                        <option className='font-medium text-dark'>Dos</option>
-                        <option className='font-medium text-dark'>Tres</option>
-                        <option className='font-medium text-dark'>Cuatro</option>
+                        <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
+                        <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
+                        <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
+                        <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
+                        <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
                     </select>
                 </div>
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 flex flex-row justify-center'>
