@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { MdFacebook } from 'react-icons/md'
@@ -7,7 +6,7 @@ import { SlSocialInstagram } from 'react-icons/sl'
 import { SiTiktok } from 'react-icons/si'
 import { GrLinkedinOption } from 'react-icons/gr'
 import { ImSpotify } from 'react-icons/im'
-import Link from 'react-router-dom';
+import Link from 'react-router-dom'
 
 export const Footer = () => {
     return (
