@@ -1,4 +1,4 @@
-import {React, } from 'react'
+import {React, useState} from 'react'
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik'
 
@@ -16,15 +16,27 @@ const Residence = () => {
             <Link to='/Social'>
                 <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
             </Link> 
-            <Formik
-            initialValues={{
-                    addressStudent: '',
-                    departamentoStudent: '',
-                    rural: '',
-                    bogota: '',
-                    stratum:'',
-                }}
-
+            <input
+                state={addressStudent}
+                modifyState={modifyAddressStudent}
+                type="text"
+                label="Dirección permanente / recurrente de residencia"
+                placeholder="Dirección permanente / recurrente de residencia"
+                id="addressStudent"
+                error="ingresa tu dirección permanente / recurrente de residencia"
+                question={questions.addressStudent}
+            />
+            
+            <div className='w-80 mx-7 pb-6'>
+                <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</h3>
+                <select id='instituciones' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                    <option className='font-medium text-dark'>Selecciona una opción</option>
+                    <option className='font-medium text-dark'>Atlántico</option>
+                    <option className='font-medium text-dark'>Bogotá</option>
+                    <option className='font-medium text-dark'>Magdalena</option>
+                    <option className='font-medium text-dark'>Tolima</option>
+                </select>
+            </div>
                 validate={(valores) => {
                     let errores = {};
                     if (!valores.addressStudent) {
