@@ -53,7 +53,7 @@ function loginPerson() {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 relative'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Contraseña:</label>
                     <input value={passwordPerson}  onChange={(e) => {setPasswordPerson(e.target.value)}} type={showPassword ? 'text' : 'password'} required placeholder='∗∗∗∗∗∗∗∗∗∗∗∗∗' className='w-full pl-1 pr-8 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
-                        <button className='absolute top-8 right-2 px-1 bg-light' onClick={() => setShowPassword(!showPassword)}>
+                        <button className='absolute top-8 right-2 px-1' onClick={() => setShowPassword(!showPassword)}>
                             {showPassword ? <AiOutlineEye className='fill-dark hover:fill-red'/> : <AiOutlineEyeInvisible className='fill-dark hover:fill-red'/>}
                         </button>
                     <h5 className='pt-1 text-center text-dark text-xs font-Nunito italic '>Olvidaste tu contraseña, <a href='https://github.com/programateacademy/PROGRAMATE-SCHOOL-FRONT' target='_blank'><b className='hover:text-red'>recupérala aquí</b></a></h5>
