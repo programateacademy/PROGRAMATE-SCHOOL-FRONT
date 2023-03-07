@@ -13,7 +13,7 @@ export default function Modal({ visible, onClose }) {
     
     return (
         <div id='box' onClick={handleOnClose} className='fixed inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
-            <div className='w-10/12 md:w-6/12 h-3/4  my-auto bg-[#FBE6A0] border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto'>
+            <div className='w-10/12 md:w-6/12 h-3/4  my-auto bg-[#FDE79D] border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto'>
                 <button onClick={onClose} className='w-full mx-auto flex justify-end'><AiFillCloseCircle size={20} className='fill-dark hover:fill-red'/></button>
                 <h1 className='w-11/12 md:w-6/12 mx-auto mt-2 py-1 px-2 bg-dark rounded-md font-Poppins font-semibold text-center text-yellow text-lg md:text-xl'> 
                 Términos y Condiciones
@@ -23,7 +23,6 @@ export default function Modal({ visible, onClose }) {
 
                     Fringilla cum nostra integer litora hendrerit euismod orci phasellus, erat nullam duis at taciti quam mi. Varius conubia nec sociis nascetur fermentum interdum ultrices, eros porttitor nibh cursus fringilla hendrerit eu, condimentum pharetra facilisi congue eleifend mollis. Dictumst arcu lobortis sed tempor pretium dui elementum accumsan mollis, pellentesque magnis euismod in turpis ad potenti lacus taciti nascetur, nec nunc dignissim nisi orci phasellus consequat blandit.
 
-                    Fringilla cum nostra integer litora hendrerit euismod orci phasellus, erat nullam duis at taciti quam mi. Varius conubia nec sociis nascetur fermentum interdum ultrices, eros porttitor nibh cursus fringilla hendrerit eu, condimentum pharetra facilisi congue eleifend mollis. Dictumst arcu lobortis sed tempor pretium dui elementum accumsan mollis, pellentesque magnis euismod in turpis ad potenti lacus taciti nascetur, nec nunc dignissim nisi orci phasellus consequat blandit.
                     </p>
             </div>
         </div>
