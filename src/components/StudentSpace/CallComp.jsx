@@ -12,13 +12,13 @@ const CallComp = () => {
 
         const interval = setInterval(function () {
 
-            numerator++;
-            if (numerator > denominator) {
-                clearInterval(interval);
-            } else {
-                fraction = numerator + '/' + denominator;
-                document.getElementById(id).innerHTML = fraction;
-            }
+            // numerator++;
+            // if (numerator > denominator) {
+            //     clearInterval(interval);
+            // } else {
+            //     fraction = numerator + '/' + denominator;
+            //     document.getElementById(id).innerHTML = fraction;
+            // }
 
         });
     }
