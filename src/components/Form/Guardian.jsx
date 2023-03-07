@@ -6,19 +6,34 @@ const Guardian = () => {
 
     let rate = 0;
 
-    const [addressStudent, setAddressStudent] = useState("");
-    const [departamentoStudent, setDepartamentoStudent] = useState("");
-    const [rural, setRural] = useState("");
-    const [bogota, setBogota] = useState("");
-    const [stratum, setStratum] = useState("");
+    const [nameGuardian, setNameGuardian] = useState("");
+    const [relationship, setRelationship] = useState("");
+    const [DocumentTypeGuardian, setDocumentTypeGuardian] = useState("");
+    const [numberIdGuardian, setNumberIdGuardian] = useState("");
+    const [EmailGuardian, setEmailGuardian] = useState("");
+    const [PhoneGuardian, setPhoneGuardian] = useState("");
+    const [PhoneGuardianTwo, setPhoneGuardianTwo] = useState("");
+    const [addressGuardian, setAddressGuardian] = useState("");
+    const [departamentoGuardian, setEmailGuardiandepartamentoGuardian] = useState("");
+    const [educationLevelGuardian, setEducationLevelGuardian] = useState("");
+    const [economic, setEconomic] = useState("");
+    const [family, setFamily] = useState("");
 
     function formAnnouncement() {
         var formAn = {
-            addressStudent: addressStudent,
-            departamentoStudent: departamentoStudent,
-            rural: rural,
-            bogota: bogota,
-            stratum: stratum
+            nameGuardian: nameGuardian,
+            relationship: relationship,
+            DocumentTypeGuardian: DocumentTypeGuardian,
+            numberIdGuardian: numberIdGuardian,
+            EmailGuardian: EmailGuardian,
+            PhoneGuardian: PhoneGuardian,
+            PhoneGuardianTwo: PhoneGuardianTwo,
+            addressGuardian: addressGuardian,
+            departamentoGuardian: departamentoGuardian,
+
+            educationLevelGuardian: educationLevelGuardian,
+            economic: economic,
+            family: family
         }
         console.log(formAn)
         // axios.post("http://localhost:3000/", formAn)
@@ -48,7 +63,7 @@ const Guardian = () => {
             }
         }
     }
-    
+
     return (
         <div>Guardian
             <div className='flex h-72 '>
