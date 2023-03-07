@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { MdFacebook } from 'react-icons/md'
