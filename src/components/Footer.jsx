@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { MdFacebook } from 'react-icons/md'
@@ -23,33 +24,36 @@ export const Footer = () => {
                         <img className='w-44 md:w-2/3' src="https://raw.githubusercontent.com/MariaHerrera03/ImageBank/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png" alt="Educamas" />
                         <h2 className='text-yellow font-Poppins font-semibold lg:w-72'>Lorem ipsum dolor sit.</h2>
                     </picture>
+                    <li><Link classname='font-bold' to={'/Superadminspace'}>Contact</Link> </li>
 
-                    {/*about the program*/}
-                    <sub className='flex justify-center flex-col'>
-                        <h3 className=' text-center text-lg text-light font-Poppins font-semibold relative '>Sobre el programa</h3>
-                        <h4 className='relative left-1/4 text-sm w-56 text-light font-Poppins font-semibold md:w-2/4 md:text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis .</h4>
-                        <button className="bg-yellow text-light py-2 m-2 w-32 relative left-24 md:left-52">Participa ya!</button>
+            {/*about the program*/}
 
-                    </sub>
-                    {/*icons and contact*/}
-                    <address className=' flex justify-center items-center flex-col   text-light font-Poppins font-semibold text-lg text-center m-2 sm:m-1 sm:w-56 '>
-                        <div className='m-2 lg:m-0'><BsFillTelephoneFill /><p className='sm:w-56'>Cra. 13 #90-17</p> </div>
-                        <div ><FaMapMarkerAlt /><p className='sm:w-56'>Cra. 13 #90-17</p></div>
+            <sub className='flex justify-center flex-col'>
+                <h3 className=' text-center text-lg text-light font-Poppins font-semibold relative '>Sobre el programa</h3>
+                <h4 className='relative left-1/4 text-sm w-56 text-light font-Poppins font-semibold md:w-2/4 md:text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis .</h4>
+                <button className="bg-yellow text-light py-2 m-2 w-32 relative left-24 md:left-52">Participa ya!</button>
 
-                        {/*social media icons*/}
-                        <span className='flex justify-evenly flex-row  text-light text-2xl  '>
-                            <p className='p-3' > <MdFacebook /></p>
-                            <p className='p-3' > <SlSocialInstagram /></p>
-                            <p className='p-3' > <SiTiktok /></p>
-                            <p className='p-3' ><GrLinkedinOption /></p>
-                            <p className='p-3' ><ImSpotify /></p>
-                        </span>
+            </sub>
+            {/*icons and contact*/}
+            <address className=' flex justify-center items-center flex-col   text-light font-Poppins font-semibold text-lg text-center m-2 sm:m-1 sm:w-56 '>
+                <div className='m-2 lg:m-0'><BsFillTelephoneFill /><p className='sm:w-56'>Cra. 13 #90-17</p> </div>
+                <div ><FaMapMarkerAlt /><p className='sm:w-56'>Cra. 13 #90-17</p></div>
 
-                    </address>
+                {/*social media icons*/}
+                <span className='flex justify-evenly flex-row  text-light text-2xl  '>
+                    <p className='p-3' > <MdFacebook /></p>
+                    <p className='p-3' > <SlSocialInstagram /></p>
+                    <p className='p-3' > <SiTiktok /></p>
+                    <p className='p-3' ><GrLinkedinOption /></p>
+                    <p className='p-3 ' ><ImSpotify /></p>
 
-                </section>
+                </span>
 
-            </footer>
+            </address>
+
+        </section>
+
+            </footer >
         </>
     )
 }
