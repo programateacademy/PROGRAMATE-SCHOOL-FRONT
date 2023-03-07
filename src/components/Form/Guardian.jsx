@@ -1,8 +1,68 @@
 import { React } from 'react'
 import { Link } from 'react-router-dom';
-import { Formik, Form } from 'formik'
+
 
 const Guardian = () => {
+
+    let rate = 0;
+
+    const [nameGuardian, setNameGuardian] = useState("");
+    const [relationship, setRelationship] = useState("");
+    const [DocumentTypeGuardian, setDocumentTypeGuardian] = useState("");
+    const [numberIdGuardian, setNumberIdGuardian] = useState("");
+    const [EmailGuardian, setEmailGuardian] = useState("");
+    const [PhoneGuardian, setPhoneGuardian] = useState("");
+    const [PhoneGuardianTwo, setPhoneGuardianTwo] = useState("");
+    const [addressGuardian, setAddressGuardian] = useState("");
+    const [departamentoGuardian, setEmailGuardiandepartamentoGuardian] = useState("");
+    const [educationLevelGuardian, setEducationLevelGuardian] = useState("");
+    const [economic, setEconomic] = useState("");
+    const [family, setFamily] = useState("");
+
+    function formAnnouncement() {
+        var formAn = {
+            nameGuardian: nameGuardian,
+            relationship: relationship,
+            DocumentTypeGuardian: DocumentTypeGuardian,
+            numberIdGuardian: numberIdGuardian,
+            EmailGuardian: EmailGuardian,
+            PhoneGuardian: PhoneGuardian,
+            PhoneGuardianTwo: PhoneGuardianTwo,
+            addressGuardian: addressGuardian,
+            departamentoGuardian: departamentoGuardian,
+
+            educationLevelGuardian: educationLevelGuardian,
+            economic: economic,
+            family: family
+        }
+        console.log(formAn)
+        // axios.post("http://localhost:3000/", formAn)
+        // .then(res => {alert("hola mundo") })
+    }
+
+    const validateForm = () => {
+        //Logica de las preguntas para sumar puntajes
+        if (!addressStudent) {
+            const errorAddressStudent = "true"
+        }
+        if (!departamentoStudent) {
+            const validateForm = "true"
+        }
+        if (!rural) {
+            const validateForm = "true"
+        }
+        if (!bogota) {
+            const validateForm = "true"
+        }
+        if (!stratum) {
+            const validateForm = "true"
+        }
+        else {
+            if (addressStudent == "femenino") {
+                rate = rate + 1
+            }
+        }
+    }
 
     return (
         <div>Guardian
@@ -26,7 +86,11 @@ const Guardian = () => {
                     PhoneGuardian: '',
                     PhoneGuardianTwo: '',
                     addressGuardian: '',
-                    departamentoGuardian:'',
+                    departamentoGuardian: '',
+                    
+                    educationLevelGuardian: '',
+                    economic: '',
+                    family: '',
                 }}
 
                 validate={(valores) => {
@@ -59,23 +123,32 @@ const Guardian = () => {
                         errores.departamentoGuardian = 'ingresa el departamento de residencia de tu acudiente'
                     }
 
+                    if (!valores.educationLevelGuardian) {
+                        errores.educationLevelGuardian = 'Ingresa nivel educativo de tus padres'
+                    }
+                    if (!valores.economic) {
+                        errores.economic = 'Ingresa la actividad economica de tus padres'
+                    }
+                    if (!valores.family) {
+                        errores.family = 'Selecciona la cantidad de personas en tu familia'
+                    }
                     return errores;
                 }}
                 onSubmit={(valores, { resetForm }) => {
                     resetForm();
                     console.log('formulario enviado');
-                    // console.log(valores)
+                    console.log(valores)
                 }}
             >
                 {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
                     <Form className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 '  onSubmit={handleSubmit}>
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 ' >
-                            <label For='nameGuardian' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Nombre completo de tu acudiente</label>
+                            <label  className='pb-1.5 text-dark text-sm font-Nunito font-black'>Nombre completo de tu acudiente</label>
                             <input
                                 className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-re'
                                 type="text"
                                 id='nameGuardian'
-                                name=''
+                                name='nameGuardian'
                                 placeholder='Nombre completo de tu acudiente'
                                 value={values.nameGuardian}
                                 onChange={handleChange}
@@ -85,12 +158,12 @@ const Guardian = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6  '>
-                            <label htmlFor='relationship' className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Parentesco contigo</label>
+                            <label  className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Parentesco contigo</label>
                             <input
                                 className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-re'
                                 type="text"
                                 id='relationship'
-                                name=''
+                                name='relationship'
                                 placeholder='Parentesco contigo'
                                 value={values.relationship}
                                 onChange={handleChange}
@@ -100,9 +173,14 @@ const Guardian = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Tipo de documento</h3>
+                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black' >Tipo de documento</h3>
                             <select id='DocumentTypeGuardian'
-                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                                name='DocumentTypeGuardian'
+                                value={values.DocumentTypeGuardian}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                data-te-select-init data-te-select-filter='true'
+                                className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
                                 <option className='font-medium text-dark'>
@@ -136,7 +214,7 @@ const Guardian = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
-                            <label for="Email" className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
+                            <label  className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
                             <p className=' font-Nunito text-gray-500 text-sm '> En este correo enviaremos copia de la información sobre todo el proceso, te recomendamos que sea el correo que revise constantemente</p>
                             <input
                                 className=' w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow md:w-1/2'
@@ -152,7 +230,7 @@ const Guardian = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente</label>
+                            <label  className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente</label>
                             <input
                                 className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
                                 type="Phone"
@@ -167,7 +245,7 @@ const Guardian = () => {
                         </div>
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="Phone" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
                             <input
                                 className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
                                 type="Phone"
@@ -194,7 +272,11 @@ const Guardian = () => {
 
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</h3>
-                            <select id='departamentoGuardian' data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                            <select id='departamentoGuardian'
+                                name='departamentoGuardian'
+                                value={values.departamentoGuardian}
+                                onChange={handleChange}
+                                onBlur={handleBlur} data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-Poppins font-medium text-dark'>Selecciona una opción</option>
                                 <option className='font-Poppins font-medium text-dark'>Atlántico</option>
                                 <option className='font-medium text-dark'>Bogotá</option>
@@ -203,53 +285,15 @@ const Guardian = () => {
                             </select>
                         </div>
 
-                        
+                        <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
-
-                        
-                    </Form>
-                )}
-            </Formik>  
-            
-            <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6" />
-            {/* Form validation */}
-            <Formik
-                initialValues={{
-                    educationLevelGuardian: '',
-                    economic: '',
-                    family: '',
-                }}
-                validate={(valores) => {
-                    let errores = {};
-                    if (!valores.educationLevelGuardian) {
-                        errores.educationLevelGuardian = 'Ingresa nivel educativo de tus padres'
-                    }
-                    if (!valores.economic) {
-                        errores.economic = 'Ingresa la actividad economica de tus padres'
-                    }
-                    if (!valores.family) {
-                        errores.family = 'Selecciona la cantidad de personas en tu familia'
-                    }
-
-                    
-                    return errores;
-                }}
-                onSubmit={(valores, { resetForm }) => {
-                    resetForm();
-                    console.log('formulario enviado');
-                }}
-            >
-
-
-                {/*the name input with the id NAME*/}
-                {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-
-                    <Form
-                        className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'
-                        onSubmit={handleSubmit}>
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="school" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es el nivel educativo de tus padres?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es el nivel educativo de tus padres?</label>
                             <select id='educationLevelGuardian'
+                                name='educationLevelGuardian'
+                                value={values.educationLevelGuardian}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
@@ -282,6 +326,10 @@ const Guardian = () => {
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu actividad económica / ocupación actual del principal proveedor en tu casa?</label>
                             <select id='economic'
+                                name='economic'
+                                value={values.economic}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
@@ -302,6 +350,10 @@ const Guardian = () => {
                         <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuántas personas componen tu núcleo familiar?</label>
                             <select id='family'
+                                name='family'
+                                value={values.family}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
@@ -320,13 +372,11 @@ const Guardian = () => {
                         <Link className='flex justify-end' to='/Vocation'>
                             <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
                         </Link> 
+                        
                     </Form>
                 )}
-            </Formik>
-
-
-
-
+            </Formik>  
+            
         </div>
     )
 }
