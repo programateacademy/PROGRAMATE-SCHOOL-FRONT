@@ -18,44 +18,6 @@ export const Footer = () => {
                 </div>
 
                 {/* Talk about the program */}
-<<<<<<< HEAD
-                <section className='  bg-dark md:flex  '>
-                    <picture className='flex justify-center items-center flex-col p-4 md:grid md:justify-start  '>
-                        <img className='w-44 md:w-2/3 ' src="https://i.ibb.co/j4GBFg6/programate-school-blancos-2.png" alt="programate-school" />
-                        <img className='w-44 md:w-2/3' src="https://raw.githubusercontent.com/MariaHerrera03/ImageBank/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png" alt="Educamas" />
-                        <h2 className='text-yellow font-Poppins font-semibold lg:w-72'>Lorem ipsum dolor sit.</h2>
-                    </picture>
-                   
-
-            {/*about the program*/}
-
-            <sub className='flex justify-center flex-col'>
-                <h3 className=' text-center text-lg text-light font-Poppins font-semibold relative '>Sobre el programa</h3>
-                <h4 className='relative left-1/4 text-sm w-56 text-light font-Poppins font-semibold md:w-2/4 md:text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis .</h4>
-                <button className="bg-yellow text-light py-2 m-2 w-32 relative left-24 md:left-52">Participa ya!</button>
-
-            </sub>
-            {/*icons and contact*/}
-            <address className=' flex justify-center items-center flex-col   text-light font-Poppins font-semibold text-lg text-center m-2 sm:m-1 sm:w-56 '>
-                <div className='m-2 lg:m-0'><BsFillTelephoneFill /><p className='sm:w-56'>Cra. 13 #90-17</p> </div>
-                <div ><FaMapMarkerAlt /><p className='sm:w-56'>Cra. 13 #90-17</p></div>
-
-                {/*social media icons*/}
-                <span className='flex justify-evenly flex-row  text-light text-2xl  '>
-                    <p className='p-3' > <MdFacebook /></p>
-                    <p className='p-3' > <SlSocialInstagram /></p>
-                    <p className='p-3' > <SiTiktok /></p>
-                    <p className='p-3' ><GrLinkedinOption /></p>
-                    <p className='p-3 ' ><ImSpotify /></p>
-
-                </span>
-
-            </address>
-
-        </section>
-
-            </footer >
-=======
                 <section className='bg-dark w-full md:grid md:grid-cols-3 py-14'>
                     <div className='mx-16 md:mx-24 flex flex-col gap-6 md:gap-16'>
                         <img src='https://i.ibb.co/j4GBFg6/programate-school-blancos-2.png' alt='programate-school'/>
@@ -91,7 +53,6 @@ export const Footer = () => {
                     </div>
                 </section>
             </footer>
->>>>>>> 025dd8de3395747a4a11707fbc8767d30ae66bdb
         </>
     )
 }

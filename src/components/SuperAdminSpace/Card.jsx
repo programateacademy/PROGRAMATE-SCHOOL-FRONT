@@ -76,7 +76,7 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
 
 export default Card*/}
 import React, { useState } from 'react'
-import { MdEditSquare } from 'react-icons/md'
+import { FaEdit } from 'react-icons/fa'
 
 
 
@@ -148,13 +148,13 @@ const Card = () => {
               
                 <section className='flex space-x-28 p-3 '>
                     <button className='bg-dark bg-gradient-to-r   text-light font-semibold py-1 px-3 rounded shadow-inner'>  Visualizar </button>
-                    <button onClick={handleAddTodo}><MdEditSquare className='text-3xl text-green-500' /></button>
+                    <button onClick={handleAddTodo}><FaEdit className='text-3xl text-green-500' /></button>
                 </section>
                     <ul>
                         {todos.map((todo, index) => (
                             <li key={index} >
                                 {todo.task} - {todo.deadline} - {todo.priority} - {todo.description} - {todo.status}
-                                <button onClick={() => handleEditTodo(index)}>  <MdEditSquare className='text-3xl text-green-500' />  </button>
+                                <button onClick={() => handleEditTodo(index)}>  <FaEdit className='text-3xl text-green-500' />  </button>
                             </li>
                         ))}
                     </ul>
