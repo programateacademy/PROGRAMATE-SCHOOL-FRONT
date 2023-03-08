@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export const Benefist = () => {
   return (
@@ -83,9 +84,12 @@ export const Benefist = () => {
               </article>
 
               {/*Button to apply to the program*/}
-              <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
-                  Aplicar Ahora!
-              </button>
+              <article className="pb-2">
+                <Link to="/Login">
+                  <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
+                    Aplicar Ahora!</button>
+                </Link>
+              </article>
           </object>
           {/*Program description...*/}
           <object className="md:col-span-2 md:ml-20">
