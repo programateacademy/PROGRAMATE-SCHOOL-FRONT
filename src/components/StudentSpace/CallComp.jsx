@@ -20,7 +20,6 @@ const CallComp = () => {
     //             fraction = numerator + '/' + denominator;
     //             document.getElementById(id).innerHTML = fraction;
     //         }
-
     //     });
     // }
 

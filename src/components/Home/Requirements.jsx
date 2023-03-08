@@ -6,7 +6,7 @@ const Requirements = () => {
 
             {/* Requirements sections */}
 
-            <h2 className=' font-Poppins text-dark font-bold my-3 mx-4 text-2xl md:ml-6 lg:ml-10 '>
+            <h2 className=' font-Poppins text-dark font-bold my-3 mx-4 text-2xl'>
                 ¿Cuales son los requerimientos para participar?
             </h2>
             <section className='mx-4 my-14 sm:flex items-center md:grid grid-cols-4 gap-14'>
@@ -51,7 +51,7 @@ const Requirements = () => {
                     </p>
                 </article>
             </section>
-            <h2 className='font-Poppins text-dark font-bold mt-3 mx-4 text-2xl md:ml-6 lg:ml-10'>
+            <h2 className='font-Poppins text-dark font-bold mt-3 mx-4 text-2xl'>
                 El proceso para aplicar es muy sencillo
             </h2>
 
