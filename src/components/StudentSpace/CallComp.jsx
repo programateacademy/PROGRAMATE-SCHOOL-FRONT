@@ -45,10 +45,10 @@ const CallComp = () => {
     //  onClick={() => setActiveBtn('Continuar')} className={activeBtn === '#' ? 'active' : ''} 
 
     return (
-        <main className='m-auto w-11/12 md:w-5/12 lg:w-7/12 shadow shadow-yellow/70 rounded'>
+        <main className='m-auto w-11/12 lg:w-7/12 shadow shadow-yellow/70 rounded'>
             <section className=''>
                 <section className='mt-12 md:mt-0'>
-                    <h1 className='font-bold font-Poppins md:text-lg lg:text-xl pt-5 ml-2 mr-6 text-start'>Desarrollador Frontend Web Jr</h1>
+                    <h1 className='font-bold font-Poppins md:text-lg lg:text-xl pt-5 m-4 mr-6 text-start'>Desarrollador Frontend Web Jr</h1>
 
                     <figure className='md:flex md:flex-col md:justify-around md:items-center'>
                         <p className='font-nonito my-4 md:my-4 md:text-lg'>Estado de la aplicación <span className='text-dark font-bold ml-10 md:ml-0'>En progreso</span></p>
@@ -57,7 +57,7 @@ const CallComp = () => {
 
 
                     <figure className='flex flex-col justify-center items-center'>
-                    <hr className='mx-4 border-1 rounded border-yellow my-10' />
+                    <hr className='mx-4 border-2 rounded border-yellow my-10 w-11/12' />
                         <p className='font-nonito md:my-4 md:text-lg'>Proceso de selección <span className='text-dark font-bold ml-16 md:ml-19'>Activo</span></p>
                         <button className='bg-yellow shadow-md shadow-dark/50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-6'>Aplicar</button>
                     </figure>
