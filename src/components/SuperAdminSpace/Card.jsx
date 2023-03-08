@@ -114,7 +114,8 @@ const Card = () => {
     }
 
     return (
-        <>
+        <>   
+        {/*Titles*/}
             <sub>
                 <h1 className='text-3xl text-dark font-Poppins font-semibold'>
                     Convocatorias creadas
@@ -125,6 +126,7 @@ const Card = () => {
                 <h2 className='text-1xl text-dark font-Poppins font-semibold'>
                     Desarrollador Frontend Web Jr
                 </h2>
+                {/*editable components*/}
                 <div>
                     <label className='text-dark font-Poppins font-semibold '>Perfil</label>
                     <input type="text" name="task" value={todo.task} onChange={handleInputChange} />
@@ -145,9 +147,11 @@ const Card = () => {
                     <label className='text-dark font-Poppins font-semibold '>Proceso de selección</label>
                     <input type="text" name="status" value={todo.status} onChange={handleInputChange} />
                 </div>
-              
+
+                {/*Edit, save and create buttons*/}
+
                 <section className='flex space-x-28 p-3 '>
-                    <button className='bg-dark bg-gradient-to-r   text-light font-semibold py-1 px-3 rounded shadow-inner'>  Visualizar </button>
+                    <button className=' bg-yellow shadow-md shadow-dark /50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-6'>  Visualizar </button>
                     <button onClick={handleAddTodo}><MdEditSquare className='text-3xl text-green-500' /></button>
                 </section>
                     <ul>
