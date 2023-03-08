@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Residence () {
     
-    let rate = 0;
+    // let rate = 0;
 
     const [addressStudent, setAddressStudent] = useState("");
     const [departamentoStudent, setDepartamentoStudent] = useState("");
@@ -13,22 +13,22 @@ function Residence () {
     const [bogota, setBogota] = useState("");
     const [stratum, setStratum] = useState("");
 
-    const [errorAddressStudent, setErrorAddressStudent] = useState("");
-    const [errordepartamentoStudent, setErrorDepartamentoStudent ] = useState("");
-    const [errorRural, setErrorRural ] = useState("");
-    const [errorBogota, setErrorBogota, ] = useState("");
-    const [errorStratum, setErrorStratum, ] = useState("");
+    // const [errorAddressStudent, setErrorAddressStudent] = useState("");
+    // const [errordepartamentoStudent, setErrorDepartamentoStudent ] = useState("");
+    // const [errorRural, setErrorRural ] = useState("");
+    // const [errorBogota, setErrorBogota, ] = useState("");
+    // const [errorStratum, setErrorStratum, ] = useState("");
 
-    function formAnnouncement() {
-        var formAn = {
+    function residenceA() {
+        var residence = {
             addressStudent: addressStudent,
             departamentoStudent: departamentoStudent,
             rural: rural,
             bogota: bogota,
             stratum: stratum
         }
-        console.log(formAn)
-        // axios.post("http://localhost:3000/", formAn)
+        console.log(residence)
+        // axios.post("http://localhost:3000/", residence)
             // .then(res => {alert("hola mundo") })
     }
 
@@ -37,32 +37,32 @@ function Residence () {
 
 
         //Logica de las preguntas para sumar puntajes
-        if (!addressStudent) {
-            errorAddressStudent.addressStudent = "ingresa tu dirección"
-            // val--;
-        }
-        if (!departamentoStudent) {
-            const validateForm = "true"
-            val--;
-        }
-        if (!rural) {
-            const validateForm = "true"
-            val--;
-        }
-        if (!bogota) {
-            const validateForm = "true"
-            val--;
-        }
-        if (!stratum == 2) {
-            const errorStratum = "true"
-            val--;
-        }
-        else {
-            if (addressStudent == "femenino") {
-                rate = rate + 1
-            }
-        } 
-    // }
+    //     if (!addressStudent) {
+    //         errorAddressStudent.addressStudent = "ingresa tu dirección"
+    //         // val--;
+    //     }
+    //     if (!departamentoStudent) {
+    //         const validateForm = "true"
+    //         val--;
+    //     }
+    //     if (!rural) {
+    //         const validateForm = "true"
+    //         val--;
+    //     }
+    //     if (!bogota) {
+    //         const validateForm = "true"
+    //         val--;
+    //     }
+    //     if (!stratum == 2) {
+    //         const errorStratum = "true"
+    //         val--;
+    //     }
+    //     else {
+    //         if (addressStudent == "femenino") {
+    //             rate = rate + 1
+    //         }
+    //     } 
+    // // }
 
     // if (val == 0) {
     //     disabled = true
@@ -83,7 +83,10 @@ function Residence () {
                 <Link to='/Social'>
                     <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
                 </Link>
-                <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
+            <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
+                
+                {/* question 21 id addressStudent */}
+
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
                         <input
@@ -98,7 +101,9 @@ function Residence () {
                         required
                         ></input>
                     {errorAddressStudent.addressStudent && <div className="text-center font-Nunito text-red text-sm">{errorAddressStudent.addressStudent}</div>}
-                    </div>
+                </div>
+                
+                {/* question 22 id departamentoStudent */}
 
                     <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
@@ -120,7 +125,9 @@ function Residence () {
                                 value='Tolima'
                                 className='font-medium text-dark'>Tolima</option>
                         </select>
-                    </div>
+                </div>
+                
+                {/* question 23 id rural */}
 
                     <div
                         value={rural}
@@ -149,7 +156,9 @@ function Residence () {
                             />  
                             No
                         </label>
-                    </div>
+                </div>
+                
+                {/* question 24 id bogota */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
@@ -172,8 +181,10 @@ function Residence () {
                             <option className='font-medium text-dark'>localidad de Puente Aranda</option>
                             <option className='font-medium text-dark'>localidad de Rafael Uribe Uribe</option>
                         </select>
-                    </div>
-                    
+                </div>
+                
+                {/* question 25 id stratum */}
+
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico?
                             (De acuerdo con la estratificación reportada en los recibos de servicios públicos)</label>
@@ -194,7 +205,7 @@ function Residence () {
 
                     {/* <Link type='submit' className='flex justify-end' to='/Guardian'> */}
                     <button
-                        onClick={formAnnouncement}
+                        onClick={residenceA}
                         type='submit'
                         // disabled={true}
                         className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
