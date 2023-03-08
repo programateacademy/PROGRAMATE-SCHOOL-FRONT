@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Singup from './pages/Singup'
 import Form from './pages/Form'
 import StudentSpace from './pages/StudentSpace'
+import SuperAdminSpace from './pages/SuperAdminSpace'
 {/* routes for registration form */ }
 import Student from './components/Form/Student'
 import Social from './components/Form/Social'
@@ -13,7 +14,6 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
-
 
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
           <Route path='/Singup' element={<Singup />} exact></Route>
           <Route path='/Form' element={<Form />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
+          <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
           {/* routes for registration form */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
