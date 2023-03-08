@@ -1,8 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { Formik, Form, Field, } from 'formik'   
+import { React, useState } from 'react'
+import { Link } from 'react-router-dom'; 
 
 const Motivation = () => {
+
+    const [why, setWhy] = useState("");
+    const [methodology, setMethodology] = useState("");
+    const [want, setWant] = useState("");
+    const [ethnicGroup, setEthnicGroup] = useState("");
+
+    function motivationA() {
+        var Motivation = {
+            why: why,
+            methodology: methodology,
+            want: want,
+            ethnicGroup: ethnicGroup
+        }
+        console.log(Motivation)
+    }
+
     return (
         <div>
             {/* cover image with logo */}
@@ -21,35 +36,21 @@ const Motivation = () => {
             </h2>
             <br/>
 
-            <Formik
-                    initialValues={{
-                        name: '',
-                    }}
-                    validate={(valores) => {
-                        let errores = {};
-                        if (!valores.name) {
-                            errores.name = ''
-                        }
+            <div>
+                {/* question 45 id why */}
 
-                        return errores;
-                    }}
-                    onSubmit={(valores, { resetForm }) => {
-                        resetForm();
-                        console.log('formulario enviado');
-                    }} >
-                    {/*the name input with the id NAME*/}
-                    {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-                        <Form
-                        onSubmit={handleSubmit}>
-                        <section className='font-Nunito'>
+                <section
+                    value={why}
+                    onChange={(e) => { setWhy(e.target.value) }}
+                    className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="want" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Por qué quieres ser parte de Prográmate School?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Por qué quieres ser parte de Prográmate School?</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="why"
+                                        id="why"
                                         value="A"
                                         className="accent-red
                                     focus:accent-yellow" />
@@ -61,11 +62,11 @@ const Motivation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="why"
+                                        id="why"
                                         value="B"
                                         className="accent-red
                                     focus:accent-yellow" />
@@ -77,11 +78,11 @@ const Motivation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="why"
+                                        id="why"
                                         value="C"
                                         className="accent-red
                                     focus:accent-yellow flex items-center" />
@@ -91,18 +92,23 @@ const Motivation = () => {
                                 No estoy seguro de que es La programación, pero es una oportunidad que nos da el colegio.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                </section>
 
-                            <section className='font-Nunito'>
-                            <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="want" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué es lo que más te interesa de la metodología?</label>
+                {/* question 46 id methodology */}
+
+                <section
+                    value={methodology}
+                    onChange={(e) => { setMethodology(e.target.value) }}
+                    className='font-Nunito'>
+                        <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué es lo que más te interesa de la metodología?</label>
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="methodology"
+                                        id="methodology"
                                         value="A"
                                         className="accent-red
                                     focus:accent-yellow" />
@@ -115,10 +121,10 @@ const Motivation = () => {
 
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="methodology"
+                                        id="methodology"
                                         value="B"
                                         className="accent-red
                                     focus:accent-yellow" />
@@ -130,11 +136,11 @@ const Motivation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
-                                        name="want"
-                                        id="want"
+                                        name="methodology"
+                                        id="methodology"
                                         value="C"
                                         className="accent-red
                                     focus:accent-yellow flex items-center" />
@@ -144,15 +150,20 @@ const Motivation = () => {
                                 Que el estudio es 100% virtual y en horario de la tarde.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                </section>
+                
+                {/* question 47 id want */}
 
-                            <section className='font-Nunito'>
-                            <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="want" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles son tus principales sueños en la vida y cómo la formación te aportará a cumplirlos?</label>
+                <section
+                    value={want}
+                    onChange={(e) => { setWant(e.target.value) }}
+                    className='font-Nunito'>
+                        <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles son tus principales sueños en la vida y cómo la formación te aportará a cumplirlos?</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="want"
                                         id="want"
@@ -167,8 +178,8 @@ const Motivation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="want"
                                         id="want"
@@ -183,8 +194,8 @@ const Motivation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="want"
                                         id="want"
@@ -197,12 +208,17 @@ const Motivation = () => {
                                 Tener una calidad de vida haciendo lo que más me apasiona que es la programación y apoyando a otros.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                </section>
 
-                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante?</h3>
-                            <select id='ethnicGroup'
+                {/* question 48 id ethnicGroup */}
+
+                    <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante?</h3>
+                    <select
+                        value={ethnicGroup}
+                        onChange={(e) => { setEthnicGroup(e.target.value) }}
+                        id='ethnicGroup'
                                 data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
@@ -216,15 +232,17 @@ const Motivation = () => {
                                     Conectividad </option>
                                 <option className='font-medium text-dark'>
                                     Ninguna de las anteriores </option>
-                            </select>
-                        </div>
+                    </select>
+                </div>
 
-                        </Form>
-                    )}
-                        </Formik>
-            <Link className='flex justify-end mr-8' to='/Logic'>
-            <button className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-            </Link>
+            </div>
+
+            {/* <Link className='flex justify-end mr-8' to='/Logic'> */}
+                <button
+                    onClick={motivationA}
+                    type='submit'
+                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+            {/* </Link> */}
         </div>
     )
 }
