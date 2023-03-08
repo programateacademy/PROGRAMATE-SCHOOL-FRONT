@@ -24,7 +24,7 @@ export const Footer = () => {
                         <img className='w-44 md:w-2/3' src="https://raw.githubusercontent.com/MariaHerrera03/ImageBank/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png" alt="Educamas" />
                         <h2 className='text-yellow font-Poppins font-semibold lg:w-72'>Lorem ipsum dolor sit.</h2>
                     </picture>
-                    <li><Link classname='font-bold' to={'/Superadminspace'}>Contact</Link> </li>
+                   
 
             {/*about the program*/}
 
