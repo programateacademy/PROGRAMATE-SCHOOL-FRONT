@@ -2,6 +2,8 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Social() {
+
+    //Hooks
     const [sisben, setSisben] = useState("");
     const [ethnicGroup, setEthnicGroup] = useState("");
     const [Nationality, setNationality] = useState("");
@@ -54,6 +56,8 @@ function Social() {
 
                 <section
                     className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
+
+                    {/* question 17 id sisben */}
                     <div
                     id="sisben" 
                     value={sisben}
@@ -83,6 +87,7 @@ function Social() {
                         </label>
                     </div>
 
+                    {/* question 18 id ethnicGroup */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico?</h3>
                         <select id='ethnicGroup'
@@ -105,6 +110,7 @@ function Social() {
                         </select>
                     </div>
 
+                    {/* question 19 id Nationaly */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?</h3>
                         <select id='Nationality'
@@ -123,6 +129,7 @@ function Social() {
                     {/* the break line in the form */}
                     <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
+                    {/* question 20 id disability */}
                     <div 
                     value={disability}onChange={(e) => { setDisability(e.target.value) }}
                     className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
@@ -150,6 +157,7 @@ function Social() {
                         </label>
                     </div>
 
+                    {/* question 21 id tipeDisability */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
                         <select id='tipeDisability'
