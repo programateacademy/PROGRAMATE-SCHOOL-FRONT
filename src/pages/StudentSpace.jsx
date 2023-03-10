@@ -1,23 +1,25 @@
-import React from 'react'
+import { React, useState } from 'react'
 import Call from '../components/StudentSpace/CallComp'
+import Navbar from '../components/Navbar'
 
 const StudentSpace = () => {
+
     return (
         <main className='container'>
-
+            <Navbar/>
             {/* session convocations */}
 
             <section className=''>
 
                 <section className=''>
-                    <h1 className='pt-6 font-bold font-Poppins text-md md:text-xl lg:text-3xl'>Convocatorias abiertas</h1>
+                    <h1 className=' font-bold font-Poppins text-md lg:text-3xl'>Convocatorias abiertas</h1>
 
-                    <section className='md:flex md:justify-around md:items-center md:gap-4 text-center'>
+                    <section className='lg:flex lg:justify-around lg:items-center lg:gap-10 text-center'>
                         <Call />
                         <Call />
                         <Call />
-                        <figure className='flex flex-col justify-center items-center md:col-start-4 lg:pt-0'>
-                            <h3 className='font-Poppins font-semibold m-2 mt-10 text-sm md:text-lg'>¿Tienes algún problema o dificultad con tu proceso?</h3>
+                        <figure className='mx-4 flex flex-col justify-center items-center md:col-start-4 lg:pt-0'>
+                            <h2 className='font-Poppins font-semibold mx-2 mt-10 text-sm md:text-lg lg:text-xl'>¿Tienes algún problema o dificultad con tu proceso?</h2>
                             <p className=' font-Nunito m-2 md:text-lg'>No dude en contáctarnos estaremos pendiente a darte una pronta solución</p>
                             <button className='bg-yellow shadow-md shadow-dark/50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-8 md:text-lg'>Contáctanos</button>
                             <hr className='border-2 rounded border-yellow w-full my-4 md:my-16' />
