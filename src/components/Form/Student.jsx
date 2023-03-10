@@ -1,8 +1,16 @@
-import { React, useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { React, useState} from 'react'
+import { Link } from 'react-router-dom'
 
 
 function Student() {
+
+    const [isDisabled, setIsDisabled] = useState(false);
+    
+    const doYourTask = () => {
+    setIsDisabled(true);
+    }
+    
+
 
     //Hooks
     const [name1Person, setName1Person] = useState("");
@@ -252,12 +260,15 @@ function Student() {
 
                 </div>
             </div>
-            {/* <Link to="/Social" className='flex justify-end mr-8' > */}
+            
+            <Link to="/Social" className='flex justify-end mr-8' >
             <button
                 onClick={StudentA}
                 type='submit'
+                disabled={isDisabled}
+                // onPress ={() => doYourTask()}
                 className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-            {/* </Link> */}
+            </Link>
             <br />
         </div >
     );

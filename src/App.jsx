@@ -14,6 +14,7 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
+import Ejemplo from './components/Form/Ejemplo'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
+          <Route path='/Ejemplo' element={<Ejemplo />} exact></Route>
         </Routes>
       </BrowserRouter>
     </div>
