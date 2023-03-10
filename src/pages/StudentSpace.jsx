@@ -1,10 +1,12 @@
-import React from 'react'
+import { React, useState } from 'react'
 import Call from '../components/StudentSpace/CallComp'
+import Navbar from '../components/Navbar'
 
 const StudentSpace = () => {
+
     return (
         <main className='container'>
-
+            <Navbar/>
             {/* session convocations */}
 
             <section className=''>
