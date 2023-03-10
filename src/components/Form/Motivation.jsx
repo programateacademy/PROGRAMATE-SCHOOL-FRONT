@@ -1,5 +1,13 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
+import { useFormik } from 'formik';
+import { motivationShema } from '../../schemas/formSchema'
+
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
 
 const Motivation = () => {
 
@@ -37,7 +45,7 @@ const Motivation = () => {
             <br/>
 
             <div>
-                {/* question 45 id why */}
+                {/* question 46 id why */}
 
                 <section
                     value={why}
@@ -95,7 +103,7 @@ const Motivation = () => {
                     </article>
                 </section>
 
-                {/* question 46 id methodology */}
+                {/* question 47 id methodology */}
 
                 <section
                     value={methodology}
@@ -153,7 +161,7 @@ const Motivation = () => {
                     </article>
                 </section>
                 
-                {/* question 47 id want */}
+                {/* question 48 id want */}
 
                 <section
                     value={want}
@@ -211,10 +219,10 @@ const Motivation = () => {
                     </article>
                 </section>
 
-                {/* question 48 id ethnicGroup */}
+                {/* question 49 id ethnicGroup */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante?</h3>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación?</h3>
                     <select
                         value={ethnicGroup}
                         onChange={(e) => { setEthnicGroup(e.target.value) }}
@@ -223,7 +231,7 @@ const Motivation = () => {
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
                                 <option className='font-medium text-dark'>
-                                    retuirarme del colegio </option>
+                                    retirarme del colegio </option>
                                 <option className='font-medium text-dark'>
                                     Tener actividades ectracuriculares / empieza a fallar en algunas materias </option>
                                 <option className='font-medium text-dark'>

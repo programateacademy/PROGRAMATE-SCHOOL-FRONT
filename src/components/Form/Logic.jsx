@@ -1,5 +1,13 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
+import { useFormik } from 'formik';
+import { logicShema } from '../../schemas/formSchema' 
+
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
 
 const Logic = () => {
 
@@ -43,7 +51,7 @@ const Logic = () => {
 
             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                 
-                {/* question 48 id logic1 */}
+                {/* question 50 id logic1 */}
                 
                 <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en
                     medio de A y C. ¿Cuál es el orden de llegada de los corredores?</h3>
@@ -65,7 +73,7 @@ const Logic = () => {
                 </select>
             </div>
 
-            {/* question 50 id logic2 */}
+            {/* question 51 id logic2 */}
 
             <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                 <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
@@ -87,11 +95,11 @@ const Logic = () => {
                         Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
                 </select>
 
-                {/* question 51 id logic3 */}
+                {/* question 52 id logic3 */}
                 {/* value={logic3}
                 onChange={(e) => { setLogic3(e.target.value) }}                 */}
 
-                {/* question 52 id logic4 */}
+                {/* question 53 id logic4 */}
                 {/* value={logic4}
                 onChange={(e) => { setLogic4(e.target.value) }} */}
 

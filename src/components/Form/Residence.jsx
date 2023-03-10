@@ -1,8 +1,8 @@
 import {React, useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { basicShema } from './index';
-// import axios from 'axios';
+import { residenceShema } from '../../schemas/formSchema'
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -12,58 +12,6 @@ const onSubmit = async (values, actions) => {
 
 const Residence = () => {
     
-    
-
-    // const [addressStudent, setAddressStudent] = useState("");
-    // const [departamentoStudent, setDepartamentoStudent] = useState("");
-    // const [rural, setRural] = useState("");
-    // const [bogota, setBogota] = useState("");
-    // const [stratum, setStratum] = useState("");
-
-    // const [errorAddressStudent, setErrorAddressStudent] = useState("");
-    // const [errorDepartamentoStudent, setErrorDepartamentoStudent ] = useState("");
-    // const [errorRural, setErrorRural ] = useState("");
-    // const [errorBogota, setErrorBogota, ] = useState("");
-    // const [errorStratum, setErrorStratum, ] = useState("");
-
-    // function residenceA() {
-    //     var residence = {
-    //         addressStudent: addressStudent,
-    //         departamentoStudent: departamentoStudent,
-    //         rural: rural,
-    //         bogota: bogota,
-    //         stratum: stratum
-    //     }
-    //     console.log(residence)
-    //     // axios.post("http://localhost:3000/", residence)
-    //         // .then(res => {alert("hola mundo") })
-    // }
-
-    // const handleBlur = () => { 
-    //     if (addressStudent == "") {
-    //         setErrorAddressStudent("ingresa tu direccion");
-    //     }
-    //     if (departamentoStudent == "") {
-    //         setErrorDepartamentoStudent("ingresa el departamento donde vives");
-    //     }
-    //     if (rural == "") {
-    //         setErrorRural("selecciona si vives en zona rural o no");
-    //     }
-    //     if (bogota == "") {
-    //         setErrorBogota("si vives en Bogotá selecciona la localidad y si no selecciona ninguna");
-    //     }
-    //     if (stratum == "") {
-    //         setErrorStratum("ingresa tu estrato según un recibo de servicio publico");
-    //     }
-    //     else {
-    //         setErrorAddressStudent(null)
-    //         setErrorDepartamentoStudent(null)
-    //         setErrorRural(null)
-    //         setErrorBogota(null)
-    //         setErrorStratum(null)
-    //     }
-    // }
-    
     const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
         initialValues: {
             addressStudent: '',
@@ -72,7 +20,7 @@ const Residence = () => {
             bogota: '',
             stratum: '',
         },
-        validationSchema: basicShema,
+        validationSchema: residenceShema,
         onSubmit
     });
     console.log(errors);
@@ -95,42 +43,33 @@ const Residence = () => {
                 onSubmit={handleSubmit}
                 className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
                 
-                {/* question 21 id addressStudent */}
+                {/* question 22 id addressStudent */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
                         <input
-                        className={errors.addressStudent && touched.addressStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}                     
-                            type="text"
-                            id='addressStudent'
-                            name='addressStudent'
+                        className={errors.addressStudent && touched.addressStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        type="text"
+                        id='addressStudent'
+                        name='addressStudent'
                         placeholder="Dirección permanente / recurrente de residencia"
                         value={values.addressStudent}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        //     value={addressStudent}
-                        //     onChange={(e) => { setAddressStudent(e.target.value) }}
-                        //     onBlur={handleBlur}
-                        // required
-
                         ></input>
-                    {errors.addressStudent && errors.touched && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}
-                    {/* {errorAddressStudent && <div className="text-center font-Nunito text-red text-sm">{errorAddressStudent}</div>} */}
+                    {errors.addressStudent && touched.addressStudent && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}                    
                 </div>
                 
-                {/* question 22 id departamentoStudent */}
+                {/* question 23 id departamentoStudent */}
 
-                    <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
-                        <select
-                            id='departamentoStudent'
+                <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
+                    <select
+                        id='departamentoStudent'
                         name='departamentoStudent'
                         value={values.departamentoStudent}
                         onChange={handleChange}
-                        onBlur={handleBlur}
-                            // value={departamentoStudent}
-                            // onChange={(e) => { setDepartamentoStudent(e.target.value) }}
-                            // onBlur={handleBlur}
+                        onBlur={handleBlur}                            
                         data-te-select-init data-te-select-filter='true' className={errors.departamentoStudent && touched.departamentoStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option
                                 value=''
@@ -144,16 +83,12 @@ const Residence = () => {
                                 value='Tolima'
                                 className='font-medium text-dark'>Tolima</option>
                     </select>
-                    {errors.departamentoStudent && errors.touched && <p className='text-red text-xs font-Poppins'>{errors.departamentoStudent}</p>}
-                    {/* {errorDepartamentoStudent && <div className="text-center font-Nunito text-red text-sm">{errorDepartamentoStudent}</div>} */}
+                    {errors.departamentoStudent && touched.departamentoStudent && <p className='text-red text-xs font-Poppins'>{errors.departamentoStudent}</p>}
                 </div>
                 
-                {/* question 23 id rural */}
+                {/* question 24 id rural */}
 
-                    <div
-                        // value={rural}
-                        // onChange={(e) => { setRural(e.target.value) }}
-                        // onBlur={handleBlur}
+                <div                        
                     value={values.rural}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -181,23 +116,19 @@ const Residence = () => {
                             />  
                             No
                     </label>
-                    {errors.radio && errors.touched && <p className='text-red text-xs font-Poppins'>{errors.radio}</p>}
-                    {/* {errorRural && <div className="text-center font-Nunito text-red text-sm">{errorRural}</div>} */}
+                    {errors.radio && touched.radio && <p className='text-red text-xs font-Poppins'>{errors.radio}</p>}                    
                 </div>
                 
-                {/* question 24 id bogota */}
+                {/* question 25 id bogota */}
 
-                    <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
-                        <select id='bogota'
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
+                    <select
+                        id='bogota'
                         name='bogota'
                         value={values.bogota}
                         onChange={handleChange}
-                        onBlur={handleBlur}
-                            // value={bogota}
-                            // onChange={(e) => { setBogota(e.target.value) }}
-                            // onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        onBlur={handleBlur}                             data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option className='font-medium text-dark'>Selecciona una opción</option>
                             <option className='font-medium text-dark'>localidad de Antonio Nariño</option>
                             <option className='font-medium text-dark'>localidad de Barrios Unidos</option>
@@ -213,42 +144,35 @@ const Residence = () => {
                             <option className='font-medium text-dark'>localidad de Rafael Uribe Uribe</option>
                             <option className='font-medium text-dark'>Ninguna</option>
                     </select>
-                    {errors.bogota && errors.touched && <p className='text-red text-xs font-Poppins'>{errors.bogota}</p>}
-                    {/* {errorBogota && <div className="text-center font-Nunito text-red text-sm">{errorBogota}</div>} */}
+                    {errors.bogota && touched.bogota && <p className='text-red text-xs font-Poppins'>{errors.bogota}</p>}                    
                 </div>
                 
-                {/* question 25 id stratum */}
+                {/* question 26 id stratum */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico?
                             (De acuerdo con la estratificación reportada en los recibos de servicios públicos)</label>
-                        <select id='stratum'
+                        <select
+                            id='stratum'
                             name='stratum'
-                            // value={stratum}
-                            // onChange={(e) => { setStratum(e.target.value) }}
-                            // onBlur={handleBlur}
-                        value={values.stratum}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
-                            <option className='font-medium text-dark'>Selecciona una opción</option>
-                            <option className='font-medium text-dark'>1</option>
-                            <option className='font-medium text-dark'>2</option>
-                            <option className='font-medium text-dark'>3</option>
-                            <option className='font-medium text-dark'>4</option>
-                            <option className='font-medium text-dark'>5</option>
-                            <option className='font-medium text-dark'>6</option>
-                    </select>
-                    {errors.stratum && errors.touched && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
-                    {/* {errorStratum && <div className="text-center font-Nunito text-red text-sm">{errorStratum}</div>} */}
+                            value={values.stratum}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                                <option className='font-medium text-dark'>Selecciona una opción</option>
+                                <option className='font-medium text-dark'>1</option>
+                                <option className='font-medium text-dark'>2</option>
+                                <option className='font-medium text-dark'>3</option>
+                                <option className='font-medium text-dark'>4</option>
+                                <option className='font-medium text-dark'>5</option>
+                                <option className='font-medium text-dark'>6</option>
+                        </select>
+                        {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
                     </div>
 
                     {/* <Link type='submit' className='flex justify-end' to='/Guardian'> */}
                     <button
-                        // onClick={residenceA}
-                    type='submit'
-                    disabled={!values}
-                        // disabled={true}
+                        type='submit'
                         className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
                     {/* </Link>  */}
                 </form>

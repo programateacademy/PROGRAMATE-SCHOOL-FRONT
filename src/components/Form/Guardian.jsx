@@ -1,46 +1,26 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { guardianShema } from '../../schemas/formSchema'
 
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
 
 const Guardian = () => {
 
-    let rate = 0;
-
-    const [nameGuardian, setNameGuardian] = useState("");
-    const [relationship, setRelationship] = useState("");
-    const [DocumentTypeGuardian, setDocumentTypeGuardian] = useState("");
-    const [numberIdGuardian, setNumberIdGuardian] = useState("");
-    const [EmailGuardian, setEmailGuardian] = useState("");
-    const [PhoneGuardian, setPhoneGuardian] = useState("");
-    const [PhoneGuardianTwo, setPhoneGuardianTwo] = useState("");
-    const [addressGuardian, setAddressGuardian] = useState("");
-    const [departamentoGuardian, setDepartamentoGuardian] = useState("");
-    const [educationLevelGuardian, setEducationLevelGuardian] = useState("");
-    const [economic, setEconomic] = useState("");
-    const [family, setFamily] = useState("");
-
-    const [errorNameGuardian, setErrorNameGuardian] = useState("");
-    const [errorRelationship, setErrorRelationship] = useState("");
-    const [errorDocumentTypeGuardian, setErrorDocumentTypeGuardian] = useState("");
-    const [errorNumberIdGuardian, setErrorNumberIdGuardian] = useState("");
-    const [errorEmailGuardian, setErrorEmailGuardian] = useState("");
-    const [errorPhoneGuardian, setErrorPhoneGuardian] = useState("");
-    const [errorPhoneGuardianTwo, setErrorPhoneGuardianTwo] = useState("");
-    const [errorAddressGuardian, setErrorAddressGuardian] = useState("");
-    const [errorDepartamentoGuardian, setErrorDepartamentoGuardian] = useState("");
-    const [errorEducationLevelGuardian, setErrorEducationLevelGuardian] = useState("");
-    const [errorEconomic, setErrorEconomic] = useState("");
-    const [errorFamily, setErrorFamily] = useState("");
-
+    
     function GuardianA() {
         var guardian = {
             nameGuardian: nameGuardian,
             relationship: relationship,
-            DocumentTypeGuardian: DocumentTypeGuardian,
+            documentTypeGuardian: documentTypeGuardian,
             numberIdGuardian: numberIdGuardian,
             EmailGuardian: EmailGuardian,
-            PhoneGuardian: PhoneGuardian,
-            PhoneGuardianTwo: PhoneGuardianTwo,
+            phoneGuardian: phoneGuardian,
+            phoneGuardianTwo: phoneGuardianTwo,
             addressGuardian: addressGuardian,
             departamentoGuardian: departamentoGuardian,
 
@@ -70,7 +50,7 @@ const Guardian = () => {
 
             <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 ' >
 
-                {/* question 26 id nameGuardian */}
+                {/* question 27 id nameGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 ' >
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Nombre completo de tu acudiente</label>
@@ -87,7 +67,7 @@ const Guardian = () => {
                     {/* {touched.nameGuardian && errors.nameGuardian && <div className="text-center font-Nunito text-red text-sm">{errors.nameGuardian}</div>} */}
                 </div>
 
-                {/* question 27 id relationship */}
+                {/* question 28 id relationship */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6  '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Parentesco contigo</label>
@@ -104,14 +84,14 @@ const Guardian = () => {
                     {/* {touched.relationship && errors.relationship && <div className="text-center font-Nunito text-red text-sm">{errors.relationship}</div>} */}
                 </div>
 
-                {/* question 28 id DocumentTypeGuardian */}
+                {/* question 29 id documentTypeGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black' >Tipo de documento</h3>
-                    <select id='DocumentTypeGuardian'
-                        name='DocumentTypeGuardian'
-                        value={DocumentTypeGuardian}
-                        onChange={(e) => { setDocumentTypeGuardian(e.target.value) }}
+                    <select id='documentTypeGuardian'
+                        name='documentTypeGuardian'
+                        value={documentTypeGuardian}
+                        onChange={(e) => { setdocumentTypeGuardian(e.target.value) }}
                         // onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true'
                         className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
@@ -132,7 +112,7 @@ const Guardian = () => {
                     </select>
                 </div>
 
-                {/* question 29 id numberIdGuardian */}
+                {/* question 30 id numberIdGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Numero de documento</label>
@@ -149,7 +129,7 @@ const Guardian = () => {
                     {/* {touched.numberId && errors.numberId && <div className="text-center font-Nunito text-red text-sm">{errors.numberId}</div>} */}
                 </div>
 
-                {/* question 30 id EmailGuardian */}
+                {/* question 31 id EmailGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
@@ -167,39 +147,39 @@ const Guardian = () => {
                     {/* {touched.EmailGuardian && errors.EmailGuardian && <div className="mx-9 font-Nunito text-red text-sm">{errors.EmailGuardian}</div>} */}
                 </div>
 
-                {/* question 31 id PhoneGuardian */}
+                {/* question 32 id phoneGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente</label>
                     <input
                         className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
-                        type="Phone"
-                        id='PhoneGuardian'
-                        name='PhoneGuardian'
+                        type="phone"
+                        id='phoneGuardian'
+                        name='phoneGuardian'
                         placeholder='000 000 00 00'
-                        value={PhoneGuardian}
-                        onChange={(e) => { setPhoneGuardian(e.target.value) }}
+                        value={phoneGuardian}
+                        onChange={(e) => { setphoneGuardian(e.target.value) }}
                     // onBlur={handleBlur}
                     ></input>
-                    {/* {touched.PhoneGuardian && errors.PhoneGuardian && <div className="text-center font-Nunito text-red text-sm">{errors.PhoneGuardian}</div>} */}
+                    {/* {touched.phoneGuardian && errors.phoneGuardian && <div className="text-center font-Nunito text-red text-sm">{errors.phoneGuardian}</div>} */}
                 </div>
 
-                {/* question 32 id PhoneGuardianTwo */}
+                {/* question 33 id phoneGuardianTwo */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
                     <input
                         className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'
-                        type="Phone"
-                        id='PhoneGuardianTwo'
-                        name='PhoneGuardianTwo'
+                        type="phone"
+                        id='phoneGuardianTwo'
+                        name='phoneGuardianTwo'
                         placeholder='000 000 00 00'
-                        value={PhoneGuardianTwo}
-                        onChange={(e) => { setPhoneGuardianTwo(e.target.value) }}
+                        value={phoneGuardianTwo}
+                        onChange={(e) => { setphoneGuardianTwo(e.target.value) }}
                     ></input>
                 </div>
 
-                {/* question 33 id addressGuardian */}
+                {/* question 34 id addressGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
@@ -216,7 +196,7 @@ const Guardian = () => {
                     {/* {touched.addressGuardian && errors.addressGuardian && <div className="text-center font-Nunito text-red text-sm">{errors.addressGuardian}</div>} */}
                 </div>
 
-                {/* question 34 id departamentoGuardian */}
+                {/* question 35 id departamentoGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</h3>
@@ -236,7 +216,7 @@ const Guardian = () => {
 
                 <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
-                {/* question 35 id educationLevelGuardian */}
+                {/* question 36 id educationLevelGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es el nivel educativo de tus padres?</label>
@@ -274,7 +254,7 @@ const Guardian = () => {
                     {/* {touched.levelEducationGuardian && errors.levelEducationGuardian && <div className="text-center font-Nunito text-red text-sm">{errors.levelEducationGuardian}</div>} */}
                 </div>
 
-                {/* question 36 id economic */}
+                {/* question 37 id economic */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu actividad económica / ocupación actual del principal proveedor en tu casa?</label>
@@ -300,7 +280,7 @@ const Guardian = () => {
                     </select>
                 </div>
 
-                {/* question 37 id family */}
+                {/* question 38 id family */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuántas personas componen tu núcleo familiar?</label>

@@ -1,7 +1,13 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { vocationShema } from '../../schemas/formSchema'
 
-
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
 
 const Vocation = () => {
 
@@ -44,7 +50,7 @@ const Vocation = () => {
                 <div>
                     <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
                     
-{/* question 38 id computer */}
+{/* question 39 id computer */}
                             <div 
                             value={computer}
                             onChange={(e) => { setComputer(e.target.value) }}
@@ -73,7 +79,7 @@ const Vocation = () => {
                                 </label>
                             </div>
                     
-                    {/* question 39 id internet */}
+                    {/* question 40 id internet */}
 
                             <div
                                 value={internet}
@@ -103,7 +109,7 @@ const Vocation = () => {
                                 </label>
                             </div>
                         </div>
-                {/* question 40 id interests */}
+                {/* question 41 id interests */}
 
                         <section
                             value={interests}
@@ -176,7 +182,7 @@ const Vocation = () => {
                                 </div>
                             </article>
                             </section>
-                {/* question 41 id activity */}
+                {/* question 42 id activity */}
                 <section
                     value={activity}
                     onChange={(e) => { setActivity(e.target.value) }}
@@ -249,7 +255,7 @@ const Vocation = () => {
                         </article>
                 </section>
                 
-                {/* question 42 id reportage */}
+                {/* question 43 id reportage */}
 
                 <section
                     value={reportage}
@@ -323,7 +329,7 @@ const Vocation = () => {
                         </article>
                 </section>
                 
-                {/* question 43 id stake */}
+                {/* question 44 id stake */}
 
                 <section
                     value={stake}
@@ -397,7 +403,7 @@ const Vocation = () => {
                         </article>
                 </section>
                 
-                {/* question 44 id webMotivation */}
+                {/* question 45 id webMotivation */}
 
                 <section
                     value={webMotivation}
