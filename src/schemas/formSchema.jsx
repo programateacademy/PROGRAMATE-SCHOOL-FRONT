@@ -29,12 +29,12 @@ export const socialShema = yup.object().shape({
     ethnicGroup: yup.string().required('selecciona si perteneces a algun grupo ednico'),
     nationality: yup.string().required('selecciona tu nacionalidad'),
     disability: yup.string().required('selecciona si estas en situacion de discapacidad'),
-    tipeDisability: yup.string().required('si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna'),
+    typeDisability: yup.string().required('si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna'),
 })
 
 export const residenceShema = yup.object().shape({
     addressStudent: yup.string().required('ingresa tu direccion'),
-    departamentoStudent: yup.string().required('ingresa el departamento donde vives'),
+    departmentStudent: yup.string().required('ingresa el department donde vives'),
     rural: yup.string().required('selecciona si vives en zona rural o no'),
     bogota: yup.string().required('si vives en Bogotá selecciona la localidad y si no selecciona ninguna'),
     stratum: yup.string().required('ingresa tu estrato según un recibo de servicio publico'),
@@ -49,7 +49,7 @@ export const guardianShema = yup.object().shape({
     phoneGuardian: yup.string().required('ingresa el numero de telefono de tu acudiente'),
     phoneGuardianTwo: yup.string().required('ingresa el numero de telefono segundario o fijo de tu acudiente'),
     addressGuardian: yup.string().required('ingresa la direccion de tu acudiente'),
-    departamentoGuardian: yup.string().required('ingresa el departamento donde vive tu acudiente'),
+    departmentGuardian: yup.string().required('ingresa el department donde vive tu acudiente'),
     educationLevelGuardian: yup.string().required('selecciona el nivel academico de tus padres'),
     economic: yup.string().required('selecciona la actividad economica de tus padres'),
     family: yup.string().required('selecciona cuantas personas conforman tu familia'),
@@ -69,7 +69,7 @@ export const motivationShema = yup.object().shape({
     why: yup.string().required('selecciona por que quieres ser parte'),
     methodology: yup.string().required('selecciona que es lo que interesa de la metodología'),
     want: yup.string().required('selecciona la respuesta que se identifique contigo'),
-    ethnicGroup: yup.string().required('selecciona la respuesta que se identifique contigo'),
+    withdrawal: yup.string().required('selecciona la respuesta que se identifique contigo'),
 })
 
 export const logicShema = yup.object().shape({

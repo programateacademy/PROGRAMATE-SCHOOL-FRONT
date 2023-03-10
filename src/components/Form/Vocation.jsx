@@ -55,7 +55,7 @@ const Vocation = () => {
                                     type="radio"
                                     name="computer"
                                     id="computer"
-                                    value="Yes"
+                                    value="SI"
                                     className="accent-red
                                 focus:accent-yellow" />
                                 Si
@@ -65,7 +65,7 @@ const Vocation = () => {
                                     type="radio"
                                     name="computer"
                                     id="computer"
-                                    value="No"
+                                    value="NO"
                                     className="accent-red
                                 focus:accent-yellow"
                                 />
@@ -87,7 +87,7 @@ const Vocation = () => {
                                         type="radio"
                                         name="internet"
                                         id="internet"
-                                        value="Yes"
+                                        value="SI"
                                         className="accent-red
                                     focus:accent-yellow " />
                                     Si
@@ -97,7 +97,7 @@ const Vocation = () => {
                                         type="radio"
                                         name="internet"
                                         id="internet"
-                                        value="No"
+                                        value="NO"
                                         className="accent-red
                                     focus:accent-yellow"
                                     />

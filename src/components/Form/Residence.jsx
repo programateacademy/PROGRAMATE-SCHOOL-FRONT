@@ -15,7 +15,7 @@ const Residence = () => {
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             addressStudent: '',
-            departamentoStudent: '',
+            departmentStudent: '',
             rural: '',
             bogota: '',
             stratum: '',
@@ -60,17 +60,17 @@ const Residence = () => {
                     {errors.addressStudent && touched.addressStudent && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}                    
                 </div>
                 
-                {/* question 23 id departamentoStudent */}
+                {/* question 23 id departmentStudent */}
 
                 <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>department de residencia</label>
                     <select
-                        id='departamentoStudent'
-                        name='departamentoStudent'
-                        value={values.departamentoStudent}
+                        id='departmentStudent'
+                        name='departmentStudent'
+                        value={values.departmentStudent}
                         onChange={handleChange}
                         onBlur={handleBlur}                            
-                        data-te-select-init data-te-select-filter='true' className={errors.departamentoStudent && touched.departamentoStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option
                                 value=''
                                 className='font-medium text-dark'>Selecciona una opción</option>
@@ -83,7 +83,7 @@ const Residence = () => {
                                 value='Tolima'
                                 className='font-medium text-dark'>Tolima</option>
                     </select>
-                    {errors.departamentoStudent && touched.departamentoStudent && <p className='text-red text-xs font-Poppins'>{errors.departamentoStudent}</p>}
+                    {errors.departmentStudent && touched.departmentStudent && <p className='text-red text-xs font-Poppins'>{errors.departmentStudent}</p>}
                 </div>
                 
                 {/* question 24 id rural */}
@@ -94,13 +94,13 @@ const Residence = () => {
                     onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label
-                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu Departamento?</label>
+                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?</label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
                                 id="rural"
                                 name="rural"
-                                value="Yes"
+                                value="SI"
                                 className="accent-red
                                 focus:accent-yellow" />
                             Si
@@ -110,7 +110,7 @@ const Residence = () => {
                                 type="radio"
                                 id="rural"
                                 name="rural"
-                                value="No"
+                                value="NO"
                                 className="accent-red
                                 focus:accent-yellow"
                             />  
@@ -174,7 +174,8 @@ const Residence = () => {
                         <button
                             disabled ={!(isValid && dirty)}
                             type='submit'
-                            className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'
+                    >Siguiente</button>
                     </Link> 
                 </form>
             </div>

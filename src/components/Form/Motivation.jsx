@@ -16,7 +16,7 @@ const Motivation = () => {
             why: '',
             methodology: '',
             want: '',
-            ethnicGroup: '',
+            withdrawal: '',
         },
         validationSchema: motivationShema,
         onSubmit
@@ -222,17 +222,17 @@ const Motivation = () => {
                     {errors.want && touched.want && <p className='text-red text-xs font-Poppins'>{errors.want}</p>}   
                 </section>
 
-                {/* question 49 id ethnicGroup */}
+                {/* question 49 id withdrawal */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación?</h3>
                     <select
-                        value={values.ethnicGroup}
+                        value={values.withdrawal}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        id='ethnicGroup'
+                        id='withdrawal'
                         data-te-select-init data-te-select-filter='true'
-                        className={errors.ethnicGroup && touched.ethnicGroup ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'} >
+                        className={errors.withdrawal && touched.withdrawal ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'} >
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
                                 <option className='font-medium text-dark'>
@@ -246,7 +246,7 @@ const Motivation = () => {
                                 <option className='font-medium text-dark'>
                                     Ninguna de las anteriores </option>
                     </select>
-                    {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>} 
+                    {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
             
                 {/* <Link className='flex justify-end mr-8' to='/Logic'> */}

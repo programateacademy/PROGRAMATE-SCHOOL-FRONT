@@ -21,7 +21,7 @@ const Guardian = () => {
             phoneGuardian: '',
             phoneGuardianTwo: '',
             addressGuardian: '',
-            departamentoGuardian: '',
+            departmentGuardian: '',
             educationLevelGuardian: '',
             economic: '',
             family: '',
@@ -151,7 +151,7 @@ const Guardian = () => {
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente</label>
                     <input
                         className={errors.phoneGuardian && touched.phoneGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
-                        type="phone"
+                        type="number"
                         id='phoneGuardian'
                         name='phoneGuardian'
                         placeholder='000 000 00 00'
@@ -168,7 +168,7 @@ const Guardian = () => {
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
                     <input
                         className={errors.phoneGuardianTwo && touched.phoneGuardianTwo ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
-                        type="phone"
+                        type="number"
                         id='phoneGuardianTwo'
                         name='phoneGuardianTwo'
                         placeholder='000 000 00 00'
@@ -196,24 +196,24 @@ const Guardian = () => {
                     {errors.addressGuardian && touched.addressGuardian && <p className='text-red text-xs font-Poppins'>{errors.addressGuardian}</p>}
                 </div>
 
-                {/* question 35 id departamentoGuardian */}
+                {/* question 35 id departmentGuardian */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</h3>
                     <select
-                        id='departamentoGuardian'
-                        name='departamentoGuardian'
-                        value={values.departamentoGuardian}
+                        id='departmentGuardian'
+                        name='departmentGuardian'
+                        value={values.departmentGuardian}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.departamentoGuardian && touched.departamentoGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.departmentGuardian && touched.departmentGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                         <option className='font-Poppins font-medium text-dark'>Selecciona una opción</option>
                         <option className='font-Poppins font-medium text-dark'>Atlántico</option>
                         <option className='font-medium text-dark'>Bogotá</option>
                         <option className='font-medium text-dark'>Magdalena</option>
                         <option className='font-medium text-dark'>Tolima</option>
                     </select>
-                    {errors.departamentoGuardian && touched.departamentoGuardian && <p className='text-red text-xs font-Poppins'>{errors.departamentoGuardian}</p>} 
+                    {errors.departmentGuardian && touched.departmentGuardian && <p className='text-red text-xs font-Poppins'>{errors.departmentGuardian}</p>} 
                 </div>
 
                 <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />

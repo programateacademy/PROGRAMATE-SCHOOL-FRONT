@@ -16,7 +16,7 @@ const Social = () => {
             ethnicGroup: '',
             nationality: '',
             disability: '',
-            tipeDisability: '',
+            typeDisability: '',
         },
         validationSchema: socialShema,
         onSubmit
@@ -52,7 +52,7 @@ const Social = () => {
                                 type="radio"
                                 id="sisben"
                                 name="sisben"
-                                value="Yes"
+                                value="SI"
                                 className="accent-red
                                     focus:accent-yellow" />
                             Si
@@ -62,7 +62,7 @@ const Social = () => {
                                 type="radio"
                                 id="sisben"
                                 name="sisben"
-                                value="No"
+                                value="NO"
                                 className="accent-red
                                     focus:accent-yellow"
                             />
@@ -139,7 +139,7 @@ const Social = () => {
                                 type="radio"
                                 name="disability"
                                 id="disability"
-                                value="Yes"
+                                value="SI"
                                 className="accent-red
                                     focus:accent-yellow" />
                             Si
@@ -149,7 +149,7 @@ const Social = () => {
                                 type="radio"
                                 name="disability"
                                 id="disability"
-                                value="No"
+                                value="NO"
                                 className="accent-red
                                     focus:accent-yellow"
                             />
@@ -158,17 +158,17 @@ const Social = () => {
                         {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>} 
                     </div>
 
-                    {/* question 21 id tipeDisability */}
+                    {/* question 21 id typeDisability */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
                         <select
-                            id='tipeDisability'
-                            value={values.tipeDisability}
+                            id='typeDisability'
+                            value={values.typeDisability}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.tipeDisability && touched.tipeDisability ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.typeDisability && touched.typeDisability ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
                             <option className='font-medium text-dark'>
@@ -190,7 +190,7 @@ const Social = () => {
                             <option className='font-medium text-dark'>
                                 Ninguno de los anteriores </option>
                         </select>
-                        {errors.tipeDisability && touched.tipeDisability && <p className='text-red text-xs font-Poppins'>{errors.tipeDisability}</p>}
+                        {errors.typeDisability && touched.typeDisability && <p className='text-red text-xs font-Poppins'>{errors.typeDisability}</p>}
                     </div>
 
                 </div>
