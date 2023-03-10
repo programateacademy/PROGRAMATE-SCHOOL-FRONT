@@ -11,26 +11,22 @@ const onSubmit = async (values, actions) => {
 
 const Motivation = () => {
 
-    const [why, setWhy] = useState("");
-    const [methodology, setMethodology] = useState("");
-    const [want, setWant] = useState("");
-    const [ethnicGroup, setEthnicGroup] = useState("");
-
-    function motivationA() {
-        var Motivation = {
-            why: why,
-            methodology: methodology,
-            want: want,
-            ethnicGroup: ethnicGroup
-        }
-        console.log(Motivation)
-    }
-
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        initialValues: {
+            why: '',
+            methodology: '',
+            want: '',
+            ethnicGroup: '',
+        },
+        validationSchema: motivationShema,
+        onSubmit
+    });
+    
     return (
         <div>
             {/* cover image with logo */}
             <div className='flex h-72 '>
-                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoSIETE.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
@@ -44,12 +40,14 @@ const Motivation = () => {
             </h2>
             <br/>
 
-            <div>
+            <form onSubmit={handleSubmit}>
+                
                 {/* question 46 id why */}
 
                 <section
-                    value={why}
-                    onChange={(e) => { setWhy(e.target.value) }}
+                    value={values.why}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Por qué quieres ser parte de Prográmate School?</label>
@@ -101,13 +99,15 @@ const Motivation = () => {
                                 </h3>
                             </div>
                     </article>
+                    {errors.why && touched.why && <p className='text-red text-xs font-Poppins'>{errors.why}</p>} 
                 </section>
 
                 {/* question 47 id methodology */}
 
                 <section
-                    value={methodology}
-                    onChange={(e) => { setMethodology(e.target.value) }}
+                    value={values.methodology}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué es lo que más te interesa de la metodología?</label>
@@ -159,13 +159,15 @@ const Motivation = () => {
                                 </h3>
                             </div>
                     </article>
+                    {errors.methodology && touched.methodology && <p className='text-red text-xs font-Poppins'>{errors.methodology}</p>}   
                 </section>
                 
                 {/* question 48 id want */}
 
                 <section
-                    value={want}
-                    onChange={(e) => { setWant(e.target.value) }}
+                    value={values.want}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                     className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles son tus principales sueños en la vida y cómo la formación te aportará a cumplirlos?</label>
@@ -217,17 +219,20 @@ const Motivation = () => {
                                 </h3>
                             </div>
                     </article>
+                    {errors.want && touched.want && <p className='text-red text-xs font-Poppins'>{errors.want}</p>}   
                 </section>
 
                 {/* question 49 id ethnicGroup */}
 
-                    <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación?</h3>
                     <select
-                        value={ethnicGroup}
-                        onChange={(e) => { setEthnicGroup(e.target.value) }}
+                        value={values.ethnicGroup}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         id='ethnicGroup'
-                                data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                        data-te-select-init data-te-select-filter='true'
+                        className={errors.ethnicGroup && touched.ethnicGroup ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'} >
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
                                 <option className='font-medium text-dark'>
@@ -241,16 +246,16 @@ const Motivation = () => {
                                 <option className='font-medium text-dark'>
                                     Ninguna de las anteriores </option>
                     </select>
+                    {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>} 
                 </div>
-
-            </div>
-
-            {/* <Link className='flex justify-end mr-8' to='/Logic'> */}
+            
+                {/* <Link className='flex justify-end mr-8' to='/Logic'> */}
                 <button
-                    onClick={motivationA}
                     type='submit'
                     className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-            {/* </Link> */}
+                {/* </Link> */}
+            
+            </form>           
         </div>
     )
 }

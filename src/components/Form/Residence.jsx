@@ -12,7 +12,7 @@ const onSubmit = async (values, actions) => {
 
 const Residence = () => {
     
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             addressStudent: '',
             departamentoStudent: '',
@@ -30,7 +30,7 @@ const Residence = () => {
             
             <div>
                 <div className='flex h-72 '>
-                    <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoDOS.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                     <div className=' flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
                         <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                     </div>
@@ -170,11 +170,12 @@ const Residence = () => {
                         {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
                     </div>
 
-                    {/* <Link type='submit' className='flex justify-end' to='/Guardian'> */}
-                    <button
-                        type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                    {/* </Link>  */}
+                    <Link type='submit' className='flex justify-end' to='/Guardian'>
+                        <button
+                            disabled ={!(isValid && dirty)}
+                            type='submit'
+                            className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                    </Link> 
                 </form>
             </div>
         )

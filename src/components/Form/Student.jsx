@@ -53,22 +53,29 @@ const Student = () => {
 
             {/* start of form */}
             <form onSubmit={handleSubmit} >
-                {/* question 1 id name1Person */}
                 <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
+                        
+                        {/* question 1 id name1Person */}
+
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</h3>
                         <input
                             value={values.name1Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='text' placeholder='1er nombre' className={errors.name1Person && touched.name1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
+                            type='text'
+                            placeholder='Primer nombre'
+                            className={errors.name1Person && touched.name1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
                         {errors.name1Person && touched.name1Person && <p className='text-red text-xs font-Poppins'>{errors.name1Person}</p>}
 
                         {/* question 2 id name2Person */}
 
                         <input value={values.name2Person}
                             onChange={handleChange}
-                            onBlur={handleBlur} type='text' placeholder='2do nombre' className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
+                            onBlur={handleBlur}
+                            type='text'
+                            placeholder='Segundo nombre'
+                            className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
                     </div>
 
                     {/* question 3 id lastname1Person */}
@@ -80,7 +87,7 @@ const Student = () => {
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='1er apellido' className={errors.lastname1Person && touched.lastname1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
                         ></input>
-                        {errors.addreslastname1PersonsStudent && touched.lastname1Person && <p className='text-red text-xs font-Poppins'>{errors.lastname1Person}</p>}
+                        {errors.lastname1Person && touched.lastname1Person && <p className='text-red text-xs font-Poppins'>{errors.lastname1Person}</p>}
 
 
                         {/* question 4 id lastname2Person */}
@@ -116,8 +123,10 @@ const Student = () => {
                             id='agePerson'
                             value={values.agePerson}
                             onChange={handleChange}
-                            onBlur={handleBlur} type='number' placeholder='00' className={errors.agePerson && touched.agePerson ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
-                        {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}
+                            onBlur={handleBlur}
+                            type='number'
+                            placeholder='00' className={errors.agePerson && touched.agePerson ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
+                        {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
                     </div>
 
                     {/* the birth input with the id gender */}

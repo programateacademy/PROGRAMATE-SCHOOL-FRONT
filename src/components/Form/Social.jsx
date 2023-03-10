@@ -27,7 +27,7 @@ const Social = () => {
         <div>
                 {/* cover image with logo */}
                 <div className='flex h-72 '>
-                    <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoUNO.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                     <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
                         <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                     </div>
@@ -120,7 +120,7 @@ const Social = () => {
                             <option className='font-medium text-dark'>
                                 Otra </option>
                         </select>
-                        {errors.addressnationalityStudent && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}   
+                        {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}   
                     </div>
 
                     {/* the break line in the form */}
@@ -197,9 +197,7 @@ const Social = () => {
 
                 {/* <Link to="/Residence" className='flex justify-end mr-8' > */}
                 <button
-                        onClick={socialA}
                         type='submit'
-                        // disabled={true}
                         className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
             {/* </Link> */}
             
