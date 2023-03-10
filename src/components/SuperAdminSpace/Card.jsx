@@ -78,6 +78,7 @@ export default Card*/}
 import React, { useState } from 'react'
 import { MdEditSquare } from 'react-icons/md'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
+import { FaEdit } from 'react-icons/fa'
 
 
 const Card = () => {
@@ -171,10 +172,6 @@ const Card = () => {
                             </li>
                         ))}
                     </ul>
-
-
-
-
                 </section>
 
                 {/*Another card */}
@@ -214,7 +211,7 @@ const Card = () => {
                         {todos.map((todo, index) => (
                             <li key={index} >
                                 {todo.task} - {todo.deadline} - {todo.priority} - {todo.description} - {todo.status}
-                                <button onClick={() => handleEditTodo(index)}>  <MdEditSquare className='text-3xl text-green-500' />  </button>
+                                <button onClick={() => handleEditTodo(index)}>  <FaEdit className='text-3xl text-green-500' />  </button>
                             </li>
                         ))}
                     </ul>
