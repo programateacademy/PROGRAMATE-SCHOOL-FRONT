@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 
 const CallComp = () => {
+
   /*    function fillId(id) {
     const numerator = 0;
     const denominator = 6;
