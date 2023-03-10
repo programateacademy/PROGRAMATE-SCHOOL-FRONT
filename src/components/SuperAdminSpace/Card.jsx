@@ -77,7 +77,7 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
 export default Card*/}
 import React, { useState } from 'react'
 import { MdEditSquare } from 'react-icons/md'
-
+import { BsFillPlusSquareFill } from 'react-icons/bs'
 
 
 const Card = () => {
@@ -115,12 +115,20 @@ const Card = () => {
 
     return (
         <>
+
+
             {/*Titles*/}
             <sub>
                 <h1 className='pt-5 font-bold text-2xl   font-Poppins  md:inset-x-12 md:text-xl lg:text-3xl lg:m-8'>
                     Convocatorias creadas
                 </h1>
             </sub>
+            <figure className='flex space-x-4 absolute right-4'>
+                <button className='flex' >
+                    <p className='text-black font-Poppins font-bold' >Crear una convocatoria</p>
+                    <BsFillPlusSquareFill className='text-black bg-ligth text-3xl'/>
+                </button>
+            </figure>
 
             <section className='flex flex-col w-fit md:flex-row md:inset-x-12 mt-12 md:mt-0'>
                 <section className='flex flex-col p-5 space-y-4 m-4 shadow shadow-yellow/70 rounded '>
@@ -165,11 +173,11 @@ const Card = () => {
                     </ul>
 
 
-        
+
 
                 </section>
-    
-                {/**otra tarjeta */}
+
+                {/*Another card */}
                 <section className='flex flex-col p-5 space-y-4 m-4 shadow shadow-yellow/70 rounded '>
                     <h2 className='font-bold font-Poppins pt-4 md:text-xl lg:text-1xl'>
                         Desarrollador Frontend Web Jr
@@ -218,8 +226,8 @@ const Card = () => {
 
 
             </section>
-       
-            
+
+
 
         </>
 
