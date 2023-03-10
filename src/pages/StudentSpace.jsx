@@ -1,5 +1,6 @@
 import React from "react";
 import Call from "../components/StudentSpace/CallComp";
+import StudentProgress from "../components/StudentSpace/StudentProgress";
 
 const StudentSpace = () => {
   return (
@@ -40,31 +41,7 @@ const StudentSpace = () => {
               />
             </figure>
           </section>
-        </section>
-      </section>
-      <section>
-        <section className="mx-2 bg-dark rounded flex flex-col justify-center text-center text-xs md:text-lg lg:text-xl text-light">
-          <h1 className="text-start m-6 font-Poppins font-bold">
-            Hola "Nombre estudiante"
-          </h1>
-          <h5>Estas aplicando al programa: Frontend Developer Jr</h5>
-          <h6>Tu progreso</h6>
-          <p>50%</p>
-        </section>
-        <section className="mx-2 text-dark">
-          <h3>Tu proceso inicia aquí</h3>
-          <div>
-            <h2>Fase 1: Registro en la plataforma</h2>
-            <p></p>
-          </div>
-          <div>
-            <h2>Fase 2: Cuentanos un poco sobre ti queremos conocerte</h2>
-            <p></p>
-          </div>
-          <div>
-            <h2>Fase 3: Prueba tecnica</h2>
-            <p></p>
-          </div>
+          <StudentProgress />
         </section>
       </section>
     </main>
