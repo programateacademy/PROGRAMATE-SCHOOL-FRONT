@@ -80,7 +80,7 @@ const Logic = () => {
                     <option className='font-medium text-dark sm:mx-40'>
                         Selecciona una opción </option>
                     <option className='font-medium text-dark sm:mx-40'>
-                        Seis tiburones no son completamente ciegos.</option>
+                        Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
                     <option className='font-medium text-dark sm:mx-40'>
                         Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
                     <option className='font-medium text-dark sm:mx-40'>

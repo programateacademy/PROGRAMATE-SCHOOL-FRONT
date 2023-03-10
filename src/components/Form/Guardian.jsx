@@ -19,6 +19,19 @@ const Guardian = () => {
     const [economic, setEconomic] = useState("");
     const [family, setFamily] = useState("");
 
+    const [errorNameGuardian, setErrorNameGuardian] = useState("");
+    const [errorRelationship, setErrorRelationship] = useState("");
+    const [errorDocumentTypeGuardian, setErrorDocumentTypeGuardian] = useState("");
+    const [errorNumberIdGuardian, setErrorNumberIdGuardian] = useState("");
+    const [errorEmailGuardian, setErrorEmailGuardian] = useState("");
+    const [errorPhoneGuardian, setErrorPhoneGuardian] = useState("");
+    const [errorPhoneGuardianTwo, setErrorPhoneGuardianTwo] = useState("");
+    const [errorAddressGuardian, setErrorAddressGuardian] = useState("");
+    const [errorDepartamentoGuardian, setErrorDepartamentoGuardian] = useState("");
+    const [errorEducationLevelGuardian, setErrorEducationLevelGuardian] = useState("");
+    const [errorEconomic, setErrorEconomic] = useState("");
+    const [errorFamily, setErrorFamily] = useState("");
+
     function GuardianA() {
         var guardian = {
             nameGuardian: nameGuardian,
@@ -40,29 +53,7 @@ const Guardian = () => {
         // .then(res => {alert("hola mundo") })
     }
 
-    // const validateForm = () => {
-    //     //Logica de las preguntas para sumar puntajes
-    //     if (!addressStudent) {
-    //         const errorAddressStudent = "true"
-    //     }
-    //     if (!departamentoStudent) {
-    //         const validateForm = "true"
-    //     }
-    //     if (!rural) {
-    //         const validateForm = "true"
-    //     }
-    //     if (!bogota) {
-    //         const validateForm = "true"
-    //     }
-    //     if (!stratum) {
-    //         const validateForm = "true"
-    //     }
-    //     else {
-    //         if (addressStudent == "femenino") {
-    //             rate = rate + 1
-    //         }
-    //     }
-    // }
+    
 
     return (
         <div>Guardian
