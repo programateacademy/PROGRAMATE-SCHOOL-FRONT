@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { vocationShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,8 +11,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Vocation = () => {
-
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             computer: '',
             internet: '',
@@ -24,7 +25,36 @@ const Vocation = () => {
         validationSchema: vocationShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function vocationP() {
+        var view5 = {
+            computer: values.computer,
+            internet: values.internet,
+            interests: values.interests,
+            activity: values.activity,
+            reportage: values.reportage,
+            stake: values.stake,
+            webMotivation: values.webMotivation,
+        }
+        console.log(view5);
+        defaultApi
+            .post("/registertoannouncement", view5)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
         <div>
@@ -484,11 +514,13 @@ const Vocation = () => {
                     {errors.webMotivation && touched.webMotivation && <p className='text-red text-xs font-Poppins'>{errors.webMotivation}</p>}
                 </section>
 
-                {/* <Link className='flex justify-end mr-8' to='/Interest'> */}
-                <button
-                    type='submit'
-                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                {/* </Link> */}
+                <Link className='flex justify-end mr-8' to='/Interest'>
+                    <button
+                        onClick={vocationP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                </Link>
 
             </form>
         </div>

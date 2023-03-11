@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
 import { useFormik } from 'formik';
 import { motivationShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,8 +11,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Motivation = () => {
-
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             why: '',
             methodology: '',
@@ -21,7 +22,33 @@ const Motivation = () => {
         validationSchema: motivationShema,
         onSubmit
     });
-    
+    // backend connection
+    function motivationP() {
+        var view6 = {
+            why: values.why,
+            methodology: values.methodology,
+            want: values.want,
+            withdrawal: values.withdrawal,
+        }
+        console.log(view6);
+        defaultApi
+            .post("/registertoannouncement", view6)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
+
     return (
         <div>
             {/* cover image with logo */}
@@ -249,11 +276,13 @@ const Motivation = () => {
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
             
-                {/* <Link className='flex justify-end mr-8' to='/Logic'> */}
-                <button
-                    type='submit'
-                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                {/* </Link> */}
+                <Link className='flex justify-end mr-8' to='/Logic'>
+                    <button
+                        onClick={motivationP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                </Link>
             
             </form>           
         </div>

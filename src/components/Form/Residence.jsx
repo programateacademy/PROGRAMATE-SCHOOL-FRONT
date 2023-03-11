@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { residenceShema } from '../../schemas/formSchema'
-
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -11,7 +11,7 @@ const onSubmit = async (values, actions) => {
 }
 
 const Residence = () => {
-    
+    // formk validations
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             addressStudent: '',
@@ -23,8 +23,35 @@ const Residence = () => {
         validationSchema: residenceShema,
         onSubmit
     });
-    console.log(errors);
-    
+    // console.log(errors);
+    // backend connection
+    function residenceP() {
+        var view3 = {
+            addressStudent: values.addressStudent,
+            departmentStudent: values.departmentStudent,
+            rural: values.rural,
+            bogota: values.bogota,
+            stratum: values.stratum
+        }
+        console.log(view3);
+        defaultApi
+            .post("/registertoannouncement", view3)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
+
 
     return (
             
@@ -171,9 +198,10 @@ const Residence = () => {
                     </div>
 
                     <Link type='submit' className='flex justify-end' to='/Guardian'>
-                        <button
-                            disabled ={!(isValid && dirty)}
-                            type='submit'
+                    <button
+                        onClick={residenceP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
                         className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'
                     >Siguiente</button>
                     </Link> 

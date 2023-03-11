@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { guardianShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,8 +11,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Guardian = () => {
-
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             nameGuardian: '',
             relationship: '',
@@ -29,8 +30,42 @@ const Guardian = () => {
         validationSchema: guardianShema,
         onSubmit
     });
-    console.log(errors);
-    
+    // console.log(errors);
+    // backend connection
+    function guardianP() {
+        var view4 = {
+            nameGuardian: values.nameGuardian,
+            relationship: values.relationship,
+            documentTypeGuardian: values.documentTypeGuardian,
+            numberIdGuardian: values.numberIdGuardian,
+            emailGuardian: values.emailGuardian,
+            phoneGuardian: values.phoneGuardian,
+            phoneGuardianTwo: values.phoneGuardianTwo,
+            addressGuardian: values.addressGuardian,
+            departmentGuardian: values.departmentGuardian,
+            educationLevelGuardian: values.educationLevelGuardian,
+            economic: values.economic,
+            family: values.family
+        }
+        console.log(view4);
+        defaultApi
+            .post("/registertoannouncement", view4)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
+
     return (
         <div>
             <div className='flex h-72 '>
@@ -309,12 +344,13 @@ const Guardian = () => {
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>} 
                 </div>
 
-                {/* <Link className='flex justify-end' to='/Vocation'> */}
-                <button
-                    type='submit'
-                    className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                {/* </Link> */}
-
+                <Link className='flex justify-end' to='/Vocation'>
+                    <button
+                        onClick={guardianP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                </Link>
             </form>
         </div>
     )

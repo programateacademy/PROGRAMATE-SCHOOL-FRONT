@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
 import { useFormik } from 'formik';
 import { logicShema } from '../../schemas/formSchema' 
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -11,7 +12,7 @@ const onSubmit = async (values, actions) => {
 
 const Logic = () => {
 
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             logic1: '',
             logic2: '',
@@ -21,7 +22,33 @@ const Logic = () => {
         validationSchema: logicShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function logicP() {
+        var view7 = {
+            logic1: values.logic1,
+            logic2: values.logic2,
+            logic3: values.logic3,
+            logic4: values.logic4,
+        }
+        console.log(view7);
+        defaultApi
+            .post("/registertoannouncement", view7)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
         <div>
@@ -105,11 +132,13 @@ const Logic = () => {
 
                         {errors.logic4 && touched.logic4 && <p className='text-red text-xs font-Poppins'>{errors.logic4}</p>} */}
 
-            {/* <Link className='flex justify-end mr-8' to='/'> */}
-            <button
-                type='submit'
-                className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                {/* </Link> */}
+            <Link className='flex justify-end mr-8' to='/'>
+                <button
+                    onClick={logicP}
+                    disabled={!(isValid && dirty)}
+                    type='submit'
+                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+            </Link>
             </form>            
         </div>
     )

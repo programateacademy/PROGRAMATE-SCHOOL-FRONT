@@ -1,7 +1,8 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
-import { studentShema } from '../../schemas/formSchema' 
+import { studentShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,29 +11,68 @@ const onSubmit = async (values, actions) => {
 }
 
 const Student = () => {
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
-            name1Person: '',
-            name2Person: '',
-            lastname1Person: '',
-            lastname2Person: '', 
+            name1Person: 'ana',
+            name2Person: 'maria',
+            lastname1Person: 'granados',
+            lastname2Person: '',
             birthdate: '',
-            agePerson: '',
+            agePerson: 15,
             gender: '',
             document: '',
-            documentPerson: '',
-            institutionPerson: '',
+            documentPerson: '52685462',
+            institutionPerson: 'colegio inegrada la calendaria',
             course: '',
             sena: '',
             availability: '',
-            emailPerson: '',
+            emailPerson: 'jibhbu@correo.com',
             phone: '',
             phoneTwo: '',
         },
         validationSchema: studentShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function studentP() {        
+        var view1 = {
+            name1Person: values.name1Person,
+            name2Person: values.name2Person,
+            lastname1Person: values.lastname1Person,
+            lastname2Person: values.lastname2Person,
+            birthdate: values.birthdate,
+            agePerson: values.agePerson,
+            gender: values.gender,
+            document: values.document,
+            documentPerson: values.documentPerson,
+            institutionPerson: values.institutionPerson,
+            course: values.course,
+            sena: values.sena,
+            availability: values.availability,
+            emailPerson: values.emailPerson,
+            phone: values.phone,
+            phoneTwo: values.phoneTwo,
+        }
+        console.log(view1);
+        defaultApi
+            .post("/registertoannouncement", view1)
+            .then((res) => { 
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
 
@@ -327,7 +367,7 @@ const Student = () => {
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
                         <input
-                            id='number'
+                            id='phone'
                             value={values.phone}
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -345,16 +385,18 @@ const Student = () => {
                             value={values.phoneTwo}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            id='number'
+                            id='phoneTwo'
                             placeholder='000 000 00 00'
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
 
-                    {/* <Link to="/Social" className='flex justify-end mr-8' > */}
+                    <Link to="/Social" className='flex justify-end mr-8' >
                     <button
+                        onClick={studentP}
+                        disabled={!(isValid && dirty)}
                         type='submit'
                         className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                    {/* </Link> */}
+                    </Link>
                 </div>
             </form>
             

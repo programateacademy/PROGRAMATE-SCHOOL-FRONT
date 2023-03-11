@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { socialShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,7 +11,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Social = () => {
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             sisben: '',
             ethnicGroup: '',
@@ -21,7 +23,34 @@ const Social = () => {
         validationSchema: socialShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function socialP() {
+        var view2 = {
+            sisben: values.sisben,
+            ethnicGroup: values.ethnicGroup,
+            nationality: values.nationality,
+            disability: values.disability,
+            typeDisability: values.typeDisability,
+        }
+        console.log(view2);
+        defaultApi
+            .post("/registertoannouncement", view2)
+            .then((res) => { 
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
         <div>
@@ -195,11 +224,13 @@ const Social = () => {
 
                 </div>
 
-                {/* <Link to="/Residence" className='flex justify-end mr-8' > */}
+                <Link to="/Residence" className='flex justify-end mr-8' >
                 <button
-                        type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-            {/* </Link> */}
+                    onClick={socialP}
+                    disabled={!(isValid && dirty)}
+                    type='submit'
+                    className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+            </Link>
             
             </form>
         </div>
