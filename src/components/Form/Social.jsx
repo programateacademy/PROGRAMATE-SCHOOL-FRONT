@@ -223,15 +223,15 @@ const Social = () => {
                     </div>
 
                 </div>
-
-                <Link to="/Residence" className='flex justify-end mr-8' >
-                <button
-                    onClick={socialP}
-                    disabled={!(isValid && dirty)}
-                    type='submit'
-                    className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-            </Link>
-            
+                <div className='relative col-span-2'>
+                    <Link to="/Residence" className='flex justify-end mr-8' >
+                        <button
+                            onClick={socialP}
+                            disabled={!(isValid && dirty)}
+                            type='submit'
+                            className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                    </Link>
+                </div>
             </form>
         </div>
     )
