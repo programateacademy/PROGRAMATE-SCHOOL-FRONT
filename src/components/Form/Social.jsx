@@ -229,7 +229,7 @@ const Social = () => {
                     onClick={socialP}
                     disabled={!(isValid && dirty)}
                         type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'>Siguiente</button>
                 </Link>
             
             </form>

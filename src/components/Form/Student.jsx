@@ -396,7 +396,7 @@ const Student = () => {
                         onClick={studentP}
                         disabled={!(isValid && dirty)}
                         type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                            className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
                     </Link>
                 </div>
             </form>
