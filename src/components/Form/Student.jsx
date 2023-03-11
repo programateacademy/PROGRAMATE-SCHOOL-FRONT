@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
-import { studentShema } from '../../schemas/formSchema' 
+import { studentShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -11,13 +11,13 @@ const onSubmit = async (values, actions) => {
 }
 
 const Student = () => {
-        // formk validations
+    // formk validations
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             name1Person: '',
             name2Person: '',
             lastname1Person: '',
-            lastname2Person: '', 
+            lastname2Person: '',
             birthdate: '',
             agePerson: 15,
             gender: '',
@@ -36,7 +36,7 @@ const Student = () => {
     });
     // console.log(errors);
     // backend connection
-    function studentP() {        
+    function studentP() {
         var view1 = {
             name1Person: values.name1Person,
             name2Person: values.name2Person,
@@ -58,7 +58,7 @@ const Student = () => {
         console.log(view1);
         defaultApi
             .post("/registertoannouncement", view1)
-            .then((res) => { 
+            .then((res) => {
                 alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
@@ -100,6 +100,7 @@ const Student = () => {
 
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</h3>
                         <input
+                            id="name1Person"
                             value={values.name1Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -110,7 +111,9 @@ const Student = () => {
 
                         {/* question 2 id name2Person */}
 
-                        <input value={values.name2Person}
+                        <input 
+                        id='name2Person'
+                        value={values.name2Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             type='text'
@@ -124,6 +127,7 @@ const Student = () => {
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-2 gap-x-2'>
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos:</h3>
                         <input
+                        id='lastname1Person'
                             value={values.lastname1Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='1er apellido' className={errors.lastname1Person && touched.lastname1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
@@ -133,6 +137,7 @@ const Student = () => {
                         {/* question 4 id lastname2Person */}
 
                         <input
+                        id='lastname2Person'
                             value={values.lastname2Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='2do apellido' className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
@@ -391,11 +396,11 @@ const Student = () => {
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
 
-                    <Link to="/Social" className='flex justify-end mr-8' >
-                    <button
-                        onClick={studentP}
-                        disabled={!(isValid && dirty)}
-                        type='submit'
+                    <Link to="/Social" className='flex justify-end mr-8 col-span-2' >
+                        <button
+                            onClick={studentP}
+                            disabled={!(isValid && dirty)}
+                            type='submit'
                             className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
                     </Link>
                 </div>
