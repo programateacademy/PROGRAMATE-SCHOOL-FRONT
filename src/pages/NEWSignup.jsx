@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFormik } from 'formik'
-import { basicSchema } from '../schemas/basicSchema'
+import { singupSchema } from '../schemas/formSchema'
 import defaultApi from '../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -22,7 +22,7 @@ const validationSignup = () => {
             agePerson: '',
             institutionPerson: '',
         },
-        validationSchema: basicSchema,
+        validationSchema: singupSchema,
         onSubmit
     })
 
