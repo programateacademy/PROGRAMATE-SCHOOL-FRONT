@@ -17,6 +17,7 @@ import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
 
+
 function App() {
 
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

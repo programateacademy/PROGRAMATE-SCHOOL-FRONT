@@ -1,80 +1,36 @@
 import {React, useState} from 'react'
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import { useFormik } from 'formik';
+import { residenceShema } from '../../schemas/formSchema'
 
 
-function Residence () {
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
+
+const Residence = () => {
     
-    // let rate = 0;
-
-    const [addressStudent, setAddressStudent] = useState("");
-    const [departamentoStudent, setDepartamentoStudent] = useState("");
-    const [rural, setRural] = useState("");
-    const [bogota, setBogota] = useState("");
-    const [stratum, setStratum] = useState("");
-
-    // const [errorAddressStudent, setErrorAddressStudent] = useState("");
-    // const [errordepartamentoStudent, setErrorDepartamentoStudent ] = useState("");
-    // const [errorRural, setErrorRural ] = useState("");
-    // const [errorBogota, setErrorBogota, ] = useState("");
-    // const [errorStratum, setErrorStratum, ] = useState("");
-
-    function residenceA() {
-        var residence = {
-            addressStudent: addressStudent,
-            departamentoStudent: departamentoStudent,
-            rural: rural,
-            bogota: bogota,
-            stratum: stratum
-        }
-        console.log(residence)
-        // axios.post("http://localhost:3000/", residence)
-            // .then(res => {alert("hola mundo") })
-    }
-
-    // let val = 5;
-    // const validateForm = () => {
-
-
-        //Logica de las preguntas para sumar puntajes
-    //     if (!addressStudent) {
-    //         errorAddressStudent.addressStudent = "ingresa tu dirección"
-    //         // val--;
-    //     }
-    //     if (!departamentoStudent) {
-    //         const validateForm = "true"
-    //         val--;
-    //     }
-    //     if (!rural) {
-    //         const validateForm = "true"
-    //         val--;
-    //     }
-    //     if (!bogota) {
-    //         const validateForm = "true"
-    //         val--;
-    //     }
-    //     if (!stratum == 2) {
-    //         const errorStratum = "true"
-    //         val--;
-    //     }
-    //     else {
-    //         if (addressStudent == "femenino") {
-    //             rate = rate + 1
-    //         }
-    //     } 
-    // // }
-
-    // if (val == 0) {
-    //     disabled = true
-    // } else (
-    //     disabled = false
-    // )
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
+        initialValues: {
+            addressStudent: '',
+            departmentStudent: '',
+            rural: '',
+            bogota: '',
+            stratum: '',
+        },
+        validationSchema: residenceShema,
+        onSubmit
+    });
+    console.log(errors);
+    
 
     return (
             
             <div>
                 <div className='flex h-72 '>
-                    <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoDOS.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                     <div className=' flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
                         <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                     </div>
@@ -83,36 +39,38 @@ function Residence () {
                 <Link to='/Social'>
                     <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
                 </Link>
-            <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
+            <form
+                onSubmit={handleSubmit}
+                className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
                 
-                {/* question 21 id addressStudent */}
+                {/* question 22 id addressStudent */}
 
-                    <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
                         <input
-                            className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow in-range:border-re'
-                            type="text"
-                            id='addressStudent'
-                            name='addressStudent'
-                            placeholder="Dirección permanente / recurrente de residencia"
-                            value={addressStudent}
-                        onChange={(e) => { setAddressStudent(e.target.value) }}
-                        onBlur={(e) => { setAddressStudent(e.target.value) }}
-                        required
+                        className={errors.addressStudent && touched.addressStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        type="text"
+                        id='addressStudent'
+                        name='addressStudent'
+                        placeholder="Dirección permanente / recurrente de residencia"
+                        value={values.addressStudent}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         ></input>
-                    {errorAddressStudent.addressStudent && <div className="text-center font-Nunito text-red text-sm">{errorAddressStudent.addressStudent}</div>}
+                    {errors.addressStudent && touched.addressStudent && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}                    
                 </div>
                 
-                {/* question 22 id departamentoStudent */}
+                {/* question 23 id departmentStudent */}
 
-                    <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Departamento de residencia</label>
-                        <select
-                            id='departamentoStudent'
-                            name='departamentoStudent'
-                            value={departamentoStudent}
-                            onChange={(e) => { setDepartamentoStudent(e.target.value) }}
-                            data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>department de residencia</label>
+                    <select
+                        id='departmentStudent'
+                        name='departmentStudent'
+                        value={values.departmentStudent}
+                        onChange={handleChange}
+                        onBlur={handleBlur}                            
+                        data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option
                                 value=''
                                 className='font-medium text-dark'>Selecciona una opción</option>
@@ -124,23 +82,25 @@ function Residence () {
                             <option
                                 value='Tolima'
                                 className='font-medium text-dark'>Tolima</option>
-                        </select>
+                    </select>
+                    {errors.departmentStudent && touched.departmentStudent && <p className='text-red text-xs font-Poppins'>{errors.departmentStudent}</p>}
                 </div>
                 
-                {/* question 23 id rural */}
+                {/* question 24 id rural */}
 
-                    <div
-                        value={rural}
-                        onChange={(e) => { setRural(e.target.value) }}
+                <div                        
+                    value={values.rural}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label
-                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu Departamento?</label>
+                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?</label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
                                 id="rural"
                                 name="rural"
-                                value="Yes"
+                                value="SI"
                                 className="accent-red
                                 focus:accent-yellow" />
                             Si
@@ -150,23 +110,25 @@ function Residence () {
                                 type="radio"
                                 id="rural"
                                 name="rural"
-                                value="No"
+                                value="NO"
                                 className="accent-red
                                 focus:accent-yellow"
                             />  
                             No
-                        </label>
+                    </label>
+                    {errors.radio && touched.radio && <p className='text-red text-xs font-Poppins'>{errors.radio}</p>}                    
                 </div>
                 
-                {/* question 24 id bogota */}
+                {/* question 25 id bogota */}
 
-                    <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
-                        <select id='bogota'
-                            name='bogota'
-                            value={bogota}
-                            onChange={(e) => { setBogota(e.target.value) }}
-                            data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
+                    <select
+                        id='bogota'
+                        name='bogota'
+                        value={values.bogota}
+                        onChange={handleChange}
+                        onBlur={handleBlur}                             data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                             <option className='font-medium text-dark'>Selecciona una opción</option>
                             <option className='font-medium text-dark'>localidad de Antonio Nariño</option>
                             <option className='font-medium text-dark'>localidad de Barrios Unidos</option>
@@ -180,37 +142,42 @@ function Residence () {
                             <option className='font-medium text-dark'>localidad de Los Mártires</option>
                             <option className='font-medium text-dark'>localidad de Puente Aranda</option>
                             <option className='font-medium text-dark'>localidad de Rafael Uribe Uribe</option>
-                        </select>
+                            <option className='font-medium text-dark'>Ninguna</option>
+                    </select>
+                    {errors.bogota && touched.bogota && <p className='text-red text-xs font-Poppins'>{errors.bogota}</p>}                    
                 </div>
                 
-                {/* question 25 id stratum */}
+                {/* question 26 id stratum */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico?
                             (De acuerdo con la estratificación reportada en los recibos de servicios públicos)</label>
-                        <select id='stratum'
+                        <select
+                            id='stratum'
                             name='stratum'
-                            value={stratum}
-                            onChange={(e) => { setStratum(e.target.value) }}
-                            data-te-select-init data-te-select-filter='true' className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'>
-                            <option className='font-medium text-dark'>Selecciona una opción</option>
-                            <option className='font-medium text-dark'>1</option>
-                            <option className='font-medium text-dark'>2</option>
-                            <option className='font-medium text-dark'>3</option>
-                            <option className='font-medium text-dark'>4</option>
-                            <option className='font-medium text-dark'>5</option>
-                            <option className='font-medium text-dark'>6</option>
+                            value={values.stratum}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                                <option className='font-medium text-dark'>Selecciona una opción</option>
+                                <option className='font-medium text-dark'>1</option>
+                                <option className='font-medium text-dark'>2</option>
+                                <option className='font-medium text-dark'>3</option>
+                                <option className='font-medium text-dark'>4</option>
+                                <option className='font-medium text-dark'>5</option>
+                                <option className='font-medium text-dark'>6</option>
                         </select>
+                        {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
                     </div>
 
-                    {/* <Link type='submit' className='flex justify-end' to='/Guardian'> */}
-                    <button
-                        onClick={residenceA}
-                        type='submit'
-                        // disabled={true}
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                    {/* </Link>  */}
-                </div>
+                    <Link type='submit' className='flex justify-end' to='/Guardian'>
+                        <button
+                            disabled ={!(isValid && dirty)}
+                            type='submit'
+                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'
+                    >Siguiente</button>
+                    </Link> 
+                </form>
             </div>
         )
 }
