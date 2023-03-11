@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { logicShema } from '../../schemas/formSchema' 
+import { logicShema } from '../../schemas/formSchema'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -45,14 +45,14 @@ const Logic = () => {
             <form onSubmit={handleSubmit}>
                 {/* question 50 id logic1 */}
 
-            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores?</h3>
-                <select
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores?</h3>
+                    <select
                         value={values.logic1}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic1'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -65,29 +65,29 @@ const Logic = () => {
                             El orden de llegada es A,B,D,A </option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
-            </div>
+                </div>
 
-            {/* question 51 id logic2 */}
+                {/* question 51 id logic2 */}
 
-            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
-                    Tres no veían por el ojo derecho, tres no veían por el ojo izquierdo y tres tanto por el derecho
-                    como por el izquierdo. Otros tres eran completamente ciegos. ¿Cuántos tiburones había como
-                    mínimo?</h3>
-                <select
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
+                        Tres no veían por el ojo derecho, tres no veían por el ojo izquierdo y tres tanto por el derecho
+                        como por el izquierdo. Otros tres eran completamente ciegos. ¿Cuántos tiburones había como
+                        mínimo?</h3>
+                    <select
                         value={values.logic2}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic2'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
-                            <option className='font-medium text-dark sm:mx-40'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark sm:mx-40'>
-                                Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
-                            <option className='font-medium text-dark sm:mx-40'>
-                                Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
-                            <option className='font-medium text-dark sm:mx-40'>
-                                Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
+                        <option className='font-medium text-dark sm:mx-40'>
+                            Selecciona una opción </option>
+                        <option className='font-medium text-dark sm:mx-40'>
+                            Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
+                        <option className='font-medium text-dark sm:mx-40'>
+                            Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
+                        <option className='font-medium text-dark sm:mx-40'>
+                            Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}
                 </div>
@@ -105,12 +105,15 @@ const Logic = () => {
 
                         {errors.logic4 && touched.logic4 && <p className='text-red text-xs font-Poppins'>{errors.logic4}</p>} */}
 
-            {/* <Link className='flex justify-end mr-8' to='/'> */}
-            <button
-                type='submit'
-                className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                {/* </Link> */}
-            </form>            
+                <div className='mb-4'>
+                    {/* <Link className='flex justify-end mr-8' to='/'> */}
+                    <button
+                        type='submit'
+                        className='absolute right-3 max-w-xs px-5 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                    {/* </Link> */}
+                </div>
+            </form>
+            <br />
         </div>
     )
 }
