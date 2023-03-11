@@ -48,7 +48,7 @@ const Residence = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
                         <input
-                        className={errors.addressStudent && touched.addressStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.addressStudent && touched.addressStudent ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
                         id='addressStudent'
                         name='addressStudent'
@@ -70,7 +70,7 @@ const Residence = () => {
                         value={values.departmentStudent}
                         onChange={handleChange}
                         onBlur={handleBlur}                            
-                        data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option
                                 value=''
                                 className='font-medium text-dark'>Selecciona una opción</option>
@@ -128,7 +128,7 @@ const Residence = () => {
                         name='bogota'
                         value={values.bogota}
                         onChange={handleChange}
-                        onBlur={handleBlur}                             data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        onBlur={handleBlur}                             data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>Selecciona una opción</option>
                             <option className='font-medium text-dark'>localidad de Antonio Nariño</option>
                             <option className='font-medium text-dark'>localidad de Barrios Unidos</option>
@@ -158,7 +158,7 @@ const Residence = () => {
                             value={values.stratum}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                                 <option className='font-medium text-dark'>Selecciona una opción</option>
                                 <option className='font-medium text-dark'>1</option>
                                 <option className='font-medium text-dark'>2</option>
@@ -169,14 +169,16 @@ const Residence = () => {
                         </select>
                         {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
                     </div>
-
+                    <div className=' mt-20'>
                     <Link type='submit' className='flex justify-end' to='/Guardian'>
                         <button
                             disabled ={!(isValid && dirty)}
                             type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'
+                        className='absolute right-3 max-w-xs px-5 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'
                     >Siguiente</button>
                     </Link> 
+                    </div>
+                    <br/>
                 </form>
             </div>
         )

@@ -248,13 +248,14 @@ const Motivation = () => {
                     </select>
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
-            
+                <div className='mb-4'>
                 {/* <Link className='flex justify-end mr-8' to='/Logic'> */}
                 <button
                     type='submit'
-                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                    className='absolute right-3 max-w-xs px-5 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
                 {/* </Link> */}
-            
+                <br/>
+                </div>
             </form>           
         </div>
     )
