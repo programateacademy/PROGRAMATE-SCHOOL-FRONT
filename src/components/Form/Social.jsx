@@ -54,23 +54,23 @@ const Social = () => {
 
     return (
         <div>
-                {/* cover image with logo */}
-                <div className='flex h-72 '>
+            {/* cover image with logo */}
+            <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoUNO.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
-                    <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                        <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
-                    </div>
+                <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
-                <Link to='/Student'>
-                    <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
-                </Link>
-                
-            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
-                <div>
+            </div>
+            <Link to='/Student'>
+                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
+            </Link>
+
+            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 ' >
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
                     {/* question 17 id sisben */}
 
                     <div
-                        id="sisben" 
+                        id="sisben"
                         value={values.sisben}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -97,7 +97,7 @@ const Social = () => {
                             />
                             No
                         </label>
-                        {errors.sisben && touched.sisben && <p className='text-red text-xs font-Poppins'>{errors.sisben}</p>} 
+                        {errors.sisben && touched.sisben && <p className='text-red text-xs font-Poppins'>{errors.sisben}</p>}
                     </div>
 
                     {/* question 18 id ethnicGroup */}
@@ -110,7 +110,7 @@ const Social = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.ethnicGroup && touched.ethnicGroup ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.ethnicGroup && touched.ethnicGroup ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
                             <option className='font-medium text-dark'>
@@ -126,11 +126,11 @@ const Social = () => {
                             <option className='font-medium text-dark'>
                                 Ninguna de las anteriores </option>
                         </select>
-                        {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>} 
+                        {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>}
                     </div>
 
                     {/* question 19 id nationality */}
-                    
+
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?</h3>
                         <select
@@ -139,7 +139,7 @@ const Social = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.nationality && touched.nationality ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.nationality && touched.nationality ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
                             <option className='font-medium text-dark'>
@@ -149,7 +149,7 @@ const Social = () => {
                             <option className='font-medium text-dark'>
                                 Otra </option>
                         </select>
-                        {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}   
+                        {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}
                     </div>
 
                     {/* the break line in the form */}
@@ -157,7 +157,7 @@ const Social = () => {
 
                     {/* question 20 id disability */}
 
-                    <div 
+                    <div
                         value={values.disability}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -184,7 +184,7 @@ const Social = () => {
                             />
                             No
                         </label>
-                        {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>} 
+                        {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>}
                     </div>
 
                     {/* question 21 id typeDisability */}
@@ -197,7 +197,7 @@ const Social = () => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.typeDisability && touched.typeDisability ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.typeDisability && touched.typeDisability ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
                             <option className='font-medium text-dark'>
@@ -223,15 +223,15 @@ const Social = () => {
                     </div>
 
                 </div>
-                <div className='relative col-span-2'>
-                    <Link to="/Residence" className='flex justify-end mr-8' >
-                        <button
-                            onClick={socialP}
-                            disabled={!(isValid && dirty)}
-                            type='submit'
-                            className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                    </Link>
-                </div>
+
+                <Link to="/Residence" className='flex justify-end mr-8' >
+                <button
+                    onClick={socialP}
+                    disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
+                </Link>
+            
             </form>
         </div>
     )

@@ -511,15 +511,15 @@ const Vocation = () => {
                                 </h3>
                             </div>
                     </article>
-                    {errors.webMotivation && touched.webMotivation && <p className='text-red text-xs font-Poppins'>{errors.webMotivation}</p>}
+                    {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
                 </section>
 
                 <Link className='flex justify-end mr-8' to='/Interest'>
-                    <button
-                        onClick={vocationP}
-                        disabled={!(isValid && dirty)}
-                        type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
+                <button
+                    onClick={vocationP}
+                    disabled={!(isValid && dirty)}
+                    type='submit'
+                    className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
                 </Link>
 
             </form>

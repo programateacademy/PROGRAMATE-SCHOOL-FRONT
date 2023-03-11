@@ -7,6 +7,8 @@ import NEWSignup from './pages/NEWSignup'
 import Form from './pages/Form'
 import StudentSpace from './pages/StudentSpace'
 import SuperAdminSpace from './pages/SuperAdminSpace'
+
+
 {/* routes for registration form */ }
 import Student from './components/Form/Student'
 import Social from './components/Form/Social'
@@ -38,7 +40,6 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
-
         </Routes>
       </BrowserRouter>
     </div>
