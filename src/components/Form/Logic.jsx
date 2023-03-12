@@ -1,7 +1,8 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { logicShema } from '../../schemas/formSchema'
+import { logicShema } from '../../schemas/formSchema' 
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -11,7 +12,7 @@ const onSubmit = async (values, actions) => {
 
 const Logic = () => {
 
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             logic1: '',
             logic2: '',
@@ -21,7 +22,33 @@ const Logic = () => {
         validationSchema: logicShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function logicP() {
+        var view7 = {
+            logic1: values.logic1,
+            logic2: values.logic2,
+            logic3: values.logic3,
+            logic4: values.logic4,
+        }
+        console.log(view7);
+        defaultApi
+            .post("/registertoannouncement", view7)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
         <div>
@@ -91,29 +118,175 @@ const Logic = () => {
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}
                 </div>
+
                 {/* question 52 id logic3 */}
-                {/* value={values.logic3}
+
+                <div className='grid grid-cols-2'>
+                    <div className='flex flex-col'>
+                    <section
+                        value={values.logic3}
                         onChange={handleChange}
                         onBlur={handleBlur}  
-                        
-                        {errors.logic3 && touched.logic3 && <p className='text-red text-xs font-Poppins'>{errors.logic3}</p>}                */}
+                        className='font-Nunito'>
+                        <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <div className="flex flex-row gap-3">   
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="A"
+                                            className="accent-red
+                                            focus:accent-yellow" />
+                                        A.
+                                    </label>
+                                </div>
+
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="B"
+                                            className="accent-red
+                                            focus:accent-yellow" />
+                                        B.
+                                    </label>
+                                </div>
+
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="C"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        C.
+                                    </label>
+                                </div>
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="D"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        D.
+                                    </label>
+                                </div>
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="E"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        E.
+                                    </label>
+                                </div>
+                            </div>
+                        </article>
+                        {errors.logic3 && touched.logic3 && <p className='text-red text-xs font-Poppins'>{errors.logic3}</p>}  
+                    </section>
+                    </div>
 
                 {/* question 53 id logic4 */}
-                {/* value={values.logic4}
+                
+                    <div className='flex flex-col'>
+                    <section
+                        value={values.logic4}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        className='font-Nunito'>
+                        <article className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <div className="flex flex-row gap-3">   
+                                <div className='flex flex-row '>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic4"
+                                            id="logic4"
+                                            value="A"
+                                            className="accent-red
+                                            focus:accent-yellow" />
+                                        A.
+                                    </label>
+                                </div>
 
-                        {errors.logic4 && touched.logic4 && <p className='text-red text-xs font-Poppins'>{errors.logic4}</p>} */}
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic4"
+                                            id="logic4"
+                                            value="B"
+                                            className="accent-red
+                                            focus:accent-yellow" />
+                                        B.
+                                    </label>
+                                </div>
 
-                <div className='mb-4'>
-                    {/* <Link className='flex justify-end mr-8' to='/'> */}
-                    <button
-                        type='submit'
-                        className='absolute right-3 max-w-xs px-5 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-                    {/* </Link> */}
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic4"
+                                            id="logic4"
+                                            value="C"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        C.
+                                    </label>
+                                </div>
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="D"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        D.
+                                    </label>
+                                </div>
+                                <div className='flex flex-row'>
+                                    <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                        <input
+                                            type="radio"
+                                            name="logic3"
+                                            id="logic3"
+                                            value="E"
+                                            className="accent-red
+                                            focus:accent-yellow flex items-center" />
+                                        E.
+                                    </label>
+                                </div>
+                            </div>
+                        </article>
+                        {errors.logic4 && touched.logic4 && <p className='text-red text-xs font-Poppins'>{errors.logic4}</p>}
+                    </section>
+                    </div>
                 </div>
-            </form>
-            <br />
+                
+            <Link className='flex justify-end mr-8' to='/'>
+                    <button
+                        onClick={logicP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                </Link>
+            </form>            
         </div>
     )
 }
