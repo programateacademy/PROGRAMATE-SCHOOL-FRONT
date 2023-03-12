@@ -515,13 +515,13 @@ const Vocation = () => {
                 </section>
 
                 <Link className='flex justify-end mr-8' to='/Interest'>
-                <button
-                    onClick={vocationP}
-                    disabled={!(isValid && dirty)}
-                    type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                    <button
+                        onClick={vocationP}
+                        disabled={!(isValid && dirty)}
+                        type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25 '>Siguiente</button>
                 </Link>
-
+                <br />
             </form>
         </div>
     )

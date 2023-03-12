@@ -281,13 +281,14 @@ const Logic = () => {
                     </div>
                 </div>
                 
-            <Link className='flex justify-end mr-8' to='/'>
+                <Link className='flex justify-end mr-8' to='/'>
                     <button
                         onClick={logicP}
                         disabled={!(isValid && dirty)}
                         type='submit'
                         className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
+                <br />
             </form>            
         </div>
     )

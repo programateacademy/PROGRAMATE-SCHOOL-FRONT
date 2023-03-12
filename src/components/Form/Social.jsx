@@ -61,8 +61,8 @@ const Social = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Student'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
+            <Link to='/Student' className='w-28'>
+                <button className='  m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
             </Link>
 
             <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 ' >
@@ -153,7 +153,8 @@ const Social = () => {
                     </div>
 
                     {/* the break line in the form */}
-                    <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" border-2 border-yellow mb-2 rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    
 
                     {/* question 20 id disability */}
 

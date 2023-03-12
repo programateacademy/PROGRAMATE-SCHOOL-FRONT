@@ -396,12 +396,12 @@ const Student = () => {
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
 
-                    <Link to="/Social" className='flex justify-end mr-8 col-span-2' >
+                    <Link to="/Social" className='place-self-end mr-8 col-span-2 w-28' >
                         <button
                             onClick={studentP}
                             disabled={!(isValid && dirty)}
                             type='submit'
-                            className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                            className=' px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
                     </Link>
                 </div>
             </form>
