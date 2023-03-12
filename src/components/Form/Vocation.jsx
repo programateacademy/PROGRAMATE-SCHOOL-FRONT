@@ -67,7 +67,7 @@ const Vocation = () => {
             </div>
 
             <Link to='/Guardian'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <form onSubmit={handleSubmit}>
@@ -514,14 +514,16 @@ const Vocation = () => {
                     {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
                 </section>
 
-                <Link className='flex justify-end mr-8' to='/Interest'>
-                    <button
-                        onClick={vocationP}
-                        disabled={!(isValid && dirty)}
-                        type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25 '>Siguiente</button>
+                <div className='flex justify-end'>
+                <Link className='mr-8 col-span-2 w-28' to='/Interest'>
+                <button
+                    onClick={vocationP}
+                    disabled={!(isValid && dirty)}
+                    type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-                <br />
+                </div>
+                <br/>
             </form>
         </div>
     )

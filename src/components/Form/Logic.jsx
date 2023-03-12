@@ -60,7 +60,7 @@ const Logic = () => {
                 </div>
             </div>
             <Link to='/Motivation'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
@@ -79,7 +79,7 @@ const Logic = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic1'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2 '}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -106,7 +106,7 @@ const Logic = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic2'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'}>
                         <option className='font-medium text-dark sm:mx-40'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark sm:mx-40'>
@@ -280,15 +280,16 @@ const Logic = () => {
                     </section>
                     </div>
                 </div>
-                
-                <Link className='flex justify-end mr-8' to='/'>
+                <div className='flex justify-end'>
+            <Link className='mr-8 col-span-2 w-28' to='/'>
                     <button
                         onClick={logicP}
                         disabled={!(isValid && dirty)}
                         type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-                <br />
+                </div>
+                <br/>
             </form>            
         </div>
     )

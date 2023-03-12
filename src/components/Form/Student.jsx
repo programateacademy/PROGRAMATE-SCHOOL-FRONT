@@ -111,9 +111,9 @@ const Student = () => {
 
                         {/* question 2 id name2Person */}
 
-                        <input 
-                        id='name2Person'
-                        value={values.name2Person}
+                        <input
+                            id='name2Person'
+                            value={values.name2Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             type='text'
@@ -127,7 +127,7 @@ const Student = () => {
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-2 gap-x-2'>
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos:</h3>
                         <input
-                        id='lastname1Person'
+                            id='lastname1Person'
                             value={values.lastname1Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='1er apellido' className={errors.lastname1Person && touched.lastname1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
@@ -137,7 +137,7 @@ const Student = () => {
                         {/* question 4 id lastname2Person */}
 
                         <input
-                        id='lastname2Person'
+                            id='lastname2Person'
                             value={values.lastname2Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='2do apellido' className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
@@ -156,7 +156,7 @@ const Student = () => {
                             onBlur={handleBlur}
                             id='birthdate'
                             type="date"
-                            className={errors.birthdate && touched.birthdate ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.birthdate && touched.birthdate ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         </input>
                         {errors.birthdate && touched.birthdate && <p className="text-center font-Nunito text-red text-sm">{errors.birthdate}</p>}
                     </div>
@@ -172,7 +172,7 @@ const Student = () => {
                             onBlur={handleBlur}
                             type='number'
                             placeholder='00'
-                            className={errors.agePerson && touched.agePerson ? 'w-full p-1 bg-light rounded border-2 border-red text-dark/50 text-xs font-Poppins font-medium' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
+                            className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
                     </div>
 
@@ -396,13 +396,16 @@ const Student = () => {
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
 
-                    <Link to="/Social" className='place-self-end mr-8 col-span-2 w-28' >
-                        <button
-                            onClick={studentP}
-                            disabled={!(isValid && dirty)}
-                            type='submit'
-                            className=' px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
-                    </Link>
+                    <div className='flex justify-end col-span-2'>
+                        <Link to="/Social" className='mr-8 w-28' >
+                            <button
+                                onClick={studentP}
+                                disabled={!(isValid && dirty)}
+                                type='submit'
+                                className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
+                        </Link>
+                    </div>
+                    <br/>
                 </div>
             </form>
 

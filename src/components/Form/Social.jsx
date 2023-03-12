@@ -61,12 +61,12 @@ const Social = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Student' className='w-28'>
-                <button className='  m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
+            <Link to='/Student'>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
-            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 ' >
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
+            <form onSubmit={handleSubmit} className=' font-Poppins' >
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div
@@ -225,14 +225,16 @@ const Social = () => {
 
                 </div>
 
-                <Link to="/Residence" className='flex justify-end mr-8' >
+                <div className='flex justify-end'>
+                <Link to="/Residence" className='mr-8 col-span-2 w-28' >
                 <button
                     onClick={socialP}
                     disabled={!(isValid && dirty)}
                         type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-            
+            </div>
+            <br/>
             </form>
         </div>
     )
