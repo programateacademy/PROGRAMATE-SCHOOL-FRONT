@@ -6,6 +6,8 @@ import Singup from './pages/Singup'
 import Form from './pages/Form'
 import StudentSpace from './pages/StudentSpace'
 import SuperAdminSpace from './pages/SuperAdminSpace'
+
+
 {/* routes for registration form */ }
 import Student from './components/Form/Student'
 import Social from './components/Form/Social'
@@ -14,6 +16,7 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
+
 
 function App() {
 

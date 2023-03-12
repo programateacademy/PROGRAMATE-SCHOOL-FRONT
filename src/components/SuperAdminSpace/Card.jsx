@@ -76,8 +76,9 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
 
 export default Card*/}
 import React, { useState } from 'react'
+import { MdEditSquare } from 'react-icons/md'
+import { BsFillPlusSquareFill } from 'react-icons/bs'
 import { FaEdit } from 'react-icons/fa'
-
 
 
 const Card = () => {
@@ -115,41 +116,97 @@ const Card = () => {
 
     return (
         <>
+
+
+            {/*Titles*/}
             <sub>
-                <h1 className='text-3xl text-dark font-Poppins font-semibold'>
+                <h1 className='pt-5 font-bold text-2xl   font-Poppins  md:inset-x-12 md:text-xl lg:text-3xl lg:m-8'>
                     Convocatorias creadas
                 </h1>
             </sub>
+            <figure className='flex space-x-4 absolute right-4'>
+                <button className='flex' >
+                    <p className='text-black font-Poppins font-bold' >Crear una convocatoria</p>
+                    <BsFillPlusSquareFill className='text-black bg-ligth text-3xl'/>
+                </button>
+            </figure>
 
-            <section className='flex flex-col p-10 space-y-5 '>
-                <h2 className='text-1xl text-dark font-Poppins font-semibold'>
-                    Desarrollador Frontend Web Jr
-                </h2>
-                <div>
-                    <label className='text-dark font-Poppins font-semibold '>Perfil</label>
-                    <input type="text" name="task" value={todo.task} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <label className='text-dark font-Poppins font-semibold '>Incritos</label>
-                    <input type="text" name="deadline" value={todo.deadline} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <label className='text-dark font-Poppins font-semibold '>Fecha de inicio</label>
-                    <input type="text" name="priority" value={todo.priority} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <label className='text-dark font-Poppins font-semibold '>Fecha de cierre</label>
-                    <input type="text" name="description" value={todo.description} onChange={handleInputChange} />
-                </div>
-                <div>
-                    <label className='text-dark font-Poppins font-semibold '>Proceso de selección</label>
-                    <input type="text" name="status" value={todo.status} onChange={handleInputChange} />
-                </div>
-              
-                <section className='flex space-x-28 p-3 '>
-                    <button className='bg-dark bg-gradient-to-r   text-light font-semibold py-1 px-3 rounded shadow-inner'>  Visualizar </button>
-                    <button onClick={handleAddTodo}><FaEdit className='text-3xl text-green-500' /></button>
+            <section className='flex flex-col w-fit md:flex-row md:inset-x-12 mt-12 md:mt-0'>
+                <section className='flex flex-col p-5 space-y-4 m-4 shadow shadow-yellow/70 rounded '>
+                    <h2 className='font-bold font-Poppins pt-4 md:text-xl lg:text-1xl'>
+                        Desarrollador Frontend Web Jr
+                    </h2>
+                    {/*editable components*/}
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Perfil</label>
+                        <input type="text" name="task" value={todo.task} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Incritos</label>
+                        <input type="text" name="deadline" value={todo.deadline} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Fecha de inicio</label>
+                        <input type="text" name="priority" value={todo.priority} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Fecha de cierre</label>
+                        <input type="text" name="description" value={todo.description} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Proceso de selección</label>
+                        <input type="text" name="status" value={todo.status} onChange={handleInputChange} />
+                    </div>
+
+                    {/*Edit, save and create buttons*/}
+
+                    <section className='flex space-x-20 p-3 '>
+                        <button className=' bg-dark  shadow-md shadow-dark /50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-6'>  Visualizar </button>
+                        <button onClick={handleAddTodo}><MdEditSquare className='text-3xl text-green-500' /></button>
+                    </section>
+                    <ul>
+                        {todos.map((todo, index) => (
+                            <li key={index} >
+                                {todo.task} - {todo.deadline} - {todo.priority} - {todo.description} - {todo.status}
+                                <button onClick={() => handleEditTodo(index)}>  <MdEditSquare className='text-3xl text-green-500' />  </button>
+                            </li>
+                        ))}
+                    </ul>
                 </section>
+
+                {/*Another card */}
+                <section className='flex flex-col p-5 space-y-4 m-4 shadow shadow-yellow/70 rounded '>
+                    <h2 className='font-bold font-Poppins pt-4 md:text-xl lg:text-1xl'>
+                        Desarrollador Frontend Web Jr
+                    </h2>
+                    {/*editable components*/}
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Perfil</label>
+                        <input type="text" name="task" value={todo.task} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Incritos</label>
+                        <input type="text" name="deadline" value={todo.deadline} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Fecha de inicio</label>
+                        <input type="text" name="priority" value={todo.priority} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Fecha de cierre</label>
+                        <input type="text" name="description" value={todo.description} onChange={handleInputChange} />
+                    </div>
+                    <div>
+                        <label className='text-dark font-Poppins font-semibold '>Proceso de selección</label>
+                        <input type="text" name="status" value={todo.status} onChange={handleInputChange} />
+                    </div>
+
+                    {/*Edit, save and create buttons*/}
+
+                    <section className='flex space-x-20 p-3 '>
+                        <button className=' bg-dark  shadow-md shadow-dark /50 hover:bg-dark w-32 h-8 rounded text-center text-light font-Poppins font-semibold my-6'>  Visualizar </button>
+                        <button onClick={handleAddTodo}><MdEditSquare className='text-3xl text-green-500' /></button>
+                    </section>
                     <ul>
                         {todos.map((todo, index) => (
                             <li key={index} >
@@ -158,17 +215,17 @@ const Card = () => {
                             </li>
                         ))}
                     </ul>
-            
-                
-                 <button onClick={() => setTodo({
-                        task: '',
-                        deadline: '',
-                        priority: '',
-                        description: '',
-                        status: ''
-                    })}>Agregar otra tarea</button>
-                
+
+
+
+
+                </section>
+
+
             </section>
+
+
+
         </>
 
     );
