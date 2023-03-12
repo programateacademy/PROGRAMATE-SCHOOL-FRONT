@@ -156,7 +156,7 @@ const Student = () => {
                             onBlur={handleBlur}
                             id='birthdate'
                             type="date"
-                            className={errors.birthdate && touched.birthdate ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.birthdate && touched.birthdate ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         </input>
                         {errors.birthdate && touched.birthdate && <p className="text-center font-Nunito text-red text-sm">{errors.birthdate}</p>}
                     </div>
@@ -172,7 +172,7 @@ const Student = () => {
                             onBlur={handleBlur}
                             type='number'
                             placeholder='00'
-                            className={errors.agePerson && touched.agePerson ? 'w-full p-1 bg-light rounded border-2 border-red text-dark/50 text-xs font-Poppins font-medium' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
+                            className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
                     </div>
 
