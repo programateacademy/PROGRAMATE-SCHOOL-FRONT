@@ -3,7 +3,7 @@ import Modal from '../components/Modal'
 import { useNavigate } from 'react-router-dom'
 import defaultApi from '../apis/index'
 import { useFormik } from 'formik'
-import { basicSchema } from '../schemas/basicSchema'
+import { signupSchema } from '../schemas/formSchema'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -25,7 +25,7 @@ const validationSignup = () => {
             institutionPerson: '',
             termsAndConditions: false,
         },
-        validationSchema: basicSchema,
+        validationSchema: signupSchema,
         onSubmit
 
     })
