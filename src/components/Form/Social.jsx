@@ -62,11 +62,11 @@ const Social = () => {
                 </div>
             </div>
             <Link to='/Student'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
-            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 ' >
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
+            <form onSubmit={handleSubmit} className=' font-Poppins' >
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div
@@ -224,14 +224,16 @@ const Social = () => {
 
                 </div>
 
-                <Link to="/Residence" className='flex justify-end mr-8' >
+                <div className='flex justify-end'>
+                <Link to="/Residence" className='mr-8 col-span-2 w-28' >
                 <button
                     onClick={socialP}
                     disabled={!(isValid && dirty)}
                         type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-            
+            </div>
+            <br/>
             </form>
         </div>
     )
