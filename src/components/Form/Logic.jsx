@@ -121,7 +121,7 @@ const Logic = () => {
 
                 {/* question 52 id logic3 */}
 
-                <div className='grid grid-cols-2'>
+                <div className='grid md:grid-cols-2'>
                     <div className='flex flex-col'>
                     <section
                         value={values.logic3}
@@ -130,7 +130,8 @@ const Logic = () => {
                         className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
-                            <div className="flex flex-row gap-3">   
+                            <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic3.png?raw=true'/><br/>
+                            <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
@@ -143,7 +144,7 @@ const Logic = () => {
                                         A.
                                     </label>
                                 </div>
-
+                                
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
@@ -209,8 +210,9 @@ const Logic = () => {
                         className='font-Nunito'>
                         <article className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                             <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
-                            <div className="flex flex-row gap-3">   
-                                <div className='flex flex-row '>
+                            <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic4.png?raw=true'/><br/>
+                            <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
+                                <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
                                             type="radio"
