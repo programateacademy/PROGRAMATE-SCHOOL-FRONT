@@ -195,8 +195,8 @@ const Residence = () => {
                                 <option className='font-medium text-dark'>6</option>
                         </select>
                         {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
-                    </div>
-                    <div className=' mt-20'>
+                    </div><br/> 
+                    <section>
                         <Link type='submit' className='flex justify-end' to='/Guardian'>
                         <button
                             onClick={residenceP}
@@ -205,7 +205,7 @@ const Residence = () => {
                             className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'
                             >Siguiente</button>
                         </Link> 
-                    </div>
+                        </section>
                     <br/>
                 </form>
             </div>
