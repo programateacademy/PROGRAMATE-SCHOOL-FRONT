@@ -1,14 +1,66 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { Formik, Form, Field, } from 'formik'
+import { useFormik } from 'formik';
+import { vocationShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
+const onSubmit = async (values, actions) => {
+    console.log(values);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm()
+}
 
 const Vocation = () => {
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
+        initialValues: {
+            computer: '',
+            internet: '',
+            interests: '',
+            activity: '',
+            reportage: '',
+            stake: '',
+            webMotivation: '',
+        },
+        validationSchema: vocationShema,
+        onSubmit
+    });
+    // console.log(errors);
+    // backend connection
+    function vocationP() {
+        var view5 = {
+            computer: values.computer,
+            internet: values.internet,
+            interests: values.interests,
+            activity: values.activity,
+            reportage: values.reportage,
+            stake: values.stake,
+            webMotivation: values.webMotivation,
+        }
+        console.log(view5);
+        defaultApi
+            .post("/registertoannouncement", view5)
+            .then((res) => {
+                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
+
     return (
         <div>
             {/* cover image with logo */}
             <div className='flex h-72 '>
-                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoTRES.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
+                <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoSEIS.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
@@ -18,183 +70,158 @@ const Vocation = () => {
                 <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
             </Link>
 
-            {/* Form validation */}
-            <Formik
-                initialValues={{
-                    name: '',
-                    Surname: '',
-                    Birthdate: '',
-                    Age: '',
-                    Email: '',
-                    Phone: '',
-                    sena: '',
-                }}
-                validate={(valores) => {
-                    let errores = {};
-                    if (!valores.name) {
-                        errores.name = 'Ingresa tu nombre'
-                    }
+            <form onSubmit={handleSubmit}>
+                <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
+                    
+{/* question 39 id computer */}
+                    <div 
+                        value={values.computer}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a un computador en casa o en el colegio?</label>
+                            <label className='flex flex-row font-Nunito'>
+                                <input
+                                    type="radio"
+                                    name="computer"
+                                    id="computer"
+                                    value="SI"
+                                    className="accent-red
+                                focus:accent-yellow" />
+                                Si
+                            </label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="computer"
+                                    id="computer"
+                                    value="NO"
+                                    className="accent-red
+                                focus:accent-yellow"
+                                />
+                                No
+                            </label>  
+                    </div>
+                    {errors.computer && touched.computer && <p className='text-red text-xs font-Poppins'>{errors.computer}</p>}  
+                    
+                    {/* question 40 id internet */}
 
-                    if (!valores.Surname) {
-                        errores.Surname = 'Ingresa tu Apellido'
-                    }
-
-                    if (!valores.Birthdate) {
-                        errores.Birthdate = 'Ingresa tu fecha de Nacimiento'
-                    }
-                    if (!valores.Age) {
-                        errores.Age = 'Ingresa tu edad en numero "18"'
-                    }
-
-                    if (!valores.Email) {
-                        errores.Email = 'Ingresa tu correo electronico'
-                    }
-
-                    if (!valores.Phone) {
-                        errores.Phone = 'Ingresa tu numero de celular'
-                    }
-
-                    if (!valores.sena) {
-                        errores.sena = 'Seleciona una opción'
-                    }
-
-                    return errores;
-                }}
-                onSubmit={(valores, { resetForm }) => {
-                    resetForm();
-                    console.log('formulario enviado');
-                }} >
-                {/*the name input with the id NAME*/}
-                {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-                    <Form
-                        onSubmit={handleSubmit}>
-                        <section className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
-                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                <label for="computer" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a un computador en casa o en el colegio?</label>
+                        <div
+                                value={values.internet}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                                <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a internet en casa o en el colegio?</label>
                                 <label className='flex flex-row font-Nunito'>
-                                    <Field
+                                    <input
                                         type="radio"
-                                        name="computer"
-                                        id="computer"
-                                        value="Yes"
-                                        className="accent-red
-                                    focus:accent-yellow" />
-                                    Si
-                                </label>
-                                <label>
-                                    <Field
-                                        type="radio"
-                                        name="computer"
-                                        id="computer"
-                                        value="No"
-                                        className="accent-red
-                                    focus:accent-yellow"
-                                    />
-                                    No
-                                </label>
-                            </div>
-
-                            <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                <label for="computer" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a internet en casa o en el colegio?</label>
-                                <label className='flex flex-row font-Nunito'>
-                                    <Field
-                                        type="radio"
-                                        name="computer"
-                                        id="computer"
-                                        value="Yes"
+                                        name="internet"
+                                        id="internet"
+                                        value="SI"
                                         className="accent-red
                                     focus:accent-yellow " />
                                     Si
                                 </label>
                                 <label>
-                                    <Field
+                                    <input
                                         type="radio"
-                                        name="computer"
-                                        id="computer"
-                                        value="No"
+                                        name="internet"
+                                        id="internet"
+                                        value="NO"
                                         className="accent-red
                                     focus:accent-yellow"
                                     />
                                     No
                                 </label>
-                            </div>
-                        </section>
+                        </div>
+                    {errors.internet && touched.internet && <p className='text-red text-xs font-Poppins'>{errors.internet}</p>}   
+                </div>
+                {/* question 41 id interests */}
 
-                        <section className='font-Nunito'>
+                <section
+                    value={values.interests}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className='font-Nunito'>
+                    <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles de las siguientes áreas de estudio te llaman más la atención/interesan?</label>
+                        <div className='flex flex-row'>
+                        <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                <input
+                                    type="radio"
+                                    name="interests"
+                                    id="interests"
+                                    value="A"
+                                    className="accent-red
+                                focus:accent-yellow" />
+                                A.
+                            </label>
+                            <h3 className=' font-Nunito font-semibold indent-4'>
+                                Conocer a los otros pasajeros y el porqué de sus viajes.
+                            </h3>
+                        </div>
+
+                        <div className='flex flex-row'>
+                        <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                <input
+                                    type="radio"
+                                    name="interests"
+                                    id="interests"
+                                    value="B"
+                                    className="accent-red
+                                focus:accent-yellow" />
+                                B.
+                            </label>
+                            <h3 className=' font-Nunito font-semibold indent-4'>
+                            Diseño, artes escénicas, comunicación audiovisual, arquitectura.
+                            </h3>
+                        </div>
+
+                        <div className='flex flex-row'>
+                        <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                <input
+                                    type="radio"
+                                    name="interests"
+                                    id="interests"
+                                    value="C"
+                                    className="accent-red
+                                focus:accent-yellow" />
+                                C.
+                            </label>
+                            <h3 className=' font-Nunito font-semibold indent-4'>
+                            Administración, marketing, finanzas.
+                            </h3>
+                        </div>
+
+                        <div className='flex flex-row'>
+                        <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                <input
+                                    type="radio"
+                                    name="interests"
+                                    id="interests"
+                                    value="D"
+                                    className="accent-red
+                                focus:accent-yellow" />
+                                D.
+                            </label>
+                            <h3 className=' font-Nunito font-semibold indent-4'>
+                            Ingenierías, matemáticas, estadística.
+                            </h3>
+                        </div>
+                    </article>
+                    {errors.interests && touched.interests && <p className='text-red text-xs font-Poppins'>{errors.interests}</p>}  
+                </section>
+                {/* question 42 id activity */}
+                <section
+                    value={values.activity}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="interests" className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles de las siguientes áreas de estudio te llaman más la atención/interesan?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si fueras pasajero en un avión comercial, ¿Cuál actividad te describe mejor?</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
-                                        type="radio"
-                                        name="interests"
-                                        id="interests"
-                                        value="A"
-                                        className="accent-red
-                                    focus:accent-yellow" />
-                                    A.
-                                </label>
-                                <h3 className=' font-Nunito font-semibold indent-4'>
-                                    Conocer a los otros pasajeros y el porqué de sus viajes.
-                                </h3>
-                            </div>
-
-                            <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
-                                        type="radio"
-                                        name="interests"
-                                        id="interests"
-                                        value="B"
-                                        className="accent-red
-                                    focus:accent-yellow" />
-                                    B.
-                                </label>
-                                <h3 className=' font-Nunito font-semibold indent-4'>
-                                Diseño, artes escénicas, comunicación audiovisual, arquitectura.
-                                </h3>
-                            </div>
-
-                            <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
-                                        type="radio"
-                                        name="interests"
-                                        id="interests"
-                                        value="C"
-                                        className="accent-red
-                                    focus:accent-yellow" />
-                                    C.
-                                </label>
-                                <h3 className=' font-Nunito font-semibold indent-4'>
-                                Administración, marketing, finanzas.
-                                </h3>
-                            </div>
-
-                            <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
-                                        type="radio"
-                                        name="interests"
-                                        id="interests"
-                                        value="D"
-                                        className="accent-red
-                                    focus:accent-yellow" />
-                                    D.
-                                </label>
-                                <h3 className=' font-Nunito font-semibold indent-4'>
-                                Ingenierías, matemáticas, estadística.
-                                </h3>
-                            </div>
-                            </article>
-                            </section>
-
-                            <section className='font-Nunito'>
-                            <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="activity" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si fueras pasajero en un avión comercial, ¿Cuál actividad te describe mejor?</label>
-                            <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="activity"
                                         id="activity"
@@ -210,7 +237,7 @@ const Vocation = () => {
 
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
                                         name="activity"
                                         id="activity"
@@ -226,7 +253,7 @@ const Vocation = () => {
 
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
                                         name="activity"
                                         id="activity"
@@ -242,7 +269,7 @@ const Vocation = () => {
 
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
                                         name="activity"
                                         id="activity"
@@ -255,15 +282,22 @@ const Vocation = () => {
                                 Comparar la relación entre el costo del viaje y calidad del servicio.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                    {errors.activity && touched.activity && <p className='text-red text-xs font-Poppins'>{errors.activity}</p>} 
+                </section>
+                
+                {/* question 43 id reportage */}
 
-                            <section className='font-Nunito'>
+                <section
+                    value={values.reportage}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="reportage" className='pb-1.5 text-dark text-sm font-Nunito font-black'>Me llamaría más la atención el siguiente reportaje</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Me llamaría más la atención el siguiente reportaje</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="reportage"
                                         id="reportage"
@@ -278,8 +312,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="reportage"
                                         id="reportage"
@@ -294,8 +328,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="reportage"
                                         id="reportage"
@@ -311,7 +345,7 @@ const Vocation = () => {
 
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                    <input
                                         type="radio"
                                         name="reportage"
                                         id="reportage"
@@ -324,15 +358,22 @@ const Vocation = () => {
                                 Fórmulas para invertir tu dinero de forma inteligente.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                    {errors.reportage && touched.reportage && <p className='text-red text-xs font-Poppins'>{errors.reportage}</p>}  
+                </section>
+                
+                {/* question 44 id stake */}
 
-                            <section className='font-Nunito'>
+                <section
+                    value={values.stake}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="stake" className='pb-1.5 text-dark text-sm font-Nunito font-black'>En la producción de una película, ¿te gustaría participar en?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>En la producción de una película, ¿te gustaría participar en?</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="stake"
                                         id="stake"
@@ -347,8 +388,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="stake"
                                         id="stake"
@@ -363,8 +404,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="stake"
                                         id="stake"
@@ -379,8 +420,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="stake"
                                         id="stake"
@@ -393,15 +434,22 @@ const Vocation = () => {
                                 Publicidad y marketing.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
+                    </article>
+                    {errors.stake && touched.stake && <p className='text-red text-xs font-Poppins'>{errors.stake}</p>}
+                </section>
+                
+                {/* question 45 id webMotivation */}
 
-                            <section className='font-Nunito'>
-                            <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label for="webMotivation" className='pb-1.5 text-dark text-sm font-Nunito font-black'>De las computadoras lo ¿Qué más te motiva es?</label>
+                <section
+                    value={values.webMotivation}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className='font-Nunito'>
+                        <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>De las computadoras lo ¿Qué más te motiva es?</label>
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="webMotivation"
                                         id="webMotivation"
@@ -416,8 +464,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="webMotivation"
                                         id="webMotivation"
@@ -432,8 +480,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="webMotivation"
                                         id="webMotivation"
@@ -448,8 +496,8 @@ const Vocation = () => {
                             </div>
 
                             <div className='flex flex-row'>
-                            <label className='flex justify-center font-Poppins font-extrabold text-center'>
-                                    <Field
+                                <label className='flex justify-center font-Poppins font-extrabold text-center'>
+                                    <input
                                         type="radio"
                                         name="webMotivation"
                                         id="webMotivation"
@@ -462,15 +510,19 @@ const Vocation = () => {
                                 Buscar nueva información y estar enterada de las noticias del mundo.
                                 </h3>
                             </div>
-                            </article>
-                            </section>
-                    </Form>
-                )}
-            </Formik>
+                    </article>
+                    {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
+                </section>
 
-            <Link className='flex justify-end mr-8' to='/Interest'>
-                <button className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm'>Siguiente</button>
-            </Link>
+                <Link className='flex justify-end mr-8' to='/Interest'>
+                <button
+                    onClick={vocationP}
+                    disabled={!(isValid && dirty)}
+                    type='submit'
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                </Link>
+
+            </form>
         </div>
     )
 }

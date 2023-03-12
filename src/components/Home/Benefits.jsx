@@ -1,9 +1,20 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+
+
+
+
 export const Benefist = () => {
   return (
+
+
     <main className="mx-6 md:mx-24">
+      <section className="flex items-end justify-end absolute right-4">
+        <Link to="/Login" >
+          <button className="  mx-auto bg-yellow text-light shadow-md shadow-dark/50 hover:bg-dark text-center text-sm font-Poppins font-medium fixed bottom-4 right-4 px-4 py-2 rounded-md">Participa ya!</button>
+        </Link>
+      </section>
       {/*Program benefits*/}
 
       <section className="">
@@ -11,9 +22,9 @@ export const Benefist = () => {
           <h1 className="text-dark mx-4 pb-4 font-bold font-Poppins text-2xl">
             Beneficios del programa
           </h1>
-          <hr className="border-2 border-yellow w-48 ml-4 lg:w-64"/>
+          <hr className="border-2 border-yellow w-48 ml-4 lg:w-64" />
           <p className="mx-4 pt-4 pb-6 font-light font-Nunito text-base lg:text-xl">
-            Creemos que la educación<br/>cambia vidas
+            Creemos que la educación<br />cambia vidas
           </p>
         </object>
 
@@ -61,55 +72,55 @@ export const Benefist = () => {
         <section className="md:grid md:grid-cols-3 my-14">
           {/*Program duration*/}
           <object className="md:col-span-1">
-              <h1 className="font-bold mx-4 font-Poppins text-2xl">
-                DURACIÓN TOTAL <br />
-                <span className="text-yellow"> 8 MESES</span>
-              </h1>
-              <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.<br/> <br/>
-              
-                incididunt ut labore et dolore.<br/> <br/>
-                
-                Aliquam ultrices sagittis orci<br/> <br/>
-                
-                purus semper eget duis. Eget sit amet tellus.<br/> <br/>
-                
-                <span className="text-yellow">Ac orci phasellus egestas</span>
-              </p>
+            <h1 className="font-bold mx-4 font-Poppins text-2xl">
+              DURACIÓN TOTAL <br />
+              <span className="text-yellow"> 8 MESES</span>
+            </h1>
+            <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.<br /> <br />
 
-              {/*Program logos*/}
-              <article className="flex justify-around pb-9">
-                <img src={"https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-color.png?raw=true"} width={100} alt="Logo-Educamas"/>
-                <img src={"https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-color.png?raw=true"} width={100} alt="logo-brillas"/>
-              </article>
+              incididunt ut labore et dolore.<br /> <br />
 
-              {/*Button to apply to the program*/}
-              <article className="pb-2">
-                <Link to="/Login">
-                  <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
-                    Aplicar Ahora!</button>
-                </Link>
-              </article>
+              Aliquam ultrices sagittis orci<br /> <br />
+
+              purus semper eget duis. Eget sit amet tellus.<br /> <br />
+
+              <span className="text-yellow">Ac orci phasellus egestas</span>
+            </p>
+
+            {/*Program logos*/}
+            <article className="flex justify-around pb-9">
+              <img src={"https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-color.png?raw=true"} width={100} alt="Logo-Educamas" />
+              <img src={"https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/brillas-color.png?raw=true"} width={100} alt="logo-brillas" />
+            </article>
+
+            {/*Button to apply to the program*/}
+            <article className="pb-2">
+              <Link to="/Login">
+                <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
+                  Aplicar Ahora!</button>
+              </Link>
+            </article>
           </object>
           {/*Program description...*/}
           <object className="md:col-span-2 md:ml-20">
             <h3 className="text-dark mt-8 md:mt-0 mx-4 font-bold font-Poppins text-2xl text-right">
-                Comienza YA a estudiar sobre el futuro que es la tecnologia
+              Comienza YA a estudiar sobre el futuro que es la tecnologia
             </h3>
             <p className="mx-4 mt-8 font-Nunito lg:text-lg text-right">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Aliquam ultrices sagittis orci a scelerisque purus semper eget
-                duis. Eget sit amet tellus cras adipiscing enim. Ac orci
-                phasellus egestas tellus rutrum. Eget arcu dictum varius duis
-                at. Dignissim suspendisse in est ante in nibh. Enim sed faucibus
-                turpis in eu mi bibendum. Lectus nulla at volutpat diam ut
-                venenatis tellus in. Nam aliquam sem et tortor consequat id
-                porta nibh venenatis. Pretium vulputate sapien nec sagittis
-                aliquam malesuada bibendum. Consectetur libero id faucibus nisl.
-                Tincidunt id aliquet risus feugiat.<br/> <br/>
-                Viverra nam libero justo laoreet. Purus ut faucibus pulvinar elementum integer enim. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Ac tincidunt vitae semper quis. Donec ultrices tincidunt arcu non sodales neque sodales. Sodales ut etiam sit amet nisl purus in. Donec ac odio tempor orci dapibus ultrices in. 
-              </p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Aliquam ultrices sagittis orci a scelerisque purus semper eget
+              duis. Eget sit amet tellus cras adipiscing enim. Ac orci
+              phasellus egestas tellus rutrum. Eget arcu dictum varius duis
+              at. Dignissim suspendisse in est ante in nibh. Enim sed faucibus
+              turpis in eu mi bibendum. Lectus nulla at volutpat diam ut
+              venenatis tellus in. Nam aliquam sem et tortor consequat id
+              porta nibh venenatis. Pretium vulputate sapien nec sagittis
+              aliquam malesuada bibendum. Consectetur libero id faucibus nisl.
+              Tincidunt id aliquet risus feugiat.<br /> <br />
+              Viverra nam libero justo laoreet. Purus ut faucibus pulvinar elementum integer enim. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Ac tincidunt vitae semper quis. Donec ultrices tincidunt arcu non sodales neque sodales. Sodales ut etiam sit amet nisl purus in. Donec ac odio tempor orci dapibus ultrices in.
+            </p>
           </object>
 
         </section>
