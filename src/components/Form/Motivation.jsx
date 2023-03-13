@@ -35,7 +35,7 @@ const Motivation = () => {
         defaultApi
             .post("/registertoannouncement", view6)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {

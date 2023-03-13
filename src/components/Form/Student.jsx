@@ -20,15 +20,15 @@ const Student = () => {
             lastname1Person: '',
             lastname2Person: '',
             birthdate: '',
-            agePerson: 15,
+            agePerson: '',
             gender: '',
             document: '',
-            documentPerson: '52685462',
-            institutionPerson: 'colegio inegrada la calendaria',
+            documentPerson: '',
+            institutionPerson: '',
             course: '',
             sena: '',
             availability: '',
-            emailPerson: 'jibhbu@correo.com',
+            emailPerson: '',
             phone: '',
             phoneTwo: '',
         },
@@ -60,7 +60,7 @@ const Student = () => {
         defaultApi
             .post("/registertoannouncement", view1)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {

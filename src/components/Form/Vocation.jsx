@@ -42,7 +42,7 @@ const Vocation = () => {
         defaultApi
             .post("/registertoannouncement", view5)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
