@@ -36,7 +36,7 @@ const Logic = () => {
         defaultApi
             .post("/registertoannouncement", view7)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                alert(" ha inscrito en la convocatoriaSe");
                 //  navigator("/")
             })
             .then(err => {

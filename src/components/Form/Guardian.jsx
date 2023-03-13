@@ -52,7 +52,7 @@ const Guardian = () => {
         defaultApi
             .post("/registertoannouncement", view4)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
