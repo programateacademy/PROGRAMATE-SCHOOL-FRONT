@@ -76,7 +76,7 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
 
 export default Card*/}
 import React, { useState } from 'react'
-import { MdEditSquare } from 'react-icons/md'
+// import { MdEditSquare } from 'react-icons/md'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
 import { FaEdit } from 'react-icons/fa'
 

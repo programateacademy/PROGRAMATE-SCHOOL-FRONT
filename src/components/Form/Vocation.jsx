@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { vocationShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -157,7 +158,7 @@ const Vocation = () => {
                                 A.
                             </label>
                             <h3 className=' font-Nunito font-semibold indent-4'>
-                                Conocer a los otros pasajeros y el porqué de sus viajes.
+                                Trabajo social, recursos humanos, derecho, enfermería.
                             </h3>
                         </div>
 
@@ -515,7 +516,7 @@ const Vocation = () => {
                 </section>
 
                 <div className='flex justify-end'>
-                <Link className='mr-8 col-span-2 w-28' to='/Interest'>
+                <Link className='mr-8 col-span-2 w-28' to='/Motivation'>
                 <button
                     onClick={vocationP}
                     disabled={!(isValid && dirty)}
