@@ -157,7 +157,7 @@ const Vocation = () => {
                                 A.
                             </label>
                             <h3 className=' font-Nunito font-semibold indent-4'>
-                                Conocer a los otros pasajeros y el porqué de sus viajes.
+                                Trabajo social, recursos humanos, derecho, enfermería.
                             </h3>
                         </div>
 
@@ -231,7 +231,7 @@ const Vocation = () => {
                                     A.
                                 </label>
                                 <h3 className=' font-Nunito font-semibold indent-4'>
-                                Trabajo social, recursos humanos, derecho, enfermería.
+                                Conocer a los otros pasajeros y el porqué de sus viajes
                                 </h3>
                             </div>
 
