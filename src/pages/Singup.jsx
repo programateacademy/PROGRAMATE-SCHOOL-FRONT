@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import defaultApi from '../apis/index'
 import { useFormik } from 'formik'
 import { signupSchema } from '../schemas/formSchema'
+import swal from 'sweetalert2'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -27,7 +28,6 @@ const validationSignup = () => {
         },
         validationSchema: signupSchema,
         onSubmit
-
     })
 
 const [showModal, setShowModal] = useState(false)
@@ -52,7 +52,14 @@ function signUp() {
     defaultApi
     .post("/signUp", signP)
     .then((res) => {
-        alert("Se ha registrado en PROGRAMATE SCHOOL");
+        swal.fire({
+            text: 'Se ha registrado en PROGRAMATE SCHOOL',
+            confirmButtonText: 'OK',
+            timer: '3000',
+            color: '#262425',
+            confirmButtonColor: '#FBC209',
+            background: '#FFFFFF',
+        });
         //  navigator("/")
     })
     .then(err => {
@@ -60,28 +67,36 @@ function signUp() {
     })
     .catch(err => {
         if (err.response.status === 409) {
-            alert("Ya existe un usuario con este documento");
+            swal.fire({
+                text: 'Ya existe un usuario con este documento',
+                confirmButtonText: 'OK',
+                timer: '3000',
+                color: '#262425',
+                confirmButtonColor: '#FBC209',
+                background: '#FFFFFF',
+            });
         } else if (err.response.status === 408) {
-            alert("Ya existe un usuario con este Correo");
+            swal.fire({
+                text: 'Ya existe un usuario con este Correo',
+                confirmButtonText: 'OK',
+                timer: '3000',
+                color: '#262425',
+                confirmButtonColor: '#FBC209',
+                background: '#FFFFFF',
+            });
         }
     })
 }
 
     return (
-        <div className='h-full grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
-            <div className='row-span-1 md:h-full xl:h-screen bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO_50.png?raw=true")] bg-cover bg-center grid'>
+        <div className='h-screen md:content-center grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
+            <div className='row-span-1 md:col-start-1 md:col-end-2 md:h-full md:fixed md:w-[50%] bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO_50.png?raw=true")] bg-cover bg-center grid'>
                 <div className='w-7/12 sm:w-5/12 md:w-9/12 m-auto'>
                     <img className='bg-light/90 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'}/>
                 </div>
             </div>
-            {/* <div className='row-span-1 relative'>
-                <div className='h-full w-full m-auto flex justify-center items-center bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO_50.png?raw=true")] bg-cover bg-center bg-fixed'>
-                    <img className='md:fixed md:object-contain md:w-4/12 bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'}/>
-                </div>
-            </div> */}
-
             {/* Signup form */}
-            <form onSubmit={handleSubmit} autoComplete='off' className='row-span-4 bg-light py-6 my-auto'>
+            <form onSubmit={handleSubmit} autoComplete='off' className='row-span-4 md:col-start-2 md:col-end-3 bg-light py-10 my-auto z-10'>
                 <h1 className='mx-12 sm:mx-52 md:mx-12 lg:mx-26 pb-5 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'>¡Da el primer paso<br/>y regístrate!</h1>
 
                 {/* Applicant's names (variables: name1Person and name2Person) */}
@@ -259,14 +274,14 @@ function signUp() {
                         type='checkbox'
                         onBlur={handleBlur}
                         className='accent-purple' />
-                        <label htmlFor='termsAndConditions' className='ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='text-purple underline decoration-2 underline-offset-4'><b>términos y condiciones</b></button>.</label>
+                        <label htmlFor='termsAndConditions' className='ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='text-purple hover:text-dark underline decoration-2 underline-offset-4'><b>términos y condiciones</b></button>.</label>
                         <Modal onClose={handleOnClose} visible={showModal}/>
                     </div>
                     <div className='pt-1'>
                         {errors.termsAndConditions && touched.termsAndConditions && <p className='text-red text-[0.65rem] font-Poppins'>∗ {errors.termsAndConditions}</p>}
                     </div>
                 </div>
-                <button type='submit' onClick={signUp} className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Regístrarse</button>
+                <button type='submit' onClick={signUp} className='flex button md:text-base'>Regístrarse</button>
             </form>
         </div>
     )
