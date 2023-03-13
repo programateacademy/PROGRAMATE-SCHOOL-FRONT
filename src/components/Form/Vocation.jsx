@@ -231,7 +231,7 @@ const Vocation = () => {
                                     A.
                                 </label>
                                 <h3 className=' font-Nunito font-semibold indent-4'>
-                                Conocer a los otros pasajeros y el porqué de sus viajes.
+                                Trabajo social, recursos humanos, derecho, enfermería.
                                 </h3>
                             </div>
 
@@ -514,7 +514,7 @@ const Vocation = () => {
                     {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
                 </section>
 
-                <Link className='flex justify-end mr-8' to='/Interest'>
+                <Link className='flex justify-end mr-8' to='/Motivation'>
                 <button
                     onClick={vocationP}
                     disabled={!(isValid && dirty)}
