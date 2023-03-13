@@ -83,13 +83,13 @@ const Logic = () => {
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B,C,D,A </option>
+                            El orden de llegada es B, C, D, A </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B,A,C,D </option>
+                            El orden de llegada es B, A, C, D </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B,D,C,A </option>
+                            El orden de llegada es B, D, C, A </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es A,B,D,A </option>
+                            El orden de llegada es A, B, D, A </option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
                 </div>
