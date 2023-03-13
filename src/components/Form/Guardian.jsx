@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { guardianShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -51,7 +52,7 @@ const Guardian = () => {
         defaultApi
             .post("/registertoannouncement", view4)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -76,7 +77,7 @@ const Guardian = () => {
             </div>
 
             <Link to='/Residence'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <form onSubmit={handleSubmit}  className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 ' >
@@ -344,14 +345,16 @@ const Guardian = () => {
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>} 
                 </div>
 
-                <Link className='flex justify-end' to='/Vocation'>
+                <div className='flex justify-end'>
+                <Link className='mr-8 col-span-2 w-28' to='/Vocation'>
                     <button
                         onClick={guardianP}
                         disabled={!(isValid && dirty)}
                     type='submit'
-                        className='flex m-6 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-
+                </div>
+                <br/>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { socialShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -37,7 +38,7 @@ const Social = () => {
         defaultApi
             .post("/registertoannouncement", view2)
             .then((res) => { 
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -62,11 +63,11 @@ const Social = () => {
                 </div>
             </div>
             <Link to='/Student'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
-            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 ' >
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
+            <form onSubmit={handleSubmit} className=' font-Poppins' >
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div
@@ -153,7 +154,8 @@ const Social = () => {
                     </div>
 
                     {/* the break line in the form */}
-                    <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" border-2 border-yellow mb-2 rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    
 
                     {/* question 20 id disability */}
 
@@ -224,14 +226,16 @@ const Social = () => {
 
                 </div>
 
-                <Link to="/Residence" className='flex justify-end mr-8' >
+                <div className='flex justify-end'>
+                <Link to="/Residence" className='mr-8 col-span-2 w-28' >
                 <button
                     onClick={socialP}
                     disabled={!(isValid && dirty)}
                         type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-            
+            </div>
+            <br/>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { logicShema } from '../../schemas/formSchema' 
 import defaultApi from '../../apis/index'
 
@@ -35,7 +36,7 @@ const Logic = () => {
         defaultApi
             .post("/registertoannouncement", view7)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                alert(" ha inscrito en la convocatoriaSe");
                 //  navigator("/")
             })
             .then(err => {
@@ -56,11 +57,11 @@ const Logic = () => {
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
             <Link to='/Motivation'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
@@ -79,17 +80,17 @@ const Logic = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic1'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2 '}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, C, D, A </option>
+                            El orden de llegada es B, C, D, A</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, A, C, D </option>
+                            El orden de llegada es B, A, C, D</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, D, C, A </option>
+                            El orden de llegada es B, D, C, A</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es A, B, D, A </option>
+                            El orden de llegada es A, B, D, A</option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
                 </div>
@@ -106,7 +107,7 @@ const Logic = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         id='logic2'
-                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-1/2 px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins w-1/2'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'}>
                         <option className='font-medium text-dark sm:mx-40'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark sm:mx-40'>
@@ -280,14 +281,16 @@ const Logic = () => {
                     </section>
                     </div>
                 </div>
-                
-            <Link className='flex justify-end mr-8' to='/'>
+                <div className='flex justify-end'>
+            <Link className='mr-8 col-span-2 w-28' to='/'>
                     <button
                         onClick={logicP}
                         disabled={!(isValid && dirty)}
                         type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
+                </div>
+                <br/>
             </form>            
         </div>
     )

@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { motivationShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -34,7 +35,7 @@ const Motivation = () => {
         defaultApi
             .post("/registertoannouncement", view6)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -55,11 +56,12 @@ const Motivation = () => {
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoSIETE.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Psychological'>
-                <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+
+            <Link to='/Psychological' className=' mr-8 col-span-2 w-28'>
+                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
@@ -259,7 +261,7 @@ const Motivation = () => {
                         onBlur={handleBlur}
                         id='withdrawal'
                         data-te-select-init data-te-select-filter='true'
-                        className={errors.withdrawal && touched.withdrawal ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'} >
+                        className={errors.withdrawal && touched.withdrawal ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'} >
                                 <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
                                 <option className='font-medium text-dark'>
@@ -275,15 +277,17 @@ const Motivation = () => {
                     </select>
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
-            
-                <Link className='flex justify-end mr-8' to='/Logic'>
+
+            <div className='flex justify-end'>
+                <Link className='mr-8 col-span-2 w-28' to='/Logic'>
                     <button
                         onClick={motivationP}
                         disabled={!(isValid && dirty)}
                     type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium rounded-sm disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
-            
+                </div>
+            <br/>
             </form>           
         </div>
     )
