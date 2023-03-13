@@ -204,6 +204,7 @@ const Logic = () => {
                 
                     <div className='flex flex-col'>
                     <section
+                    id='logic4'
                         value={values.logic4}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -254,8 +255,8 @@ const Logic = () => {
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
                                             type="radio"
-                                            name="logic3"
-                                            id="logic3"
+                                            name="logic4"
+                                            id="logic4"
                                             value="D"
                                             className="accent-red
                                             focus:accent-yellow flex items-center" />
@@ -266,8 +267,8 @@ const Logic = () => {
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
                                             type="radio"
-                                            name="logic3"
-                                            id="logic3"
+                                            name="logic4"
+                                            id="logic4"
                                             value="E"
                                             className="accent-red
                                             focus:accent-yellow flex items-center" />
