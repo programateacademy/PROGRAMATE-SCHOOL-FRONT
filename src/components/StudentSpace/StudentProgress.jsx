@@ -1,4 +1,6 @@
 import React from "react";
+import { BsCheck, BsCircleFill } from 'react-icons/bs'
+
 
 const StudentProgress = () => {
   return (
@@ -15,23 +17,38 @@ const StudentProgress = () => {
       <section className="mx-2 text-dark">
         <h3 className="font-bold font-Poppins mt-4">Tu proceso inicia aquí</h3>
         <div className="flex justify-between items-center">
-          <div className=" flex items-center mx-4 bg-purple rounded-full h-[150px] w-[10px] relative">
-            <div className="bg-purple w-[50px] h-[50px] rounded-full mx-1 border-2 border-dark absolute flex justify-center items-center text-light font-bold text-3xl">
-              1
+          <div className=" flex justify-center items-center mx-4 bg-purple rounded-full h-[150px] w-[10px]">
+            <div className="bg-purple w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-3xl">
+              <BsCheck className="text-white text-5xl"/>
             </div>
           </div>
           
-          <h2>Fase 1: Registro en la plataforma</h2>
+          <h2 className="font-bold font-Poppins text-purple mx-4">Fase 1: Registro en la plataforma</h2>
           <p></p>
         </div>
-        <div>
-          <h2>Fase 2: Cuentanos un poco sobre ti queremos conocerte</h2>
+
+        <div className="flex justify-between items-center mt-6">
+          <div className=" flex justify-center items-center mx-4 bg-dark rounded-full h-[150px] w-[10px]">
+            <div className="bg-dark w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-2xl">
+            </div>
+          </div>
+
+          <h2 className="font-bold font-Poppins text-dark mx-4">Fase 2: Cuentanos un poco sobre ti, queremos conocerte</h2>
           <p></p>
         </div>
-        <div>
-          <h2>Fase 3: Prueba tecnica</h2>
+
+        <div className="flex justify-between items-center mt-6">
+          <div className=" flex justify-center items-center mx-4 bg-dark rounded-full h-[150px] w-[10px]">
+            <div className="bg-dark w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-2xl">
+              
+            </div>
+          </div>
+
+          <h2 className="font-bold font-Poppins text-dark mx-4">Fase 1: Registro en la plataforma</h2>
           <p></p>
         </div>
+        
+        
       </section>
     </main>
   );
