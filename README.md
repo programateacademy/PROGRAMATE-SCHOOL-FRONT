@@ -37,7 +37,7 @@ What things do you need to install the software and how to see it on the local d
 - Framework
 1. `Tailwind`
 2. `UseFormik`
-3. `Alert Sweet2`
+3. `sweetalert2`
 4. `React router dom`
 5. `React icons`
 6. `yup`
