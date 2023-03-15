@@ -44,12 +44,13 @@ https://deploy-preview-65--dashing-concha-e5f29a.netlify.app/
 
 <div>
 <h2> Authors✒️ </h2>
-<img align="right"  src="https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png?raw=true" />
        
 - [@MariaHerrera03](https://github.com/MariaHerrera03)
 - [@LilyCastillo](https://github.com/lilajoha29)
 - [@SoffiaSanchezz](https://github.com/SoffiaSanchezz)
 - [@DaniloDiaz08](https://github.com/DaniloDiaz08)
+       <img align="right"   src="https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png?raw=true" />
+
 - [@MichiCmc](https://github.com/MichiCmc)
 </div>
 
