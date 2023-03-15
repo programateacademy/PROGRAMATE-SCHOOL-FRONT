@@ -64,6 +64,9 @@ const Social = () => {
             <Link to='/Student'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
+                Informacion Social
+            </h2>
 
             <form onSubmit={handleSubmit} className=' font-Poppins' >
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
@@ -75,7 +78,7 @@ const Social = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén?</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén? <small className='text-red/80'>*</small></label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -103,7 +106,7 @@ const Social = () => {
                     {/* question 18 id ethnicGroup */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico? <small className='text-red/80'>*</small></h3>
                         <select
                             id='ethnicGroup'
                             value={values.ethnicGroup}
@@ -132,7 +135,7 @@ const Social = () => {
                     {/* question 19 id nationality */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?   <small className='text-red/80'>*</small></h3>
                         <select
                             id='nationality'
                             value={values.nationality}
@@ -153,7 +156,7 @@ const Social = () => {
                     </div>
 
                     {/* the break line in the form */}
-                    <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
                     {/* question 20 id disability */}
 
@@ -162,7 +165,7 @@ const Social = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces a población en situación de discapacidad?</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces a población en situación de discapacidad? <small className='text-red/80'>*</small> </label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -190,7 +193,7 @@ const Social = () => {
                     {/* question 21 id typeDisability */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes? <small className='text-red/80'>*</small></h3>
                         <select
                             id='typeDisability'
                             value={values.typeDisability}

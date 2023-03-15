@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { logicShema } from '../../schemas/formSchema' 
 import defaultApi from '../../apis/index'
+import swal from 'sweetalert2'
+
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -35,7 +38,16 @@ const Logic = () => {
         defaultApi
             .post("/registertoannouncement", view7)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                swal.fire({
+                    text: 'Se ha inscrito a la convocatoria EXITOSAMENTE',
+                    confirmButtonText: 'OK',
+                    timer: '3000',
+                    color: '#262425',
+                    confirmButtonColor: '#FBC209',
+                    background: '#FFFFFF',
+                    font: 'Poppins'
+                });
+        
                 //  navigator("/")
             })
             .then(err => {
@@ -73,7 +85,7 @@ const Logic = () => {
                 {/* question 50 id logic1 */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores?</h3>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores? <small className='text-red/80'>*</small></h3>
                     <select
                         value={values.logic1}
                         onChange={handleChange}
@@ -100,7 +112,7 @@ const Logic = () => {
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
                         Tres no veían por el ojo derecho, tres no veían por el ojo izquierdo y tres tanto por el derecho
                         como por el izquierdo. Otros tres eran completamente ciegos. ¿Cuántos tiburones había como
-                        mínimo?</h3>
+                        mínimo? <small className='text-red/80'>*</small></h3>
                     <select
                         value={values.logic2}
                         onChange={handleChange}
@@ -129,7 +141,7 @@ const Logic = () => {
                         onBlur={handleBlur}  
                         className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua? <small className='text-red/80'>*</small></label>
                             <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic3.png?raw=true'/><br/>
                             <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
                                 <div className='flex flex-row'>
@@ -210,7 +222,7 @@ const Logic = () => {
                         onBlur={handleBlur}
                         className='font-Nunito'>
                         <article className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua? <small className='text-red/80'>*</small></label>
                             <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic4.png?raw=true'/><br/>
                             <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
                                 <div className='flex flex-row'>
@@ -287,7 +299,7 @@ const Logic = () => {
                         onClick={logicP}
                         disabled={!(isValid && dirty)}
                         type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Finalizar</button>
                 </Link>
                 </div>
                 <br/>
