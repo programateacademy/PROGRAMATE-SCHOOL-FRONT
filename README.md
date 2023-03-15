@@ -2,7 +2,7 @@
 <img
        width="300" align="" src="https://user-images.githubusercontent.com/114118697/225444952-bbe51088-9f2a-4f47-8d95-5d4332a1b78e.png" />
        <hr/>
-       <img  width="50" align="left" src="https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true"/>
+       <img  width="60" align="left" src="https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1-amarilla.png?raw=true"/>
        </div>
 <p>We created a user interface in which the student will find a landing pages with the information of programarte School in which students can register and register to the different calls, what we wanted with this project is an educational application with a simple and interactive design for people who visit the website. </p>
 
