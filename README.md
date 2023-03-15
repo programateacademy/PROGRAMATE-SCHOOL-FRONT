@@ -24,9 +24,9 @@ What things do you need to install the software and how to see it on the local d
   -git clone https://github.com/programateacademy/PROGRAMATE-SCHOOL-FRONT.git 
   ```
 </p>
-<img align="right" width="650" src="https://github.com/SoffiaSanchezz/Img/blob/main/assets/Vista_Responsive.png?raw=true" />
 
 <h3>Installation 🔧 </h3>
+<img align="right" width="600" src="https://github.com/SoffiaSanchezz/Img/blob/main/assets/Vista_Responsive.png?raw=true" />
  
  - Frond-End Installation
  
