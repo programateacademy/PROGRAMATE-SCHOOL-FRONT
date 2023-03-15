@@ -16,6 +16,7 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
+import SuccessfulRegistration from './components/Home/SuccessfulRegistration'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/Form' element={<Form />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
+          <Route path='/SuccessfulRegistration' element={<SuccessfulRegistration/>} exact></Route>
           {/* routes for registration form */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
