@@ -83,13 +83,13 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2 '}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,C,D,A'>
                             El orden de llegada es B, C, D, A</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,A,C,D'>
                             El orden de llegada es B, A, C, D</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,D,C,A'>
                             El orden de llegada es B, D, C, A</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='A,B,D,A'>
                             El orden de llegada es A, B, D, A</option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
@@ -110,11 +110,11 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'}>
                         <option className='font-medium text-dark sm:mx-40'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q1'>
                             Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q2'>
                             Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q3'>
                             Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}

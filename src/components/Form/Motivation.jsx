@@ -262,17 +262,17 @@ const Motivation = () => {
                         id='withdrawal'
                         data-te-select-init data-te-select-filter='true'
                         className={errors.withdrawal && touched.withdrawal ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'} >
-                                <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark'>
                                     Selecciona una opción </option>
-                                <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='retirarse del colegio'>
                                     retirarme del colegio </option>
-                                <option className='font-medium text-dark'>
-                                    Tener actividades ectracuriculares / empieza a fallar en algunas materias </option>
-                                <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='actividades extracuriculares'>
+                                    Tener actividades extracurriculares / empieza a fallar en algunas materias </option>
+                            <option className='font-medium text-dark' value='tiempo'>
                                     Disponibilidad de tiempo </option>
-                                <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Conectividad'>
                                     Conectividad </option>
-                                <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Ninguna'>
                                     Ninguna de las anteriores </option>
                     </select>
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
