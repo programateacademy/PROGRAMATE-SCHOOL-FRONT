@@ -12,7 +12,7 @@
 
 See Deployment to learn how to deploy the project.
 </p>
-<h3> Prerequisites 📋 </h3>
+<h3>  Prerequisites 📋 </h3>
 <p>
 What things do you need to install the software and how to see it on the local device.
 
@@ -51,4 +51,4 @@ https://deploy-preview-65--dashing-concha-e5f29a.netlify.app/
 - [@DaniloDiaz08](https://github.com/DaniloDiaz08)
 - [@MichiCmc](https://github.com/MichiCmc)
 </div>
-
+<img align="right"  src="https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png?raw=true" />
