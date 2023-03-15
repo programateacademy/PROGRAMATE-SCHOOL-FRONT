@@ -34,6 +34,15 @@ What things do you need to install the software and how to see it on the local d
 2. `npm install`
 3. `npm run dev`
 
+- Framework
+1. `Tailwind`
+2. `UseFormik`
+3. `Alert Sweet2`
+4. `React router dom`
+5. `React icons`
+6. `yup`
+7. `Axios`
+
 <h3>Deployment 📦</h3>
 <p>The deployment is ready to run </p>
 
