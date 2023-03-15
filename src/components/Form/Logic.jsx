@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { logicShema } from '../../schemas/formSchema' 
 import defaultApi from '../../apis/index'
 import swal from 'sweetalert2'
@@ -68,7 +69,7 @@ const Logic = () => {
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
             <Link to='/Motivation'>
@@ -95,13 +96,13 @@ const Logic = () => {
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, C, D, A </option>
+                            El orden de llegada es B, C, D, A</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, A, C, D </option>
+                            El orden de llegada es B, A, C, D</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es B, D, C, A </option>
+                            El orden de llegada es B, D, C, A</option>
                         <option className='font-medium text-dark'>
-                            El orden de llegada es A, B, D, A </option>
+                            El orden de llegada es A, B, D, A</option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
                 </div>

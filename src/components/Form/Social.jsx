@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { socialShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -37,7 +38,7 @@ const Social = () => {
         defaultApi
             .post("/registertoannouncement", view2)
             .then((res) => { 
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -157,6 +158,8 @@ const Social = () => {
 
                     {/* the break line in the form */}
                     <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" border-2 border-yellow mb-2 rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    
 
                     {/* question 20 id disability */}
 

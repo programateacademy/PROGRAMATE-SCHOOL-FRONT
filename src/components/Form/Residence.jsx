@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { residenceShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -37,7 +38,7 @@ const Residence = () => {
         defaultApi
             .post("/registertoannouncement", view3)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -127,7 +128,7 @@ const Residence = () => {
                     onBlur={handleBlur}
                     className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label
-                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?<small className='text-red/80'>*</small></label>
+                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?</label>
                     <label className='flex flex-row font-Nunito'>
                         <input
                             type="radio"

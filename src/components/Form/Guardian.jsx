@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { guardianShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -51,7 +52,7 @@ const Guardian = () => {
         defaultApi
             .post("/registertoannouncement", view4)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {

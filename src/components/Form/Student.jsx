@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { studentShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -22,8 +23,8 @@ const Student = () => {
             agePerson: "",
             gender: '',
             document: '',
-            documentPerson: '',
-            institutionPerson: '',
+            documentPerson: '52685462',
+            institutionPerson: 'colegio inegrada la calendaria',
             course: '',
             sena: '',
             availability: '',
@@ -59,7 +60,7 @@ const Student = () => {
         defaultApi
             .post("/registertoannouncement", view1)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
