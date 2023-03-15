@@ -1,6 +1,5 @@
 import { React, useState } from 'react'
 import Modal from '../components/Modal'
-import { useNavigate } from 'react-router-dom'
 import defaultApi from '../apis/index'
 import { useFormik } from 'formik'
 import { signupSchema } from '../schemas/formSchema'
@@ -34,8 +33,6 @@ const [showModal, setShowModal] = useState(false)
 
 const handleOnClose = () => setShowModal(false)
 
-const navigator = useNavigate();
-
 function signUp() {
     var signP = {
         name1Person: values.name1Person,
@@ -60,7 +57,6 @@ function signUp() {
             confirmButtonColor: '#FBC209',
             background: '#FFFFFF',
         });
-        //  navigator("/")
     })
     .then(err => {
         console.log(err)
