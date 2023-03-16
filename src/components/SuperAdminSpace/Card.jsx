@@ -72,3 +72,4 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
         </div>
     );
 };
+}
