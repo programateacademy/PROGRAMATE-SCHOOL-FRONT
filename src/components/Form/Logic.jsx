@@ -4,6 +4,9 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
 import { logicShema } from '../../schemas/formSchema' 
 import defaultApi from '../../apis/index'
+import swal from 'sweetalert2'
+
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -36,7 +39,15 @@ const Logic = () => {
         defaultApi
             .post("/registertoannouncement", view7)
             .then((res) => {
-                alert(" ha inscrito en la convocatoriaSe");
+                swal.fire({
+                    text: 'Se ha inscrito a la convocatoria EXITOSAMENTE',
+                    confirmButtonText: 'OK',
+                    timer: '3000',
+                    color: '#262425',
+                    confirmButtonColor: '#FBC209',
+                    background: '#FFFFFF',
+                    font: 'Poppins'
+                });
                 //  navigator("/")
             })
             .then(err => {
@@ -74,7 +85,7 @@ const Logic = () => {
                 {/* question 50 id logic1 */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores?</h3>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores? <small className='text-red/80'>*</small></h3>
                     <select
                         value={values.logic1}
                         onChange={handleChange}
@@ -83,13 +94,13 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2 '}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,C,D,A'>
                             El orden de llegada es B, C, D, A</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,A,C,D'>
                             El orden de llegada es B, A, C, D</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='B,D,C,A'>
                             El orden de llegada es B, D, C, A</option>
-                        <option className='font-medium text-dark'>
+                        <option className='font-medium text-dark' value='A,B,D,A'>
                             El orden de llegada es A, B, D, A</option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
@@ -101,7 +112,7 @@ const Logic = () => {
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
                         Tres no veían por el ojo derecho, tres no veían por el ojo izquierdo y tres tanto por el derecho
                         como por el izquierdo. Otros tres eran completamente ciegos. ¿Cuántos tiburones había como
-                        mínimo?</h3>
+                        mínimo? <small className='text-red/80'>*</small></h3>
                     <select
                         value={values.logic2}
                         onChange={handleChange}
@@ -110,11 +121,11 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'}>
                         <option className='font-medium text-dark sm:mx-40'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q1'>
                             Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q2'>
                             Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
-                        <option className='font-medium text-dark sm:mx-40'>
+                        <option className='font-medium text-dark sm:mx-40' value='Q3'>
                             Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}
@@ -130,7 +141,7 @@ const Logic = () => {
                         onBlur={handleBlur}  
                         className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua? <small className='text-red/80'>*</small></label>
                             <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic3.png?raw=true'/><br/>
                             <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
                                 <div className='flex flex-row'>
@@ -205,12 +216,13 @@ const Logic = () => {
                 
                     <div className='flex flex-col'>
                     <section
+                    id='logic4'
                         value={values.logic4}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='font-Nunito'>
                         <article className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué figura continua? <small className='text-red/80'>*</small></label>
                             <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/logic4.png?raw=true'/><br/>
                             <div className="flex flex-row gap-7 lg:gap-14 justify-center">   
                                 <div className='flex flex-row'>
@@ -287,7 +299,7 @@ const Logic = () => {
                         onClick={logicP}
                         disabled={!(isValid && dirty)}
                         type='submit'
-                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Finalizar</button>
                 </Link>
                 </div>
                 <br/>
