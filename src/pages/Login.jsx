@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { useNavigate, Link,  } from 'react-router-dom'
 import defaultApi from '../apis/index'
+import swal from 'sweetalert2'
 
 
 function LoginPerson() {
@@ -21,7 +22,14 @@ function loginPerson() {
     defaultApi
     .post("/login", loginP)
     .then((res) => {
-        alert("OK");
+        swal.fire({
+                text: 'Ingreso exitoso, seguimos trabajando en el enrutamiento ',
+                confirmButtonText: 'OK',
+                timer: '3000',
+                color: '#262425',
+                confirmButtonColor: '#FBC209',
+                background: '#FFFFFF',
+            });
         // navigator("/")
     })
     .then((err) => {
@@ -29,9 +37,23 @@ function loginPerson() {
     })
     .catch((err) => {
         if (err.response.status === 401) {
-            alert("Usuario no encontrado");
+            swal.fire({
+                text: 'Usuario no encontrado',
+                confirmButtonText: 'OK',
+                timer: '3000',
+                color: '#262425',
+                confirmButtonColor: '#FBC209',
+                background: '#FFFFFF',
+            });
         } else if (err.response.status === 403) {
-            alert("Contraseña incorrecta");
+            swal.fire({
+                text: 'Contraseña incorrecta',
+                confirmButtonText: 'OK',
+                timer: '3000',
+                color: '#262425',
+                confirmButtonColor: '#FBC209',
+                background: '#FFFFFF',
+            });
         }
     });
 }
@@ -58,7 +80,7 @@ function loginPerson() {
                         </button>
                     <h5 className='pt-1 text-center text-dark text-xs font-Nunito italic '>Olvidaste tu contraseña, <a href='https://github.com/programateacademy/PROGRAMATE-SCHOOL-FRONT' target='_blank'><b className='hover:text-red'>recupérala aquí</b></a></h5>
                 </div>
-                <button onClick={loginPerson} className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Ingresar</button>
+                <button onClick={loginPerson} className='flex button md:text-base'>Ingresar</button>
                 <h4 className='mx-20 md:mx-16 pt-6 text-center text-dark text-sm font-Nunito'>¿No tienes una cuenta?</h4>
                 <Link to='/Singup'><h5 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito'><b><button className='text-dark hover:text-red'>Regístrate aquí</button></b>.</h5></Link>
             </div>

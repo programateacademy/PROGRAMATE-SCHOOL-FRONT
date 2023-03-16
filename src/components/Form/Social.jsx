@@ -1,7 +1,9 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { socialShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,7 +12,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Social = () => {
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             sisben: '',
             ethnicGroup: '',
@@ -21,32 +24,62 @@ const Social = () => {
         validationSchema: socialShema,
         onSubmit
     });
-    console.log(errors);
+    // console.log(errors);
+    // backend connection
+    function socialP() {
+        var view2 = {
+            sisben: values.sisben,
+            ethnicGroup: values.ethnicGroup,
+            nationality: values.nationality,
+            disability: values.disability,
+            typeDisability: values.typeDisability,
+        }
+        console.log(view2);
+        defaultApi
+            .post("/registertoannouncement", view2)
+            .then((res) => { 
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
 
     return (
         <div>
-                {/* cover image with logo */}
-                <div className='flex h-72 '>
+            {/* cover image with logo */}
+            <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoUNO.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
-                    <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                        <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
-                    </div>
+                <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
-                <Link to='/Student'>
-                    <button className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-light text-sm font-Poppins font-medium'>Atras</button>
-                </Link>
-                
-            <form onSubmit={handleSubmit} className=' font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
-                <div>
+            </div>
+            <Link to='/Student'>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+            </Link>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
+                Informacion Social
+            </h2>
+
+            <form onSubmit={handleSubmit} className=' font-Poppins' >
+                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div
-                        id="sisben" 
+                        id="sisben"
                         value={values.sisben}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén?</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces al sisbén? <small className='text-red/80'>*</small></label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -68,72 +101,72 @@ const Social = () => {
                             />
                             No
                         </label>
-                        {errors.sisben && touched.sisben && <p className='text-red text-xs font-Poppins'>{errors.sisben}</p>} 
+                        {errors.sisben && touched.sisben && <p className='text-red text-xs font-Poppins'>{errors.sisben}</p>}
                     </div>
 
                     {/* question 18 id ethnicGroup */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico? <small className='text-red/80'>*</small></h3>
                         <select
                             id='ethnicGroup'
                             value={values.ethnicGroup}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.ethnicGroup && touched.ethnicGroup ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.ethnicGroup && touched.ethnicGroup ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Palenquero'>
                                 Palenquero </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Afrocolombiano'>
                                 Afrocolombiano o Afrodecendiente </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Indigena'>
                                 Indigena </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Gitano'>
                                 Gitano </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Raizal'>
                                 Raizal </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Ninguna'>
                                 Ninguna de las anteriores </option>
                         </select>
-                        {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>} 
+                        {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>}
                     </div>
 
                     {/* question 19 id nationality */}
-                    
+
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?   <small className='text-red/80'>*</small></h3>
                         <select
                             id='nationality'
                             value={values.nationality}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.nationality && touched.nationality ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.nationality && touched.nationality ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='ven'>
                                 Venezolan@ </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='col'>
                                 Colombian@</option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='otro'>
                                 Otra </option>
                         </select>
-                        {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}   
+                        {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}
                     </div>
 
                     {/* the break line in the form */}
-                    <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
                     {/* question 20 id disability */}
 
-                    <div 
+                    <div
                         value={values.disability}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces a población en situación de discapacidad?</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Perteneces a población en situación de discapacidad? <small className='text-red/80'>*</small> </label>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -155,39 +188,39 @@ const Social = () => {
                             />
                             No
                         </label>
-                        {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>} 
+                        {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>}
                     </div>
 
                     {/* question 21 id typeDisability */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes? <small className='text-red/80'>*</small></h3>
                         <select
                             id='typeDisability'
                             value={values.typeDisability}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
-                            className={errors.typeDisability && touched.typeDisability ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                            className={errors.typeDisability && touched.typeDisability ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Fisica'>
                                 Fisica </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Auditiva'>
                                 Auditiva </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Visual'>
                                 Visual </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Cognitiva'>
                                 Intelectual / Cognitiva </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='SordoCegera'>
                                 SordoCegera </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Pisicosocial'>
                                 Pisicosocial </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Multiple'>
                                 Multiple </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='otra'>
                                 Otra </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Ninguna'>
                                 Ninguno de los anteriores </option>
                         </select>
                         {errors.typeDisability && touched.typeDisability && <p className='text-red text-xs font-Poppins'>{errors.typeDisability}</p>}
@@ -195,12 +228,16 @@ const Social = () => {
 
                 </div>
 
-                {/* <Link to="/Residence" className='flex justify-end mr-8' > */}
+                <div className='flex justify-end'>
+                <Link to="/Residence" className='mr-8 col-span-2 w-28' >
                 <button
+                    onClick={socialP}
+                    disabled={!(isValid && dirty)}
                         type='submit'
-                        className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-            {/* </Link> */}
-            
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
+                </Link>
+            </div>
+            <br/>
             </form>
         </div>
     )

@@ -4,3 +4,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .button {
+        @apply mx-auto px-6 py-1 rounded bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm md:text-lg font-Poppins font-bold
+    }
+    .scrollbar::-webkit-scrollbar, #descripScroll::-webkit-scrollbar {
+        @apply w-2
+    }
+    .scrollbar-track::-webkit-scrollbar-track, #descripScroll::-webkit-scrollbar-track {
+        @apply bg-transparent
+    }
+    .scrollbar-thumb::-webkit-scrollbar-thumb, #descripScroll::-webkit-scrollbar-thumb {
+        @apply bg-dark rounded-lg
+    }
+}

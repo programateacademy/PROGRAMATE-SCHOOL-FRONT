@@ -12,7 +12,7 @@ export const Benefist = () => {
     <main className="mx-6 md:mx-24">
       <section className="flex items-end justify-end absolute right-4">
         <Link to="/Login" >
-          <button className="  mx-auto bg-yellow text-light shadow-md shadow-dark/50 hover:bg-dark text-center text-sm font-Poppins font-medium fixed bottom-4 right-4 px-4 py-2 rounded-md">Participa ya!</button>
+          <button className="button fixed bottom-4 right-4 z-40 border-2 border-dark">Participa ya!</button>
         </Link>
       </section>
       {/*Program benefits*/}
@@ -31,7 +31,7 @@ export const Benefist = () => {
         <object className="md:grid md:grid-cols-3 md:pt-36 lg:grid lg:grid-cols-3 lg:pt-40">
           <figure className="flex justify-center md:pt-10 lg:pt-16 pb-4 lg:pb-0">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-40 m-4">
+            <div className="w-40 h-30 z-20 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -44,7 +44,7 @@ export const Benefist = () => {
 
           <figure className="flex justify-center lg:pb-16 pb-4">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-40 m-4">
+            <div className="w-40 h-30 z-20 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -57,7 +57,7 @@ export const Benefist = () => {
 
           <figure className="flex justify-center md:pt-10 lg:pt-16">
             <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-40 m-4">
+            <div className="w-40 h-30 z-20 m-4">
               <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
                 Cero costo
               </h5>
@@ -97,7 +97,7 @@ export const Benefist = () => {
             {/*Button to apply to the program*/}
             <article className="pb-2">
               <Link to="/Login">
-                <button className="flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium">
+                <button className="flex button">
                   Aplicar Ahora!</button>
               </Link>
             </article>

@@ -1,13 +1,17 @@
 import React from 'react'
 import CreationComp from '../components/SuperAdminSpace/CreationComp'
-import Card from '../components/SuperAdminSpace/Card'
+import Navbar from '../components/Navbar'
+import VerticalNavbar from '../components/VerticalNavbar'
+
 
 const SuperAdminSpace = () => {
     return (
-        <div>
-            SuperAdminSpace
-            <CreationComp/>
-            <Card/>
+        <div className='mx-4 md:mx-14'>
+            <Navbar/>
+            <section className='flex'>
+                <CreationComp className=''/>
+                <VerticalNavbar className=''/>
+            </section>
         </div>
     )
 }
