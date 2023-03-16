@@ -18,6 +18,7 @@ export const Footer = () => {
                 </div>
 
                 {/* Talk about the program */}
+
                 <section className='bg-dark w-full md:grid md:grid-cols-3 py-14'>
                     <div className='mx-16 md:mx-24 flex flex-col gap-6 md:gap-16'>
                         <img src='https://i.ibb.co/j4GBFg6/programate-school-blancos-2.png' alt='programate-school'/>
@@ -53,6 +54,7 @@ export const Footer = () => {
                     </div>
                 </section>
             </footer>
+
         </>
     )
 }

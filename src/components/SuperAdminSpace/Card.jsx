@@ -72,6 +72,3 @@ const [procesoSeleccion, setProcesoSeleccion] = useState(tarjeta.procesoSeleccio
         </div>
     );
 };
-}
-
-export default Card
