@@ -84,7 +84,7 @@ const Student = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>
+            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2xl'>
                 Informacion del estudiante
             </h2>
             {/* form start text */}

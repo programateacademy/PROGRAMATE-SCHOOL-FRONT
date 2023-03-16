@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Singup from './pages/Singup'
@@ -13,6 +13,7 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
+import ProtectedRoutes from './components/Routes/ProtectedRoutes'
 
 
 function App() {
@@ -24,8 +25,11 @@ function App() {
           <Route path='/' element={<Home />} exact></Route>
           <Route path='/Login' element={<Login />} exact></Route>
           <Route path='/Singup' element={<Singup />} exact></Route>
-          <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
+          {/* Protected routes */}
+          <Route element={ProtectedRoutes}>
+          <Route path='/StudentSpace' element={<StudentSpace/>} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
+          </Route>
           {/* Form paths */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
@@ -34,6 +38,7 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
+          <Route path='*' element={ <Navigate to="/Login" />} exact></Route>
         </Routes>
       </BrowserRouter>
     </div>
