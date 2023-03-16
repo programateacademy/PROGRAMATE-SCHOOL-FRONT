@@ -30,7 +30,7 @@ export const Footer = () => {
                         <h3 className='text-lg md:text-2xl font-Poppins font-semibold text-light pb-3'>Sobre el programa</h3>
                         <h4 className='text-sm text-light font-Nunito font-light pb-6 md:pb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis.</h4>
                         <Link to="/Login">
-                        <button className="flex mx-auto md:mx-0 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-light text-center text-light hover:text-yellow text-sm font-Poppins font-medium">Participa ya!</button></Link>
+                        <button className="button hover:bg-light hover:text-dark">Participa ya!</button></Link>
                     </div>
                     {/*icons and contact*/}
                     <div className='mx-16 md:mx-20 text-center md:text-left'>

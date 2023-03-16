@@ -1,7 +1,9 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { guardianShema } from '../../schemas/formSchema'
+import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -10,8 +12,8 @@ const onSubmit = async (values, actions) => {
 }
 
 const Guardian = () => {
-
-    const { values, handleChange, handleBlur, handleSubmit, errors, touched } = useFormik({
+        // formk validations
+    const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
             nameGuardian: '',
             relationship: '',
@@ -29,8 +31,42 @@ const Guardian = () => {
         validationSchema: guardianShema,
         onSubmit
     });
-    console.log(errors);
-    
+    // console.log(errors);
+    // backend connection
+    function guardianP() {
+        var view4 = {
+            nameGuardian: values.nameGuardian,
+            relationship: values.relationship,
+            documentTypeGuardian: values.documentTypeGuardian,
+            numberIdGuardian: values.numberIdGuardian,
+            emailGuardian: values.emailGuardian,
+            phoneGuardian: values.phoneGuardian,
+            phoneGuardianTwo: values.phoneGuardianTwo,
+            addressGuardian: values.addressGuardian,
+            departmentGuardian: values.departmentGuardian,
+            educationLevelGuardian: values.educationLevelGuardian,
+            economic: values.economic,
+            family: values.family
+        }
+        console.log(view4);
+        defaultApi
+            .post("/registertoannouncement", view4)
+            .then((res) => {
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
+                //  navigator("/")
+            })
+            .then(err => {
+                console.log(err)
+            })
+            .catch(err => {
+                if (err.response.status === 409) {
+                    alert("Ya existe un usuario con este documento");
+                } else if (err.response.status === 408) {
+                    alert("Ya existe un usuario con este Correo");
+                }
+            })
+    }
+
     return (
         <div>
             <div className='flex h-72 '>
@@ -41,7 +77,7 @@ const Guardian = () => {
             </div>
 
             <Link to='/Residence'>
-                <button className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Atras</button>
+                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
             <form onSubmit={handleSubmit}  className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 ' >
@@ -51,7 +87,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 ' >
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Nombre completo de tu acudiente</label>
                     <input
-                        className={errors.nameGuardian && touched.nameGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.nameGuardian && touched.nameGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
                         id='nameGuardian'
                         name='nameGuardian'
@@ -68,7 +104,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6  '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Parentesco contigo</label>
                     <input
-                        className={errors.relationship && touched.relationship ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.relationship && touched.relationship ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
                         id='relationship'
                         name='relationship'
@@ -91,7 +127,7 @@ const Guardian = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true'
-                        className={errors.documentTypeGuardian && touched.documentTypeGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        className={errors.documentTypeGuardian && touched.documentTypeGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -115,7 +151,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Numero de documento</label>
                     <input
-                        className={errors.numberIdGuardian && touched.numberIdGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.numberIdGuardian && touched.numberIdGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
                         id='numberIdGuardian'
                         name='numberIdGuardian'
@@ -133,7 +169,7 @@ const Guardian = () => {
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
                     <p className=' font-Nunito text-gray-500 text-sm '> En este correo enviaremos copia de la información sobre todo el proceso, te recomendamos que sea el correo que revise constantemente</p>
                     <input
-                        className={errors.emailGuardian && touched.emailGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.emailGuardian && touched.emailGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:w-1/2'}
                         type="Email"
                         id='emailGuardian'
                         name='emailGuardian'
@@ -150,7 +186,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente</label>
                     <input
-                        className={errors.phoneGuardian && touched.phoneGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.phoneGuardian && touched.phoneGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="number"
                         id='phoneGuardian'
                         name='phoneGuardian'
@@ -167,7 +203,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
                     <input
-                        className={errors.phoneGuardianTwo && touched.phoneGuardianTwo ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.phoneGuardianTwo && touched.phoneGuardianTwo ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="number"
                         id='phoneGuardianTwo'
                         name='phoneGuardianTwo'
@@ -184,7 +220,7 @@ const Guardian = () => {
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
                     <input
-                        className={errors.addressGuardian && touched.addressGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
+                        className={errors.addressGuardian && touched.addressGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
                         id='addressGuardian'
                         name='addressGuardian'
@@ -206,7 +242,7 @@ const Guardian = () => {
                         value={values.departmentGuardian}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.departmentGuardian && touched.departmentGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.departmentGuardian && touched.departmentGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-Poppins font-medium text-dark'>Selecciona una opción</option>
                         <option className='font-Poppins font-medium text-dark'>Atlántico</option>
                         <option className='font-medium text-dark'>Bogotá</option>
@@ -228,7 +264,7 @@ const Guardian = () => {
                         value={values.educationLevelGuardian}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.educationLevelGuardian && touched.educationLevelGuardian ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.educationLevelGuardian && touched.educationLevelGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -267,7 +303,7 @@ const Guardian = () => {
                         value={values.economic}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.economic && touched.economic ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.economic && touched.economic ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -294,7 +330,7 @@ const Guardian = () => {
                         value={values.family}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        data-te-select-init data-te-select-filter='true' className={errors.family && touched.family ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
+                        data-te-select-init data-te-select-filter='true' className={errors.family && touched.family ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
                         <option className='font-medium text-dark'>
@@ -309,12 +345,16 @@ const Guardian = () => {
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>} 
                 </div>
 
-                {/* <Link className='flex justify-end' to='/Vocation'> */}
-                <button
+                <div className='flex justify-end'>
+                <Link className='mr-8 col-span-2 w-28' to='/Vocation'>
+                    <button
+                        onClick={guardianP}
+                        disabled={!(isValid && dirty)}
                     type='submit'
-                    className='flex m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Siguiente</button>
-                {/* </Link> */}
-
+                        className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
+                </Link>
+                </div>
+                <br/>
             </form>
         </div>
     )
