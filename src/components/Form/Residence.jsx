@@ -63,10 +63,13 @@ const Residence = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-
             <Link to='/Social'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
+
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
+                Informacion de Recidencia
+            </h2>
             <form
                 onSubmit={handleSubmit}
                 className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
@@ -74,7 +77,7 @@ const Residence = () => {
                 {/* question 22 id addressStudent */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia</label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia <small className='text-red/80'>*</small></label>
                     <input
                         className={errors.addressStudent && touched.addressStudent ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
@@ -91,7 +94,7 @@ const Residence = () => {
                 {/* question 23 id departmentStudent */}
 
                 <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>department de residencia</label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>department de residencia <small className='text-red/80'>*</small> </label>
                     <select
                         id='departmentStudent'
                         name='departmentStudent'
@@ -124,7 +127,7 @@ const Residence = () => {
                     onBlur={handleBlur}
                     className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label
-                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu departmento?</label>
+                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?<small className='text-red/80'>*</small></label>
                     <label className='flex flex-row font-Nunito'>
                         <input
                             type="radio"
@@ -152,7 +155,7 @@ const Residence = () => {
                 {/* question 25 id bogota */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia?</label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia? <small className='text-red/80'>*</small></label>
                     <select
                         id='bogota'
                         name='bogota'
@@ -181,7 +184,7 @@ const Residence = () => {
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico?
-                        (De acuerdo con la estratificación reportada en los recibos de servicios públicos)</label>
+                        (De acuerdo con la estratificación reportada en los recibos de servicios públicos) <small className='text-red/80'>*</small></label>
                     <select
                         id='stratum'
                         name='stratum'

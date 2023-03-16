@@ -84,6 +84,9 @@ const Student = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
+            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>
+                Informacion del estudiante
+            </h2>
             {/* form start text */}
 
             <div>
@@ -99,7 +102,7 @@ const Student = () => {
 
                         {/* question 1 id name1Person */}
 
-                        <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</h3>
+                        <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres: <small className='text-red/80'>*</small></h3>
                         <input
                             id="name1Person"
                             value={values.name1Person}
@@ -126,7 +129,7 @@ const Student = () => {
                     {/* question 3 id lastname1Person */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-2 gap-x-2'>
-                        <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos:</h3>
+                        <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos: <small className='text-red/80'>*</small></h3>
                         <input
                             id='lastname1Person'
                             value={values.lastname1Person}
@@ -150,7 +153,7 @@ const Student = () => {
 
 
                     <div className='flex flex-col mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Fecha de nacimiento:</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Fecha de nacimiento: <small className='text-red/80'>*</small></label>
                         <input
                             value={values.birthdate}
                             onChange={handleChange}
@@ -165,7 +168,7 @@ const Student = () => {
                     {/* question 6 id agePerson */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad: <small className='text-red/80'>*</small></h3>
                         <input
                             id='agePerson'
                             value={values.agePerson}
@@ -181,7 +184,7 @@ const Student = () => {
                     {/* question 7 id gender */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género? <small className='text-red/80'>*</small></h3>
                         <select
                             id='gender'
                             value={values.gender}
@@ -204,7 +207,7 @@ const Student = () => {
                     {/* question 8 id document */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Tipo de documento</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Tipo de documento: <small className='text-red/80'>*</small></h3>
                         <select
                             value={values.document}
                             onChange={handleChange}
@@ -233,7 +236,7 @@ const Student = () => {
                     {/* question 9 id documentPerson */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento: <small className='text-red/80'>*</small></h3>
                         <input
                             id="documentPerson"
                             value={values.documentPerson}
@@ -250,7 +253,7 @@ const Student = () => {
                     {/* question 10 id institutionPerson */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Institución:</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Institución educativa a la que Pertenece? <small className='text-red/80'>*</small></h3>
                         <select
                             value={values.institutionPerson}
                             onChange={handleChange}
@@ -270,7 +273,7 @@ const Student = () => {
                     {/* question 11 id course */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estas cursando Actualmente?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estas cursando Actualmente? <small className='text-red/80'>*</small></h3>
                         <select
                             id='course'
                             value={values.course}
@@ -295,7 +298,7 @@ const Student = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Te encuentras cursando SENA u Horas sociales?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Te encuentras cursando SENA u Horas sociales? <small className='text-red/80'>*</small> </h3>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -329,7 +332,7 @@ const Student = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con Disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM?</h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con Disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM? <small className='text-red/80'>*</small></h3>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -354,25 +357,12 @@ const Student = () => {
                         {errors.availability && touched.availability && <p className='text-red text-xs font-Poppins'>{errors.availability}</p>}
                     </div>
 
-                    {/* question 14 id emailPerson */}
-
-                    <div className='mx-12 sm:mx-40 md:mx-16 md:col-span-2 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Correo:</h3>
-                        <p className=' font-Nunito text-sm text-dark/60'> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
-                        <input
-                            id="emailPerson"
-                            value={values.emailPerson}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            type='email' placeholder='correo@correo.edu.co' className={errors.emailPerson && touched.emailPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:w-1/2'}></input>
-                        {errors.emailPerson && touched.emailPerson && <p className='text-red text-xs font-Poppins'>{errors.emailPerson}</p>}
-                    </div>
 
                     {/* the birth input with the id phone */}
                     {/* question 15 id phone */}
 
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal  <small className='text-red/80'>*</small></label>
                         <input
                             id='phone'
                             value={values.phone}
@@ -396,6 +386,19 @@ const Student = () => {
                             placeholder='000 000 00 00'
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
+                    {/* question 14 id emailPerson */}
+
+                    <div className='mx-12 sm:mx-40 md:mx-16  lg:mx-28 pb-6'>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Correo: <small className='text-red/80'>*</small></h3>
+                        <input
+                            id="emailPerson"
+                            value={values.emailPerson}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            type='email' placeholder='correo@correo.edu.co' className={errors.emailPerson && touched.emailPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
+                        {errors.emailPerson && touched.emailPerson && <p className='text-red text-xs font-Poppins'>{errors.emailPerson}</p>}
+                        <p className=' font-Nunito text-sm text-dark/60'> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
+                    </div>
 
                     <div className='flex justify-end col-span-2'>
                         <Link to="/Social" className='mr-8 w-28' >
@@ -406,7 +409,7 @@ const Student = () => {
                                 className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                         </Link>
                     </div>
-                    <br/>
+                    <br />
                 </div>
             </form>
 

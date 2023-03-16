@@ -64,6 +64,11 @@ const Motivation = () => {
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
+                Test Motivacional
+            </h2>
+
+
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
             Ser parte de “PROGRÁMATE SCHOOL”
             </h2>
@@ -79,7 +84,7 @@ const Motivation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Por qué quieres ser parte de Prográmate School?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Por qué quieres ser parte de Prográmate School? <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -139,7 +144,7 @@ const Motivation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué es lo que más te interesa de la metodología?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué es lo que más te interesa de la metodología? <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -199,7 +204,7 @@ const Motivation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles son tus principales sueños en la vida y cómo la formación te aportará a cumplirlos?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles son tus principales sueños en la vida y cómo la formación te aportará a cumplirlos? <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -254,7 +259,7 @@ const Motivation = () => {
                 {/* question 49 id withdrawal */}
 
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación?</h3>
+                    <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación? <small className='text-red/80'>*</small></h3>
                     <select
                         value={values.withdrawal}
                         onChange={handleChange}
