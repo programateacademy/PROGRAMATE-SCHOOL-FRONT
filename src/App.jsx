@@ -13,7 +13,6 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
-import ProtectedRoutes from './components/Routes/ProtectedRoutes'
 
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
           <Route element={ProtectedRoutes}>
           <Route path='/StudentSpace' element={<StudentSpace/>} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
-          </Route>
           {/* Form paths */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>

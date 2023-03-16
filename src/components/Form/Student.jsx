@@ -21,6 +21,7 @@ const Student = () => {
             lastname2Person: '',
             birthdate: '',
             agePerson: "",
+            agePerson: '',
             gender: '',
             document: '',
             documentPerson: '52685462',
@@ -193,11 +194,11 @@ const Student = () => {
                             data-te-select-init data-te-select-filter='true' className={errors.gender && touched.gender ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='F'>
                                 Femenino </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='M'>
                                 Masculino </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Otro'>
                                 Otro </option>
                         </select>
                         {errors.gender && touched.gender && <p className='text-red text-xs font-Poppins'>{errors.gender}</p>}
@@ -217,17 +218,17 @@ const Student = () => {
                         >
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Cc'>
                                 Cédula de Ciudadania </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Ce'>
                                 Cédula de extranjería </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Ti'>
                                 Tarjeta de identidad </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Pasaporte'>
                                 Pasaporte </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='PEP'>
                                 PEP </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='PTP'>
                                 PTP </option>
                         </select>
                         {errors.document && touched.document && <p className='text-red text-xs font-Poppins'>{errors.document}</p>}
@@ -260,11 +261,11 @@ const Student = () => {
                             onBlur={handleBlur} id='institutionPerson' data-te-select-init data-te-select-filter='true'
                             className={errors.institutionPerson && touched.institutionPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>Selecciona una opción</option>
-                            <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
-                            <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
-                            <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
-                            <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
-                            <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
+                            <option className='font-medium text-dark' value='Jardín'>IE El Jardín - Ibagué</option>
+                            <option className='font-medium text-dark' value='Olivo'>El Olivo School - Santa Marta</option>
+                            <option className='font-medium text-dark' value='Candelaria'>Colegio Integrada La Candelaria</option>
+                            <option className='font-medium text-dark' value='Luruaco'>Técnica Agropecuaria Luruaco - Atlantico</option>
+                            <option className='font-medium text-dark' value='Cruz'>Colegio Campo de la Cruz - Atlantico</option>
                         </select>
                         {errors.institutionPerson && touched.institutionPerson && <p className='text-red text-xs font-Poppins'>{errors.institutionPerson}</p>}
                     </div>
@@ -282,9 +283,9 @@ const Student = () => {
                             data-te-select-init data-te-select-filter='true' className={errors.course && touched.course ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='11'>
                                 11° </option>
-                            <option className='font-medium text-dark'>
+                            <option className='font-medium text-dark' value='Otro'>
                                 Otro </option>
                         </select>
                         {errors.course && touched.course && <p className='text-red text-xs font-Poppins'>{errors.course}</p>}
