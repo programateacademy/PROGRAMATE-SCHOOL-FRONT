@@ -30,7 +30,7 @@ function loginPerson() {
                 confirmButtonColor: '#FBC209',
                 background: '#FFFFFF',
             });
-        // navigator("/")
+        // navigator("/") 
     })
     .then((err) => {
         console.log(err);
@@ -66,7 +66,7 @@ function loginPerson() {
             <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-cover bg-center'>
             </div>
             <div className='row-span-2 bg-light py-6 my-auto'>
-                <h1 className='mx-12 sm:mx-12 md:mx-12 lg:mx-26 pb-3 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'>¡Sigue educándote<br/>para el futuro!</h1>
+                    <h1 className='mx-12 sm:mx-12 md:mx-12 lg:mx-26 pb-3 text-center text-yellow text-lg sm:text-2xl md:text-2xl lg:text-3xl font-Poppins font-black uppercase'> A un click de <br /> cambiar tu futuro</h1>
                 <Link to='/Singup'><img className='mx-auto w-[25%] pb-6 md:hidden' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt=''/></Link>
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Usuario:</label>
