@@ -71,6 +71,10 @@ const Vocation = () => {
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
+                Test Vocacional
+            </h2>
+
             <form onSubmit={handleSubmit}>
                 <div className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4'>
                     
@@ -80,7 +84,7 @@ const Vocation = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a un computador en casa o en el colegio?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a un computador en casa o en el colegio? <small className='text-red/80'>*</small></label>
                             <label className='flex flex-row font-Nunito'>
                                 <input
                                     type="radio"
@@ -112,7 +116,7 @@ const Vocation = () => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                                <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a internet en casa o en el colegio?</label>
+                                <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tienes acceso a internet en casa o en el colegio?  <small className='text-red/80'>*</small></label>
                                 <label className='flex flex-row font-Nunito'>
                                     <input
                                         type="radio"
@@ -145,7 +149,7 @@ const Vocation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                     <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles de las siguientes áreas de estudio te llaman más la atención/interesan?</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles de las siguientes áreas de estudio te llaman más la atención/interesan?  <small className='text-red/80'>*</small></label>
                         <div className='flex flex-row'>
                         <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                 <input
@@ -219,7 +223,7 @@ const Vocation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si fueras pasajero en un avión comercial, ¿Cuál actividad te describe mejor?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>  Si fueras pasajero en un avión comercial, ¿Cuál actividad te describe mejor? <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -232,7 +236,7 @@ const Vocation = () => {
                                     A.
                                 </label>
                                 <h3 className=' font-Nunito font-semibold indent-4'>
-                                Conocer a los otros pasajeros y el porqué de sus viajes.
+                                Conocer a los otros pasajeros y el porqué de sus viajes
                                 </h3>
                             </div>
 
@@ -280,7 +284,7 @@ const Vocation = () => {
                                     D.
                                 </label>
                                 <h3 className=' font-Nunito font-semibold indent-4'>
-                                Comparar la relación entre el costo del viaje y calidad del servicio.
+                                Comparar la relación entre el costo del viaje y calidad del servicio. 
                                 </h3>
                             </div>
                     </article>
@@ -295,7 +299,7 @@ const Vocation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Me llamaría más la atención el siguiente reportaje</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Me llamaría más la atención el siguiente reportaje  <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -371,7 +375,7 @@ const Vocation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                             <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>En la producción de una película, ¿te gustaría participar en?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>En la producción de una película, ¿te gustaría participar en?  <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -447,7 +451,7 @@ const Vocation = () => {
                     onBlur={handleBlur}
                     className='font-Nunito'>
                         <article className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>De las computadoras lo ¿Qué más te motiva es?</label>
+                            <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>De las computadoras lo ¿Qué más te motiva es?  <small className='text-red/80'>*</small></label>
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
