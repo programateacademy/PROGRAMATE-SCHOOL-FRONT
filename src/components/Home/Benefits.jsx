@@ -12,7 +12,7 @@ export const Benefist = () => {
     <main className="mx-6 md:mx-24">
       <section className="flex items-end justify-end absolute right-4">
         <Link to="/Login" >
-          <button className="button fixed bottom-4 right-4 z-40">Participa ya!</button>
+          <button className="button fixed bottom-4 right-4 z-40 border-2 border-dark">Participa ya!</button>
         </Link>
       </section>
       {/*Program benefits*/}
