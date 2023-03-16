@@ -1,12 +1,17 @@
 import * as yup from 'yup'
 
+export const loginSchema = yup.object().shape({
+    emailPerson: yup.string().email('Escribe un correo válido').required('Campo obligatorio'),
+    passwordPerson: yup.string().required('Campo obligatorio'),
+})
+
 export const signupSchema = yup.object().shape({
     name1Person: yup.string().required('Campo obligatorio'),
     name2Person: yup.string(),
     lastname1Person: yup.string().required('Campo obligatorio'),
     lastname2Person: yup.string(),
     documentPerson: yup.string().required('Campo obligatorio'),
-    emailPerson: yup.string().email('Escriba un correo válido').required('Campo obligatorio'),
+    emailPerson: yup.string().email('Escribe un correo válido').required('Campo obligatorio'),
     agePerson: yup.number().positive('Ingresa un valor válido').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     institutionPerson: yup.string().required('Campo obligatorio').oneOf(['Jardín', 'Olivo', 'Candelaria', 'Luruaco', 'Cruz'], 'Ingresa una opción válida'),
     termsAndConditions: yup.boolean().oneOf([true], 'Debes aceptar los T&C'),
@@ -26,7 +31,7 @@ export const studentShema = yup.object().shape({
     availability: yup.string().required('selecciona si tienes o no disponibilidad de tiempo'),
     emailPerson: yup.string().required('ingresa tu correo personal'),
     phone: yup.string().required('ingresa tu numero de telefono'),
-    phoneTwo: yup.string().required('ingresa tu numero de telefono segundario o fijo'),
+    // phoneTwo: yup.string().required('ingresa tu numero de telefono segundario o fijo'),
 })
 
 export const socialShema = yup.object().shape({
@@ -52,7 +57,7 @@ export const guardianShema = yup.object().shape({
     numberIdGuardian: yup.string().required('ingresa el numero de documento de tu acudiente'),
     emailGuardian: yup.string().required('ingresa el correo de tu acudiente'),
     phoneGuardian: yup.string().required('ingresa el numero de telefono de tu acudiente'),
-    phoneGuardianTwo: yup.string().required('ingresa el numero de telefono segundario o fijo de tu acudiente'),
+    // phoneGuardianTwo: yup.string().required('ingresa el numero de telefono segundario o fijo de tu acudiente'),
     addressGuardian: yup.string().required('ingresa la direccion de tu acudiente'),
     departmentGuardian: yup.string().required('ingresa el department donde vive tu acudiente'),
     educationLevelGuardian: yup.string().required('selecciona el nivel academico de tus padres'),

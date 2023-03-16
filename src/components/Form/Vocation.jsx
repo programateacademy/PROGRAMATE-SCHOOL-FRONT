@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { vocationShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -41,7 +42,7 @@ const Vocation = () => {
         defaultApi
             .post("/registertoannouncement", view5)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -62,7 +63,7 @@ const Vocation = () => {
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoSEIS.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
                 <div className='flex justify-center  w-7/12 sm:w-5/12 md:w-9/12 m-auto '>
-                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
+                    <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
 
@@ -518,13 +519,15 @@ const Vocation = () => {
                     {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
                 </section>
 
-                <Link className='flex justify-end mr-8' to='/Motivation'>
+                <div className='flex justify-end'>
+                <Link className='mr-8 col-span-2 w-28' to='/Motivation'>
                 <button
                     onClick={vocationP}
                     disabled={!(isValid && dirty)}
                     type='submit'
                         className='px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-dark  hover:text-light text-sm font-Poppins font-bold rounded-sm disabled:opacity-25'>Siguiente</button>
                 </Link>
+                </div>
                 <br/>
             </form>
         </div>

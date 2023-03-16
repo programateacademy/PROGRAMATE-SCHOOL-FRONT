@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom'
 import { residenceShema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
@@ -37,7 +38,7 @@ const Residence = () => {
         defaultApi
             .post("/registertoannouncement", view3)
             .then((res) => {
-                alert("Se ha registrado en PROGRAMATE SCHOOL");
+                // alert("Se ha registrado en PROGRAMATE SCHOOL");
                 //  navigator("/")
             })
             .then(err => {
@@ -62,7 +63,6 @@ const Residence = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-
             <Link to='/Social'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
@@ -70,8 +70,6 @@ const Residence = () => {
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
                 Informacion de Recidencia
             </h2>
-
-
             <form
                 onSubmit={handleSubmit}
                 className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >

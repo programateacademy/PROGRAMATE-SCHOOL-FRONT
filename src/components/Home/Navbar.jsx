@@ -31,7 +31,7 @@ export const Navbar = () => {
                 <div className='flex flex-row items-center justify-self-end gap-3 md:col-span-1'>
                     {/*  Login button which is routed to the login */}
                     <Link to="/Login">
-                        <button className='flex mx-auto px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-light text-sm font-Poppins font-medium'>Ingresar</button>
+                        <button className='button flex'>Ingresar</button>
                     </Link>
                     {/* Hamburger menu button which if true shows the menu display */}
                     <HiMenu
