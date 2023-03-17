@@ -1,11 +1,11 @@
 import React from 'react'
 import { BsCheck } from 'react-icons/bs'
 
-export const StudentPhases = () => {
+const StudentPhases = () => {
     return (
         <main>
             <div className="flex justify-between items-center mx-6 gap-5 md:mx-10">
-                <div className=" flex justify-center items-center  bg-purple rounded-full h-[150px] w-[10px]">
+                <div className=" flex justify-center items-center bg-purple rounded-full h-[150px] w-[10px]">
                     <div className="bg-purple w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-3xl">
                         <BsCheck className="text-white text-5xl" />
                     </div>
@@ -36,3 +36,4 @@ export const StudentPhases = () => {
         </main>
     )
 }
+export default StudentPhases
