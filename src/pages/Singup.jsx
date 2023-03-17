@@ -253,11 +253,11 @@ function signUp() {
                     onBlur={handleBlur}
                     className={errors.institutionPerson && touched.institutionPerson ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                         <option className='font-medium text-dark'>Selecciona una opción</option>
-                        <option className='font-medium text-dark' value='Jardín'>IE El Jardín - Ibagué</option>
-                        <option className='font-medium text-dark' value='Olivo'>El Olivo School - Santa Marta</option>
-                        <option className='font-medium text-dark' value='Candelaria'>Colegio Integrada La Candelaria</option>
-                        <option className='font-medium text-dark' value='Luruaco'>Técnica Agropecuaria Luruaco - Atlantico</option>
-                        <option className='font-medium text-dark' value='Cruz'>Colegio Campo de la Cruz - Atlantico</option>
+                        <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
+                        <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
+                        <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
+                        <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
+                        <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
                     </select>
                     {errors.institutionPerson && touched.institutionPerson && <p className='px-1 text-red text-[0.65rem] font-Poppins'>{errors.institutionPerson}</p>}
                 </div>

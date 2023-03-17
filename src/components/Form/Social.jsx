@@ -65,7 +65,7 @@ const Social = () => {
             </h2>
 
             <form onSubmit={handleSubmit} className=' font-Poppins' >
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
+                <div className='mx-12 sm:mx-5 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div

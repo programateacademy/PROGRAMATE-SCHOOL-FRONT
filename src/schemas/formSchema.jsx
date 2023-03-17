@@ -13,7 +13,7 @@ export const signupSchema = yup.object().shape({
     documentPerson: yup.string().required('Campo obligatorio'),
     emailPerson: yup.string().email('Escribe un correo válido').required('Campo obligatorio'),
     agePerson: yup.number().positive('Ingresa un valor válido').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
-    institutionPerson: yup.string().required('Campo obligatorio').oneOf(['Jardín', 'Olivo', 'Candelaria', 'Luruaco', 'Cruz'], 'Ingresa una opción válida'),
+    institutionPerson: yup.string().required('Campo obligatorio').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlantico', 'Colegio Campo de la Cruz - Atlantico'], 'Ingresa una opción válida'),
     termsAndConditions: yup.boolean().oneOf([true], 'Debes aceptar los T&C'),
 })
 
@@ -25,7 +25,7 @@ export const studentSchema = yup.object().shape({
     gender: yup.string().required('Selecciona tu genero').oneOf(['Femenino', 'Masculino', 'Otro'], 'Selecciona tu genero'),
     document: yup.string().required('Selecciona tu tipo de documento').oneOf(['Cédula de Ciudadania', 'Cédula de extranjería', 'Tarjeta de identidad', 'Pasaporte', 'PEP', 'PTP'], 'Selecciona tu tipo de documento'),
     documentPerson: yup.string().required('Ingresa tu numero de documento'),
-    institutionPerson: yup.string().required('Selecciona el institucion donde estudias').oneOf(['Jardín', 'Olivo', 'Candelaria', 'Luruaco', 'Cruz'], 'Selecciona el institucion donde estudias'),
+    institutionPerson: yup.string().required('Selecciona el institucion donde estudias').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlantico', 'Colegio Campo de la Cruz - Atlantico'], 'Selecciona el institucion donde estudias'),
     course: yup.string().required('Selecciona el grado que estas cursando').oneOf(['11°', 'Otro'], 'Selecciona tu genero'),
     sena: yup.string().required('Selecciona si estas cursando en el sena o estas en horas sociales'),
     availability: yup.string().required('Selecciona si tienes o no disponibilidad de tiempo'),
