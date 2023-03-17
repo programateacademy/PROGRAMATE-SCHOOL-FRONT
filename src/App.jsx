@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Singup from './pages/Singup'
 import StudentSpace from './pages/StudentSpace'
 import SuperAdminSpace from './pages/SuperAdminSpace'
+import AdminSpace from './pages/AdminSpace'
 {/* Import form paths */ }
 import Student from './components/Form/Student'
 import Social from './components/Form/Social'
@@ -13,7 +14,8 @@ import Guardian from './components/Form/Guardian'
 import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
-import SuccessfulRegistration from './components/Home/SuccessfulRegistration'
+import EmailVerificationWindow from './components/EmailVerificationWindow '
+import UnauthorizedWindow from './components/UnauthorizedWindow '
 
 
 function App() {
@@ -27,7 +29,9 @@ function App() {
           <Route path='/Singup' element={<Singup />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
-          <Route path='/SuccessfulRegistration' element={<SuccessfulRegistration/>} exact></Route>
+          <Route path='/Adminspace' element={<AdminSpace />} exact></Route>
+          <Route path='/Emailverificationwindow' element={<EmailVerificationWindow/>} exact></Route>
+          <Route path='/Unauthorizedwindow' element={<UnauthorizedWindow/>} exact></Route>
           {/* Form paths */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>

@@ -15,8 +15,8 @@ export const Benefist = () => {
           <button className="button fixed bottom-4 right-4 z-40 border-2 border-dark">Participa ya!</button>
         </Link>
       </section>
-      {/*Program benefits*/}
 
+      {/*Program benefits*/}
       <section className="">
         <object className="mt-14 mb-10 md:absolute lg:items-center lg:absolute">
           <h1 className="text-dark mx-4 pb-4 font-bold font-Poppins text-2xl">
@@ -69,12 +69,16 @@ export const Benefist = () => {
           </figure>
         </object>
 
+        <object>
+          <h2 className="w-full mx-auto py-4 text-center text-dark font-semibold font-Poppins text-lg">Escribir aquí</h2>
+        </object>
+
         <section className="md:grid md:grid-cols-3 my-14">
           {/*Program duration*/}
           <object className="md:col-span-1">
             <h1 className="font-bold mx-4 font-Poppins text-2xl">
               DURACIÓN TOTAL <br />
-              <span className="text-yellow"> 8 MESES</span>
+              <span className="text-yellow">8 MESES</span>
             </h1>
             <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.<br /> <br />
