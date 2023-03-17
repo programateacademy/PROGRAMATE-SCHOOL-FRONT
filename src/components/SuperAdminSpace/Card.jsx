@@ -1,4 +1,5 @@
 import React from 'react'
+import { GraphicsAdmin } from './GraphicsAdmin';
 
 const Card = ({ tarjeta, index, editarTarjeta, eliminarTarjeta }) => {
 { const [perfil, setPerfil] = useState(tarjeta.perfil);

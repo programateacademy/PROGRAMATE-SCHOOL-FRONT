@@ -14,6 +14,7 @@ import Vocation from './components/Form/Vocation'
 import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
 import SuccessfulRegistration from './components/Home/SuccessfulRegistration'
+import Prueba from './components/SuperAdminSpace/GraphicsAdmin'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
           <Route path='/Singup' element={<Singup />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
-          <Route path='/SuccessfulRegistration' element={<SuccessfulRegistration/>} exact></Route>
+          <Route path='/SuccessfulRegistration' element={<SuccessfulRegistration />} exact></Route>
           {/* Form paths */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
@@ -36,6 +37,8 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
+          {/*Prueba*/}
+          <Route path='/Prueba' element={<Prueba />} exact></Route>
         </Routes>
       </BrowserRouter>
     </div>
