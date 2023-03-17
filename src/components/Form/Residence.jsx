@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { residenceShema } from '../../schemas/formSchema'
+import { residenceSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -21,7 +21,7 @@ const Residence = () => {
             bogota: '',
             stratum: '',
         },
-        validationSchema: residenceShema,
+        validationSchema: residenceSchema,
         onSubmit
     });
     // console.log(errors);
@@ -35,24 +35,19 @@ const Residence = () => {
             stratum: values.stratum
         }
         console.log(view3);
-        defaultApi
-            .post("/registertoannouncement", view3)
-            .then((res) => {
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
-    }
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1to2save = JSON.parse(localStorage.getItem('LSview1to2'))
+        localStorage.removeItem('LSview1to2')
 
+        // THIS JOIN TWO OBJECTS
+        const view1to3 = {...view1to2save, ...view3}
+        console.log(view1to3)
+
+        // THIS SEND VIEW1TO3  TO LOCALSTORAGE 
+        localStorage.setItem('LSview1to3', JSON.stringify(view1to3))
+
+    }
 
     return (
 
@@ -103,17 +98,14 @@ const Residence = () => {
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option
-                            
                             className='font-medium text-dark'>Selecciona una opción</option>
                         <option
-                            value='Atlántico' 
                             className='font-medium text-dark'>Atlántico</option>
                         <option
-                            value='Bogotá' className='font-medium text-dark'>Bogotá</option>
+                            className='font-medium text-dark'>Bogotá</option>
                         <option
-                            value='Magdalena' className='font-medium text-dark'>Magdalena</option>
+                            className='font-medium text-dark'>Magdalena</option>
                         <option
-                            value='Tolima'
                             className='font-medium text-dark' >Tolima</option>
                     </select>
                     {errors.departmentStudent && touched.departmentStudent && <p className='text-red text-xs font-Poppins'>{errors.departmentStudent}</p>}
@@ -163,19 +155,19 @@ const Residence = () => {
                         onChange={handleChange}
                         onBlur={handleBlur} data-te-select-init data-te-select-filter='true' className={errors.bogota && touched.bogota ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>Selecciona una opción</option>
-                        <option className='font-medium text-dark' value='Antonio Nariño'>localidad de Antonio Nariño</option>
-                        <option className='font-medium text-dark' value='Barrios Unidos'>localidad de Barrios Unidos</option>
-                        <option className='font-medium text-dark' value='Bosa'>localidad de Bosa</option>
-                        <option className='font-medium text-dark' value='Chapinero'>localidad de Chapinero</option>
-                        <option className='font-medium text-dark' value='Ciudad Bolívar'>localidad de Ciudad Bolívar</option>
-                        <option className='font-medium text-dark' value='Engativá'>localidad de Engativá</option>
-                        <option className='font-medium text-dark' value='Fontibón'>localidad de Fontibón</option>
-                        <option className='font-medium text-dark' value='Kennedy'>localidad de Kennedy</option>
-                        <option className='font-medium text-dark' value='Candelaría'>localidad de La Candelaría</option>
-                        <option className='font-medium text-dark' value='Mártires'>localidad de Los Mártires</option>
-                        <option className='font-medium text-dark' value='Puente Aranda'>localidad de Puente Aranda</option>
-                        <option className='font-medium text-dark' value='Rafael Uribe Uribe'>localidad de Rafael Uribe Uribe</option>
-                        <option className='font-medium text-dark' value='Ninguna'>Ninguna</option>
+                        <option className='font-medium text-dark'>localidad de Antonio Nariño</option>
+                        <option className='font-medium text-dark'>localidad de Barrios Unidos</option>
+                        <option className='font-medium text-dark'>localidad de Bosa</option>
+                        <option className='font-medium text-dark'>localidad de Chapinero</option>
+                        <option className='font-medium text-dark'>localidad de Ciudad Bolívar</option>
+                        <option className='font-medium text-dark'>localidad de Engativá</option>
+                        <option className='font-medium text-dark'>localidad de Fontibón</option>
+                        <option className='font-medium text-dark'>localidad de Kennedy</option>
+                        <option className='font-medium text-dark'>localidad de La Candelaría</option>
+                        <option className='font-medium text-dark'>localidad de Los Mártires</option>
+                        <option className='font-medium text-dark'>localidad de Puente Aranda</option>
+                        <option className='font-medium text-dark'>localidad de Rafael Uribe Uribe</option>
+                        <option className='font-medium text-dark'>Ninguna</option>
                     </select>
                     {errors.bogota && touched.bogota && <p className='text-red text-xs font-Poppins'>{errors.bogota}</p>}
                 </div>
@@ -193,12 +185,12 @@ const Residence = () => {
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.stratum && touched.stratum ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>Selecciona una opción</option>
-                        <option className='font-medium text-dark' value='1'>1</option>
-                        <option className='font-medium text-dark' value='2'>2</option>
-                        <option className='font-medium text-dark' value='3'>3</option>
-                        <option className='font-medium text-dark' value='4'>4</option>
-                        <option className='font-medium text-dark' value='5'>5</option>
-                        <option className='font-medium text-dark' value='6'>6</option>
+                        <option className='font-medium text-dark'>1</option>
+                        <option className='font-medium text-dark'>2</option>
+                        <option className='font-medium text-dark'>3</option>
+                        <option className='font-medium text-dark'>4</option>
+                        <option className='font-medium text-dark'>5</option>
+                        <option className='font-medium text-dark'>6</option>
                     </select>
                     {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
                 </div><br />

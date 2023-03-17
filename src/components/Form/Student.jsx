@@ -2,8 +2,9 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { studentShema } from '../../schemas/formSchema'
+import { studentSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -11,7 +12,7 @@ const onSubmit = async (values, actions) => {
     actions.resetForm()
 }
 
-const Student = () => {
+const Student = props => {
     // formk validations
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
@@ -32,7 +33,7 @@ const Student = () => {
             phone: '',
             phoneTwo: '',
         },
-        validationSchema: studentShema,
+        validationSchema: studentSchema,
         onSubmit
     });
     // console.log(errors);
@@ -57,22 +58,9 @@ const Student = () => {
             phoneTwo: values.phoneTwo,
         }
         console.log(view1);
-        defaultApi
-            .post("/registertoannouncement", view1)
-            .then((res) => {
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
+        
+        // THIS SEND VIEW1 TO LOCALSTORAGE 
+        localStorage.setItem('LSview1', JSON.stringify(view1))
     }
 
     return (
@@ -193,12 +181,12 @@ const Student = () => {
                             data-te-select-init data-te-select-filter='true' className={errors.gender && touched.gender ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='F'>
-                                Femenino </option>
-                            <option className='font-medium text-dark' value='M'>
-                                Masculino </option>
-                            <option className='font-medium text-dark' value='Otro'>
-                                Otro </option>
+                            <option className='font-medium text-dark'>
+                                Femenino</option>
+                            <option className='font-medium text-dark'>
+                                Masculino</option>
+                            <option className='font-medium text-dark'>
+                                Otro</option>
                         </select>
                         {errors.gender && touched.gender && <p className='text-red text-xs font-Poppins'>{errors.gender}</p>}
                     </div>
@@ -217,17 +205,17 @@ const Student = () => {
                         >
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='Cc'>
+                            <option className='font-medium text-dark'>
                                 Cédula de Ciudadania </option>
-                            <option className='font-medium text-dark' value='Ce'>
+                            <option className='font-medium text-dark'>
                                 Cédula de extranjería </option>
-                            <option className='font-medium text-dark' value='Ti'>
+                            <option className='font-medium text-dark'>
                                 Tarjeta de identidad </option>
-                            <option className='font-medium text-dark' value='Pasaporte'>
+                            <option className='font-medium text-dark'>
                                 Pasaporte </option>
-                            <option className='font-medium text-dark' value='PEP'>
+                            <option className='font-medium text-dark'>
                                 PEP </option>
-                            <option className='font-medium text-dark' value='PTP'>
+                            <option className='font-medium text-dark'>
                                 PTP </option>
                         </select>
                         {errors.document && touched.document && <p className='text-red text-xs font-Poppins'>{errors.document}</p>}
@@ -282,10 +270,10 @@ const Student = () => {
                             data-te-select-init data-te-select-filter='true' className={errors.course && touched.course ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='11'>
-                                11° </option>
-                            <option className='font-medium text-dark' value='Otro'>
-                                Otro </option>
+                            <option className='font-medium text-dark'>
+                                11°</option>
+                            <option className='font-medium text-dark'>
+                                Otro</option>
                         </select>
                         {errors.course && touched.course && <p className='text-red text-xs font-Poppins'>{errors.course}</p>}
                     </div>
