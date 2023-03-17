@@ -204,19 +204,19 @@ const Student = props => {
                             data-te-select-init data-te-select-filter='true' className={errors.document && touched.document ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         >
                             <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
+                                Selecciona una opción</option>
                             <option className='font-medium text-dark'>
-                                Cédula de Ciudadania </option>
+                                Cédula de Ciudadania</option>
                             <option className='font-medium text-dark'>
-                                Cédula de extranjería </option>
+                                Cédula de extranjería</option>
                             <option className='font-medium text-dark'>
-                                Tarjeta de identidad </option>
+                                Tarjeta de identidad</option>
                             <option className='font-medium text-dark'>
-                                Pasaporte </option>
+                                Pasaporte</option>
                             <option className='font-medium text-dark'>
-                                PEP </option>
+                                PEP</option>
                             <option className='font-medium text-dark'>
-                                PTP </option>
+                                PTP</option>
                         </select>
                         {errors.document && touched.document && <p className='text-red text-xs font-Poppins'>{errors.document}</p>}
                     </div>
@@ -248,11 +248,11 @@ const Student = props => {
                             onBlur={handleBlur} id='institutionPerson' data-te-select-init data-te-select-filter='true'
                             className={errors.institutionPerson && touched.institutionPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>Selecciona una opción</option>
-                            <option className='font-medium text-dark' value='Jardín'>IE El Jardín - Ibagué</option>
-                            <option className='font-medium text-dark' value='Olivo'>El Olivo School - Santa Marta</option>
-                            <option className='font-medium text-dark' value='Candelaria'>Colegio Integrada La Candelaria</option>
-                            <option className='font-medium text-dark' value='Luruaco'>Técnica Agropecuaria Luruaco - Atlantico</option>
-                            <option className='font-medium text-dark' value='Cruz'>Colegio Campo de la Cruz - Atlantico</option>
+                            <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
+                            <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
+                            <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
+                            <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
+                            <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
                         </select>
                         {errors.institutionPerson && touched.institutionPerson && <p className='text-red text-xs font-Poppins'>{errors.institutionPerson}</p>}
                     </div>
