@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'; 
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { motivationShema } from '../../schemas/formSchema'
+import { motivationSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -20,7 +20,7 @@ const Motivation = () => {
             want: '',
             withdrawal: '',
         },
-        validationSchema: motivationShema,
+        validationSchema: motivationSchema,
         onSubmit
     });
     // backend connection
@@ -32,22 +32,17 @@ const Motivation = () => {
             withdrawal: values.withdrawal,
         }
         console.log(view6);
-        defaultApi
-            .post("/registertoannouncement", view6)
-            .then((res) => {
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1to5save = JSON.parse(localStorage.getItem('LSview1to5'))
+        localStorage.removeItem('LSview1to5')
+
+        // THIS JOIN TWO OBJECTS
+        const view1to6 = {...view1to5save, ...view6}
+        console.log(view1to6)
+
+        // THIS SEND VIEW1TO6  TO LOCALSTORAGE 
+        localStorage.setItem('LSview1to6', JSON.stringify(view1to6))
     }
 
     return (
@@ -268,17 +263,17 @@ const Motivation = () => {
                         data-te-select-init data-te-select-filter='true'
                         className={errors.withdrawal && touched.withdrawal ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'} >
                             <option className='font-medium text-dark'>
-                                    Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='retirarse del colegio'>
-                                    retirarme del colegio </option>
-                            <option className='font-medium text-dark' value='actividades extracuriculares'>
-                                    Tener actividades extracurriculares / empieza a fallar en algunas materias </option>
-                            <option className='font-medium text-dark' value='tiempo'>
-                                    Disponibilidad de tiempo </option>
-                            <option className='font-medium text-dark' value='Conectividad'>
-                                    Conectividad </option>
-                            <option className='font-medium text-dark' value='Ninguna'>
-                                    Ninguna de las anteriores </option>
+                                    Selecciona una opción</option>
+                            <option className='font-medium text-dark'>
+                                    retirarme del colegio</option>
+                            <option className='font-medium text-dark'>
+                                    Tener actividades extracurriculares / empieza a fallar en algunas materias</option>
+                            <option className='font-medium text-dark'>
+                                    Disponibilidad de tiempo</option>
+                            <option className='font-medium text-dark'>
+                                    Conectividad</option>
+                            <option className='font-medium text-dark'>
+                                    Ninguna de las anteriores</option>
                     </select>
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>

@@ -17,11 +17,15 @@ import Logic from './components/Form/Logic'
 import EmailVerificationWindow from './components/EmailVerificationWindow '
 import UnauthorizedWindow from './components/UnauthorizedWindow '
 
+//import { AnnouncementContext, AnnouncementProvider } from './context/AnnouncementProvider'
+
+//import FormRegister from "./components/Form/FormRegister"
 
 function App() {
-
+  
   return (
     <div>
+    
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} exact></Route>
@@ -33,6 +37,9 @@ function App() {
           <Route path='/Emailverificationwindow' element={<EmailVerificationWindow/>} exact></Route>
           <Route path='/Unauthorizedwindow' element={<UnauthorizedWindow/>} exact></Route>
           {/* Form paths */}
+
+          {/* <Route path='/FormRegister' element={<FormRegister/>} exact></Route> */}
+
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
           <Route path='/Residence' element={<Residence />} exact></Route>
@@ -40,8 +47,19 @@ function App() {
           <Route path='/Vocation' element={<Vocation />} exact></Route>
           <Route path='/Motivation' element={<Motivation />} exact></Route>
           <Route path='/Logic' element={<Logic />} exact></Route>
+
+          {/* <AnnouncementProvider> */}
+            {/* <Route path='/Student' element={<Student AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Social' element={<Social AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Residence' element={<Residence AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Guardian' element={<Guardian AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Vocation' element={<Vocation AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Motivation' element={<Motivation AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route>
+            <Route path='/Logic' element={<Logic AnnouncementData={Announcement} setAnnouncementData={setAnnouncement}/>} exact></Route> */}
+          {/*</AnnouncementProvider> */}
         </Routes>
       </BrowserRouter>
+    
     </div>
   )
 }

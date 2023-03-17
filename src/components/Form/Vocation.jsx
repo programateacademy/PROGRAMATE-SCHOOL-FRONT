@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { vocationShema } from '../../schemas/formSchema'
+import { vocationSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -23,7 +23,7 @@ const Vocation = () => {
             stake: '',
             webMotivation: '',
         },
-        validationSchema: vocationShema,
+        validationSchema: vocationSchema,
         onSubmit
     });
     // console.log(errors);
@@ -39,22 +39,17 @@ const Vocation = () => {
             webMotivation: values.webMotivation,
         }
         console.log(view5);
-        defaultApi
-            .post("/registertoannouncement", view5)
-            .then((res) => {
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1to4save = JSON.parse(localStorage.getItem('LSview1to4'))
+        localStorage.removeItem('LSview1to4')
+
+        // THIS JOIN TWO OBJECTS
+        const view1to5 = {...view1to4save, ...view5}
+        console.log(view1to5)
+
+        // THIS SEND VIEW1TO5  TO LOCALSTORAGE 
+        localStorage.setItem('LSview1to5', JSON.stringify(view1to5))
     }
 
     return (
