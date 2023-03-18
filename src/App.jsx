@@ -28,6 +28,7 @@ function App() {
           <Route element={ProtectedRoutes}>
           <Route path='/StudentSpace' element={<StudentSpace/>} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
+           </Route> 
           {/* Form paths */}
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
