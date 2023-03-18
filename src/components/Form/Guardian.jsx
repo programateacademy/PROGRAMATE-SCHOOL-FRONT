@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { guardianShema } from '../../schemas/formSchema'
+import { guardianSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -29,7 +29,7 @@ const Guardian = () => {
             economic: '',
             family: '',
         },
-        validationSchema: guardianShema,
+        validationSchema: guardianSchema,
         onSubmit
     });
     // console.log(errors);
@@ -51,22 +51,17 @@ const Guardian = () => {
             family: values.family
         }
         console.log(view4);
-        defaultApi
-            .post("/registertoannouncement", view4)
-            .then((res) => {
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1to3save = JSON.parse(localStorage.getItem('LSview1to3'))
+        localStorage.removeItem('LSview1to3')
+
+        // THIS JOIN TWO OBJECTS
+        const view1to4 = {...view1to3save, ...view4}
+        console.log(view1to4)
+
+        // THIS SEND VIEW1TO4  TO LOCALSTORAGE 
+        localStorage.setItem('LSview1to4', JSON.stringify(view1to4))
     }
 
     return (
@@ -122,19 +117,19 @@ const Guardian = () => {
                         data-te-select-init data-te-select-filter='true'
                         className={errors.documentTypeGuardian && touched.documentTypeGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
-                            Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='Cc'>
-                            Cédula de Ciudadania </option>
-                        <option className='font-medium text-dark' value='Ce'>
-                            Cédula de extranjería </option>
-                        <option className='font-medium text-dark' value='Ti'>
-                            Tarjeta de identidad </option>
-                        <option className='font-medium text-dark' value='Pasaporte'>
-                            Pasaporte </option>
-                        <option className='font-medium text-dark' value='PEP'>
-                            PEP </option>
-                        <option className='font-medium text-dark' value='PTP'>
-                            PTP </option>
+                            Selecciona una opción</option>
+                        <option className='font-medium text-dark'>
+                            Cédula de Ciudadania</option>
+                        <option className='font-medium text-dark'>
+                            Cédula de extranjería</option>
+                        <option className='font-medium text-dark'>
+                            Tarjeta de identidad</option>
+                        <option className='font-medium text-dark'>
+                            Pasaporte</option>
+                        <option className='font-medium text-dark'>
+                            PEP</option>
+                        <option className='font-medium text-dark'>
+                            PTP</option>
                     </select>
                     {errors.documentTypeGuardian && touched.documentTypeGuardian && <p className='text-red text-xs font-Poppins'>{errors.documentTypeGuardian}</p>}
                 </div>
@@ -267,18 +262,18 @@ const Guardian = () => {
                         onBlur={handleBlur}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='padres'>
-                            Madre - Padre </option>
-                        <option className='font-medium text-dark' value='padrinos'>
-                            Padrino - Madrina </option>
-                        <option className='font-medium text-dark' value='tios'>
-                            Tío - Tía </option>
-                        <option className='font-medium text-dark' value='abuelos'>
-                            Abuelo - Abuela </option>
+                        <option className='font-medium text-dark'>
+                            Madre - Padre</option>
+                        <option className='font-medium text-dark'>
+                            Padrino - Madrina</option>
+                        <option className='font-medium text-dark'>
+                            Tío - Tía</option>
+                        <option className='font-medium text-dark'>
+                            Abuelo - Abuela</option>
                         <option className='font-medium text-dark' value='padrastros'>
-                            Padrastro - Madrastra </option>
-                        <option className='font-medium text-dark' value='otro'>
-                            Otro </option>
+                            Padrastro - Madrastra</option>
+                        <option className='font-medium text-dark'>
+                            Otro</option>
                     </select>
                     {errors.relationship && touched.relationship && <p className='text-red text-xs font-Poppins'>{errors.relationship}</p>}
                 </div>
@@ -315,27 +310,27 @@ const Guardian = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.educationLevelGuardian && touched.educationLevelGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='Pregrado-completo'>
-                            Pregrado - completo </option>
-                        <option className='font-medium text-dark' value='Pregrado-incompleto'>
-                            Pregrado - incompleto </option>
-                        <option className='font-medium text-dark' value='tecnológica-completo'>
-                            Formación tecnológica - completo </option>
-                        <option className='font-medium text-dark' value='tecnológica-incompleto'>
-                            Formación tecnológica - incompleto </option>
-                        <option className='font-medium text-dark' value='tecnica-completo'>
-                            Formación tecnica - completo </option>
-                        <option className='font-medium text-dark' value='tecnica-incompleto'>
-                            Formación tecnica - incompleto </option>
-                        <option className='font-medium text-dark' value='Bachillerato-completo'>
-                            Bachillerato - completo </option>
-                        <option className='font-medium text-dark' value='Bachillerato-incompleto'>
+                        <option className='font-medium text-dark'>
+                            Pregrado - completo</option>
+                        <option className='font-medium text-dark'>
+                            Pregrado - incompleto</option>
+                        <option className='font-medium text-dark'>
+                            Formación tecnológica - completo</option>
+                        <option className='font-medium text-dark'>
+                            Formación tecnológica - incompleto</option>
+                        <option className='font-medium text-dark'>
+                            Formación tecnica - completo</option>
+                        <option className='font-medium text-dark'>
+                            Formación tecnica - incompleto</option>
+                        <option className='font-medium text-dark'>
+                            Bachillerato - completo</option>
+                        <option className='font-medium text-dark'>
                             Bachillerato - incompleto </option>
-                        <option className='font-medium text-dark' value='Primaria-completo'>
-                            Primaria - completo </option>
-                        <option className='font-medium text-dark' value='Primaria-incompleto'>
+                        <option className='font-medium text-dark'>
+                            Primaria - completo</option>
+                        <option className='font-medium text-dark'>
                             Primaria - incompleto </option>
-                        <option className='font-medium text-dark' value='Ninguno'>
+                        <option className='font-medium text-dark'>
                             Ninguna </option>
                     </select>
                     {errors.educationLevelGuardian && touched.educationLevelGuardian && <p className='text-red text-xs font-Poppins'>{errors.educationLevelGuardian}</p>} 
@@ -354,15 +349,15 @@ const Guardian = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.economic && touched.economic ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='Empleado tiempo completo'>
-                            Empleado tiempo completo </option>
-                        <option className='font-medium text-dark' value='Empleado medio tiempo'>
+                        <option className='font-medium text-dark'>
+                            Empleado tiempo completo</option>
+                        <option className='font-medium text-dark'>
                             Empleado medio tiempo</option>
-                        <option className='font-medium text-dark' value='Informal'>
-                            Generando ingresos de manera informal (sin contrato) </option>
-                        <option className='font-medium text-dark' value='Independiente'>
+                        <option className='font-medium text-dark'>
+                            Generando ingresos de manera informal (sin contrato)</option>
+                        <option className='font-medium text-dark'>
                             Independiente</option>
-                        <option className='font-medium text-dark' value='Desempleado'>
+                        <option className='font-medium text-dark'>
                             Desempleado/a</option>
                     </select>
                     {errors.economic && touched.economic && <p className='text-red text-xs font-Poppins'>{errors.economic}</p>}   
@@ -381,13 +376,13 @@ const Guardian = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.family && touched.family ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='1-2'>
+                        <option className='font-medium text-dark'>
                             1 - 2 </option>
-                        <option className='font-medium text-dark' value='3-4'>
+                        <option className='font-medium text-dark'>
                             3 - 4 </option>
-                        <option className='font-medium text-dark' value='5-mas'>
+                        <option className='font-medium text-dark'>
                             5 o más </option>
-                        <option className='font-medium text-dark' value='Ninguna'>
+                        <option className='font-medium text-dark'>
                             Ninguna </option>
                     </select>
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>} 

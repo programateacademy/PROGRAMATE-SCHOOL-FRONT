@@ -3,7 +3,7 @@ import { MdEditSquare } from 'react-icons/md'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
 
 
-const CreationComp = () => {
+const CreationAnnouncement = () => {
     const [todo, setTodo] = useState({
         task: '',
         deadline: '',
@@ -38,16 +38,16 @@ const CreationComp = () => {
 
     return (
         <>
-            {/* Titles */}        
-            <section className='px-4 grid grid-cols-2 text-dark'>
-                <h1 className='font-bold text-2xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
+            {/* Header */}        
+            <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
+                <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
                     Convocatorias creadas
                 </h1>
-                <h2 className='flex items-center justify-end font-Poppins font-bold text-right'>Crear una convocatoria<BsFillPlusSquareFill className='scale-[2] ml-5 rounded-md'/></h2>
+                <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear una convocatoria<BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></h2>
             </section>
 
             {/* Editable announcements cards */}
-            <section className='px-4 grid grid-cols-3 justify-center gap-8'>
+            <section className='px-4 grid md:grid-cols-2 justify-center gap-8'>
                 <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                     <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>Desarrollador Frontend Web Jr</h2>
 
@@ -84,7 +84,7 @@ const CreationComp = () => {
                     {/* ... */}
                     <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
                         <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Visualizar</button>
-                        <button onClick={handleAddTodo}><MdEditSquare className='scale-[2.3] text-green-500' /></button>
+                        <button onClick={handleAddTodo}><MdEditSquare className='scale-[2.3] text-[#40A014]' /></button>
                     </section>
                 </div>
             </section>
@@ -92,4 +92,4 @@ const CreationComp = () => {
     );
 }
 
-export default CreationComp
+export default CreationAnnouncement

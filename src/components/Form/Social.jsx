@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { socialShema } from '../../schemas/formSchema'
+import { socialSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
@@ -21,7 +21,7 @@ const Social = () => {
             disability: '',
             typeDisability: '',
         },
-        validationSchema: socialShema,
+        validationSchema: socialSchema,
         onSubmit
     });
     // console.log(errors);
@@ -35,22 +35,17 @@ const Social = () => {
             typeDisability: values.typeDisability,
         }
         console.log(view2);
-        defaultApi
-            .post("/registertoannouncement", view2)
-            .then((res) => { 
-                // alert("Se ha registrado en PROGRAMATE SCHOOL");
-                //  navigator("/")
-            })
-            .then(err => {
-                console.log(err)
-            })
-            .catch(err => {
-                if (err.response.status === 409) {
-                    alert("Ya existe un usuario con este documento");
-                } else if (err.response.status === 408) {
-                    alert("Ya existe un usuario con este Correo");
-                }
-            })
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1save = JSON.parse(localStorage.getItem('LSview1'))
+        localStorage.removeItem('LSview1')
+
+        // THIS JOIN TWO OBJECTS
+        const view1to2 = {...view1save, ...view2}
+        console.log(view1to2)
+
+        // THIS SEND VIEW1TO2 TO LOCALSTORAGE 
+        localStorage.setItem('LSview1to2', JSON.stringify(view1to2))
     }
 
     return (
@@ -70,7 +65,7 @@ const Social = () => {
             </h2>
 
             <form onSubmit={handleSubmit} className=' font-Poppins' >
-                <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
+                <div className='mx-12 sm:mx-5 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     {/* question 17 id sisben */}
 
                     <div
@@ -117,18 +112,18 @@ const Social = () => {
                             className={errors.ethnicGroup && touched.ethnicGroup ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='Palenquero'>
-                                Palenquero </option>
-                            <option className='font-medium text-dark' value='Afrocolombiano'>
-                                Afrocolombiano o Afrodecendiente </option>
-                            <option className='font-medium text-dark' value='Indigena'>
-                                Indigena </option>
-                            <option className='font-medium text-dark' value='Gitano'>
-                                Gitano </option>
-                            <option className='font-medium text-dark' value='Raizal'>
-                                Raizal </option>
-                            <option className='font-medium text-dark' value='Ninguna'>
-                                Ninguna de las anteriores </option>
+                            <option className='font-medium text-dark'>
+                                Palenquero</option>
+                            <option className='font-medium text-dark'>
+                                Afrocolombiano o Afrodecendiente</option>
+                            <option className='font-medium text-dark'>
+                                Indigena</option>
+                            <option className='font-medium text-dark'>
+                                Gitano</option>
+                            <option className='font-medium text-dark'>
+                                Raizal</option>
+                            <option className='font-medium text-dark'>
+                                Ninguna de las anteriores</option>
                         </select>
                         {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>}
                     </div>
@@ -146,12 +141,12 @@ const Social = () => {
                             className={errors.nationality && touched.nationality ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='ven'>
-                                Venezolan@ </option>
-                            <option className='font-medium text-dark' value='col'>
+                            <option className='font-medium text-dark'>
+                                Venezolan@</option>
+                            <option className='font-medium text-dark'>
                                 Colombian@</option>
-                            <option className='font-medium text-dark' value='otro'>
-                                Otra </option>
+                            <option className='font-medium text-dark'>
+                                Otra</option>
                         </select>
                         {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}
                     </div>
@@ -204,24 +199,24 @@ const Social = () => {
                             className={errors.typeDisability && touched.typeDisability ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>
                                 Selecciona una opción </option>
-                            <option className='font-medium text-dark' value='Fisica'>
-                                Fisica </option>
-                            <option className='font-medium text-dark' value='Auditiva'>
-                                Auditiva </option>
-                            <option className='font-medium text-dark' value='Visual'>
-                                Visual </option>
-                            <option className='font-medium text-dark' value='Cognitiva'>
-                                Intelectual / Cognitiva </option>
-                            <option className='font-medium text-dark' value='SordoCegera'>
-                                SordoCegera </option>
-                            <option className='font-medium text-dark' value='Pisicosocial'>
-                                Pisicosocial </option>
-                            <option className='font-medium text-dark' value='Multiple'>
-                                Multiple </option>
-                            <option className='font-medium text-dark' value='otra'>
+                            <option className='font-medium text-dark'>
+                                Fisica</option>
+                            <option className='font-medium text-dark'>
+                                Auditiva</option>
+                            <option className='font-medium text-dark'>
+                                Visual</option>
+                            <option className='font-medium text-dark'>
+                                Intelectual / Cognitiva</option>
+                            <option className='font-medium text-dark'>
+                                SordoCegera</option>
+                            <option className='font-medium text-dark'>
+                                Pisicosocial</option>
+                            <option className='font-medium text-dark'>
+                                Multiple</option>
+                            <option className='font-medium text-dark'>
                                 Otra </option>
-                            <option className='font-medium text-dark' value='Ninguna'>
-                                Ninguno de los anteriores </option>
+                            <option className='font-medium text-dark'>
+                                Ninguno de los anteriores</option>
                         </select>
                         {errors.typeDisability && touched.typeDisability && <p className='text-red text-xs font-Poppins'>{errors.typeDisability}</p>}
                     </div>

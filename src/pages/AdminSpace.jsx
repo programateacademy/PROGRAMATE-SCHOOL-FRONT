@@ -1,5 +1,4 @@
 import React from 'react'
-import CreationAdmin from '../components/SuperAdminSpace/CreationAdmin'
 import Navbar from '../components/Navbar'
 import VerticalNavbar from '../components/VerticalNavbar'
 import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement'
@@ -7,7 +6,7 @@ import UsersTable from '../components/SuperAdminSpace/UsersTable'
 import Statistics from '../components/SuperAdminSpace/Statistics'
 
 
-const SuperAdminSpace = () => {
+const AdminSpace = () => {
     return (
         <div className='mx-4 md:mx-14'>
             <Navbar/>
@@ -19,7 +18,6 @@ const SuperAdminSpace = () => {
                     <CreationAnnouncement/>
                     <UsersTable/>
                     <Statistics/>
-                    <CreationAdmin/>
                 </div>
                 <div className='hidden md:block md:col-span-1'>
                     <VerticalNavbar/>
@@ -29,4 +27,4 @@ const SuperAdminSpace = () => {
     )
 }
 
-export default SuperAdminSpace
+export default AdminSpace
