@@ -73,7 +73,7 @@ const Guardian = () => {
                 </div>
             </div>
 
-            <Link to='/Residence'>
+            <Link to='/Register/Residence'>
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
@@ -389,7 +389,7 @@ const Guardian = () => {
                 </div>
 
                 <div className='flex justify-end'>
-                <Link className='mr-8 col-span-2 w-28' to='/Vocation'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Vocation'>
                     <button
                         onClick={guardianP}
                         disabled={!(isValid && dirty)}

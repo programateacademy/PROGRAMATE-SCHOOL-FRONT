@@ -58,7 +58,7 @@ const Residence = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Social'>
+            <Link to='/Register/Social'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
@@ -196,7 +196,7 @@ const Residence = () => {
                 </div><br />
 
                 <div className='flex justify-end col-span-2'>
-                <Link to="/Guardian" className='mr-8  w-28' >
+                    <Link to="/Register/Guardian" className='mr-8  w-28' >
                     <button
                         onClick={residenceP}
                         disabled={!(isValid && dirty)}

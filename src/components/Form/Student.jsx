@@ -389,7 +389,7 @@ const Student = props => {
                     </div>
 
                     <div className='flex justify-end col-span-2'>
-                        <Link to="/Social" className='mr-8 w-28' >
+                        <Link to="/Register/Social" className='mr-8 w-28' >
                             <button
                                 onClick={studentP}
                                 disabled={!(isValid && dirty)}
