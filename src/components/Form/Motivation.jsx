@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
 import { motivationSchema } from '../../schemas/formSchema'
-import defaultApi from '../../apis/index'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -47,6 +46,7 @@ const Motivation = () => {
 
     return (
         <div>
+
             {/* cover image with logo */}
             <div className='flex h-72 '>
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoSIETE.jpeg?raw=true'} className=' opacity-50 mix-blend-overlay object-cover h-72 w-full absolute'></img>
@@ -54,25 +54,20 @@ const Motivation = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-
             <Link to='/Psychological' className=' mr-8 col-span-2 w-28'>
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
                 Test Motivacional
             </h2>
-
-
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
             Ser parte de “PROGRÁMATE SCHOOL”
             </h2>
             <br/>
 
             <form onSubmit={handleSubmit}>
-                
-                {/* question 46 id why */}
 
+                {/* question 46 id why */}
                 <section
                     value={values.why}
                     onChange={handleChange}
@@ -95,7 +90,6 @@ const Motivation = () => {
                                 Quiero ser parte de Prográmate School porque la programación siempre me ha interesado y con esta oportunidad podré ampliar mis conocimientos en esta área.
                                 </h3>
                             </div>
-
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -111,7 +105,6 @@ const Motivation = () => {
                                 Quiero ser parte de Prográmate porque me va a ayudar a adquirir conocimientos para ser influencer.
                                 </h3>
                             </div>
-
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -132,7 +125,6 @@ const Motivation = () => {
                 </section>
 
                 {/* question 47 id methodology */}
-
                 <section
                     value={values.methodology}
                     onChange={handleChange}
@@ -192,7 +184,6 @@ const Motivation = () => {
                 </section>
                 
                 {/* question 48 id want */}
-
                 <section
                     value={values.want}
                     onChange={handleChange}
@@ -215,7 +206,6 @@ const Motivation = () => {
                                 Poder tener conocimientos en tecnología y así poner en práctica mi conocimiento de programación cuando entre a la universidad.
                                 </h3>
                             </div>
-
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -231,7 +221,6 @@ const Motivation = () => {
                                 Tener un trabajo que me dé mucho dinero. 
                                 </h3>
                             </div>
-
                             <div className='flex flex-row'>
                                 <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                     <input
@@ -252,7 +241,6 @@ const Motivation = () => {
                 </section>
 
                 {/* question 49 id withdrawal */}
-
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuáles consideras que serían los motivos de retiro del programa durante el tiempo de programación? <small className='text-red/80'>*</small></h3>
                     <select
@@ -277,7 +265,6 @@ const Motivation = () => {
                     </select>
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
-
             <div className='flex justify-end'>
                 <Link className='mr-8 col-span-2 w-28' to='/Logic'>
                     <button

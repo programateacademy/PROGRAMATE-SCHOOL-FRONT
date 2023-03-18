@@ -6,8 +6,6 @@ import { logicSchema } from '../../schemas/formSchema'
 import defaultApi from '../../apis/index'
 import swal from 'sweetalert2'
 
-
-
 const onSubmit = async (values, actions) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -86,7 +84,6 @@ const Logic = () => {
             <Link to='/Motivation'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>
                 Prueba Logica
             </h2>
@@ -94,8 +91,8 @@ const Logic = () => {
                 Ahora no te asustes, esta pequeña prueba de lógica lo que busca es ver la manera en la que dar solución a diversas problemáticas no cuenta con calificación, pero si te recomendamos que la respondas a conciencia, ya que con esto podremos saber la mejor manera de apoyarte en u aprendizaje
             </p>
             <form onSubmit={handleSubmit}>
-                {/* question 50 id logic1 */}
 
+                {/* question 50 id logic1 */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>En una carrera, de 4 corredores, se sabe que C ha llegado justo detrás de B, y D ha llegado en medio de A y C. ¿Cuál es el orden de llegada de los corredores? <small className='text-red/80'>*</small></h3>
                     <select
@@ -119,7 +116,6 @@ const Logic = () => {
                 </div>
 
                 {/* question 51 id logic2 */}
-
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Un nadador se ve rodeado de un grupo de tiburones, muchos de ellos con problemas de visión.
                         Tres no veían por el ojo derecho, tres no veían por el ojo izquierdo y tres tanto por el derecho
@@ -144,7 +140,6 @@ const Logic = () => {
                 </div>
 
                 {/* question 52 id logic3 */}
-
                 <div className='grid md:grid-cols-2'>
                     <div className='flex flex-col'>
                     <section
@@ -167,8 +162,7 @@ const Logic = () => {
                                             focus:accent-yellow" />
                                         A.
                                     </label>
-                                </div>
-                                
+                                </div>                           
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
@@ -181,7 +175,6 @@ const Logic = () => {
                                         B.
                                     </label>
                                 </div>
-
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
@@ -225,7 +218,6 @@ const Logic = () => {
                     </div>
 
                 {/* question 53 id logic4 */}
-                
                     <div className='flex flex-col'>
                     <section
                     id='logic4'
@@ -249,7 +241,6 @@ const Logic = () => {
                                         A.
                                     </label>
                                 </div>
-
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
@@ -262,7 +253,6 @@ const Logic = () => {
                                         B.
                                     </label>
                                 </div>
-
                                 <div className='flex flex-row'>
                                     <label className='flex justify-center font-Poppins font-extrabold text-center'>
                                         <input
