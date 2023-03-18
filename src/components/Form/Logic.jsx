@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom'
-import { logicShema } from '../../schemas/formSchema' 
+import { logicSchema } from '../../schemas/formSchema' 
 import defaultApi from '../../apis/index'
 import swal from 'sweetalert2'
 
@@ -23,7 +23,7 @@ const Logic = () => {
             logic3: '',
             logic4: '',
         },
-        validationSchema: logicShema,
+        validationSchema: logicSchema,
         onSubmit
     });
     // console.log(errors);
@@ -36,8 +36,20 @@ const Logic = () => {
             logic4: values.logic4,
         }
         console.log(view7);
+        
+        //THIS BRING AN OBJECT FROM LOCALSTORAGE
+        const view1to6save = JSON.parse(localStorage.getItem('LSview1to6'))
+        localStorage.removeItem('LSview1to6')
+
+        // THIS JOIN TWO OBJECTS
+        const view1to7 = {...view1to6save, ...view7}
+        
+        // THIS SEND VIEW1TO7  TO LOCALSTORAGE 
+        //localStorage.setItem('LSview1to7', JSON.stringify(view1to7))
+
+        console.log(view1to7);
         defaultApi
-            .post("/registertoannouncement", view7)
+            .post("/registertoannouncement", view1to7)
             .then((res) => {
                 swal.fire({
                     text: 'Se ha inscrito a la convocatoria EXITOSAMENTE',
@@ -95,13 +107,13 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic1 && touched.logic1 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2 '}>
                         <option className='font-medium text-dark'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark' value='B,C,D,A'>
+                        <option className='font-medium text-dark' value='El orden de llegada es B, C, D, A'>
                             El orden de llegada es B, C, D, A</option>
-                        <option className='font-medium text-dark' value='B,A,C,D'>
+                        <option className='font-medium text-dark' value='El orden de llegada es B, A, C, D'>
                             El orden de llegada es B, A, C, D</option>
-                        <option className='font-medium text-dark' value='B,D,C,A'>
+                        <option className='font-medium text-dark' value='El orden de llegada es B, D, C, A'>
                             El orden de llegada es B, D, C, A</option>
-                        <option className='font-medium text-dark' value='A,B,D,A'>
+                        <option className='font-medium text-dark' value='El orden de llegada es A, B, D, A'>
                             El orden de llegada es A, B, D, A</option>
                     </select>
                     {errors.logic1 && touched.logic1 && <p className='text-red text-xs font-Poppins'>{errors.logic1}</p>}
@@ -122,11 +134,11 @@ const Logic = () => {
                         data-te-select-init data-te-select-filter='true' className={errors.logic2 && touched.logic2 ? ' w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins md:items-center md:w-1/2' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium md:items-center md:w-1/2'}>
                         <option className='font-medium text-dark sm:mx-40'>
                             Selecciona una opción </option>
-                        <option className='font-medium text-dark sm:mx-40' value='Q1'>
-                            Seis tiburones no son completamente ciegos y tres son completamente ciegos.</option>
-                        <option className='font-medium text-dark sm:mx-40' value='Q2'>
+                        <option className='font-medium text-dark sm:mx-40'>
+                            Seis tiburones no son completamente ciegos y tres son completamente ciegos </option>
+                        <option className='font-medium text-dark sm:mx-40'>
                             Tres de los tiburones son completamente ciegos y tres no son completamente  </option>
-                        <option className='font-medium text-dark sm:mx-40' value='Q3'>
+                        <option className='font-medium text-dark sm:mx-40'>
                             Tres tiburones no son completamente ciegos y Seiscon completamente ciegos </option>
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}

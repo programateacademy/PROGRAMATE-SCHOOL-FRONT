@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Singup from './pages/Singup'
 import StudentSpace from './pages/StudentSpace'
 import SuperAdminSpace from './pages/SuperAdminSpace'
+import AdminSpace from './pages/AdminSpace'
 {/* Import form paths */ }
 import Student from './components/Form/Student'
 import Social from './components/Form/Social'
@@ -15,10 +16,15 @@ import Motivation from './components/Form/Motivation'
 import Logic from './components/Form/Logic'
 
 
-function App() {
+//import { AnnouncementContext, AnnouncementProvider } from './context/AnnouncementProvider'
 
+//import FormRegister from "./components/Form/FormRegister"
+
+function App() {
+  
   return (
     <div>
+    
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} exact></Route>
@@ -30,6 +36,9 @@ function App() {
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
            </Route> 
           {/* Form paths */}
+
+          {/* <Route path='/FormRegister' element={<FormRegister/>} exact></Route> */}
+
           <Route path='/Student' element={<Student />} exact></Route>
           <Route path='/Social' element={<Social />} exact></Route>
           <Route path='/Residence' element={<Residence />} exact></Route>
@@ -40,6 +49,7 @@ function App() {
           <Route path='*' element={ <Navigate to="/Login" />} exact></Route>
         </Routes>
       </BrowserRouter>
+    
     </div>
   )
 }
