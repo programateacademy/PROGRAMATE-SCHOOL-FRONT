@@ -39,7 +39,7 @@ export const socialSchema = yup.object().shape({
     ethnicGroup: yup.string().required('Selecciona si perteneces a algun grupo ednico').oneOf(['Palenquero', 'Afrocolombiano o Afrodecendiente', 'Indigena', 'Gitano', 'Raizal', 'Ninguna de las anteriores'], 'Selecciona si perteneces a algun grupo ednico'),
     nationality: yup.string().required('Selecciona tu nacionalidad').oneOf(['Venezolan@', 'Colombian@', 'Otra'], 'Selecciona tu nacionalidad'),
     disability: yup.string().required('Selecciona si estas en situacion de discapacidad'),
-    typeDisability: yup.string().required('Si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna').oneOf(['Fisica', 'Auditiva', 'Visual', 'Intelectual / Cognitiva', 'SordoCegera', 'Pisicosocial', 'Multiple', 'Otra', 'Ninguno de los anteriores'], 'Si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna'),
+    typeDisability: yup.string().required('Si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna').oneOf(['Fisica', 'Auditiva', 'Visual', 'Intelectual / Cognitiva', 'SordoCegera', 'Pisicosocial', 'Multiple', 'Otra', 'Ninguna'], 'Si estas en situacion de discapacidad selecciona cual y si no selecciona ninguna'),
 })
 
 export const residenceSchema = yup.object().shape({
