@@ -1,9 +1,10 @@
-import React from 'react'
-import { BsFillPlusSquareFill } from 'react-icons/bs'
+import React from 'react';
+import { BsFillPlusSquareFill } from 'react-icons/bs';
 
 const UsersTable = () => {
     return (
         <div>
+            
             {/* Header */}        
             <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
                 <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
@@ -14,15 +15,7 @@ const UsersTable = () => {
 
             {/* Table */}
             <section className=''>
-                <br/>
-
-                <br/>
-
-                <br/>
-
-                <br/>
-
-                <br/>
+                <br/><br/><br/><br/><br/>
             </section>
         </div>
     )

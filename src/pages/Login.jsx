@@ -1,15 +1,13 @@
-import { React, useState } from 'react'
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
-import { useNavigate, Link,  } from 'react-router-dom'
-import defaultApi from '../apis/index'
-import swal from 'sweetalert2'
-
+import { React, useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { useNavigate, Link,  } from 'react-router-dom';
+import defaultApi from '../apis/index';
+import swal from 'sweetalert2';
 
 function LoginPerson() {
     //Hooks
     const [emailPerson, setEmailPerson] = useState("");
     const [passwordPerson, setPasswordPerson] = useState("");
-
     const navigator = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
 
@@ -54,11 +52,9 @@ function loginPerson() {
                 confirmButtonColor: '#FBC209',
                 background: '#FFFFFF',
             });
-        }
+        };
     });
-}
-    
-
+};
     return (
         <div className='relative'>
         <Link to='/'><img className='absolute w-1/6 left-6 top-4 hidden md:block' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados'/></Link>
@@ -89,4 +85,4 @@ function loginPerson() {
     )
 }
 
-export default LoginPerson
+export default LoginPerson;

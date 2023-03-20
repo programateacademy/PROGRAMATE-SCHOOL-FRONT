@@ -55,7 +55,7 @@ const Guardian = () => {
         const view1to3save = JSON.parse(localStorage.getItem('LSview1to3'))
         localStorage.removeItem('LSview1to3')
 
-        // THIS JOIN TWO OBJECTS
+        // THIS JOIN TWO OBJECT
         const view1to4 = { ...view1to3save, ...view4 }
         console.log(view1to4)
 
@@ -74,9 +74,7 @@ const Guardian = () => {
             <Link to='/Residence'>
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-            <h2 className=' font-Poppins font-semibold flex justify-center mb -5 text-2xl'>
-                Informacion de acudiente
-            </h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb -5 text-2xl'>Informacion de acudiente</h2>
             <form onSubmit={handleSubmit} className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 ' >
 
                 {/* question 27 id nameGuardian */}
@@ -106,20 +104,13 @@ const Guardian = () => {
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true'
                         className={errors.documentTypeGuardian && touched.documentTypeGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                        <option className='font-medium text-dark'>
-                            Selecciona una opción</option>
-                        <option className='font-medium text-dark'>
-                            Cédula de Ciudadania</option>
-                        <option className='font-medium text-dark'>
-                            Cédula de extranjería</option>
-                        <option className='font-medium text-dark'>
-                            Tarjeta de identidad</option>
-                        <option className='font-medium text-dark'>
-                            Pasaporte</option>
-                        <option className='font-medium text-dark'>
-                            PEP</option>
-                        <option className='font-medium text-dark'>
-                            PTP</option>
+                        <option className='font-medium text-dark'>Selecciona una opción</option>
+                        <option className='font-medium text-dark'>Cédula de Ciudadania</option>
+                        <option className='font-medium text-dark'>Cédula de extranjería</option>
+                        <option className='font-medium text-dark'>Tarjeta de identidad</option>
+                        <option className='font-medium text-dark'>Pasaporte</option>
+                        <option className='font-medium text-dark'>PEP</option>
+                        <option className='font-medium text-dark'>PTP</option>
                     </select>
                     {errors.documentTypeGuardian && touched.documentTypeGuardian && <p className='text-red text-xs font-Poppins'>{errors.documentTypeGuardian}</p>}
                 </div>
@@ -236,41 +227,31 @@ const Guardian = () => {
                         value={values.relationship}
                         onChange={handleChange}
                         onBlur={handleBlur}>
-                        <option className='font-medium text-dark'>
-                            Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
-                            Madre - Padre</option>
-                        <option className='font-medium text-dark'>
-                            Padrino - Madrina</option>
-                        <option className='font-medium text-dark'>
-                            Tío - Tía</option>
-                        <option className='font-medium text-dark'>
-                            Abuelo - Abuela</option>
-                        <option className='font-medium text-dark' value='padrastros'>
-                            Padrastro - Madrastra</option>
-                        <option className='font-medium text-dark'>
-                            Otro</option>
+                        <option className='font-medium text-dark'>Selecciona una opción </option>
+                        <option className='font-medium text-dark'>Madre - Padre</option>
+                        <option className='font-medium text-dark'>Padrino - Madrina</option>
+                        <option className='font-medium text-dark'>Tío - Tía</option>
+                        <option className='font-medium text-dark'>Abuelo - Abuela</option>
+                        <option className='font-medium text-dark' value='padrastros'>Padrastro - Madrastra</option>
+                        <option className='font-medium text-dark'>Otro</option>
                     </select>
                     {errors.relationship && touched.relationship && <p className='text-red text-xs font-Poppins'>{errors.relationship}</p>}
                 </div>
-                <div className='mx-12 sm:mx-40  md:mx-16 lg:mx-28 pb-6  '>
-                    {values.relationship === 'Otro' && (
-                        <div>
-                            <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'> Cual</label>
-                            <input
-                                className={errors.relationshipO && touched.relationshipO ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
-                                type="text"
-                                id='relationshipO'
-                                name='relationshipO'
-                                placeholder='Cual'
-                                value={values.relationshipO}
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                            />
-                        </div>
-                    )}
-                </div>
-
+                {values.relationship === 'Otro' && (
+                    <div className='mx-12 sm:mx-40  md:mx-16 lg:mx-28 pb-6'>
+                        <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Cual</label>
+                        <input
+                            className={errors.relationshipO && touched.relationshipO ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
+                            type="text"
+                            id='relationshipO'
+                            name='relationshipO'
+                            placeholder='Cual'
+                            value={values.relationshipO}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+                )}
                 <hr className=" border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
                 {/* question 36 id educationLevelGuardian */}
@@ -283,30 +264,18 @@ const Guardian = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.educationLevelGuardian && touched.educationLevelGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                        <option className='font-medium text-dark'>
-                            Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
-                            Pregrado - completo</option>
-                        <option className='font-medium text-dark'>
-                            Pregrado - incompleto</option>
-                        <option className='font-medium text-dark'>
-                            Formación tecnológica - completo</option>
-                        <option className='font-medium text-dark'>
-                            Formación tecnológica - incompleto</option>
-                        <option className='font-medium text-dark'>
-                            Formación tecnica - completo</option>
-                        <option className='font-medium text-dark'>
-                            Formación tecnica - incompleto</option>
-                        <option className='font-medium text-dark'>
-                            Bachillerato - completo</option>
-                        <option className='font-medium text-dark'>
-                            Bachillerato - incompleto </option>
-                        <option className='font-medium text-dark'>
-                            Primaria - completo</option>
-                        <option className='font-medium text-dark'>
-                            Primaria - incompleto </option>
-                        <option className='font-medium text-dark'>
-                            Ninguna </option>
+                        <option className='font-medium text-dark'>Selecciona una opción </option>
+                        <option className='font-medium text-dark'>Pregrado - completo</option>
+                        <option className='font-medium text-dark'>Pregrado - incompleto</option>
+                        <option className='font-medium text-dark'>Formación tecnológica - completo</option>
+                        <option className='font-medium text-dark'>Formación tecnológica - incompleto</option>
+                        <option className='font-medium text-dark'>Formación tecnica - completo</option>
+                        <option className='font-medium text-dark'>Formación tecnica - incompleto</option>
+                        <option className='font-medium text-dark'>Bachillerato - completo</option>
+                        <option className='font-medium text-dark'>Bachillerato - incompleto </option>
+                        <option className='font-medium text-dark'>Primaria - completo</option>
+                        <option className='font-medium text-dark'>Primaria - incompleto </option>
+                        <option className='font-medium text-dark'>Ninguna </option>
                     </select>
                     {errors.educationLevelGuardian && touched.educationLevelGuardian && <p className='text-red text-xs font-Poppins'>{errors.educationLevelGuardian}</p>}
                 </div>
@@ -321,25 +290,19 @@ const Guardian = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.economic && touched.economic ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                        <option className='font-medium text-dark'>
-                            Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
-                            Empleado tiempo completo</option>
-                        <option className='font-medium text-dark'>
-                            Empleado medio tiempo</option>
-                        <option className='font-medium text-dark'>
-                            Generando ingresos de manera informal (sin contrato)</option>
-                        <option className='font-medium text-dark'>
-                            Independiente</option>
-                        <option className='font-medium text-dark'>
-                            Desempleado/a</option>
+                        <option className='font-medium text-dark'>Selecciona una opción </option>
+                        <option className='font-medium text-dark'>Empleado tiempo completo</option>
+                        <option className='font-medium text-dark'>Empleado medio tiempo</option>
+                        <option className='font-medium text-dark'>Generando ingresos de manera informal (sin contrato)</option>
+                        <option className='font-medium text-dark'>Independiente</option>
+                        <option className='font-medium text-dark'>Desempleado/a</option>
                     </select>
                     {errors.economic && touched.economic && <p className='text-red text-xs font-Poppins'>{errors.economic}</p>}
                 </div>
 
                 {/* question 38 id family */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuántas personas componen tu núcleo familiar?  <small className='text-red/80'>*</small> </label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuántas personas componen tu núcleo familiar?<small className='text-red/80'>*</small> </label>
                     <select
                         id='family'
                         name='family'
@@ -347,20 +310,14 @@ const Guardian = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.family && touched.family ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                        <option className='font-medium text-dark'>
-                            Selecciona una opción </option>
-                        <option className='font-medium text-dark'>
-                            1 - 2 </option>
-                        <option className='font-medium text-dark'>
-                            3 - 4 </option>
-                        <option className='font-medium text-dark'>
-                            5 o más </option>
-                        <option className='font-medium text-dark'>
-                            Ninguna </option>
+                        <option className='font-medium text-dark'>Selecciona una opción </option>
+                        <option className='font-medium text-dark'>1 - 2</option>
+                        <option className='font-medium text-dark'>3 - 4</option>
+                        <option className='font-medium text-dark'>5 o más</option>
+                        <option className='font-medium text-dark'>Ninguna</option>
                     </select>
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>}
                 </div>
-                
                 <div className='flex justify-end'>
                     <Link className='mr-8 col-span-2 w-28' to='/Vocation'>
                         <button

@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from '../components/Navbar'
-import HelpNotice from '../components/StudentSpace/HelpNotice'
-import Announcement from '../components/StudentSpace/Announcement'
-import StudenPhases from '../components/StudentSpace/StudentPhases'
+import Navbar from '../components/Navbar';
+import HelpNotice from '../components/StudentSpace/HelpNotice';
+import Announcement from '../components/StudentSpace/Announcement';
+import StudenPhases from '../components/StudentSpace/StudentPhases';
 import StudentProgress from "../components/StudentSpace/StudentProgress";
 
 const StudentSpace = () => {

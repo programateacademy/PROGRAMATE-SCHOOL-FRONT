@@ -2,14 +2,13 @@ import { React, useState } from 'react'
 import { HiMenu } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 
-
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <nav className=''>
             <section className='absolute z-40 flex flex-row md:grid md:grid-cols-5 px-4 py-2 items-center justify-between m-auto md:mx-14 md:mt-3'>
-                
+
                 {/* Logo Programate school */}
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-2/6 flex md:col-span-1 md:w-full'></img>
 
@@ -20,14 +19,13 @@ export const Navbar = () => {
                     2xl:text-2xl'>
                     <div className=' flex flex-row md:grid md:grid-cols-2 md:gap-8 '>
                         {/* <Link to=""> */}
-                            <h1 className='px-3 text-center' alt="Convocatorias">Convocatorias</h1>
+                        <h1 className='px-3 text-center' alt="Convocatorias">Convocatorias</h1>
                         {/* </Link>
                         <Link to=""> */}
-                            <h1 className='px-3 text-center justify-items-end' alt="Contáctanos">Contáctanos</h1>
+                        <h1 className='px-3 text-center justify-items-end' alt="Contáctanos">Contáctanos</h1>
                         {/* </Link> */}
                     </div>
                 </div>
-
                 <div className='flex flex-row items-center justify-self-end gap-3 md:col-span-1'>
                     {/*  Login button which is routed to the login */}
                     <Link to="/Login">
@@ -47,8 +45,7 @@ export const Navbar = () => {
                             <button className='font-medium focus:bg-light rounded-lg p-3' alt="Contáctanos">Contáctanos</button>
                             {/* </Link> */}
                         </div>
-                    ) : null
-                    }
+                    ) : null}
                 </div>
             </section>
         </nav>

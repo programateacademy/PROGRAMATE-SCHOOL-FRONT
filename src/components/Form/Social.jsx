@@ -1,9 +1,7 @@
-import { React, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
-import { socialSchema } from '../../schemas/formSchema'
-import defaultApi from '../../apis/index'
+import { socialSchema } from '../../schemas/formSchema';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -60,14 +58,11 @@ const Social = () => {
             <Link to='/Student'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
-                Informacion Social
-            </h2>
-
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Informacion Social</h2>
             <form onSubmit={handleSubmit} className=' font-Poppins' >
                 <div className='mx-12 sm:mx-5 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
+                    
                     {/* question 17 id sisben */}
-
                     <div
                         id="sisben"
                         value={values.sisben}
@@ -81,9 +76,7 @@ const Social = () => {
                                 id="sisben"
                                 name="sisben"
                                 value="SI"
-                                className="accent-red
-                                    focus:accent-yellow" />
-                            Si
+                                className="accent-red focus:accent-yellow"/>Si
                         </label>
                         <label>
                             <input
@@ -91,16 +84,12 @@ const Social = () => {
                                 id="sisben"
                                 name="sisben"
                                 value="NO"
-                                className="accent-red
-                                    focus:accent-yellow"
-                            />
-                            No
+                                className="accent-red focus:accent-yellow"/>No
                         </label>
                         {errors.sisben && touched.sisben && <p className='text-red text-xs font-Poppins'>{errors.sisben}</p>}
                     </div>
 
                     {/* question 18 id ethnicGroup */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Eres parte de un grupo étnico? <small className='text-red/80'>*</small></h3>
                         <select
@@ -110,26 +99,18 @@ const Social = () => {
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
                             className={errors.ethnicGroup && touched.ethnicGroup ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
-                                Palenquero</option>
-                            <option className='font-medium text-dark'>
-                                Afrocolombiano o Afrodecendiente</option>
-                            <option className='font-medium text-dark'>
-                                Indigena</option>
-                            <option className='font-medium text-dark'>
-                                Gitano</option>
-                            <option className='font-medium text-dark'>
-                                Raizal</option>
-                            <option className='font-medium text-dark'>
-                                Ninguna de las anteriores</option>
+                            <option className='font-medium text-dark'>Selecciona una opción </option>
+                            <option className='font-medium text-dark'>Palenquero</option>
+                            <option className='font-medium text-dark'>Afrocolombiano o Afrodecendiente</option>
+                            <option className='font-medium text-dark'>Indigena</option>
+                            <option className='font-medium text-dark'>Gitano</option>
+                            <option className='font-medium text-dark'>Raizal</option>
+                            <option className='font-medium text-dark'>Ninguna de las anteriores</option>
                         </select>
                         {errors.ethnicGroup && touched.ethnicGroup && <p className='text-red text-xs font-Poppins'>{errors.ethnicGroup}</p>}
                     </div>
 
                     {/* question 19 id nationality */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu nacionalidad?   <small className='text-red/80'>*</small></h3>
                         <select
@@ -139,14 +120,10 @@ const Social = () => {
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
                             className={errors.nationality && touched.nationality ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
-                                Venezolan@</option>
-                            <option className='font-medium text-dark'>
-                                Colombian@</option>
-                            <option className='font-medium text-dark'>
-                                Otra</option>
+                            <option className='font-medium text-dark'>Selecciona una opción </option>
+                            <option className='font-medium text-dark'>Venezolan@</option>
+                            <option className='font-medium text-dark'>Colombian@</option>
+                            <option className='font-medium text-dark'>Otra</option>
                         </select>
                         {errors.nationality && touched.nationality && <p className='text-red text-xs font-Poppins'>{errors.nationality}</p>}
                     </div>
@@ -155,7 +132,6 @@ const Social = () => {
                     <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
 
                     {/* question 20 id disability */}
-
                     <div
                         value={values.disability}
                         onChange={handleChange}
@@ -168,9 +144,7 @@ const Social = () => {
                                 name="disability"
                                 id="disability"
                                 value="SI"
-                                className="accent-red
-                                    focus:accent-yellow" />
-                            Si
+                                className="accent-red focus:accent-yellow" />Si
                         </label>
                         <label>
                             <input
@@ -178,16 +152,12 @@ const Social = () => {
                                 name="disability"
                                 id="disability"
                                 value="NO"
-                                className="accent-red
-                                    focus:accent-yellow"
-                            />
-                            No
+                                className="accent-red focus:accent-yellow"/>No
                         </label>
                         {errors.disability && touched.disability && <p className='text-red text-xs font-Poppins'>{errors.disability}</p>}
                     </div>
 
                     {/* question 21 id typeDisability */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué tipo de discapacidad tienes? <small className='text-red/80'>*</small></h3>
                         <select
@@ -197,32 +167,20 @@ const Social = () => {
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true'
                             className={errors.typeDisability && touched.typeDisability ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
-                                Fisica</option>
-                            <option className='font-medium text-dark'>
-                                Auditiva</option>
-                            <option className='font-medium text-dark'>
-                                Visual</option>
-                            <option className='font-medium text-dark'>
-                                Intelectual / Cognitiva</option>
-                            <option className='font-medium text-dark'>
-                                SordoCegera</option>
-                            <option className='font-medium text-dark'>
-                                Pisicosocial</option>
-                            <option className='font-medium text-dark'>
-                                Multiple</option>
-                            <option className='font-medium text-dark'>
-                                Otra </option>
-                            <option className='font-medium text-dark'>
-                                Ninguno de los anteriores</option>
+                            <option className='font-medium text-dark'>Selecciona una opción </option>
+                            <option className='font-medium text-dark'>Fisica</option>
+                            <option className='font-medium text-dark'>Auditiva</option>
+                            <option className='font-medium text-dark'>Visual</option>
+                            <option className='font-medium text-dark'>Intelectual / Cognitiva</option>
+                            <option className='font-medium text-dark'>SordoCegera</option>
+                            <option className='font-medium text-dark'>Pisicosocial</option>
+                            <option className='font-medium text-dark'>Multiple</option>
+                            <option className='font-medium text-dark'>Otra </option>
+                            <option className='font-medium text-dark'>Ninguno de los anteriores</option>
                         </select>
                         {errors.typeDisability && touched.typeDisability && <p className='text-red text-xs font-Poppins'>{errors.typeDisability}</p>}
                     </div>
-
                 </div>
-
                 <div className='flex justify-end'>
                 <Link to="/Residence" className='mr-8 col-span-2 w-28' >
                 <button

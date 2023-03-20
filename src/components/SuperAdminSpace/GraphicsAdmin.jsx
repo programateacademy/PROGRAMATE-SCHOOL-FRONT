@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -11,7 +11,6 @@ import {
     Filler,
 } from "chart.js";
 import { Bar } from 'react-chartjs-2';
-
 
 ChartJS.register(
     CategoryScale,
@@ -59,7 +58,6 @@ const options = {
             labels,
         };
     }, []);
-
     return (
         <div className=''>
             <h2>Categorias</h2>

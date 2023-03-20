@@ -1,7 +1,7 @@
-import React from 'react'
-import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2'
-import { SlGraduation } from 'react-icons/sl'
-import { TfiMouse } from 'react-icons/tfi'
+import React from 'react';
+import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
+import { SlGraduation } from 'react-icons/sl';
+import { TfiMouse } from 'react-icons/tfi';
 
 const VerticalNavbar = () => {
     return (
@@ -31,7 +31,7 @@ const VerticalNavbar = () => {
                 <HiOutlineWallet className='md:hidden m-auto scale-[1.3]'/>
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default VerticalNavbar
+export default VerticalNavbar;
