@@ -77,19 +77,22 @@ export const Benefist = () => {
           {/*Program duration*/}
           <object className="md:col-span-1">
             <h1 className="font-bold mx-4 font-Poppins text-2xl">
-              DURACIÓN TOTAL <br />
-              <span className="text-yellow">8 MESES</span>
+              PROPUESTA PROGRAMÁTICA  <br />
+              <span className="text-yellow">2023</span>
             </h1>
             <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.<br /> <br />
+              <strong>Duración:</strong>5 meses (posibilidad de tener 2 cohortes o más por año )<br /> <br />
 
-              incididunt ut labore et dolore.<br /> <br />
+              <strong>Número de horas:</strong>250 horas (200 horas técnicas y de acompañamiento vocacional+50 horas de inglés)<br /> <br />
 
-              Aliquam ultrices sagittis orci<br /> <br />
+              <strong>Horario:</strong>lunes, martes, miércoles y viernes de 3:00 pm a 6:00 pm o 6:30 pm<br /> <br />
 
-              purus semper eget duis. Eget sit amet tellus.<br /> <br />
+              <strong>Requisitos:</strong>Interés por la tecnología y contar con una mente analítica<br /> <br />
 
-              <span className="text-yellow">Ac orci phasellus egestas</span>
+              <strong>Modalidad:</strong>100% remoto sincrónico (clases en vivo)<br /> <br />
+
+              <strong>Título otorgado:</strong>Certificación de competencias como Desarrollador web front end nivel junior<br /> <br />
+       
             </p>
 
             {/*Program logos*/}
@@ -109,21 +112,15 @@ export const Benefist = () => {
           {/*Program description...*/}
           <object className="md:col-span-2 md:ml-20">
             <h3 className="text-dark mt-8 md:mt-0 mx-4 font-bold font-Poppins text-2xl text-right">
-              Comienza YA a estudiar sobre el futuro que es la tecnologia
-            </h3>
+              DESARROLLO WEB FRONT END </h3>
             <p className="mx-4 mt-8 font-Nunito lg:text-lg text-right">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Aliquam ultrices sagittis orci a scelerisque purus semper eget
-              duis. Eget sit amet tellus cras adipiscing enim. Ac orci
-              phasellus egestas tellus rutrum. Eget arcu dictum varius duis
-              at. Dignissim suspendisse in est ante in nibh. Enim sed faucibus
-              turpis in eu mi bibendum. Lectus nulla at volutpat diam ut
-              venenatis tellus in. Nam aliquam sem et tortor consequat id
-              porta nibh venenatis. Pretium vulputate sapien nec sagittis
-              aliquam malesuada bibendum. Consectetur libero id faucibus nisl.
-              Tincidunt id aliquet risus feugiat.<br /> <br />
-              Viverra nam libero justo laoreet. Purus ut faucibus pulvinar elementum integer enim. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Ac tincidunt vitae semper quis. Donec ultrices tincidunt arcu non sodales neque sodales. Sodales ut etiam sit amet nisl purus in. Donec ac odio tempor orci dapibus ultrices in.
+              Adquirirás las destrezas necesarias para desempeñarse como Desarrollador Web Frontend, a  través de lenguajes de programación de vanguardia que permitirán páginas web y plataformas digitales innovadoras. <br />
+    
+                <strong>Front end:</strong>Creación de interfaces web  a partir del diseño y la experiencia de usuario <br /> 
+                <strong>Sitios web:</strong>Creación de contenido, incluyendo textos  gráficos,  animaciones entre otros, que permitan navegar de forma  funcional en el entorno web. <br />
+                <strong>Aplicaciones web</strong>Creación de contenido  basado en la  experiencia de usuario para mejorar la navegabilidad. <br />
+              <br />
+              De igual forma, adquirirás habilidades innovadoras como la comunicación asertiva, el trabajo en equipo, el liderazgo, la resolución de problemas y autogestión, con lo cuál fomentamos que tengas un perfil de salida integral que te permitirá destacarte en el entorno laboral. 
             </p>
           </object>
 
