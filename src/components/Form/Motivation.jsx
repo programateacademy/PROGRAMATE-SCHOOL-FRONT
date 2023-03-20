@@ -218,7 +218,7 @@ const Motivation = () => {
                     {errors.withdrawal && touched.withdrawal && <p className='text-red text-xs font-Poppins'>{errors.withdrawal}</p>} 
                 </div>
             <div className='flex justify-end'>
-                <Link className='mr-8 col-span-2 w-28' to='/Logic'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Logic'>
                     <button
                         onClick={motivationP}
                         disabled={!(isValid && dirty)}

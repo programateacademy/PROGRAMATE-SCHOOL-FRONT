@@ -18,6 +18,7 @@ export const Navbar = () => {
                     xl:text-xl
                     2xl:text-2xl'>
                     <div className=' flex flex-row md:grid md:grid-cols-2 md:gap-8 '>
+
                         {/* <Link to=""> */}
                         <h1 className='px-3 text-center' alt="Convocatorias">Convocatorias</h1>
                         {/* </Link>
@@ -38,10 +39,10 @@ export const Navbar = () => {
                     />
                     {isOpen === true ? (
                         <div className=' bg-yellow rounded-lg p-3 flex flex-col font-Poppins mt-44 fixed right-5'>
-                            {/* <Link to=""> */}
+                            <Link to="/Singup">
                             <button className='font-medium focus:bg-light rounded-lg p-3' alt="Convocatorias">Convocatorias</button>
-                            {/* </Link>
-                            <Link to=""> */}
+                            </Link> 
+                            {/* <Link to="/Home/Requirements">  */}
                             <button className='font-medium focus:bg-light rounded-lg p-3' alt="Contáctanos">Contáctanos</button>
                             {/* </Link> */}
                         </div>

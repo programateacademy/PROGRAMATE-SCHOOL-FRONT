@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
     return (
-        <>
+        <div id="footer">
             {/* Phrase of Educamas */}
             <footer >
                 <div className='flex justify-center items-center bg-yellow p-0 md:p-1 '>

@@ -55,7 +55,7 @@ const Social = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Student'>
+            <Link to='/Register/Student'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Informacion Social</h2>
@@ -183,7 +183,7 @@ const Social = () => {
                     </div>
                 </div>
                 <div className='flex justify-end'>
-                <Link to="/Residence" className='mr-8 col-span-2 w-28' >
+                    <Link to="/Register/Residence" className='mr-8 col-span-2 w-28' >
                 <button
                     onClick={socialP}
                     disabled={!(isValid && dirty)}

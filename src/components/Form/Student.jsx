@@ -334,7 +334,7 @@ const Student = props => {
                         <p className=' font-Nunito text-sm text-dark/60'> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
                     </div>
                     <div className='flex justify-end col-span-2'>
-                        <Link to="/Social" className='mr-8 w-28' >
+                        <Link to="/Register/Social" className='mr-8 w-28' >
                             <button
                                 onClick={studentP}
                                 disabled={!(isValid && dirty)}

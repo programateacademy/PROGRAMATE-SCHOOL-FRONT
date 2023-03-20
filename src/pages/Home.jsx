@@ -12,7 +12,7 @@ function Home() {
             <Header/>
             <Benefits/>
             <Requirements/>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

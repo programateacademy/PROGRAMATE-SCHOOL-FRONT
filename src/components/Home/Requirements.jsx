@@ -89,7 +89,7 @@ const Requirements = () => {
                             <p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
-                            <button className=' button mx-3 '>button-Primary</button>
+                            {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
                         <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
