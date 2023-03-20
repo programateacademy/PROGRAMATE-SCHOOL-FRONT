@@ -176,7 +176,8 @@ const Social = () => {
                             <option className='font-medium text-dark'>Pisicosocial</option>
                             <option className='font-medium text-dark'>Multiple</option>
                             <option className='font-medium text-dark'>Otra </option>
-                            <option className='font-medium text-dark'>Ninguno de los anteriores</option>
+                            <option className='font-medium text-dark'>Ninguna</option>
+                        
                         </select>
                         {errors.typeDisability && touched.typeDisability && <p className='text-red text-xs font-Poppins'>{errors.typeDisability}</p>}
                     </div>
