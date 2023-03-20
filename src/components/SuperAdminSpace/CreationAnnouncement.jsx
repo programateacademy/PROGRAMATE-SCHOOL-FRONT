@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { MdEditSquare } from 'react-icons/md'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
 
-
 const CreationAnnouncement = () => {
     const [todo, setTodo] = useState({
         task: '',

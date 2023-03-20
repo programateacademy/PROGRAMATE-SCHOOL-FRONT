@@ -1,14 +1,11 @@
-import React from 'react'
-import { Routes, Route, Outlet } from 'react-router-dom'
-import Navbar from '../components/Home/Navbar'
-import Header from '../components/Home/Header'
-import Benefits from '../components/Home/Benefits'
-import Requirements from '../components/Home/Requirements'
-import Footer from '../components/Footer'
+import React from 'react';
+import Navbar from '../components/Home/Navbar';
+import Header from '../components/Home/Header';
+import Benefits from '../components/Home/Benefits';
+import Requirements from '../components/Home/Requirements';
+import Footer from '../components/Footer';
 
-
-function Home() {
-    
+function Home() { 
     return (
         <div>
             <Navbar/>
@@ -20,4 +17,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;

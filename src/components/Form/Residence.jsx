@@ -1,9 +1,7 @@
 import { React, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
-import { residenceSchema } from '../../schemas/formSchema'
-import defaultApi from '../../apis/index'
+import { residenceSchema } from '../../schemas/formSchema';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -61,16 +59,12 @@ const Residence = () => {
             <Link to='/Register/Social'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-
-            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>
-                Informacion de Recidencia
-            </h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Informacion de Recidencia</h2>
             <form
                 onSubmit={handleSubmit}
                 className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
 
                 {/* question 22 id addressStudent */}
-
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Dirección permanente / recurrente de residencia <small className='text-red/80'>*</small></label>
                     <input
@@ -85,7 +79,6 @@ const Residence = () => {
                     ></input>
                     {errors.addressStudent && touched.addressStudent && <p className='text-red text-xs font-Poppins'>{errors.addressStudent}</p>}
                 </div>
-
                 {/* question 23 id departmentStudent */}
 
                 <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
@@ -97,20 +90,14 @@ const Residence = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         data-te-select-init data-te-select-filter='true' className={errors.departmentStudent && touched.departmentStudent ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                        <option
-                            className='font-medium text-dark'>Selecciona una opción</option>
-                        <option
-                            className='font-medium text-dark'>Atlántico</option>
-                        <option
-                            className='font-medium text-dark'>Bogotá</option>
-                        <option
-                            className='font-medium text-dark'>Magdalena</option>
-                        <option
-                            className='font-medium text-dark' >Tolima</option>
+                        <option className='font-medium text-dark'>Selecciona una opción</option>
+                        <option className='font-medium text-dark'>Atlántico</option>
+                        <option className='font-medium text-dark'>Bogotá</option>
+                        <option className='font-medium text-dark'>Magdalena</option>
+                        <option className='font-medium text-dark' >Tolima</option>
                     </select>
                     {errors.departmentStudent && touched.departmentStudent && <p className='text-red text-xs font-Poppins'>{errors.departmentStudent}</p>}
                 </div>
-
                 {/* question 24 id rural */}
 
                 <div
@@ -118,17 +105,14 @@ const Residence = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <label
-                        className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?<small className='text-red/80'>*</small></label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?<small className='text-red/80'>*</small></label>
                     <label className='flex flex-row font-Nunito'>
                         <input
                             type="radio"
                             id="rural"
                             name="rural"
                             value="SI"
-                            className="accent-red
-                                focus:accent-yellow" />
-                        Si
+                            className="accent-red focus:accent-yellow"/>Si
                     </label>
                     <label>
                         <input
@@ -136,16 +120,12 @@ const Residence = () => {
                             id="rural"
                             name="rural"
                             value="NO"
-                            className="accent-red
-                                focus:accent-yellow"
-                        />
-                        No
+                            className="accent-red focus:accent-yellow"/>No
                     </label>
                     {errors.radio && touched.radio && <p className='text-red text-xs font-Poppins'>{errors.radio}</p>}
                 </div>
 
                 {/* question 25 id bogota */}
-
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Si tu lugar de residencia es Bogotá, ¿Cuál es la localidad de residencia? <small className='text-red/80'>*</small></label>
                     <select
@@ -173,7 +153,6 @@ const Residence = () => {
                 </div>
 
                 {/* question 26 id stratum */}
-
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu estrato socioeconómico?
                         (De acuerdo con la estratificación reportada en los recibos de servicios públicos) <small className='text-red/80'>*</small></label>
@@ -193,8 +172,8 @@ const Residence = () => {
                         <option className='font-medium text-dark'>6</option>
                     </select>
                     {errors.stratum && touched.stratum && <p className='text-red text-xs font-Poppins'>{errors.stratum}</p>}
-                </div><br />
-
+                </div>
+                <br />
                 <div className='flex justify-end col-span-2'>
                     <Link to="/Register/Guardian" className='mr-8  w-28' >
                     <button

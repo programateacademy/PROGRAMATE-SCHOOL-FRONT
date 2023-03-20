@@ -1,10 +1,7 @@
-import { React, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
-import { studentSchema } from '../../schemas/formSchema'
-import defaultApi from '../../apis/index'
-
+import { studentSchema } from '../../schemas/formSchema';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -72,15 +69,10 @@ const Student = props => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>
-                Informacion del estudiante
-            </h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>Informacion del estudiante</h2>
             {/* form start text */}
-
             <div>
-                <h3 className=' font-Poppins font-semibold flex justify-center p-3'>
-                    Por favor diligencia estas preguntas. Para nosotros son muy importantes, ya que esta será la primera forma de conocerte.
-                </h3>
+                <h3 className=' font-Poppins font-semibold flex justify-center p-3'>Por favor diligencia estas preguntas. Para nosotros son muy importantes, ya que esta será la primera forma de conocerte.</h3>
             </div>
 
             {/* start of form */}
@@ -89,7 +81,6 @@ const Student = props => {
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
 
                         {/* question 1 id name1Person */}
-
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres: <small className='text-red/80'>*</small></h3>
                         <input
                             id="name1Person"
@@ -100,9 +91,7 @@ const Student = props => {
                             placeholder='Primer nombre'
                             className={errors.name1Person && touched.name1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}></input>
 
-
                         {/* question 2 id name2Person */}
-
                         <input
                             id='name2Person'
                             value={values.name2Person}
@@ -115,7 +104,6 @@ const Student = props => {
                     </div>
 
                     {/* question 3 id lastname1Person */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-2 gap-x-2'>
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos: <small className='text-red/80'>*</small></h3>
                         <input
@@ -125,9 +113,7 @@ const Student = props => {
                             onBlur={handleBlur} type='text' placeholder='1er apellido' className={errors.lastname1Person && touched.lastname1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
                         ></input>
 
-
                         {/* question 4 id lastname2Person */}
-
                         <input
                             id='lastname2Person'
                             value={values.lastname2Person}
@@ -138,8 +124,6 @@ const Student = props => {
 
                     {/* the birth input with the id birthdate */}
                     {/* question 5 id birthdate */}
-
-
                     <div className='flex flex-col mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Fecha de nacimiento: <small className='text-red/80'>*</small></label>
                         <input
@@ -154,7 +138,6 @@ const Student = props => {
                     </div>
 
                     {/* question 6 id agePerson */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad: <small className='text-red/80'>*</small></h3>
                         <input
@@ -170,7 +153,6 @@ const Student = props => {
 
                     {/* the birth input with the id gender */}
                     {/* question 7 id gender */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuál es tu género? <small className='text-red/80'>*</small></h3>
                         <select
@@ -179,21 +161,16 @@ const Student = props => {
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='Genero'
                             data-te-select-init data-te-select-filter='true' className={errors.gender && touched.gender ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
-                                Femenino</option>
-                            <option className='font-medium text-dark'>
-                                Masculino</option>
-                            <option className='font-medium text-dark'>
-                                Otro</option>
+                            <option className='font-medium text-dark'>Selecciona una opción </option>
+                            <option className='font-medium text-dark'>Femenino</option>
+                            <option className='font-medium text-dark'>Masculino</option>
+                            <option className='font-medium text-dark'>Otro</option>
                         </select>
                         {errors.gender && touched.gender && <p className='text-red text-xs font-Poppins'>{errors.gender}</p>}
                     </div>
 
                     {/* the document input with the options it gives */}
                     {/* question 8 id document */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Tipo de documento: <small className='text-red/80'>*</small></h3>
                         <select
@@ -201,28 +178,19 @@ const Student = props => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             id='document'
-                            data-te-select-init data-te-select-filter='true' className={errors.document && touched.document ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
-                        >
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción</option>
-                            <option className='font-medium text-dark'>
-                                Cédula de Ciudadania</option>
-                            <option className='font-medium text-dark'>
-                                Cédula de extranjería</option>
-                            <option className='font-medium text-dark'>
-                                Tarjeta de identidad</option>
-                            <option className='font-medium text-dark'>
-                                Pasaporte</option>
-                            <option className='font-medium text-dark'>
-                                PEP</option>
-                            <option className='font-medium text-dark'>
-                                PTP</option>
+                            data-te-select-init data-te-select-filter='true' className={errors.document && touched.document ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
+                            <option className='font-medium text-dark'>Selecciona una opción</option>
+                            <option className='font-medium text-dark'>Cédula de Ciudadania</option>
+                            <option className='font-medium text-dark'>Cédula de extranjería</option>
+                            <option className='font-medium text-dark'>Tarjeta de identidad</option>
+                            <option className='font-medium text-dark'>Pasaporte</option>
+                            <option className='font-medium text-dark'>PEP</option>
+                            <option className='font-medium text-dark'>PTP</option>
                         </select>
                         {errors.document && touched.document && <p className='text-red text-xs font-Poppins'>{errors.document}</p>}
                     </div>
 
                     {/* question 9 id documentPerson */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento: <small className='text-red/80'>*</small></h3>
                         <input
@@ -234,12 +202,10 @@ const Student = props => {
                         {errors.documentPerson && touched.documentPerson && <p className='text-red text-xs font-Poppins'>{errors.documentPerson}</p>}
                     </div>
 
-
                     {/* the break line in the form */}
                     <hr className=" border-2 border-yellow rounded w-full max-w-full flex justify-center items-center md:col-span-2" />
 
                     {/* question 10 id institutionPerson */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Institución educativa a la que Pertenece? <small className='text-red/80'>*</small></h3>
                         <select
@@ -259,7 +225,6 @@ const Student = props => {
 
                     {/* the birth input with the id course */}
                     {/* question 11 id course */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estas cursando Actualmente? <small className='text-red/80'>*</small></h3>
                         <select
@@ -268,19 +233,15 @@ const Student = props => {
                             onChange={handleChange}
                             onBlur={handleBlur}
                             data-te-select-init data-te-select-filter='true' className={errors.course && touched.course ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
-                            <option className='font-medium text-dark'>
-                                Selecciona una opción </option>
-                            <option className='font-medium text-dark'>
-                                11°</option>
-                            <option className='font-medium text-dark'>
-                                Otro</option>
+                            <option className='font-medium text-dark'>Selecciona una opción </option>
+                            <option className='font-medium text-dark'>11°</option>
+                            <option className='font-medium text-dark'>Otro</option>
                         </select>
                         {errors.course && touched.course && <p className='text-red text-xs font-Poppins'>{errors.course}</p>}
                     </div>
 
                     {/* the birth input with the id Sena */}
                     {/* question 12 id sena */}
-
                     <div
                         value={values.sena}
                         onChange={handleChange}
@@ -293,9 +254,7 @@ const Student = props => {
                                 id="sena"
                                 name="sena"
                                 value="SI"
-                                className="accent-red
-                                    focus:accent-yellow" />
-                            Si
+                                className="accent-red focus:accent-yellow"/>Si
                         </label>
                         <label>
                             <input
@@ -303,18 +262,13 @@ const Student = props => {
                                 id="sena"
                                 name="sena"
                                 value="NO"
-                                className="accent-red
-                                    focus:accent-yellow"
-                            />
-                            No
+                                className="accent-red focus:accent-yellow"/>No
                         </label>
                         {errors.sena && touched.sena && <p className='text-red text-xs font-Poppins'>{errors.sena}</p>}
-
                     </div>
 
                     {/* the birth input with the id availability */}
                     {/* question 13 id availability */}
-
                     <div
                         value={values.availability}
                         onChange={handleChange}
@@ -327,9 +281,7 @@ const Student = props => {
                                 id="availability"
                                 name="availability"
                                 value="SI"
-                                className="accent-red
-                                    focus:accent-yellow" />
-                            Si
+                                className="accent-red focus:accent-yellow"/>Si
                         </label>
                         <label>
                             <input
@@ -337,18 +289,13 @@ const Student = props => {
                                 id="availability"
                                 name="availability"
                                 value="NO"
-                                className="accent-red
-                                    focus:accent-yellow"
-                            />
-                            No
+                                className="accent-red focus:accent-yellow"/>No
                         </label>
                         {errors.availability && touched.availability && <p className='text-red text-xs font-Poppins'>{errors.availability}</p>}
                     </div>
 
-
                     {/* the birth input with the id phone */}
                     {/* question 15 id phone */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal  <small className='text-red/80'>*</small></label>
                         <input
@@ -363,7 +310,6 @@ const Student = props => {
 
                     {/* the birth input with the id phoneTwo */}
                     {/* question 16 id phoneTwo */}
-
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular Secundario</label>
                         <input
@@ -374,8 +320,8 @@ const Student = props => {
                             placeholder='000 000 00 00'
                             className='w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium focus:border-yellow'></input>
                     </div>
-                    {/* question 14 id emailPerson */}
 
+                    {/* question 14 id emailPerson */}
                     <div className='mx-12 sm:mx-40 md:mx-16  lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Correo: <small className='text-red/80'>*</small></h3>
                         <input
@@ -387,7 +333,6 @@ const Student = props => {
                         {errors.emailPerson && touched.emailPerson && <p className='text-red text-xs font-Poppins'>{errors.emailPerson}</p>}
                         <p className=' font-Nunito text-sm text-dark/60'> En este correo te enviaremos información sobre todo el proceso, te recomendamos que sea el correo oficial de tu colegio</p>
                     </div>
-
                     <div className='flex justify-end col-span-2'>
                         <Link to="/Register/Social" className='mr-8 w-28' >
                             <button

@@ -1,10 +1,9 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import VerticalNavbar from '../components/VerticalNavbar'
-import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement'
-import UsersTable from '../components/SuperAdminSpace/UsersTable'
-import Statistics from '../components/SuperAdminSpace/Statistics'
-
+import React from 'react';
+import Navbar from '../components/Navbar';
+import VerticalNavbar from '../components/VerticalNavbar';
+import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement';
+import UsersTable from '../components/SuperAdminSpace/UsersTable';
+import Statistics from '../components/SuperAdminSpace/Statistics';
 
 const AdminSpace = () => {
     return (
@@ -27,4 +26,4 @@ const AdminSpace = () => {
     )
 }
 
-export default AdminSpace
+export default AdminSpace;

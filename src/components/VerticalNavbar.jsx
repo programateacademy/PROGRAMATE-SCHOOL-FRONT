@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2'
-import { SlGraduation } from 'react-icons/sl'
-import { TfiMouse } from 'react-icons/tfi'
+import React from 'react';
+import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
+import { SlGraduation } from 'react-icons/sl';
+import { TfiMouse } from 'react-icons/tfi';
 
 const VerticalNavbar = () => {
     // este dato es de las cookies
@@ -75,7 +74,7 @@ const VerticalNavbar = () => {
                 </Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default VerticalNavbar
+export default VerticalNavbar;
