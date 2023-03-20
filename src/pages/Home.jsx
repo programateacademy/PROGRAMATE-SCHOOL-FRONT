@@ -1,4 +1,5 @@
 import React from 'react'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from '../components/Home/Navbar'
 import Header from '../components/Home/Header'
 import Benefits from '../components/Home/Benefits'
@@ -14,7 +15,7 @@ function Home() {
             <Header/>
             <Benefits/>
             <Requirements/>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

@@ -6,7 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 
 const CreationAdmin = () => {
     return (
-        <div>
+        <div className=''>
             {/* Header */}        
             <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
                 <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>

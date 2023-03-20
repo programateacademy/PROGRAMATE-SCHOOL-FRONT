@@ -62,7 +62,7 @@ const Vocation = () => {
                 </div>
             </div>
 
-            <Link to='/Guardian'>
+            <Link to='/Register/Guardian'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
@@ -515,7 +515,7 @@ const Vocation = () => {
                 </section>
 
                 <div className='flex justify-end'>
-                <Link className='mr-8 col-span-2 w-28' to='/Motivation'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Motivation'>
                 <button
                     onClick={vocationP}
                     disabled={!(isValid && dirty)}

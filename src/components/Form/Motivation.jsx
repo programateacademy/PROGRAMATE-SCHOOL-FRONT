@@ -55,7 +55,7 @@ const Motivation = () => {
                 </div>
             </div>
 
-            <Link to='/Psychological' className=' mr-8 col-span-2 w-28'>
+            <Link to='/Register/Psychological' className=' mr-8 col-span-2 w-28'>
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
 
@@ -279,7 +279,7 @@ const Motivation = () => {
                 </div>
 
             <div className='flex justify-end'>
-                <Link className='mr-8 col-span-2 w-28' to='/Logic'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Logic'>
                     <button
                         onClick={motivationP}
                         disabled={!(isValid && dirty)}
