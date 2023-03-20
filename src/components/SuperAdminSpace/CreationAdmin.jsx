@@ -1,18 +1,59 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs'
 import { MdEditSquare } from 'react-icons/md'
 import { HiChevronDoubleRight, HiChevronDoubleLeft } from 'react-icons/hi'
 import { AiOutlineSearch } from 'react-icons/ai'
+import Modal from '../SuperAdminSpace/EditorCreationAdmin'
+import defaultApi from '../../apis/index'
 
 const CreationAdmin = () => {
+
+    const [showModal, setShowModal] = useState(false)
+
+    const handleOnClose = () => setShowModal(false)
+
+    const [dataAdmin, setDataAdmin] = useState([])
+
+    useEffect(() => {
+        defaultApi
+            .get("/getAdmin")
+            .then(res => {
+                console.log(res.data)
+                setDataAdmin(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+
     return (
         <div>
+            
+                <li>
+                    {dataAdmin.map((admin) => {
+                        console.log()
+                        {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
+
+                            return(
+
+                                <li key={admin._id} className="clases"> 
+
+                                    <p >Nombre:<span className='text-xl'>{admin.name1Person}</span></p>
+                                    <p >Apellido:<span className='text-xl'>{admin.lastname1Person}</span></p>
+                                    <p >Correo:<span className='text-xl'>{admin.emailPerson}</span></p>
+                                    <p >Cargo:<span className='text-xl'>{admin.positionPerson}</span></p>
+                            
+                                </li>//Comentarios
+                            )
+                    })}
+                </li>
+
             {/* Header */}        
             <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
                 <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
                     Usuario con rol admin de la aplicación
                 </h1>
-                <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear un usuario<BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></h2>
+                <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear un administrador<button onClick={() => setShowModal(true)}><BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></button></h2>
             </section>
 
             {/* Search and filter bar */}
@@ -31,7 +72,8 @@ const CreationAdmin = () => {
                 <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                     <div className='w-full p-6 flex justify-between'>
                         <button><BsFillTrashFill className='scale-[2] text-red' /></button>
-                        <button><MdEditSquare className='scale-[2.3] text-[#40A014]' /></button>
+                        <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button>
+                        <Modal onClose={handleOnClose} visible={showModal}/>
                     </div>
                     <div className='w-full mx-auto flex flex-col justify-center'>
                         <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1+smile.png?raw=true'} className='w-[33%] mx-auto'></img>
@@ -77,4 +119,4 @@ const CreationAdmin = () => {
     )
 }
 
-export default CreationAdmin
+export default CreationAdmin;

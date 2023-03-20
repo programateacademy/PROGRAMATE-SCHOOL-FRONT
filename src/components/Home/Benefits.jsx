@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-
-
-
 export const Benefist = () => {
   return (
 
@@ -16,62 +13,53 @@ export const Benefist = () => {
         </Link>
       </section>
 
-      {/*Program benefits*/}
-      <section className="">
-        <object className="mt-14 mb-10 md:absolute lg:items-center lg:absolute">
-          <h1 className="text-dark mx-4 pb-4 font-bold font-Poppins text-2xl">
-            Beneficios del programa
-          </h1>
-          <hr className="border-2 border-yellow w-48 ml-4 lg:w-64" />
-          <p className="mx-4 pt-4 pb-6 font-light font-Nunito text-base lg:text-xl">
-            Creemos que la educación<br />cambia vidas
-          </p>
-        </object>
+      <section className="md:grid md:grid-cols-2">
+        {/*Program benefits*/}
+        <div className="mt-14 mx-4">
+          <h1 className="pb-4 text-dark font-bold font-Poppins text-2xl text-center md:text-start">Beneficios del programa</h1>
+          <hr className="md:w-[50%] border-2 border-yellow rounded"/>
+          <p className="md:w-[50%] pt-4 font-light font-Nunito text-base text-center md:text-start  lg:text-xl">Creemos que la educación cambia vidas</p>
+        </div>
 
-        <object className="md:grid md:grid-cols-3 md:pt-36 lg:grid lg:grid-cols-3 lg:pt-40">
-          <figure className="flex justify-center md:pt-10 lg:pt-16 pb-4 lg:pb-0">
-            <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-20 m-4">
-              <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
-                Cero costo
-              </h5>
-              <p className="text-center text-sm font-Nunito">
-                Buscamos que puedas tener una educación de calidad becado
-                mientras terminas tus estudios
-              </p>
-            </div>
+        {/*...*/}
+        <div className="mx-4 mt-14 md:grid md:grid-cols-2 gap-10">
+          <figure className="flex items-center">
+            <h2 className="w-[80%] md:w-[100%] xl:w-[70%] m-auto mb-7 md:m-auto py-1.5 md:py-1 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/SesentaYDos.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>62</b> Estudiantes han sido beneficiarios de la formación de <b>Prográmate School</b></h2>
           </figure>
-
-          <figure className="flex justify-center lg:pb-16 pb-4">
-            <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-20 m-4">
-              <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
-                Cero costo
-              </h5>
-              <p className="text-center text-sm font-Nunito">
-                Buscamos que puedas tener una educación de calidad becado
-                mientras terminas tus estudios
-              </p>
-            </div>
+          <figure className="flex items-center">
+            <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-8 md:py-5 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/3%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>3%</b> Deserción durante el proceso formativo</h2>
           </figure>
+        </div>
+      </section>
 
-          <figure className="flex justify-center md:pt-10 lg:pt-16">
-            <div className="rounded-full border-[35px] border-yellow/50 w-36 h-36 absolute z-0"></div>
-            <div className="w-40 h-30 z-20 m-4">
-              <h5 className="text-center text-2xl font-Poppins text-dark  font-bold">
-                Cero costo
-              </h5>
-              <p className="text-center text-sm font-Nunito">
-                Buscamos que puedas tener una educación de calidad becado
-                mientras terminas tus estudios
-              </p>
-            </div>
-          </figure>
-        </object>
-
-        <object>
-          <h2 className="w-full mx-auto py-4 text-center text-dark font-semibold font-Poppins text-lg">Escribir aquí</h2>
-        </object>
+      {/*...*/}
+      <section className="mx-4 md:mt-14 md:grid md:grid-cols-4 gap-10">
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-8 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/45%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>45%</b> Estudiantes han sido mujeres</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-5 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/5%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>5%</b> Estudiantes migrantes en Colombia</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-1.5 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/100%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>100%</b> Estratos<br/>1, 2 y 3 pertenecientes a colegios públicos</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-5 md:py-1 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/34%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>34%</b> Reciben auxilio de conectividad a internet</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-5 md:py-1 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/Cero.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>Cero costo</b> Buscamos que tengas educación de calidad becado</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-1 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/58%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>58%</b> Estudiantes en regiones fuera de Bogotá, Santa Marta e Ibagué</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-5 text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/48%25.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>48%</b> Estudiantes reciben apoyo con un computador</h2>
+        </figure>
+        <figure className="flex items-center">
+          <h2 className="w-[80%] md:w-[100%] xl:w-[60%] m-auto mb-7 md:m-auto py-8 md:py-5  text-center text-lg font-Nunito font-bold bg-[url('https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/Diecisiete.png?raw=true')] bg-center bg-contain bg-no-repeat"><b>17 años</b> Promedio de edad de la cohorte</h2>
+        </figure>
+      </section>
+    
 
         <section className="md:grid md:grid-cols-3 my-14">
           {/*Program duration*/}
@@ -128,7 +116,6 @@ export const Benefist = () => {
           </object>
 
         </section>
-      </section>
     </main>
   );
 };

@@ -207,11 +207,10 @@ const Motivation = () => {
                                         name="want"
                                         id="want"
                                         value="A"
-                                        className="accent-red
-                                    focus:accent-yellow" />
+                                        className="accent-red focus:accent-yellow" />
                                     A.
                                 </label>
-                                <h3 className=' font-Nunito font-semibold ml-4'>
+                                <h3 className='ml-4 font-Nunito font-semibold'>
                                 Poder tener conocimientos en tecnología y así poner en práctica mi conocimiento de programación cuando entre a la universidad.
                                 </h3>
                             </div>
@@ -224,7 +223,7 @@ const Motivation = () => {
                                         id="want"
                                         value="B"
                                         className="accent-red
-                                    focus:accent-yellow" />
+                                    focus:accent-yellow"/>
                                     B.
                                 </label>
                                 <h3 className=' font-Nunito font-semibold indent-4'>

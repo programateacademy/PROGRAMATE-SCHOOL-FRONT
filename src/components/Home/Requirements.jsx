@@ -9,7 +9,7 @@ const Requirements = () => {
             <h2 className=' font-Poppins text-dark font-bold my-3 mx-4 text-2xl'>
                 ¿Cuales son los requerimientos para participar?
             </h2>
-            <section className='mx-4 mb-4 mt-14 sm:flex items-center md:grid grid-cols-3 gap-14'>
+            <section className='mx-4 my-14 sm:flex items-center md:grid grid-cols-4 gap-14'>
 
                 {/* First requirement */}
                 <article className='flex justify-center sd:flex items-center flex-col pb-6'>
@@ -40,35 +40,13 @@ const Requirements = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                     </p>
                 </article>
-            </section>
-            <section className='mx-4 mb-14 sm:flex items-center md:grid grid-cols-3 gap-14'>
 
-                {/* Fourth requirement */}
-                <article className='flex justify-center sd:flex items-center flex-col pb-6'>
+                {/* fourth requirement */}
+                <article className=' flex justify-center items-center sm:flex flex-col md:flex md:row-span-2 md:items-center pb-6 md:pb-0 md:mt-auto'>
                     <p>
-                        <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-uno.png?raw=true' />
+                        <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-cuatro.png?raw=true' />
                     </p>
                     <p className='text-center font-Nunito text-sm  sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                </article>
-
-                {/* Fifth requirement */}
-                <article className='flex justify-center items-center sm:flex flex-col md:flex md:row-span-2 md:items-center pb-6 md:pb-0 md:mt-auto'>
-                    <p>
-                        <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-dos.png?raw=true' />
-                    </p>
-                    <p className='text-center font-Nunito text-sm sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-                    </p>
-                </article>
-
-                {/* Sixth requirement */}
-                <article className='flex justify-center items-center md:flex flex-col lg:flex-col-reverse pb-6'>
-                    <p>
-                        <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-tres.png?raw=true' />
-                    </p>
-                    <p className='text-center font-Nunito text-sm sm:text-sm p-2'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                     </p>
                 </article>
