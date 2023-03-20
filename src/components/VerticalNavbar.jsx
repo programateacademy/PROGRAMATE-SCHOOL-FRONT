@@ -4,7 +4,15 @@ import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2'
 import { SlGraduation } from 'react-icons/sl'
 import { TfiMouse } from 'react-icons/tfi'
 
-const VerticalNavbar = ({ disabled }) => {
+const VerticalNavbar = () => {
+    // este dato es de las cookies
+    const profilePerson = "SuperAdmin"
+                
+    let buttonSuperAdmin = true
+    if (profilePerson == "SuperAdmin") {
+        buttonSuperAdmin = false
+    }
+
     return (
         <div className='fixed'>
             <div className=' hidden lg:block lg:gap-5 lg:w-full lg:justify-items-end lg:px-5 lg:py-5' >
@@ -20,17 +28,16 @@ const VerticalNavbar = ({ disabled }) => {
                     <h2 className=' md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>Inscritos<SlGraduation className='scale-[1.3] ml-5'/></h2>
                 </button>
                 </Link>
-                <Link to={"/Superadminspace/Statistics"}>
                 {/* Statistics section > Button */}
+                <Link to={"/Superadminspace/Statistics"}>
                     <button className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full'>
                     <h2 className=' md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>Estadísticas<TfiMouse className='scale-[1.3] ml-5'/></h2>
                 </button>
                 </Link>
-                <Link to={"/Superadminspace/CreationAdmin"}>
                 {/* SuperAdmin's space section > Button */}
-                    <button disabled={disabled} className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full'>
+                <Link to={"/Superadminspace/CreationAdmin"}>
+                    <button disabled={buttonSuperAdmin} className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full disabled:opacity-25'>
                         <h2 className='hidden md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>SuperAdmin<HiOutlineWallet className='scale-[1.3] ml-5' /></h2>
-                        <h2 className='hidden md:block items-center justify-end font-Poppins font-semibold text-lg text-right'>SuperAdmin</h2>
                 </button>
                 </Link>
             </div>
@@ -52,16 +59,16 @@ const VerticalNavbar = ({ disabled }) => {
                         <h2 className='hidden md:block font-Poppins font-semibold text-mg'>Inscritos</h2>
                     </button>
                 </Link>
+                {/* Statistics section > Button */}
                 <Link to={"/Superadminspace/Statistics"}>
-                    {/* Statistics section > Button */}
                     <button className='p-2  bg-yellow/25 hover:bg-transparent rounded w-full md:w-full border-transparent hover:border-yellow text-dark hover:text-yellow'>
                         <TfiMouse className='m-auto scale-[1.3]' />
                         <h2 className='hidden md:block items-center justify-end font-Poppins font-semibold text-mg'>Estadísticas</h2>
                     </button>
                 </Link>
+                {/* SuperAdmin's space section > Button */}
                 <Link to={"/Superadminspace/CreationAdmin"}>
-                    {/* SuperAdmin's space section > Button */}
-                    <button disabled={disabled} className='p-2 bg-yellow/25 hover:bg-transparent rounded w-full md:w-full border-transparent hover:border-yellow text-dark hover:text-yellow'>
+                    <button disabled={buttonSuperAdmin} className='p-2 bg-yellow/25 hover:bg-transparent rounded w-full md:w-full border-transparent hover:border-yellow text-dark hover:text-yellow disabled:opacity-25'>
                         <HiOutlineWallet className='m-auto scale-[1.3]'></HiOutlineWallet>
                         <h2 className='hidden md:block items-center justify-end font-Poppins font-semibold text-mg'>SuperAdmin</h2>
                     </button>

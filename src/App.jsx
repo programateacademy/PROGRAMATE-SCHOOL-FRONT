@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Singup from './pages/Singup'
 import StudentSpace from './pages/StudentSpace'
-{/* Import super admin and admin paths */ }
+{/* super admin and admin view paths */ }
 import SuperAdminSpace from './pages/SuperAdminSpace'
 import CreationAnnouncement from './components/SuperAdminSpace/CreationAnnouncement'
 import UsersTable from './components/SuperAdminSpace/UsersTable'
@@ -41,6 +41,7 @@ function App() {
           <Route path='/Login' element={<Login />} exact></Route>
           <Route path='/Singup' element={<Singup />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
+          {/* super admin and admin view paths */}
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact>
             <Route index exact path='/Superadminspace/CreationAnnouncement' element={<CreationAnnouncement />}></Route>
             <Route exact path="/Superadminspace/UsersTable" element={<UsersTable />}></Route>
@@ -51,8 +52,6 @@ function App() {
           <Route path='/Emailverificationwindow' element={<EmailVerificationWindow/>} exact></Route>
           <Route path='/Unauthorizedwindow' element={<UnauthorizedWindow/>} exact></Route>
           {/* Form paths */}
-
-          {/* <Route path='/FormRegister' element={<FormRegister/>} exact></Route> */}
           <Route path='/Register' element={<Register/>} exact>
             <Route index exact path='/Register/Student' element={<Student />} ></Route>
             <Route exact path='/Register/Social' element={<Social />} ></Route>
