@@ -42,10 +42,10 @@ function App() {
           <Route path='/Singup' element={<Singup />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact>
-            <Route index path='/Superadminspace/CreationAnnouncement' element={<CreationAnnouncement />}></Route>
-            <Route path="/Superadminspace/UsersTable" element={<UsersTable />}></Route>
-            <Route path="/Superadminspace/Statistics" element={<Statistics />}></Route>
-            <Route path="/Superadminspace/CreationAdmin" element={<CreationAdmin />}></Route>
+            <Route index exact path='/Superadminspace/CreationAnnouncement' element={<CreationAnnouncement />}></Route>
+            <Route exact path="/Superadminspace/UsersTable" element={<UsersTable />}></Route>
+            <Route exact path="/Superadminspace/Statistics" element={<Statistics />}></Route>
+            <Route exact path="/Superadminspace/CreationAdmin" element={<CreationAdmin />}></Route>
           </Route>
           <Route path='/Adminspace' element={<AdminSpace />} exact></Route>
           <Route path='/Emailverificationwindow' element={<EmailVerificationWindow/>} exact></Route>

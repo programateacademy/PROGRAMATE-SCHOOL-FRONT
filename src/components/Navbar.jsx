@@ -19,7 +19,7 @@ const Navbar = () => {
                         onClick={() => setIsOpen(!isOpen)}
                     />
                     {isOpen === true ? (
-                        <div className='bg-yellow rounded-lg p-3 flex flex-col fixed right-4 md:right-20 top-14 md:top-24'>
+                        <div className='bg-yellow rounded-lg p-3 mt-3 flex flex-col fixed right-4  top-16 sm:top-20 md:top-24 lg:top-28'>
                             <h3 className='md:hidden py-1 px-3 font-Poppins font-semibold text-sm md:text-lg text-dark'>Nombre Usuario</h3>
                             <button className='font-Poppins font-medium focus:bg-light text-sm md:text-base lg:text-lg rounded-lg py-1 px-3' alt="Convocatorias">Cerrar sesión</button>
                         </div>
