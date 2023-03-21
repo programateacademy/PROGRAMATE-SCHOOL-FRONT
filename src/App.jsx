@@ -31,11 +31,9 @@ function App() {
           <Route path='/Login' element={<Login />} exact></Route>
           <Route path='/Singup' element={<Singup />} exact></Route>
           {/* Protected routes */}
-          <Route element={ProtectedRoutes}>
+
           <Route path='/StudentSpace' element={<StudentSpace/>} exact></Route>
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact></Route>
-           </Route> 
-          {/* Form paths */}
 
           {/* <Route path='/FormRegister' element={<FormRegister/>} exact></Route> */}
 
