@@ -2,6 +2,7 @@ import React from 'react';
 import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
+import { Link } from 'react-router-dom';
 
 const VerticalNavbar = () => {
     // este dato es de las cookies

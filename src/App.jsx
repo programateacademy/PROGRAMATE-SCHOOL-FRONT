@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import Singup from './pages/Singup'
+import Signup from './pages/Signup'
 import StudentSpace from './pages/StudentSpace'
 {/* super admin and admin view paths */ }
 import SuperAdminSpace from './pages/SuperAdminSpace'
@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} exact></Route>
           <Route path='/Login' element={<Login />} exact></Route>
-          <Route path='/Singup' element={<Singup />} exact></Route>
+          <Route path='/Signup' element={<Signup />} exact></Route>
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           {/* super admin and admin view paths */}
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact>
