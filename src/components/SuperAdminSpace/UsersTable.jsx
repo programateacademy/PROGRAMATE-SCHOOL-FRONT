@@ -53,15 +53,7 @@ const UsersTable = () => {
 
             {/* Table */}
             <section className=''>
-                <br/>
-
-                <br/>
-
-                <br/>
-
-                <br/>
-
-                <br/>
+                <br/><br/><br/><br/><br/>
             </section>
         </div>
     )

@@ -3,7 +3,7 @@ import * as yup from 'yup'
 export const loginSchema = yup.object().shape({
     emailPerson: yup.string().email('Escribe un correo válido').required('Campo obligatorio'),
     passwordPerson: yup.string().required('Campo obligatorio'),
-})
+});
 
 export const signupSchema = yup.object().shape({
     name1Person: yup.string().required('Campo obligatorio'),
@@ -15,7 +15,7 @@ export const signupSchema = yup.object().shape({
     agePerson: yup.number().positive('Ingresa un valor válido').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     institutionPerson: yup.string().required('Campo obligatorio').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlántico', 'Colegio Campo de la Cruz - Atlantico'], 'Ingresa una opción válida'),
     termsAndConditions: yup.boolean().oneOf([true], 'Debes aceptar los T&C'),
-})
+});
 
 export const studentSchema = yup.object().shape({
     name1Person: yup.string().required('Ingresa tu primer nombre'),
@@ -32,7 +32,7 @@ export const studentSchema = yup.object().shape({
     emailPerson: yup.string().email('Escribe un correo válido').required('Ingresa tu correo personal'),
     phone: yup.number().required('Ingresa tu numero de telefono'),
     // phoneTwo: yup.string().required('Ingresa tu numero de telefono segundario o fijo'),
-})
+});
 
 export const socialSchema = yup.object().shape({
     sisben: yup.string().required('Selecciona si perteneces a el sisben'),
@@ -41,6 +41,7 @@ export const socialSchema = yup.object().shape({
     disability: yup.string().required('Selecciona si estas en situación de discapacidad'),
     typeDisability: yup.string().required('Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna').oneOf(['Fisica', 'Auditiva', 'Visual', 'Intelectual / Cognitiva', 'SordoCegera', 'Pisicosocial', 'Multiple', 'Otra', 'Ninguna'], 'Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna'),
 })
+
 
 export const residenceSchema = yup.object().shape({
     addressStudent: yup.string().required('Ingresa tu dirección'),
@@ -64,7 +65,7 @@ export const guardianSchema = yup.object().shape({
     educationLevelGuardian: yup.string().required('Selecciona el nivel académico de tus padres').oneOf(['Pregrado - completo', 'Pregrado - incompleto', 'Formación tecnológica - completo', 'Formación tecnológica - incompleto', 'Formación tecnica - completo', 'Formación tecnica - incompleto', 'Bachillerato - completo', 'Bachillerato - incompleto', 'Primaria - completo', 'Primaria - incompleto', 'Ninguna'], 'Selecciona el nivel academico de tus padres'),
     economic: yup.string().required('Selecciona la actividad económica de tus padres').oneOf(['Empleado tiempo completo', 'Empleado medio tiempo', 'Generando ingresos de manera informal (sin contrato)', 'Independiente', 'Desempleado/a'], 'Selecciona la actividad economica de tus padres'),
     family: yup.string().required('Selecciona cuantas personas conforman tu familia').oneOf(['1 - 2', '3 - 4', '5 o más', 'Ninguna'], 'Selecciona cuantas personas conforman tu familia'),
-})
+});
 
 export const vocationSchema = yup.object().shape({
     computer: yup.string().required('Selecciona si tienes acceso a un computador'),
@@ -74,19 +75,18 @@ export const vocationSchema = yup.object().shape({
     reportage: yup.string().required('Selecciona el reportaje que mas te llame la atencion'),
     stake: yup.string().required('Selecciona en que parte te gustaria participar'),
     webMotivation: yup.string().required('Selecciona que es lo que te motiva'),
-})
+});
 
 export const motivationSchema = yup.object().shape({
     why: yup.string().required('Selecciona por que quieres ser parte'),
     methodology: yup.string().required('Selecciona que es lo que interesa de la metodología'),
     want: yup.string().required('Selecciona la respuesta que se identifique contigo'),
     withdrawal: yup.string().required('Selecciona la respuesta que se identifique contigo').oneOf(['retirarme del colegio', 'Tener actividades extracurriculares / empieza a fallar en algunas materias', 'Disponibilidad de tiempo', 'Conectividad', 'Ninguna de las anteriores'], 'Selecciona la respuesta que se identifique contigo'),
-})
+});
 
 export const logicSchema = yup.object().shape({
     logic1: yup.string().required('Selecciona la respuesta que creas correcta').oneOf(['El orden de llegada es B, C, D, A', 'El orden de llegada es B, A, C, D', 'El orden de llegada es B, D, C, A', 'El orden de llegada es A, B, D, A'], 'Selecciona la respuesta que creas correcta'),
     logic2: yup.string().required('Selecciona la respuesta que creas correcta').oneOf(['Seis tiburones no son completamente ciegos y tres son completamente ciegos', 'Tres de los tiburones son completamente ciegos y tres no son completamente', 'Tres tiburones no son completamente ciegos y seis son completamente ciegos'], 'Selecciona la respuesta que creas correcta'),
     logic3: yup.string().required('Selecciona la respuesta que creas correcta'),
     logic4: yup.string().required('Selecciona la respuesta que creas correcta'),
-})
-
+});
