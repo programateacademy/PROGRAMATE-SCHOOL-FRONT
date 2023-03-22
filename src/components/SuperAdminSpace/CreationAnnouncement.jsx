@@ -44,6 +44,7 @@ const CreationAnnouncement = () => {
     }
 
     const [dataAnnouncement, setDataAnnouncement] = useState([])
+    console.log(dataAnnouncement)
 
     useEffect(() => {
         defaultApi
@@ -69,14 +70,14 @@ const CreationAnnouncement = () => {
             </section>
 
             {/* Editable announcements cards */}
-            <div>
+            <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAnnouncement.map((announ) => {
                     console.log()
                     {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
                     
                     return(
 
-                        <section key={announ._id} className='px-4 grid md:grid-cols-2 justify-center gap-8'>
+                        <section key={announ._id} className='px-4'>
                             <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                     
                             <h2 className='p-4 font-semibold font-Poppins text-dark text-lg text-center'>{announ.nameAnnouncement}</h2>
@@ -117,49 +118,7 @@ const CreationAnnouncement = () => {
                             )
                     })}
                 </div>
-            <section className='px-4 grid md:grid-cols-2 justify-center gap-8'>
-                <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
-                    
-                    <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>Desarrollador Frontend Web Jr</h2>
-                    
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base'>Perfil</label>
-                        <input placeholder='Jovenes de grado 11°' type="text" name="task" value={todo.task} onChange={handleInputChange} className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base'>Inscritos</label>
-                        <input placeholder='120' type="text" name="task" value={todo.task} onChange={handleInputChange} className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>Fecha de inicio</label>
-                        <input type="date" name="task" value={todo.task} onChange={handleInputChange} className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>Fecha de cierre</label>
-                        <input type="date" name="task" value={todo.task} onChange={handleInputChange} className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base'>Proceso de selección</label>
-                        <input placeholder='Activo' type="text" name="task" value={todo.task} onChange={handleInputChange} className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
-                        <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Visualizar</button>
-                        <button onClick={handleAddTodo}><MdEditSquare className='scale-[2.3] text-[#40A014]' /></button>
-                    </section>
-                </div>
                 <Modal onClose={handleOnClose} visible={showModal}/>
-            </section>
         </div>
     );
 }
