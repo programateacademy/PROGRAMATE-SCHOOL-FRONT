@@ -43,7 +43,7 @@ function App() {
           <Route path='/Studentspace' element={<StudentSpace />} exact></Route>
           {/* super admin and admin view paths */}
           <Route path='/Superadminspace' element={<SuperAdminSpace />} exact>
-            <Route index exact path='/Superadminspace/CreationAnnouncement' element={<CreationAnnouncement />}></Route>
+            <Route index path='/Superadminspace/CreationAnnouncement' element={<CreationAnnouncement />}></Route>
             <Route exact path="/Superadminspace/UsersTable" element={<UsersTable />}></Route>
             <Route exact path="/Superadminspace/Statistics" element={<Statistics />}></Route>
             <Route exact path="/Superadminspace/CreationAdmin" element={<CreationAdmin />}></Route>

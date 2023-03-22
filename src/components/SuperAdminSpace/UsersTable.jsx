@@ -17,27 +17,7 @@ const UsersTable = () => {
                 console.log(err)
             })
     }, [])
-
-    //FORM TABLE ONE
-    // $(document).ready(function(){
-    //     let url = defaultApi.get("/getUsers")
-    //     $('#users').DataTable({
-    //         ajax:{
-    //             url: url,
-    //             dataSrc:''
-    //         },
-    //         columns:[
-    //             {data: "name1Person"},
-    //             {data: "lastname1Person"},
-    //             {data: "documentPerson"},
-    //             {data: "agePerson"},
-    //             {data: "emailPerson"},
-    //             {data: "institutionPerson"}
-    //         ],
-    //         responsive: true
-    //     }).columns.adjust().responsive.recalc()
-    // })
-
+    
     //FORM TABLE TWO
     let studentTable;
     let studentsTableIsInitialized=false;
