@@ -1,10 +1,10 @@
-import { React, useState } from 'react'
-import Modal from '../components/Modal'
-import { useNavigate } from 'react-router-dom'
-import defaultApi from '../apis/index'
-import { useFormik } from 'formik'
-import { signupSchema } from '../schemas/formSchema'
-import swal from 'sweetalert2'
+import { React, useState } from 'react';
+import Modal from '../components/SignUp/Terms&Conditions';
+import defaultApi from '../apis/index';
+import { useFormik } from 'formik';
+import { signupSchema } from '../schemas/formSchema';
+import swal from 'sweetalert2';
+import { AiOutlineEye } from 'react-icons/ai';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -31,10 +31,7 @@ const validationSignup = () => {
     })
 
 const [showModal, setShowModal] = useState(false)
-
 const handleOnClose = () => setShowModal(false)
-
-const navigator = useNavigate();
 
 function signUp() {
     var signP = {
@@ -60,7 +57,6 @@ function signUp() {
             confirmButtonColor: '#FBC209',
             background: '#FFFFFF',
         });
-        //  navigator("/")
     })
     .then(err => {
         console.log(err)
@@ -84,9 +80,9 @@ function signUp() {
                 confirmButtonColor: '#FBC209',
                 background: '#FFFFFF',
             });
-        }
-    })
-}
+        };
+    });
+};
 
     return (
         <div className='h-screen md:content-center grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
@@ -101,7 +97,6 @@ function signUp() {
 
                 {/* Applicant's names (variables: name1Person and name2Person) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
-
                     <label htmlFor='names' className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</label>
 
                     {/* name1Person */}
@@ -132,7 +127,6 @@ function signUp() {
 
                 {/* Applicant's last names (variables: lastname1Person and lastname2Person) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
-
                     <label htmlFor='lastnames'className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos:</label>
 
                     {/* lastname1Person */}
@@ -163,9 +157,7 @@ function signUp() {
 
                 {/* Applicant's email (variable: emailPerson) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-
                     <label htmlFor='emailPerson'className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Correo:</label>
-
                     <div>
                         <input
                         value={values.emailPerson}
@@ -181,9 +173,7 @@ function signUp() {
 
                 {/* Applicant's age and document in media query greater than 768px (variables: documentPerson and agePerson) */}
                 <div className='hidden md:grid mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid-cols-2 gap-x-2'>
-
                     <label htmlFor='documentPerson' className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
-
                     <label htmlFor='agePerson'  className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
 
                     {/* documentPerson */}
@@ -215,9 +205,7 @@ function signUp() {
 
                 {/* Applicant's document in media query smaller than 768px (variable: documentPerson) */}
                 <div className='md:hidden mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-
                     <label htmlFor='documentPerson' className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
-
                     <input
                     value={values.documentPerson}
                     onChange={handleChange}
@@ -231,9 +219,7 @@ function signUp() {
 
                 {/* Applicant's age in media query smaller than 768px (variable: agePerson) */}
                 <div className='md:hidden mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-
                     <label htmlFor='agePerson' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
-
                     <input 
                     value={values.agePerson}
                     onChange={handleChange}
@@ -257,11 +243,11 @@ function signUp() {
                     onBlur={handleBlur}
                     className={errors.institutionPerson && touched.institutionPerson ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}>
                         <option className='font-medium text-dark'>Selecciona una opción</option>
-                        <option className='font-medium text-dark' value='Jardín'>IE El Jardín - Ibagué</option>
-                        <option className='font-medium text-dark' value='Olivo'>El Olivo School - Santa Marta</option>
-                        <option className='font-medium text-dark' value='Candelaria'>Colegio Integrada La Candelaria</option>
-                        <option className='font-medium text-dark' value='Luruaco'>Técnica Agropecuaria Luruaco - Atlantico</option>
-                        <option className='font-medium text-dark' value='Cruz'>Colegio Campo de la Cruz - Atlantico</option>
+                        <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
+                        <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
+                        <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
+                        <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
+                        <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
                     </select>
                     {errors.institutionPerson && touched.institutionPerson && <p className='px-1 text-red text-[0.65rem] font-Poppins'>{errors.institutionPerson}</p>}
                 </div>
@@ -274,17 +260,17 @@ function signUp() {
                         type='checkbox'
                         onBlur={handleBlur}
                         className='accent-purple' />
-                        <label htmlFor='termsAndConditions' className='ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='text-purple hover:text-dark underline decoration-2 underline-offset-4'><b>términos y condiciones</b></button>.</label>
+                        <label htmlFor='termsAndConditions' className='flex gap-2 ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='flex items-center gap-2 text-purple hover:text-dark underline decoration-2 underline-offset-4'><b>términos y condiciones</b><AiOutlineEye className='scale-[1.5]'/></button></label>
                         <Modal onClose={handleOnClose} visible={showModal}/>
                     </div>
                     <div className='pt-1'>
-                        {errors.termsAndConditions && touched.termsAndConditions && <p className='text-red text-[0.65rem] font-Poppins'>∗ {errors.termsAndConditions}</p>}
+                        {errors.termsAndConditions && touched.termsAndConditions && <p className='text-red text-[0.65rem] font-Poppins'>∗ {errors.termsAndConditions} </p>}
                     </div>
                 </div>
                 <button type='submit' onClick={signUp} className='flex button md:text-base'>Regístrarse</button>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default validationSignup
+export default validationSignup;
