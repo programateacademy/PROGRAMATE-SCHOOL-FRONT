@@ -27,7 +27,7 @@ const UsersTable = () => {
                     Tabla de usuarios registrados
                 </h1>
                 
-                {/* <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear un usuario<BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></h2> */}
+                <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear un usuario<BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></h2>
             </section>
 
                 <li>
@@ -53,7 +53,15 @@ const UsersTable = () => {
 
             {/* Table */}
             <section className=''>
-                <br/><br/><br/><br/><br/>
+                <br/>
+
+                <br/>
+
+                <br/>
+
+                <br/>
+
+                <br/>
             </section>
         </div>
     )

@@ -5,6 +5,7 @@ import VerticalNavbar from '../components/VerticalNavbar';
 import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement';
 import UsersTable from '../components/SuperAdminSpace/UsersTable';
 import Statistics from '../components/SuperAdminSpace/Statistics';
+import { Outlet } from 'react-router-dom';
 
 const SuperAdminSpace = () => {
 

@@ -76,46 +76,43 @@ function Modal({ visible, onClose }) {
     if (!visible) return null
     
     return (
-        <div id='box' onClick={handleOnClose} className='fixed inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
+        <div id='box' onClick={handleOnClose} className='fixed z-40 inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
             <div className='w-10/12 md:w-6/12 my-auto bg-light border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto scrollbar scrollbar-track scrollbar-thumb'>
                 <button onClick={onClose} className='w-full mx-auto flex justify-end'><AiFillCloseCircle size={20} className='fill-dark hover:fill-red'/></button>
                 <h1 className='w-11/12 md:w-8/12 mx-auto mt-2 py-1 px-2 bg-dark rounded-md font-Poppins font-semibold text-center text-yellow text-base md:text-xl'> 
-                Crear ADMIN
+                Nuevo administrador
                 </h1>
                 
-                <div className='px-4 pb-4 pt-8 flex gap-2'>
+                <div className='px-8 pb-4 pt-8 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Nombre:</label>
-                    <input value={name1Person} onChange={(e) => {setName1Person(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={name1Person} onChange={(e) => {setName1Person(e.target.value)}} placeholder='1er nombre' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
+                <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Segundo nombre:</label>
-                    <input value={name2Person} onChange={(e) => {setName2Person(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={name2Person} onChange={(e) => {setName2Person(e.target.value)}} placeholder='2do nombre' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
+                <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Apellido:</label>
-                    <input value={lastname1Person} onChange={(e) => {setLastname1Person(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={lastname1Person} onChange={(e) => {setLastname1Person(e.target.value)}} placeholder='1er apellido' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
+                <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Segundo apellido:</label>
-                    <input value={lastname2Person} onChange={(e) => {setLastname2Person(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={lastname2Person} onChange={(e) => {setLastname2Person(e.target.value)}} placeholder='2do apellido' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
+                <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>N° de documento:</label>
-                    <input value={documentPerson} onChange={(e) => {setDocumentPerson(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={documentPerson} onChange={(e) => {setDocumentPerson(e.target.value)}} placeholder='123456789' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
+                <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Correo:</label>
-                    <input value={emailPerson} onChange={(e) => {setEmailPerson(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={emailPerson} onChange={(e) => {setEmailPerson(e.target.value)}} placeholder='correo@correo.edu.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-                <div className='px-4 pb-4 flex gap-2'>
-                    <label className='w-full text-dark font-Poppins font-medium text-base'>Cargo(Opcional):</label>
-                    <input value={positionPerson} onChange={(e) => {setPositionPerson(e.target.value)}} placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                <div className='px-8 pb-4 flex gap-2'>
+                    <label className='w-full text-dark font-Poppins font-medium text-base'>Cargo (Opcional):</label>
+                    <input value={positionPerson} onChange={(e) => {setPositionPerson(e.target.value)}} placeholder='Cargo' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
-
-
-
-                <div className='grid grid-cols pb-4'>
-                    <button onClick={buttonFunction} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Crear Admin</button>
+                <div className='grid grid-cols py-4'>
+                    <button onClick={buttonFunction} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Crear</button>
                 </div>
             </div>
         </div>

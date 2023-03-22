@@ -12,7 +12,7 @@ export default function Modal({ visible, onClose }) {
 
     return (
         <div id='box' onClick={handleOnClose} className='fixed inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
-            <div className='w-10/12 md:w-6/12 max-h-80 my-auto bg-light border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto scrollbar scrollbar-track scrollbar-thumb'>
+            <div className='w-10/12 md:w-6/12 max-h-96 my-auto bg-light border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto scrollbar scrollbar-track scrollbar-thumb'>
                 <button onClick={onClose} className='w-full mx-auto flex justify-end'><AiFillCloseCircle size={20} className='fill-dark hover:fill-red' /></button>
                 <h1 className='w-11/12 md:w-8/12 mx-auto mt-2 py-1 px-2 bg-dark rounded-md font-Poppins font-semibold text-center text-yellow text-base md:text-xl'>
                     POLÍTICAS DE TRATAMIENTO DE INFORMACIÓN PERSONAL DE LA FUNDACIÓN  EDUCAMÁS
@@ -36,7 +36,8 @@ export default function Modal({ visible, onClose }) {
                     El responsable del tratamiento de los datos personales y las bases de datos será la
                     Fundación Educamás es una fundación sin ánimo de lucro, domiciliada en la ciudad de
                     Bogotá, constituida el 27 de mayo de 2013, con NIT 900.629.163-8, cuyos datos de contacto
-                    son: <strong className='flex items-center'>Correo electrónico:dpersonales@educamas.com.co </strong><br /><br />
+                    son: 
+                    <h6 className='mx-auto flex justify-center gap-2'>Correo electrónico:<span className='text-purple underline decoration-2 underline-offset-4'>dpersonales@educamas.com.co</span> </h6><br /><br />
                     <p className='font-Poppins font-semibold'>DEFICIONES:</p>
                     <section className='flex flex-col'>
                         <lu><strong>• Autorización:</strong> Consentimiento previo, expreso e informado del Titular para llevar acabo el Tratamiento de datos personales;</lu>
@@ -138,9 +139,9 @@ export default function Modal({ visible, onClose }) {
                     personales, en aplicación de lo previsto en la Ley 1581 de 2012 y el Decreto 1377 de 2013,
                     deberá enviarse a:<br /><br />
                     <section className='flex flex-col'>
-                        <lu><strong>Entidad:</strong>Fundación Educamás</lu>
-                        <lu><strong>Dependencia:</strong>Dirección Ejecutiva</lu>
-                        <lu><strong>Correo electrónico</strong>dpersonales@educamas.com.co</lu>
+                        <lu className='mx-auto flex gap-2'><strong>Entidad:</strong>Fundación Educamás</lu>
+                        <lu className='mx-auto flex gap-2'><strong>Dependencia:</strong>Dirección Ejecutiva</lu>
+                        <lu className='mx-auto flex gap-2'><strong>Correo electrónico:</strong><h6 className='text-purple underline decoration-2 underline-offset-4'>dpersonales@educamas.com.co</h6></lu>
                     </section><br /><br />
                     <p className='font-Poppins font-semibold'>FUNCIONES DEL ÁREA RESPONSABLE DEL TRATAMIENTO DE DATOS PERSONALES:</p>  <br />
                     El área responsables del tratamiento de datos personales tiene les siguientes funciones:<br /><br />
@@ -196,7 +197,7 @@ export default function Modal({ visible, onClose }) {
                     El Titular de los Datos Personales para poder gestionar la revocatoria, debe llevar a cabo los
                     mismos pasos y requisitos consagrados en el procedimiento para consultas, quejas y
                     reclamos.<br /><br />
-                    <p className='font-Poppins font-semibold'>REVOCAR LA AUTORIZACIÓN PARA TRATAR LOS DATOS PERSONALES:</p><br />
+                    <p className='font-Poppins font-semibold'>MARCO NORMATIVO Y LEGAL:</p><br />
                     Las políticas de protección de Datos Personales de EDUCAMÁS se rigen por las siguientes
                     normas:<br /><br />
                     <section className='flex flex-col'>
@@ -207,7 +208,7 @@ export default function Modal({ visible, onClose }) {
                         <lu>DECRETO 1377 DE 2013</lu>
                         <lu>DECRETO 886 DE 2014</lu>
                     </section><br /><br />
-                    <p className='font-Poppins font-semibold'>REVOCAR LA AUTORIZACIÓN PARA TRATAR LOS DATOS PERSONALES:</p><br />
+                    <p className='font-Poppins font-semibold'>VIGENCIA DE LA BASE DE DATOS</p><br />
                     Las Políticas de Tratamiento de Información Personal de la EDUCAMÁS estarán vigentes a
                     partir del día veintisiete (27) de julio de 2021. EDUCAMÁS se reserva el derecho a
                     modificarlas, en los términos y con las limitaciones previstas en la ley.<br /><br />
