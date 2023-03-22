@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EmailVerificationWindow = () => {
     return (
@@ -16,7 +16,7 @@ const EmailVerificationWindow = () => {
                 </section>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default EmailVerificationWindow 
