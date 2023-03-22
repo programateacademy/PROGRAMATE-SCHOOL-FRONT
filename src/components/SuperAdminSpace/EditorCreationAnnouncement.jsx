@@ -75,11 +75,11 @@ function Modal({ visible, onClose }) {
     if (!visible) return null
     
     return (
-        <div id='box' onClick={handleOnClose} className='fixed inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
+        <div id='box' onClick={handleOnClose} className='fixed z-40 inset-0 bg-dark bg-opacity-50 backdrop-blur-sm flex items-center justify-center'>
             <div className='w-10/12 md:w-6/12 my-auto bg-light border-2 border-yellow p-2 rounded-md drop-shadow-2xl overflow-y-auto scrollbar scrollbar-track scrollbar-thumb'>
                 <button onClick={onClose} className='w-full mx-auto flex justify-end'><AiFillCloseCircle size={20} className='fill-dark hover:fill-red'/></button>
                 <h1 className='w-11/12 md:w-8/12 mx-auto mt-2 py-1 px-2 bg-dark rounded-md font-Poppins font-semibold text-center text-yellow text-base md:text-xl'> 
-                Crear nueva convocatoria
+                Nueva convocatoria
                 </h1>
                 
                 <div className='px-8 pb-4 pt-8 flex gap-2'>

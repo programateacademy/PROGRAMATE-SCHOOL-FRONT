@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import Modal from '../components/Modal';
+import Modal from '../components/SignUp/Terms&Conditions';
 import defaultApi from '../apis/index';
 import { useFormik } from 'formik';
 import { signupSchema } from '../schemas/formSchema';
@@ -173,8 +173,8 @@ function signUp() {
 
                 {/* Applicant's age and document in media query greater than 768px (variables: documentPerson and agePerson) */}
                 <div className='hidden md:grid mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid-cols-2 gap-x-2'>
-                     <label htmlFor='documentPerson' className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
-                     <label htmlFor='agePerson'  className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
+                    <label htmlFor='documentPerson' className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
+                    <label htmlFor='agePerson'  className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
 
                     {/* documentPerson */}
                     <div>

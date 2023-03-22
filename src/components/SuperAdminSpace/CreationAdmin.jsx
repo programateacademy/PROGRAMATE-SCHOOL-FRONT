@@ -27,37 +27,18 @@ const CreationAdmin = () => {
     }, [])
 
     return (
-        <div>
-            
-                <li>
-                    {dataAdmin.map((admin) => {
-                        console.log()
-                        {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
-
-                            return(
-
-                                <li key={admin._id} className="clases"> 
-
-                                    <p >Nombre:<span className='text-xl'>{admin.name1Person}</span></p>
-                                    <p >Apellido:<span className='text-xl'>{admin.lastname1Person}</span></p>
-                                    <p >Correo:<span className='text-xl'>{admin.emailPerson}</span></p>
-                                    <p >Cargo:<span className='text-xl'>{admin.positionPerson}</span></p>
-                            
-                                </li>//Comentarios
-                            )
-                    })}
-                </li>
+        <div className='pb-4'>
 
             {/* Header */}        
             <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
-                <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
+                <h1 className='my-4 font-bold text-xl text-center md:text-left font-Poppins md:my-8 md:text-xl lg:text-3xl'>
                     Usuario con rol admin de la aplicación
                 </h1>
-                <h2 className='mb-4 flex items-center md:justify-end font-Poppins font-bold text-right'>Crear un administrador<button onClick={() => setShowModal(true)}><BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></button></h2>
+                <h2 className='mb-4 flex items-center justify-center md:justify-end font-Poppins font-bold text-right'>Crear un administrador<button onClick={() => setShowModal(true)}><BsFillPlusSquareFill className='scale-[1.5] md:scale-[2] ml-5 rounded-md'/></button></h2>
             </section>
 
             {/* Search and filter bar */}
-            <section className='w-full md:pl-4 mb-6 md:mb-8 flex justify-between gap-3 md:gap-6'>
+            <section  className='w-full md:pl-4 mb-6 md:mb-8 flex justify-between gap-3 md:gap-6'>
                 <div className='relative w-[75%]'>
                 <input type='search' className='w-full py-2 rounded border-[1px] border-yellow text-dark/50 text-xs font-Poppins'/>
                     <button className='absolute top-2.5 right-2 px-1'><AiOutlineSearch className='text-yellow'/></button>
@@ -68,43 +49,39 @@ const CreationAdmin = () => {
             </section>
 
             {/* Editable cards to create Administrators */}
-            <section className='px-4 grid md:grid-cols-2 justify-center gap-8'>
-                <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
-                    <div className='w-full p-6 flex justify-between'>
-                        <button><BsFillTrashFill className='scale-[2] text-red' /></button>
-                        <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button>
-                        <Modal onClose={handleOnClose} visible={showModal}/>
-                    </div>
-                    <div className='w-full mx-auto flex flex-col justify-center'>
-                        <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1+smile.png?raw=true'} className='w-[33%] mx-auto'></img>
-                        <h2 className='w-full py-2 font-semibold font-Poppins text-center text-dark text-2xl'>NombreUser</h2>
-                    </div>
+            <div>
+                {dataAdmin.map((admin) => {
+                    console.log()
+                    {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
+                    return(
+                <section key={admin._id} className='px-4 grid md:grid-cols-2 justify-center gap-8'>
+                    <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
+                        <div className='w-full p-6 flex justify-between'>
+                            <button><BsFillTrashFill className='scale-[2] text-red' /></button>
+                            <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button>
+                            <Modal onClose={handleOnClose} visible={showModal}/>
+                        </div>
+                        <div className='w-full mx-auto flex flex-col justify-center'>
+                            <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1+smile.png?raw=true'} className='w-[33%] mx-auto'></img>
+                            <h2 className='w-full pt-2 pb-4 font-semibold font-Poppins text-center text-dark text-2xl'>{admin.name1Person} {admin.lastname1Person}</h2>
+                        </div>
 
-                    {/* ... */}
-                    <div className='p-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base'>Creado:</label>
-                        <input type="date" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
+                        {/* ... */}
+                        <div className='px-6 pb-4 flex gap-2 items-center'>
+                            <h2 className='text-dark font-Poppins font-medium text-base'>Correo:</h2>
+                            <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.emailPerson}</h3>
+                        </div>
 
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base'>Correo:</label>
-                        <input placeholder='ss@educamas.com.co' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                        {/* ... */}
+                        <div className='px-6 pb-4 flex gap-2 items-center'>
+                            <h2 className='text-dark font-Poppins font-medium text-base'>Cargo:</h2>
+                            <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.positionPerson}</h3>
+                        </div>
                     </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>Contraseña:</label>
-                        <input placeholder='∗∗∗∗∗∗∗∗∗∗∗∗∗' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-
-                    {/* ... */}
-                    <div className='px-4 pb-4 flex gap-2'>
-                        <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>Rol:</label>
-                        <input placeholder='Formador' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
-                    </div>
-                </div>
-            </section>
+                </section>
+                    )
+                })}
+            </div>
 
             {/* Search index */}
             <section className='w-full my-4 md:my-8 flex justify-center gap-2 md:gap-6 font-Poppins font-bold text-xl text-dark'>
