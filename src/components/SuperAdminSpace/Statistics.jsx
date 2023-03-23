@@ -30,7 +30,7 @@ const Statistics = () => {
     const DepAtlant = dataStats.DepAtlant
     const DepBog = dataStats.DepBog
     const DepMag = dataStats.DepMag
-    const DepTol = dataStats.DEpTol
+    const DepTol = dataStats.DepTol
 
     const PercFemale = Math.round(PercentF * 100)
     const PercMale = Math.round(PercentM * 100)
