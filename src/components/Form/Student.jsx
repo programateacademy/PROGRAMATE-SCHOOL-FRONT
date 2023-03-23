@@ -12,6 +12,47 @@ const onSubmit = async (values, actions) => {
     actions.resetForm()
 }
 
+const idAnnouncement = localStorage.getItem('idAnnouncement')
+    //console.log(idAnnouncement)
+
+    // console.log(errors);
+    // backend connection
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"))
+    //console.log(decodedToken)
+
+    const idPerson = decodedToken._id
+    //console.log(idPerson)
+
+    //const idPerson = JSON.stringify(decodedToken._id)
+    //console.log(idPerson)
+
+    var idreq = {
+        idPerson: idPerson
+    }
+
+    defaultApi.post("/getonestudent", idreq)
+        .then((res) => {
+            console.log(res.data)
+        })
+        
+    // let N1Person =console.log(name1Person)
+    // console.log(N1Person)
+    // const N2Person = (Stu.name2Person)
+    // console.log(N2Person)
+    // const L1Person = (Stu.lastname1Person)
+    // console.log(L1Person)
+    // const L2Person = (Stu.lastname2Person)
+    // console.log(L2Person)
+    // const DPerson = (Stu.documentPerson)
+    // console.log(DPerson)
+    // const EPerson = (Stu.emailPerson)
+    // console.log(EPerson)
+    // const IPerson = (Stu.institutionPerson)
+    // console.log(IPerson)
+    // const APerson = (Stu.agePerson)
+    // console.log(APerson)
+
 const Student = props => {
     // formk validations
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
