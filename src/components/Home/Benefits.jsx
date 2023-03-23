@@ -58,21 +58,21 @@ export const Benefist = () => {
         </figure>
       </section>
 
-        <section className="md:grid md:grid-cols-3 my-14">
+        <section className="md:grid md:grid-cols-5 md:gap-8 my-14">
 
           {/*Program duration*/}
-          <object className="md:col-span-1">
+          <object className="md:col-span-2">
             <h1 className="font-bold mx-4 font-Poppins text-2xl">
               PROPUESTA PROGRAMÁTICA  <br />
               <span className="text-yellow">2023</span>
             </h1>
             <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
-              <strong>Duración:</strong>5 meses (posibilidad de tener 2 cohortes o más por año )<br /> <br />
-              <strong>Número de horas:</strong>250 horas (200 horas técnicas y de acompañamiento vocacional+50 horas de inglés)<br /> <br />
-              <strong>Horario:</strong>lunes, martes, miércoles y viernes de 3:00 pm a 6:00 pm o 6:30 pm<br /> <br />
-              <strong>Requisitos:</strong>Interés por la tecnología y contar con una mente analítica<br /> <br />
-              <strong>Modalidad:</strong>100% remoto sincrónico (clases en vivo)<br /> <br />
-              <strong>Título otorgado:</strong>Certificación de competencias como Desarrollador web front end nivel junior<br /> <br />
+              <strong className="text-yellow">Duración:</strong><h5>5 meses (posibilidad de tener 2 cohortes o más por año)</h5><br />
+              <strong className="text-yellow">Número de horas:</strong><h5>250 horas (200 horas técnicas y de acompañamiento vocacional+50 horas de inglés)</h5><br />
+              <strong className="text-yellow">Horario:</strong><h5>Lunes, martes, miércoles y viernes de 3:00 pm a 6:00 pm o 6:30 pm</h5><br />
+              <strong className="text-yellow">Requisitos:</strong><h5>Interés por la tecnología y contar con una mente analítica</h5><br />
+              <strong className="text-yellow">Modalidad:</strong><h5>100% remoto sincrónico (clases en vivo)</h5><br />
+              <strong className="text-yellow">Título otorgado:</strong><h5>Certificación de competencias como Desarrollador web front end nivel junior</h5><br />
             </p>
             
             {/*Program logos*/}
@@ -90,15 +90,17 @@ export const Benefist = () => {
           </object>
           
           {/*Program description...*/}
-          <object className="md:col-span-2 md:ml-20">
+          <object className="md:col-span-3 md:ml-8">
             <h3 className="text-dark mt-8 md:mt-0 mx-4 font-bold font-Poppins text-2xl text-right">
               DESARROLLO WEB FRONT END </h3>
             <p className="mx-4 mt-8 font-Nunito lg:text-lg text-right">
-              Adquirirás las destrezas necesarias para desempeñarse como Desarrollador Web Frontend, a  través de lenguajes de programación de vanguardia que permitirán páginas web y plataformas digitales innovadoras. <br />
-                <strong>Front end:</strong>Creación de interfaces web  a partir del diseño y la experiencia de usuario <br /> 
-                <strong>Sitios web:</strong>Creación de contenido, incluyendo textos  gráficos,  animaciones entre otros, que permitan navegar de forma  funcional en el entorno web. <br />
-                <strong>Aplicaciones web</strong>Creación de contenido  basado en la  experiencia de usuario para mejorar la navegabilidad. <br />
+              Adquirirás las destrezas necesarias para desempeñarse como Desarrollador Web Frontend, a  través de lenguajes de programación de vanguardia que permitirán páginas web y plataformas digitales innovadoras. <br /><br />
+                <strong className="text-yellow">Front end:</strong><h4>Creación de interfaces web  a partir del diseño y la experiencia de usuario</h4> <br /> 
+                <strong className="text-yellow">Sitios web:</strong><h4>Creación de contenido, incluyendo textos  gráficos,  animaciones entre otros, que permitan navegar de forma  funcional en el entorno web.</h4> <br />
+                <strong className="text-yellow">Aplicaciones web:</strong><h4>Creación de contenido  basado en la  experiencia de usuario para mejorar la navegabilidad.</h4>
               <br />
+
+              
               De igual forma, adquirirás habilidades innovadoras como la comunicación asertiva, el trabajo en equipo, el liderazgo, la resolución de problemas y autogestión, con lo cuál fomentamos que tengas un perfil de salida integral que te permitirá destacarte en el entorno laboral. 
             </p>
           </object>
