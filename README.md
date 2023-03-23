@@ -47,7 +47,7 @@ What things do you need to install the software and how to see it on the local d
 <p>The deployment is ready to run </p>
 
 ```bash
-https://deploy-preview-65--dashing-concha-e5f29a.netlify.app/
+   https://programate-school-front.vercel.app/
   ```
 <div>
 
