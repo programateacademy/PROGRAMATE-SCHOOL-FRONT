@@ -15,8 +15,8 @@ const Requirements = () => {
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-uno.png?raw=true' />
                     </p>
-                    <p className='text-center font-Nunito text-sm  sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                    <p className='text-center font-Nunito text-1xl p-2'>
+                    Pertenecer a una institución aliada.
                     </p>
                 </article>
 
@@ -25,8 +25,8 @@ const Requirements = () => {
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-dos.png?raw=true' />
                     </p>
-                    <p className='text-center font-Nunito text-sm sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                    <p className='text-center font-Nunito text-1xl p-2'>
+                    Tener máximo 19 años.
                     </p>
                 </article>
 
@@ -35,8 +35,8 @@ const Requirements = () => {
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-tres.png?raw=true' />
                     </p>
-                    <p className='text-center font-Nunito text-sm sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                    <p className='text-center font-Nunito text-1xl p-2'>
+                    Estar cursando el grado 11°.
                     </p>
                 </article>
 
@@ -45,8 +45,8 @@ const Requirements = () => {
                     <p>
                         <img src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/recurso-cuatro.png?raw=true' />
                     </p>
-                    <p className='text-center font-Nunito text-sm  sm:text-sm p-2'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                    <p className='text-center font-Nunito text-1xl p-2'>
+                    Pertenecer a los estratos 1,2,3.
                     </p>
                 </article>
             </section>
