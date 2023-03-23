@@ -72,9 +72,9 @@ const Guardian = () => {
                 </div>
             </div>
             <Link to='/Residence'>
-                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
-            <h2 className=' font-Poppins font-semibold flex justify-center mb -5 text-2xl'>Informacion de acudiente</h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb -5 text-2xl'>Información de acudiente</h2>
             <form onSubmit={handleSubmit} className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4 ' >
 
                 {/* question 27 id nameGuardian */}
@@ -117,7 +117,7 @@ const Guardian = () => {
 
                 {/* question 30 id numberIdGuardian */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Numero de documento  <small className='text-red/80'>*</small></label>
+                    <label className=' pb-1.5 text-dark text-sm font-Nunito font-black'>Número de documento  <small className='text-red/80'>*</small></label>
                     <input
                         className={errors.numberIdGuardian && touched.numberIdGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="text"
@@ -136,7 +136,7 @@ const Guardian = () => {
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular principal de tu acudiente  <small className='text-red/80'>*</small></label>
                     <input
                         className={errors.phoneGuardian && touched.phoneGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
-                        type="number"
+                        type="text"
                         id='phoneGuardian'
                         name='phoneGuardian'
                         placeholder='000 000 00 00'
@@ -152,7 +152,7 @@ const Guardian = () => {
                     <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono celular o fijo secundario de tu acudiente</label>
                     <input
                         className={errors.phoneGuardianTwo && touched.phoneGuardianTwo ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
-                        type="number"
+                        type="text"
                         id='phoneGuardianTwo'
                         name='phoneGuardianTwo'
                         placeholder='000 000 00 00'
@@ -200,7 +200,7 @@ const Guardian = () => {
 
                 {/* question 31 id emailGuardian */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electronico</label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black '>Correo Electrónico</label>
                     <input
                         className={errors.emailGuardian && touched.emailGuardian ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}
                         type="Email"
@@ -212,7 +212,7 @@ const Guardian = () => {
                         onBlur={handleBlur}
                     ></input>
                     {errors.emailGuardian && touched.emailGuardian && <p className='text-red text-xs font-Poppins'>{errors.emailGuardian}</p>}
-                    <p className=' font-Nunito text-gray-500 text-sm '> En este correo enviaremos copia de la información sobre todo el proceso, te recomendamos que sea el correo que revise constantemente</p>
+                    <p className=' font-Nunito text-gray-500 text-sm '> En este correo enviaremos copia de la información sobre todo el proceso, te recomendamos que sea un correo que revise constantemente</p>
                 </div>
 
                 {/* question 28 id relationship */}
@@ -269,8 +269,8 @@ const Guardian = () => {
                         <option className='font-medium text-dark'>Pregrado - incompleto</option>
                         <option className='font-medium text-dark'>Formación tecnológica - completo</option>
                         <option className='font-medium text-dark'>Formación tecnológica - incompleto</option>
-                        <option className='font-medium text-dark'>Formación tecnica - completo</option>
-                        <option className='font-medium text-dark'>Formación tecnica - incompleto</option>
+                        <option className='font-medium text-dark'>Formación técnica - completo</option>
+                        <option className='font-medium text-dark'>Formación técnica - incompleto</option>
                         <option className='font-medium text-dark'>Bachillerato - completo</option>
                         <option className='font-medium text-dark'>Bachillerato - incompleto </option>
                         <option className='font-medium text-dark'>Primaria - completo</option>

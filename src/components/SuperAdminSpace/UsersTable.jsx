@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { BsFillPlusSquareFill } from 'react-icons/bs'
-import defaultApi from '../../apis/index'
+import React, { useState, useEffect } from 'react';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import defaultApi from '../../apis/index';
+import DataTable from 'datatables.net-dt';
+import jwt_decode from "jwt-decode";
 
 const UsersTable = () => {
+
+    let Table = new DataTable('#myTable', {
+        responsive: true,
+    });
 
     const [dataStudentsList, setDataStudentsList] = useState([])
 
@@ -19,8 +25,13 @@ const UsersTable = () => {
     }, [])
     
     //FORM TABLE TWO
-    let studentTable;
-    let studentsTableIsInitialized=false;
+    var studentTable;
+    let studentsTableIsInitialized = false;
+    
+    let dataTableOptions = {
+        pageLength: 10,
+        destroy: true,
+    }
 
     const initDataTable = async() => {
         if (studentsTableIsInitialized) {
@@ -28,7 +39,14 @@ const UsersTable = () => {
         }
         await listStudents();
 
-        studentTable=$('#dataTable_students').DataTable({});
+        $(document).ready(function() {
+            $('#dataTable_students').DataTable( {
+                "pagingType": "scrolling"
+            } );
+        } );
+        
+        // studentTable = $('#dataTable_students').DataTable( dataTableOptions );
+        // DataTable = $('#dataTable_students').DataTable( dataTableOptions );
 
         studentsTableIsInitialized = true;
     }
@@ -55,6 +73,10 @@ const UsersTable = () => {
             alert(ex);   
         }
     }
+
+    window.addEventListener("load", async () => {
+        await initDataTable();
+    });
     
     return (
         <div>
@@ -68,30 +90,69 @@ const UsersTable = () => {
             </section>
 
                     {/* FORM TABLE */}
-                    <button onClick={initDataTable}>
-                    <div className='container my-4'>
-                        <div className='row'>
-                            <div className='col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-                                <table id="dataTable_students" className='table'>
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Documento</th>
-                                            <th>Edad</th>
-                                            <th>Correo</th>
-                                            <th>Institución</th>
+                <button
+                // onClick={initDataTable}
+                className="bg-yellow hover:bg-dark text-dark hover:text-light font-semibold font-Poppins py-2 px-4 rounded">VER LISTADO DE USUARIOS</button>
+                <div>
+                    <div>
+                        <div
+                        className='p-5 w-full'
+                        >
+                            <table id="dataTable_students" className='table table-striped '
+                            >
+                                <thead >
+                                    <tr
+                                    className=" bg-amber-200 text-dark font-Poppins border-2 border-gray-300 "
+                                    >
+                                        <th className='text-center px-2'>#</th>
+                                        <th className='text-center px-2'>Nombre</th>
+                                        <th className='text-center px-2'>Apellido</th>
+                                        <th className='text-center px-2'>Documento</th>
+                                        <th className='text-center px-'>Edad</th>
+                                        <th className='text-center px-2'>Correo</th>
+                                        <th className='text-center px-2'>Institución</th>
                                         </tr>
                                     </thead>
                                     <tbody id='tableBody_students'></tbody>
-                                </table>
+                            </table>
+                            {/* <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+                                <span class="text-sm font-normal text-gray-500 ">Showing <span class="font-semibold text-gray-900 ">1-10</span> of <span class="font-semibold text-gray-900 ">1000</span></span>
+                                <ul class="inline-flex items-center -space-x-px">
+                                    <li>
+                                        <a href="#" class="block px-3 py-2 ml-0 leading-tight text-black border border-gray-300 rounded-l-lg bg-light hover:bg-yellow">
+                                            <span class="sr-only">Previous</span>
+                                            <BsChevronLeft class="w-5 h-5"></BsChevronLeft>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300  bg-light hover:bg-yellow">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300  bg-light hover:bg-yellow">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-current="page" class="z-10 px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow">...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow ">100</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-3 py-2 leading-tight text-black border border-gray-300 rounded-r-lg bg-light hover:bg-yellow ">
+                                            <span class="sr-only">Next</span>
+                                            <BsChevronRight class="w-5 h-5"></BsChevronRight>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav> */}
                             </div>
                         </div>
                     </div>
-                    </button>
-        </div>
-    )
-}
+                    </div>
+        
+    );
+};
 
 export default UsersTable

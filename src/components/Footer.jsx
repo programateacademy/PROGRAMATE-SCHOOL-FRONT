@@ -8,6 +8,7 @@ import { GrLinkedinOption } from 'react-icons/gr';
 import { ImSpotify } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
+
 export const Footer = () => {
     return (
         <div id="footer">

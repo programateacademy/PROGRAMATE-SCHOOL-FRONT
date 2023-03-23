@@ -1,7 +1,14 @@
 import { React, useState } from 'react';
 import { FaSmile, FaChevronDown } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const Navigator = useNavigate()
+    function handleOnClose() {
+        Navigator("/Login")
+        return (localStorage.clear());
+    }
 
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -17,7 +24,8 @@ const Navbar = () => {
                     {isOpen === true ? (
                         <div className='bg-yellow rounded-lg p-3 mt-3 flex flex-col fixed right-12  top-16 sm:top-20'>
                             <h3 className='md:hidden py-1 px-3 font-Poppins font-semibold text-sm md:text-lg text-dark'>Nombre Usuario</h3>
-                            <button className='font-Poppins font-medium focus:bg-light text-sm md:text-base lg:text-lg rounded-lg py-1 px-3' alt="Convocatorias">Cerrar sesión</button>
+                            <button
+                                onClick={() => { handleOnClose() }} className='font-Poppins font-medium focus:bg-light text-sm md:text-base lg:text-lg rounded-lg py-1 px-3' alt="Convocatorias">Cerrar sesión</button>
                         </div>
                     ) : null
                     }
