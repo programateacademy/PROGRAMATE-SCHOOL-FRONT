@@ -130,6 +130,8 @@ const Social = () => {
 
                     {/* the break line in the form */}
                     <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    <hr className=" border-2 border-yellow mb-2 rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
+                    
 
                     {/* question 20 id disability */}
                     <div
