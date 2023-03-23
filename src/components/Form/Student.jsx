@@ -2,6 +2,9 @@ import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
+import jwt_decode from "jwt-decode"
+import defaultApi from "../../apis/index"
+//import idAnnouncement from '../StudentSpace/Announcement'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -35,8 +38,30 @@ const Student = props => {
     });
     // console.log(errors);
     // backend connection
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"))
+    console.log(decodedToken)
+
+    const id = decodedToken._id
+    console.log(id)
+
+    const idAnnouncement = localStorage.getItem('idAnnouncement')
+    console.log(idAnnouncement)
+    
+    defaultApi
+        .get("/getonestudent", id)
+        .then((res) => {
+            const RStudent = res
+            console.log(RStudent)
+        })
+        .catch((err) => {
+            console.log(err)
+        })   
+
     function studentP() {
         var view1 = {
+            idStudent: id,
+            idAnnouncement: idAnnouncement,
             name1Person: values.name1Person,
             name2Person: values.name2Person,
             lastname1Person: values.lastname1Person,
@@ -69,7 +94,7 @@ const Student = props => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>Informacion del estudiante</h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center p-2 text-2'>Información del estudiante</h2>
             {/* form start text */}
             <div>
                 <h3 className=' font-Poppins font-semibold flex justify-center p-3'>Por favor diligencia estas preguntas. Para nosotros son muy importantes, ya que esta será la primera forma de conocerte.</h3>
@@ -145,7 +170,7 @@ const Student = props => {
                             value={values.agePerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='number'
+                            type="number" min="1" max="10000"
                             placeholder='00'
                             className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
@@ -198,7 +223,7 @@ const Student = props => {
                             value={values.documentPerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='number' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
+                            type='text' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
                         {errors.documentPerson && touched.documentPerson && <p className='text-red text-xs font-Poppins'>{errors.documentPerson}</p>}
                     </div>
 
@@ -226,7 +251,7 @@ const Student = props => {
                     {/* the birth input with the id course */}
                     {/* question 11 id course */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estas cursando Actualmente? <small className='text-red/80'>*</small></h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estás cursando Actualmente? <small className='text-red/80'>*</small></h3>
                         <select
                             id='course'
                             value={values.course}
@@ -274,7 +299,7 @@ const Student = props => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con Disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM? <small className='text-red/80'>*</small></h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Cuentas con disponibilidad de tiempo Lunes, Martes, Miercoles Y Viernes de 3:00 PM a 6:00 PM? <small className='text-red/80'>*</small></h3>
                         <label className='flex flex-row font-Nunito'>
                             <input
                                 type="radio"
@@ -297,7 +322,7 @@ const Student = props => {
                     {/* the birth input with the id phone */}
                     {/* question 15 id phone */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular principal  <small className='text-red/80'>*</small></label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono Celular principal  <small className='text-red/80'>*</small></label>
                         <input
                             id='phone'
                             value={values.phone}
@@ -311,7 +336,7 @@ const Student = props => {
                     {/* the birth input with the id phoneTwo */}
                     {/* question 16 id phoneTwo */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Telefono Celular Secundario</label>
+                        <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>Teléfono Celular Secundario</label>
                         <input
                             value={values.phoneTwo}
                             onChange={handleChange}

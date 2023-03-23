@@ -81,7 +81,7 @@ const Logic = () => {
                 </div>
             </div>
             <Link to='/Motivation'><button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button></Link>
-            <h2 className=' font-Poppins font-extrabold text-2xl text-center'>Prueba Logica</h2>
+            <h2 className=' font-Poppins font-extrabold text-2xl text-center'>Prueba Lógica</h2>
             <p className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 font-Nunito text-dark/70'>Ahora no te asustes, esta pequeña prueba de lógica lo que busca es ver la manera en la que dar solución a diversas problemáticas no cuenta con calificación, pero si te recomendamos que la respondas a conciencia, ya que con esto podremos saber la mejor manera de apoyarte en u aprendizaje</p>
             <form onSubmit={handleSubmit}>
 
