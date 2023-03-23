@@ -20,7 +20,7 @@ export const Navbar = () => {
                     <div className=' flex flex-row md:grid md:grid-cols-2 md:gap-8 '>
 
                         {/* <Link to=""> */}
-                        <h1 className='px-3 text-center' alt="Convocatorias">Convocatorias</h1>
+                        {/* <h1 className='px-3 text-center hover:border-yellow' alt="Convocatorias">Convocatorias</h1> */}
                         {/* </Link>
                         <Link to=""> */}
                         <h1 className='px-3 text-center justify-items-end' alt="Contáctanos">Contáctanos</h1>
