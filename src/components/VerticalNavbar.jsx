@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
-import { Link } from 'react-router-dom';
+
 
 const VerticalNavbar = () => {
     // este dato es de las cookies
@@ -15,28 +16,28 @@ const VerticalNavbar = () => {
 
     return (
         <div className='fixed'>
-            <div className=' hidden lg:block lg:gap-5 lg:w-full lg:justify-items-end lg:px-5 lg:py-5' >
+            <div className=' hidden lg:flex lg:flex-col lg:w-full lg:gap-3 lg:pl-10 items-end'>
                 {/* Announcements section > Button */}
-                <Link to={"/Superadminspace/CreationAnnouncement"} >
-                    <button className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full'>
-                    <h2 className=' md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>Convocatorias<HiOutlinePaintBrush className='scale-[1.3] ml-5'/></h2>
+                <Link to={"/Superadminspace/CreationAnnouncement"} className='lg:w-fit'>
+                    <button className='lg:p-4 lg:rounded-none lg:bg-transparent lg:border-b-0 lg:border-r-2 hover:border-yellow text-dark hover:text-yellow'>
+                        <h2 className=' lg:flex items-center font-Poppins font-semibold text-lg text-right'>Convocatorias<HiOutlinePaintBrush className='scale-[1.3] ml-5'/></h2>
                 </button>
                 </Link>
                 {/* Registered persons section > Button */}
-                <Link to={"/Superadminspace/UsersTable"}>
-                    <button className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full'>
-                    <h2 className=' md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>Inscritos<SlGraduation className='scale-[1.3] ml-5'/></h2>
+                <Link to={"/Superadminspace/UsersTable"} className='lg:w-fit'>
+                    <button className=' lg:p-4 lg:rounded-none lg:bg-transparent lg:border-b-0 lg:border-r-2 hover:border-yellow text-dark hover:text-yellow'>
+                        <h2 className=' lg:flex items-center font-Poppins font-semibold text-lg text-right'>Inscritos<SlGraduation className='scale-[1.3] ml-5'/></h2>
                 </button>
                 </Link>
                 {/* Statistics section > Button */}
-                <Link to={"/Superadminspace/Statistics"}>
-                    <button className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full'>
+                <Link to={"/Superadminspace/Statistics"} className='lg:w-fit'>
+                    <button className='lg:p-4 lg:rounded-none lg:bg-transparent lg:border-b-0 lg:border-r-2 hover:border-yellow text-dark hover:text-yellow '>
                     <h2 className=' md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>Estadísticas<TfiMouse className='scale-[1.3] ml-5'/></h2>
                 </button>
                 </Link>
                 {/* SuperAdmin's space section > Button */}
-                <Link to={"/Superadminspace/CreationAdmin"}>
-                    <button disabled={buttonSuperAdmin} className='md:p-4 md:rounded-none md:bg-transparent md:border-b-0 md:border-r-2 hover:border-yellow text-dark hover:text-yellow lg:w-full disabled:opacity-25'>
+                <Link to={"/Superadminspace/CreationAdmin"} className='lg:w-fit  '>
+                    <button disabled={buttonSuperAdmin} className='lg:p-4 lg:rounded-none lg:bg-transparent text-dark hover:text-yellow lg:border-b-0 lg:border-r-2 hover:border-yellow disabled:opacity-25'>
                         <h2 className='hidden md:flex items-center justify-end font-Poppins font-semibold text-lg text-right'>SuperAdmin<HiOutlineWallet className='scale-[1.3] ml-5' /></h2>
                 </button>
                 </Link>

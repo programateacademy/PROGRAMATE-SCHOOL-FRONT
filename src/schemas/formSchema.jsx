@@ -21,7 +21,7 @@ export const studentSchema = yup.object().shape({
     name1Person: yup.string().required('Ingresa tu primer nombre'),
     lastname1Person: yup.string().required('Ingresa tu primer apellido'),
     birthdate: yup.string().required('Ingresa tu fecha de nacimiento'),
-    agePerson: yup.number().required('Ingresa tu edad'),
+    agePerson: yup.number().required('Ingresa tu edad').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     gender: yup.string().required('Selecciona tu género').oneOf(['Femenino', 'Masculino', 'Otro'], 'Selecciona tu género'),
     document: yup.string().required('Selecciona tu tipo de documento').oneOf(['Cédula de Ciudadania', 'Cédula de extranjería', 'Tarjeta de identidad', 'Pasaporte', 'PEP', 'PTP'], 'Selecciona tu tipo de documento'),
     documentPerson: yup.string().required('Ingresa tu numero de documento'),
@@ -30,7 +30,7 @@ export const studentSchema = yup.object().shape({
     sena: yup.string().required('Selecciona si estas cursando en el sena o estas en horas sociales'),
     availability: yup.string().required('Selecciona si tienes o no disponibilidad de tiempo'),
     emailPerson: yup.string().email('Escribe un correo válido').required('Ingresa tu correo personal'),
-    phone: yup.number().required('Ingresa tu numero de telefono'),
+    phone: yup.number().required('Ingresa tu numero de telefono').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     // phoneTwo: yup.string().required('Ingresa tu numero de telefono segundario o fijo'),
 });
 
@@ -58,7 +58,7 @@ export const guardianSchema = yup.object().shape({
     documentTypeGuardian: yup.string().required('Selecciona el tipo de documento de tu acudiente').oneOf(['Cédula de Ciudadania', 'Cédula de extranjería', 'Tarjeta de identidad', 'Pasaporte', 'PEP', 'PTP'], 'Selecciona el tipo de documento de tu acudiente'),
     numberIdGuardian: yup.string().required('Ingresa el número de documento de tu acudiente'),
     emailGuardian: yup.string().email('Escribe un correo válido').required('Ingresa el correo de tu acudiente'),
-    phoneGuardian: yup.number().required('Ingresa el número de teléfono de tu acudiente'),
+    phoneGuardian: yup.number().required('Ingresa el número de teléfono de tu acudiente').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     // phoneGuardianTwo: yup.string().required('Ingresa el numero de telefono segundario o fijo de tu acudiente'),
     addressGuardian: yup.string().required('Ingresa la direccion de tu acudiente'),
     departmentGuardian: yup.string().required('Ingresa el departmento donde vive tu acudiente').oneOf(['Atlántico', 'Bogotá', 'Magdalena', 'Tolima'], 'Ingresa el department donde vive tu acudiente'),
