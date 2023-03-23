@@ -78,7 +78,7 @@ function loginPerson() {
                 </div>
                 <button onClick={loginPerson} className='flex button md:text-base'>Ingresar</button>
                 <h4 className='mx-20 md:mx-16 pt-6 text-center text-dark text-sm font-Nunito'>¿No tienes una cuenta?</h4>
-                <Link to='/Singup'><h5 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito'><b><button className='text-dark hover:text-red'>Regístrate aquí</button></b>.</h5></Link>
+                <Link to='/Signup'><h5 className='mx-20 md:mx-16 text-center text-dark text-sm font-Nunito'><b><button className='text-dark hover:text-red'>Regístrate aquí</button></b>.</h5></Link>
             </div>
         </div>
         </div>

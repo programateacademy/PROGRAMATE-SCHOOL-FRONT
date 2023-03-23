@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs'
-import { MdEditSquare } from 'react-icons/md'
+import { BsFillPlusSquareFill } from 'react-icons/bs'
 import Modal from './EditorCreationAnnouncement'
 import defaultApi from '../../apis/index'
 
@@ -90,6 +89,12 @@ const CreationAnnouncement = () => {
 
                                 {/* ... */}
                                 <div className='px-6 pb-4 flex gap-2 items-center'>
+                                    <h2 className='text-dark font-Poppins font-medium text-base'>Cupos:</h2>
+                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{announ.placesAnnouncement}</h3>
+                                </div>
+
+                                {/* ... */}
+                                <div className='px-6 pb-4 flex gap-2 items-center'>
                                     <h2 className='text-dark font-Poppins font-medium text-base'>Fecha de inicio:</h2>
                                     <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{announ.dateStartAnnouncement}</h3>
                                 </div>
@@ -108,8 +113,8 @@ const CreationAnnouncement = () => {
 
                         {/* ... */}
                         <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
-                            <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Visualizar</button>
-                            <button onClick={handleAddTodo}><MdEditSquare className='z-0 scale-[2.3] text-[#40A014]' /></button>
+                            <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Editar</button>
+                            {/* <button onClick={handleAddTodo}><MdEditSquare className='z-0 scale-[2.3] text-[#40A014]' /></button> */}
                         </section>
                             </div>
                         </section>

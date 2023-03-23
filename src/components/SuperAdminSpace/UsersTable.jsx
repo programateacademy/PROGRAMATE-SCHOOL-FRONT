@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { BsFillPlusSquareFill } from 'react-icons/bs'
 import defaultApi from '../../apis/index'
 
 const UsersTable = () => {
@@ -18,78 +17,55 @@ const UsersTable = () => {
             })
     }, [])
 
-    //FORM TABLE ONE
-    // $(document).ready(function(){
-    //     let url = defaultApi.get("/getUsers")
-    //     $('#users').DataTable({
-    //         ajax:{
-    //             url: url,
-    //             dataSrc:''
-    //         },
-    //         columns:[
-    //             {data: "name1Person"},
-    //             {data: "lastname1Person"},
-    //             {data: "documentPerson"},
-    //             {data: "agePerson"},
-    //             {data: "emailPerson"},
-    //             {data: "institutionPerson"}
-    //         ],
-    //         responsive: true
-    //     }).columns.adjust().responsive.recalc()
-    // })
-
-    //FORM TABLE TWO
-    let studentTable;
-    let studentsTableIsInitialized=false;
-
-    const initDataTable = async() => {
-        if (studentsTableIsInitialized) {
-            studentTable.destroy();
-        }
-        await listStudents();
-
-        studentTable=$('#dataTable_students').DataTable({});
-
-        studentsTableIsInitialized = true;
+    let dataTableOptions = {
+        pageLength: 10,
+        destroy: true,
     }
+    let studentsTableIsInitialized=false;
+    let studentTable;
+
+
+const initDataTable = async() => {
+    if (studentsTableIsInitialized) {
+        studentTable.destroy();
+    }
+    await listStudents();
+
+    
+    studentTable = $('#dataTable_students').DataTable(dataTableOptions);
+
+    studentsTableIsInitialized = true;
+    };
 
     const listStudents = async () => {
-        try {
-            const response = await fetch("http://localhost:3000/api/getUsers");
-            const students = await response.json();
+    try {
+        const response = await fetch('http://localhost:3000/api/getUsers');
+        const students = await response.json();
 
-            let content = ``;
-            students.forEach((student, index) => {
-                content += `<tr>
-                    <td>${index + 1}</td>
-                    <td>${student.name1Person}</td>
-                    <td>${student.lastname1Person}</td>
-                    <td>${student.documentPerson}</td>
-                    <td>${student.agePerson}</td>
-                    <td>${student.emailPerson}</td>
-                    <td>${student.institutionPerson}</td>                  
-                </tr>`
-            })
-            tableBody_students.innerHTML = content;
-        } catch (ex) {
-            alert(ex);   
-        }
-    }
-    
-    return (
-        <div>
-                    
+    let content = ``;
+    students.forEach((student, index) => {
+        content += `<tr>
+            <td>${index + 1}</td>
+            <td>${student.name1Person}</td>
+            <td>${student.lastname1Person}</td>
+            <td>${student.documentPerson}</td>
+            <td>${student.agePerson}</td>
+            <td>${student.emailPerson}</td>
+            <td>${student.institutionPerson}</td>                  
+        </tr>`
+    })
+    tableBody_students.innerHTML = content;
+} catch (ex) {
+    // alert(ex);   
+}
+}
 
-            {/* Header */}        
-            <section className='md:pl-4 grid grid-row-2 md:grid-cols-2 text-dark'>
-                <h1 className='my-4 font-bold text-xl font-Poppins md:my-8 md:text-xl lg:text-3xl'>
-                    Tabla de usuarios registrados
-                </h1>
-            </section>
+    window.addEventListener('load', async () => {
+    await initDataTable();
+    });
 
-                    {/* FORM TABLE */}
-                    <button onClick={initDataTable}>
-                    <div className='container my-4'>
+return (
+    <div className='w-full container my-4'>
                         <div className='row'>
                             <div className='col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <table id="dataTable_students" className='table'>
@@ -109,9 +85,9 @@ const UsersTable = () => {
                             </div>
                         </div>
                     </div>
-                    </button>
-        </div>
-    )
+)
+
 }
+
 
 export default UsersTable

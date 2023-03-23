@@ -54,10 +54,10 @@ const CreationAdmin = () => {
                     console.log()
                     {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
                     return(
-                <section key={admin._id} className='px-4 grid md:grid-cols-2 justify-center gap-8'>
+                <section key={admin._id} className='px-4grid md:grid-cols-2 justify-center gap-8'>
                     <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
-                        <div className='w-full p-6 flex justify-between'>
-                            <button><BsFillTrashFill className='scale-[2] text-red' /></button>
+                        <div className='w-full p-6 flex justify-end'>
+                            {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}
                             <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button>
                             <Modal onClose={handleOnClose} visible={showModal}/>
                         </div>
