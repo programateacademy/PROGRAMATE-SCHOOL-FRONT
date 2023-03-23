@@ -8,6 +8,7 @@ import { GrLinkedinOption } from 'react-icons/gr';
 import { ImSpotify } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
+
 export const Footer = () => {
     return (
         <div id="footer">
@@ -22,13 +23,13 @@ export const Footer = () => {
                     <div className='mx-16 md:mx-24 flex flex-col gap-6 md:gap-16'>
                         <img src='https://i.ibb.co/j4GBFg6/programate-school-blancos-2.png' alt='programate-school'/>
                         <img src='https://raw.githubusercontent.com/MariaHerrera03/ImageBank/main/Progr%C3%A1mateSchool/educamas-blanco-y-negro.png' alt='Educamas'/>
-                        <h2 className='text-center md:text-left pt-6 md:pt-12 text-yellow font-Nunito font-semibold'>Lorem ipsum dolor sit.</h2>
+                        {/* <h2 className='text-center md:text-left pt-6 md:pt-12 text-yellow font-Nunito font-semibold'>Lorem ipsum dolor sit.</h2> */}
                     </div>
 
                     {/*about the program*/}
                     <div className='mx-16 md:mx-auto text-center md:text-left my-6 md:my-0'>
                         <h3 className='text-lg md:text-2xl font-Poppins font-semibold text-light pb-3'>Sobre el programa</h3>
-                        <h4 className='text-sm text-light font-Nunito font-light pb-6 md:pb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Eget sit amet tellus cras adipiscing enim. Ac orci phasellus egestas tellus rutrum. Eget arcu dictum varius duis.</h4>
+                        <h4 className='text-sm text-light font-Nunito font-light pb-6 md:pb-10'>Adquirirás las destrezas necesarias para desempeñarse como Desarrollador Web Frontend, a través de lenguajes de programación de vanguardia que permitirán páginas web y plataformas digitales innovadoras.</h4>
                         <Link to="/Login">
                         <button className="button hover:bg-light hover:text-dark">Participa ya!</button></Link>
                     </div>
@@ -37,22 +38,34 @@ export const Footer = () => {
                     <div className='mx-16 md:mx-20 text-center md:text-left'>
                         <h3 className='text-lg md:text-2xl font-Poppins font-semibold text-light pb-3'>Contacto</h3>
                         <section className='flex justify-center md:justify-start items-center gap-4 pb-3'>
-                            <BsFillTelephoneFill className='fill-light'/>
+                            <FaMapMarkerAlt className='fill-light'/>
                             <h5 className='text-sm text-light font-Nunito font-light'>Cra. 13 #90-17</h5>
                         </section>
                         <section className='flex justify-center md:justify-start items-center gap-4 pb-10'>
-                            <FaMapMarkerAlt className='fill-light'/>
+                            <BsFillTelephoneFill className='fill-light'/>
+                            <a href='https://wa.me/573114508935?'>
                             <h5 className='text-sm text-light font-Nunito font-light'>311 450 8935</h5>
+                            </a>
                         </section>
 
                         {/*social media icons*/}
-                        <span className='flex justify-between'>
-                            <MdFacebook className='fill-light scale-150'/>
-                            <SlSocialInstagram className='fill-light scale-150'/>
-                            <SiTiktok className='fill-light scale-150'/>
-                            <GrLinkedinOption className='fill-light scale-150'/>
-                            <ImSpotify className='fill-light scale-150'/>
-                        </span>
+                        <section className='flex justify-between'>
+                        {/* Social network Facebook */}
+                        <a href='https://www.facebook.com/programateacademy' target={'_blank'}>
+                            <MdFacebook className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
+                            {/* Social network Instagram */}
+                            <a href='https://www.instagram.com/somoseducamas/' target={'_blank'}>
+                            <SlSocialInstagram className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
+                            {/* Social network tiktok */}
+                            <a href='https://www.tiktok.com/@programateacademy' target={'_blank'}>
+                            <SiTiktok className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
+                            {/* Social network Linkedin */}
+                            <a href='https://www.linkedin.com/company/educam%C3%A1s/' target={'_blank'}>
+                            <GrLinkedinOption className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
+                            {/* Social network Spotify */}
+                            <a href='' target={'_blank'}>
+                            <ImSpotify className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
+                        </section>
                     </div>
                 </section>
             </footer>

@@ -3,6 +3,10 @@ import defaultApi from '../../apis/index'
 
 const UsersTable = () => {
 
+    let Table = new DataTable('#myTable', {
+        responsive: true,
+    });
+
     const [dataStudentsList, setDataStudentsList] = useState([])
 
     useEffect(() => {
@@ -81,7 +85,39 @@ return (
                                         </tr>
                                     </thead>
                                     <tbody id='tableBody_students'></tbody>
-                                </table>
+                            </table>
+                            {/* <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+                                <span class="text-sm font-normal text-gray-500 ">Showing <span class="font-semibold text-gray-900 ">1-10</span> of <span class="font-semibold text-gray-900 ">1000</span></span>
+                                <ul class="inline-flex items-center -space-x-px">
+                                    <li>
+                                        <a href="#" class="block px-3 py-2 ml-0 leading-tight text-black border border-gray-300 rounded-l-lg bg-light hover:bg-yellow">
+                                            <span class="sr-only">Previous</span>
+                                            <BsChevronLeft class="w-5 h-5"></BsChevronLeft>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300  bg-light hover:bg-yellow">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300  bg-light hover:bg-yellow">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-current="page" class="z-10 px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow">...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="px-3 py-2 leading-tight text-black border border-gray-300 bg-light hover:bg-yellow ">100</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-3 py-2 leading-tight text-black border border-gray-300 rounded-r-lg bg-light hover:bg-yellow ">
+                                            <span class="sr-only">Next</span>
+                                            <BsChevronRight class="w-5 h-5"></BsChevronRight>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav> */}
                             </div>
                         </div>
                     </div>

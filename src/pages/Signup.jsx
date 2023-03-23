@@ -33,57 +33,53 @@ const validationSignup = () => {
 const [showModal, setShowModal] = useState(false)
 const handleOnClose = () => setShowModal(false)
 
-function signUp() {
-    var signP = {
-        name1Person: values.name1Person,
-        name2Person: values.name2Person,
-        lastname1Person: values.lastname1Person,
-        lastname2Person: values.lastname2Person,
-        documentPerson: values.documentPerson,
-        emailPerson: values.emailPerson,
-        profilePerson: 3,
-        agePerson: values.agePerson,
-        institutionPerson: values.institutionPerson,
-    };
-    console.log(signP);
-    defaultApi
-    .post("/signUp", signP)
-    .then((res) => {
-        swal.fire({
-            text: 'Se ha registrado en PROGRAMATE SCHOOL',
-            confirmButtonText: 'OK',
-            timer: '3000',
-            color: '#262425',
-            confirmButtonColor: '#FBC209',
-            background: '#FFFFFF',
-        });
-    })
-    .then(err => {
-        console.log(err)
-    })
-    .catch(err => {
-        if (err.response.status === 409) {
-            swal.fire({
-                text: 'Ya existe un usuario con este documento',
-                confirmButtonText: 'OK',
-                timer: '3000',
-                color: '#262425',
-                confirmButtonColor: '#FBC209',
-                background: '#FFFFFF',
-            });
-        } else if (err.response.status === 408) {
-            swal.fire({
-                text: 'Ya existe un usuario con este Correo',
-                confirmButtonText: 'OK',
-                timer: '3000',
-                color: '#262425',
-                confirmButtonColor: '#FBC209',
-                background: '#FFFFFF',
-            });
+    function signUp() {
+        var signP = {
+            name1Person: values.name1Person,
+            name2Person: values.name2Person,
+            lastname1Person: values.lastname1Person,
+            lastname2Person: values.lastname2Person,
+            documentPerson: values.documentPerson,
+            emailPerson: values.emailPerson,
+            profilePerson: 3,
+            agePerson: values.agePerson,
+            institutionPerson: values.institutionPerson,
         };
-    });
-};
-
+        console.log(signP);
+        defaultApi
+            .post("/auth/signUp", signP)
+            .catch(err => {
+                if (err.response.status === 409) {
+                    swal.fire({
+                        text: 'Ya existe un usuario con este documento',
+                        confirmButtonText: 'OK',
+                        timer: '3000',
+                        color: '#262425',
+                        confirmButtonColor: '#FBC209',
+                        background: '#FFFFFF',
+                    });
+                } else if (err.response.status === 408) {
+                    swal.fire({
+                        text: 'Ya existe un usuario con este Correo',
+                        confirmButtonText: 'OK',
+                        timer: '3000',
+                        color: '#262425',
+                        confirmButtonColor: '#FBC209',
+                        background: '#FFFFFF',
+                    });
+                };
+            })
+            .then((res) => {
+                swal.fire({
+                    text: 'Se ha registrado en PROGRAMATE SCHOOL',
+                    confirmButtonText: 'OK',
+                    timer: '3000',
+                    color: '#262425',
+                    confirmButtonColor: '#FBC209',
+                    background: '#FFFFFF',
+                });
+            })
+    };
     return (
         <div className='h-screen md:content-center grid grid-rows-5 md:grid-rows-1 md:grid-cols-2'>
             <div className='row-span-1 md:col-start-1 md:col-end-2 md:h-full md:fixed md:w-[50%] bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/PhotoOCHO_50.png?raw=true")] bg-cover bg-center grid'>
