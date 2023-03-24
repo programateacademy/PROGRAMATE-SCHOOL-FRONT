@@ -51,7 +51,7 @@ export const Footer = () => {
                         {/*social media icons*/}
                         <section className='flex justify-between items-center'>
                         {/* Social network Facebook */}
-                        <a href='https://www.facebook.com/programateacademy' target={'_blank'}>
+                        <a href='https://www.facebook.com/camila.educamas' target={'_blank'}>
                             <MdFacebook className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
                             {/* Social network Instagram */}
                             <a href='https://www.instagram.com/somoseducamas/' target={'_blank'}>
