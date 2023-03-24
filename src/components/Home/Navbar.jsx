@@ -7,23 +7,23 @@ export const Navbar = () => {
 
     return (
         <nav className=''>
-            <section className='absolute z-40 flex flex-row md:grid md:grid-cols-5 px-4 py-2 items-center justify-between m-auto md:mx-14 md:mt-3'>
+            <section className='absolute z-40 flex flex-row md:grid md:grid-cols-4 px-4 py-2 items-center justify-between m-auto md:mx-14 md:mt-3'>
 
                 {/* Logo Programate school */}
                 <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} className=' w-2/6 flex md:col-span-1 md:w-full'></img>
 
 
                 {/* Menu which appears when the media query responsive is set to min-width: 768px - tailwind md*/}
-                <div className=' md:col-span-3 justify-end pr-1 pl-44 text-lg font-Poppins font-medium hidden md:block  md:text-base lg:text-lg
+                <div className=' md:col-span-2 justify-end pr-1 pl-44 text-lg font-Poppins font-medium hidden md:block  md:text-base lg:text-lg
                     xl:text-xl
                     2xl:text-2xl'>
-                    <div className=' flex flex-row md:grid md:grid-cols-2 md:gap-8 '>
+                    <div className=' flex flex-row md:grid md:gap-8  '>
 
                         {/* <Link to=""> */}
                         {/* <h1 className='px-3 text-center hover:border-yellow' alt="Convocatorias">Convocatorias</h1> */}
                         {/* </Link>
                         <Link to=""> */}
-                        <h1 className='px-3 text-center justify-items-end' alt="Contáctanos">Contáctanos</h1>
+                        <a href='#footer' className='px-3 text-end justify-items-end' alt="Contáctanos">Contáctanos</a>
                         {/* </Link> */}
                     </div>
                 </div>
@@ -39,11 +39,11 @@ export const Navbar = () => {
                     />
                     {isOpen === true ? (
                         <div className=' bg-yellow rounded-lg p-3 flex flex-col font-Poppins mt-44 fixed right-5'>
-                            <Link to="/Singup">
+                            {/* <Link to="/Singup">
                             <button className='font-medium focus:bg-light rounded-lg p-3' alt="Convocatorias">Convocatorias</button>
-                            </Link> 
+                            </Link>  */}
                             {/* <Link to="/Home/Requirements">  */}
-                            <button className='font-medium focus:bg-light rounded-lg p-3' alt="Contáctanos">Contáctanos</button>
+                            <button className='font-medium focus:bg-light rounded-lg p-3' alt="Contáctanos"><a href='#footer'>Contáctanos</a></button>
                             {/* </Link> */}
                         </div>
                     ) : null}
