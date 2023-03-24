@@ -4,24 +4,13 @@ import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
 
-
-const VerticalNavbar = (props) => {
-    
-    const Routes = props.Routes
-
-    const CreationAnnouncement = Routes[0]
-    const UsersTable = Routes[1];
-    const Statistics = Routes[2]
-    const CreationAdmin = Routes[3];
-
-    const profile = props.profile
-
-    const [disableButton, setDisableButton] = useState(true)
-
-    if (profile === 'SuperAdmin') {
-        setDisableButton(true)
-    } else if (profile === 'Admin') {
-        setDisableButton(false)
+const VerticalNavbar = () => {
+    // este dato es de las cookies
+    const profilePerson = "SuperAdmin"
+                
+    let buttonSuperAdmin = true
+    if (profilePerson == "SuperAdmin") {
+        buttonSuperAdmin = false
     }
 
 console.log(profile)
