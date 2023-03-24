@@ -19,10 +19,10 @@ const SuperAdminSpace = () => {
     const ProfilePerson = decodedToken.ProfilePerson;
 
     return (
-        <div className='relative mx-4 md:mx-14'>
+        <div className='relative'>
                 <Navbar />
             <section className='pt-28 flex flex-col lg:grid lg:grid-cols-4'>  
-                    <div className='pb-10 md:col-span-3'>
+                    <div className='mx-4 md:mx-14 pb-10 md:col-span-3'>
                     <Outlet />        
                     </div> 
                 <div className='lg:col-span-1'>
