@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Robotcito from '../assets/img/Robotcito@300x.png'
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const UnauthorizedWindow = () => {
@@ -20,13 +18,11 @@ const UnauthorizedWindow = () => {
                             <h2 className='flex items-center text-xs font-medium md:text-xl lg:text-3xl md:mt-16'>Vaya, no cuentas con las credenciales necesarias para acceder a esta sección</h2>
                         </div>
                         <div className='pt-4 lg:pt-0 px-7 md:px-24 flex justify-center md:justify-end'>
-                            <button onClick={() => { navigate(-3); }} className="button md:text-2xl" > Regresar </button>
+                            <button onClick={() => { navigate(-3); }} className="button md:text-2xl" >Regresar</button>
                         </div>
                     </div>
                 </section>
             </div>
-            </section>
-        </div>
         </div>
     );
 };

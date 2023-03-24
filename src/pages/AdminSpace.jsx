@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
+import FooterSpaceSingup from '../components/FooterSpaceSingup';
 import jwt_decode from 'jwt-decode';
 
 const AdminSpace = () => {
@@ -27,6 +28,7 @@ const AdminSpace = () => {
                     <VerticalNavbar Routes={AdminRoutes} profile={ProfilePerson}/>
                 </div>
             </section>
+            <FooterSpaceSingup /> 
         </div>
     )
 }

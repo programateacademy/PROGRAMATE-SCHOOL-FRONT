@@ -10,7 +10,9 @@ import FooterSpaceSingup from '../FooterSpaceSingup';
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
+import FooterSpaceSingup from '../components/FooterSpaceSingup';
 import jwt_decode from 'jwt-decode';
+
 
 const SuperAdminSpace = () => {
 
@@ -36,9 +38,7 @@ const SuperAdminSpace = () => {
                 <VerticalNavbar Routes={AdminRoutes} profile={ProfilePerson}/> 
                 </div>
             </section>
-        </div>
-        <div>
-        <FooterSpaceSingup/>
+            <FooterSpaceSingup /> 
         </div>
         </div>
     );
