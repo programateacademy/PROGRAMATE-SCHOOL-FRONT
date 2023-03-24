@@ -220,7 +220,7 @@ export default function Modal({ visible, onClose }) {
                     entre EDUCAMÁS y el Titular.</p>
                 <div className='grid grid-cols pb-4'>
                     {/* <button className='flex mx-auto px-6 py-1 bg-dark shadow-md shadow-dark/50 hover:bg-purple text-center text-yellow hover:text-light text-sm font-Poppins font-medium'>Aceptar</button> */}
-                    <button onClick={onClose} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Cancelar</button>
+                    <button onClick={onClose} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Cerrar</button>
                 </div>
             </div>
         </div>

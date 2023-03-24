@@ -5,6 +5,7 @@ import VerticalNavbar from '../components/VerticalNavbar';
 import FooterSpaceSingup from '../components/FooterSpaceSingup';
 import jwt_decode from 'jwt-decode';
 
+
 const SuperAdminSpace = () => {
 
     const AdminRoutes = [

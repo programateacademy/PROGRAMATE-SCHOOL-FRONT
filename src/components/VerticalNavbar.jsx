@@ -4,7 +4,6 @@ import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
 
-
 const VerticalNavbar = (props) => {
     
     const Routes = props.Routes
@@ -22,6 +21,7 @@ const VerticalNavbar = (props) => {
         setDisableButton(true)
     } else if (profile === 'Admin') {
         setDisableButton(false)
+
     }
 
 console.log(profile)
