@@ -1,8 +1,8 @@
-import {React, useState} from 'react';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import defaultApi from '../../apis/index';
-import swal from 'sweetalert2';
-import jwt_decode from "jwt-decode";
+import {React, useState} from 'react'
+import { AiFillCloseCircle } from 'react-icons/ai'
+import defaultApi from '../../apis/index'
+import swal from 'sweetalert2'
+import jwt_decode from "jwt-decode"
 
 function Modal({ visible, onClose }) {
 
@@ -10,10 +10,9 @@ function Modal({ visible, onClose }) {
         if (e.target.id === 'box')
         onClose()
     }
-
+    
     const decodedToken = jwt_decode(localStorage.getItem("token"))
-
-    // THIS INFO MUST BE OBTAIN FROM THE COOKIES
+    // THIS INFO MUST BE OBTAIN FROM THE TOKEN
     //const documentPerson = something
     const adminId = decodedToken._id
 
@@ -97,15 +96,15 @@ function Modal({ visible, onClose }) {
                 </div>
                 <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Cupos:</label>
-                    <input value={placesAnnouncement} onChange={(e) => {setPlacesAnnouncement(e.target.value)}} placeholder='120' type="Number" min="1" max="1000" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={placesAnnouncement} onChange={(e) => {setPlacesAnnouncement(e.target.value)}} placeholder='120' type="Number" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
                 <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Fecha de inicio:</label>
-                    <input value={dateStartAnnouncement} onChange={(e) => {setDateStartAnnouncement(e.target.value)}} placeholder='dd/mm/aaaa' type="date" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={dateStartAnnouncement} onChange={(e) => {setDateStartAnnouncement(e.target.value)}} placeholder='dd/mm/aaaa' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
                 <div className='px-8 pb-4 flex gap-2'>
                     <label className='w-full text-dark font-Poppins font-medium text-base'>Fecha de cierre:</label>
-                    <input value={dateFinishAnnouncement} onChange={(e) => {setDateFinishAnnouncement(e.target.value)}} placeholder='dd/mm/aaaa' type="date" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
+                    <input value={dateFinishAnnouncement} onChange={(e) => {setDateFinishAnnouncement(e.target.value)}} placeholder='dd/mm/aaaa' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
                 
                 <div className='grid grid-cols py-4'>

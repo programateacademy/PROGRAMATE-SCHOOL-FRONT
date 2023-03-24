@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs';
-import { MdEditSquare } from 'react-icons/md';
-import { HiChevronDoubleRight, HiChevronDoubleLeft } from 'react-icons/hi';
-import { AiOutlineSearch } from 'react-icons/ai';
-import Modal from '../SuperAdminSpace/EditorCreationAdmin';
-import defaultApi from '../../apis/index';
-import jwt_decode from "jwt-decode";
+import React, { useState, useEffect } from 'react'
+import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs'
+import { MdEditSquare } from 'react-icons/md'
+import { HiChevronDoubleRight, HiChevronDoubleLeft } from 'react-icons/hi'
+import { AiOutlineSearch } from 'react-icons/ai'
+import Modal from '../SuperAdminSpace/EditorCreationAdmin'
+import defaultApi from '../../apis/index'
 
 const CreationAdmin = () => {
 
@@ -50,12 +49,12 @@ const CreationAdmin = () => {
             </section>
 
             {/* Editable cards to create Administrators */}
-            <div>
+            <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAdmin.map((admin) => {
                     console.log()
                     {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
                     return(
-                <section key={admin._id} className='px-4grid md:grid-cols-2 justify-center gap-8'>
+                <section key={admin._id} className='px-4'>
                     <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                         <div className='w-full p-6 flex justify-end'>
                             {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}
