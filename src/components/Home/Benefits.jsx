@@ -14,7 +14,7 @@ export const Benefist = () => {
       <section className="md:grid md:grid-cols-2">
         {/*Program benefits*/}
         <div className="mt-14 mx-4">
-          <h1 className="pb-4 text-dark font-bold font-Poppins text-2xl text-center md:text-start">Beneficios del programa</h1>
+          <h1 className="pb-4 text-dark font-bold font-Poppins text-2xl text-center md:text-start">Indicadores del programa</h1>
           <hr className="md:w-[50%] border-2 border-yellow rounded"/>
           <p className="md:w-[50%] pt-4 font-light font-Nunito text-base text-center md:text-start  lg:text-xl">Creemos que la educación cambia vidas</p>
         </div>
