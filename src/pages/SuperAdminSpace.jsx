@@ -1,5 +1,4 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom'
 import CreationAdmin from '../components/SuperAdminSpace/CreationAdmin';
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
