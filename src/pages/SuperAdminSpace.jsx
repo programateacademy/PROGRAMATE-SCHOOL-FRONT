@@ -1,14 +1,20 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom'
-import CreationAdmin from '../components/SuperAdminSpace/CreationAdmin';
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
-import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement';
-import UsersTable from '../components/SuperAdminSpace/UsersTable';
-import Statistics from '../components/SuperAdminSpace/Statistics';
-
+import jwt_decode from 'jwt-decode';
 
 const SuperAdminSpace = () => {
+
+    const AdminRoutes = [
+        "/Superadminspace/CreationAnnouncement",
+        "/Superadminspace/UsersTable",
+        "/Superadminspace/Statistics",
+        "/Superadminspace/CreationAdmin",
+    ];
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"));
+    const ProfilePerson = decodedToken.ProfilePerson;
 
     return (
         <div className='relative mx-4 md:mx-14'>
@@ -18,7 +24,7 @@ const SuperAdminSpace = () => {
                     <Outlet />        
                     </div> 
                 <div className='lg:col-span-1'>
-                <VerticalNavbar /> 
+                <VerticalNavbar Routes={AdminRoutes} profile={ProfilePerson}/> 
                 </div>
             </section> 
         </div>
