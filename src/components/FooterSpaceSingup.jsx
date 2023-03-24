@@ -36,7 +36,7 @@ const FooterSpaceSingup = () => {
                 <section className='flex gap-5 justify-center items-center py-10'>
                     {/* Social network Facebook */}
                     <div className=''>
-                        <a href='https://www.facebook.com/programateacademy' target={'_blank'}>
+                        <a href='https://www.facebook.com/camila.educamas' target={'_blank'}>
                             <MdFacebook className='text-light text-3xl hover:scale-150 hover:text-yellow' /></a>
                     </div>
                     {/* Social network Instagram */}
