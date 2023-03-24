@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom"
-// import jwt_decode from "jwt-decode"
+import jwt_decode from "jwt-decode"
 
 const Auth = (props) => {
     const [token, SetToken] = useState(jwt_decode(localStorage.getItem("token")));

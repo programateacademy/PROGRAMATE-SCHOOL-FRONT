@@ -49,7 +49,7 @@ const CreationAdmin = () => {
             </section>
 
             {/* Editable cards to create Administrators */}
-            <div>
+            <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAdmin.map((admin) => {
                     console.log()
                     {/* este li es quien contiene el indice para poder iterar a todos los elementos */ }
