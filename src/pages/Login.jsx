@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useNavigate, Link } from 'react-router-dom';
 import defaultApi from '../apis/index';
 import swal from 'sweetalert2';
-import jwt_decode from 'jwt-decode';
+// import jwt_decode from 'jwt-decode';
 
 function LoginPerson() {
     //Hooks
