@@ -69,9 +69,9 @@ const Requirements = () => {
                             </p>
                             <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
+                        {/* <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
-                        </h5>
+                        </h5> */}
                     </article>
 
                     {/* second process */}
@@ -135,7 +135,7 @@ const Requirements = () => {
                             <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Felicidades ya eres parte del programa!.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 min</h5>
+                        {/* <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 min</h5> */}
                     </article>
                     <br/>
                     {/* <div className='flex justify-end pb-14'>

@@ -6,10 +6,12 @@ import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnounce
 import UsersTable from '../components/SuperAdminSpace/UsersTable';
 import Statistics from '../components/SuperAdminSpace/Statistics';
 import { Outlet } from 'react-router-dom';
+import FooterSpaceSingup from '../FooterSpaceSingup';
 
 const SuperAdminSpace = () => {
 
     return (
+        <div>
         <div className='relative mx-4 md:mx-14'>
                 <Navbar />
             <section className='pt-28 flex flex-col lg:grid lg:grid-cols-4'>  
@@ -19,7 +21,11 @@ const SuperAdminSpace = () => {
                 <div className='lg:col-span-1'>
                 <VerticalNavbar /> 
                 </div>
-            </section> 
+            </section>
+        </div>
+        <div>
+        <FooterSpaceSingup/>
+        </div>
         </div>
     );
 };

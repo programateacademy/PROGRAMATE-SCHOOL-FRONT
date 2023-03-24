@@ -4,6 +4,7 @@ import HelpNotice from '../components/StudentSpace/HelpNotice';
 import Announcement from '../components/StudentSpace/Announcement';
 import StudenPhases from '../components/StudentSpace/StudentPhases';
 import StudentProgress from "../components/StudentSpace/StudentProgress";
+import FooterSpaceSingup from "../FooterSpaceSingup";
 
 const StudentSpace = () => {
   return (
@@ -24,6 +25,9 @@ const StudentSpace = () => {
         </div>
         <div className='m-4 md:m-0 md:col-span-1'>
           <HelpNotice/>
+        </div>
+        <div>
+          <FooterSpaceSingup/>
         </div>
       </section>
     </div>
