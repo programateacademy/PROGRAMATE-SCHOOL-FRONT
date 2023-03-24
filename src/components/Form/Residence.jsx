@@ -59,7 +59,7 @@ const Residence = () => {
             <Link to='/Register/Social'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Informacion de Recidencia</h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Información de Residencia</h2>
             <form
                 onSubmit={handleSubmit}
                 className='font-Poppins px-3 py-3 md:grid grid-cols-2 gap-4' >
@@ -82,7 +82,7 @@ const Residence = () => {
                 {/* question 23 id departmentStudent */}
 
                 <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>department de residencia <small className='text-red/80'>*</small> </label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>departmento de residencia <small className='text-red/80'>*</small> </label>
                     <select
                         id='departmentStudent'
                         name='departmentStudent'
@@ -94,7 +94,7 @@ const Residence = () => {
                         <option className='font-medium text-dark'>Atlántico</option>
                         <option className='font-medium text-dark'>Bogotá</option>
                         <option className='font-medium text-dark'>Magdalena</option>
-                        <option className='font-medium text-dark' >Tolima</option>
+                        <option className='font-medium text-dark'>Tolima</option>
                     </select>
                     {errors.departmentStudent && touched.departmentStudent && <p className='text-red text-xs font-Poppins'>{errors.departmentStudent}</p>}
                 </div>
@@ -105,7 +105,7 @@ const Residence = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu department?<small className='text-red/80'>*</small></label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Tu residencia se encuentra en el área rural de tu departmento?<small className='text-red/80'>*</small></label>
                     <label className='flex flex-row font-Nunito'>
                         <input
                             type="radio"

@@ -10,7 +10,7 @@ const StudentSpace = () => {
   return (
     <div className='mx-4 md:mx-14'>
       <Navbar/>
-      <section className='grid md:grid-cols-4'>
+      <section className='pt-28 grid md:grid-cols-4'>
         <div className='md:col-span-3'>
           <Announcement/>
         </div>
