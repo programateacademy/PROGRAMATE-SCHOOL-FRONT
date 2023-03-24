@@ -43,13 +43,13 @@ export const Footer = () => {
                         </section>
                         <section className='flex justify-center md:justify-start items-center gap-4 pb-10'>
                             <BsFillTelephoneFill className='fill-light'/>
-                            <a href='https://wa.me/573114508935?'>
+                            <a href='https://wa.me/573114508935?' target={'_blank'}>
                             <h5 className='text-sm text-light font-Nunito font-light'>311 450 8935</h5>
                             </a>
                         </section>
 
                         {/*social media icons*/}
-                        <section className='flex justify-between'>
+                        <section className='flex justify-between items-center'>
                         {/* Social network Facebook */}
                         <a href='https://www.facebook.com/programateacademy' target={'_blank'}>
                             <MdFacebook className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
