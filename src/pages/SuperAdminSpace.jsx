@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
 import jwt_decode from 'jwt-decode';
 
+
 const SuperAdminSpace = () => {
 
     const AdminRoutes = [
