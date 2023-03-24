@@ -12,7 +12,6 @@ function LoginPerson() {
     const navigator = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
 
-
     function loginPerson() {
         var loginP = {
             emailPerson: emailPerson,
@@ -43,14 +42,7 @@ function LoginPerson() {
                 }
             })
             .then((res) => {
-                // swal.fire({
-                //     text: "Ingreso exitoso",
-                //     confirmButtonText: "OK",
-                //     timer: "3000",
-                //     color: "#262425",
-                //     confirmButtonColor: "#FBC209",
-                //     background: "#FFFFFF",
-                // });
+
                 const access_token = res.data.sessionToken;
                 localStorage.setItem("token", access_token);
 
@@ -69,6 +61,7 @@ function LoginPerson() {
                 }
             });
     }
+    
     return (
         <div className='relative'>
             <Link to='/'><img className='absolute w-1/6 left-6 top-4 hidden md:block' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados' /></Link>

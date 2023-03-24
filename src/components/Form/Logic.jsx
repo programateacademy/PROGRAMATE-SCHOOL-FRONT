@@ -56,7 +56,6 @@ const Logic = () => {
                     background: '#FFFFFF',
                     font: 'Poppins'
                 });
-        
                 //  navigator("/")
             })
             .then(err => {

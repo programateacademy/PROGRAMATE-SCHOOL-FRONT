@@ -144,29 +144,6 @@ const Statistics = () => {
                             </PieChart>
                         </ResponsiveContainer>
                     </div>
-
-                    <br />
-                    {/* <p>{Total}</p> 
-                    <p>{PercentF}</p>                   
-                    <p>{PercentM}</p>
-                    <p>{Stratum1}</p>
-                    <p>{Stratum2}</p>
-                    <p>{Stratum3}</p>          
-                    <p>{Stratum4}</p>
-                    <p>{Stratum5}</p>
-                    <p>{Stratum6}</p>
-                    <p>{DepAtlant}</p>
-                    <p>{DepBog}</p>
-                    <p>{DepMag}</p>                  
-                    <p>{DepTol}</p>
-                    <p>{PercFemale}</p>
-                    <p>{PercMale}</p> */}
-
-                    <br />
-
-                    <br />
-
-                    <br />
                 </div>
             </section>
         </div>

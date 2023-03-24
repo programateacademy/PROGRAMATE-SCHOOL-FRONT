@@ -4,7 +4,6 @@ import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
 
-
 const VerticalNavbar = () => {
     // este dato es de las cookies
     const profilePerson = "SuperAdmin"

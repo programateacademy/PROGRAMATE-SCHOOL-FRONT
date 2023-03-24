@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs';
+import React, { useState, useEffect } from 'react'
+import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs'
 import { MdEditSquare } from 'react-icons/md'
-import Modal from './EditorCreationAnnouncement';
-import defaultApi from '../../apis/index';
-import jwt_decode from "jwt-decode";
+import Modal from './EditorCreationAnnouncement'
+import defaultApi from '../../apis/index'
 
 const CreationAnnouncement = () => {
 
@@ -87,12 +86,6 @@ const CreationAnnouncement = () => {
                                 <div className='px-6 pb-4 flex gap-2 items-center'>
                                     <h2 className='text-dark font-Poppins font-medium text-base'>Perfil:</h2>
                                     <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{announ.descriptionAnnouncement}</h3>
-                                </div>
-
-                                {/* ... */}
-                                <div className='px-6 pb-4 flex gap-2 items-center'>
-                                    <h2 className='text-dark font-Poppins font-medium text-base'>Cupos:</h2>
-                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{announ.placesAnnouncement}</h3>
                                 </div>
 
                                 {/* ... */}
