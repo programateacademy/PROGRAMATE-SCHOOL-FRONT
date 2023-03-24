@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
 import jwt_decode from "jwt-decode"
 import defaultApi from "../../apis/index"
-//import idAnnouncement from '../StudentSpace/Announcement'
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -40,23 +39,16 @@ const Student = props => {
     // backend connection
 
     const decodedToken = jwt_decode(localStorage.getItem("token"))
-    console.log(decodedToken)
+    //console.log(decodedToken)
 
-    const id = decodedToken._id
-    console.log(id)
+    const idPerson = JSON.stringify(decodedToken._id)
+    console.log(idPerson)
 
-    const idAnnouncement = localStorage.getItem('idAnnouncement')
-    console.log(idAnnouncement)
-    
     defaultApi
-        .get("/getonestudent", id)
-        .then((res) => {
-            const RStudent = res
-            console.log(RStudent)
-        })
-        .catch((err) => {
-            console.log(err)
-        })   
+        .get("/getonestudent", ipPerson)
+        .then(res => json(res.data))
+        console.log(res.data)
+    
 
     function studentP() {
         var view1 = {
@@ -170,7 +162,7 @@ const Student = props => {
                             value={values.agePerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type="number" min="1" max="10000"
+                            type='number'
                             placeholder='00'
                             className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
@@ -223,7 +215,7 @@ const Student = props => {
                             value={values.documentPerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='text' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
+                            type='number' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
                         {errors.documentPerson && touched.documentPerson && <p className='text-red text-xs font-Poppins'>{errors.documentPerson}</p>}
                     </div>
 

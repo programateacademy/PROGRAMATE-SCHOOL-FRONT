@@ -14,7 +14,7 @@ export const Benefist = () => {
       <section className="md:grid md:grid-cols-2">
         {/*Program benefits*/}
         <div className="mt-14 mx-4">
-          <h1 className="pb-4 text-dark font-bold font-Poppins text-2xl text-center md:text-start">Beneficios del programa</h1>
+          <h1 className="pb-4 text-dark font-bold font-Poppins text-2xl text-center md:text-start">Indicadores del programa</h1>
           <hr className="md:w-[50%] border-2 border-yellow rounded"/>
           <p className="md:w-[50%] pt-4 font-light font-Nunito text-base text-center md:text-start  lg:text-xl">Creemos que la educación cambia vidas</p>
         </div>
@@ -67,12 +67,12 @@ export const Benefist = () => {
               <span className="text-yellow">2023</span>
             </h1>
             <p className="text-left mx-4 py-8 font-Nunito md:text-lg">
-              <strong className="text-yellow">Duración:</strong><h5>5 meses (posibilidad de tener 2 cohortes o más por año)</h5><br />
-              <strong className="text-yellow">Número de horas:</strong><h5>250 horas (200 horas técnicas y de acompañamiento vocacional+50 horas de inglés)</h5><br />
-              <strong className="text-yellow">Horario:</strong><h5>Lunes, martes, miércoles y viernes de 3:00 pm a 6:00 pm o 6:30 pm</h5><br />
-              <strong className="text-yellow">Requisitos:</strong><h5>Interés por la tecnología y contar con una mente analítica</h5><br />
-              <strong className="text-yellow">Modalidad:</strong><h5>100% remoto sincrónico (clases en vivo)</h5><br />
-              <strong className="text-yellow">Título otorgado:</strong><h5>Certificación de competencias como Desarrollador web front end nivel junior</h5><br />
+              <strong>Duración:</strong><h5>5 meses (posibilidad de tener 2 cohortes o más por año)</h5><br />
+              <strong>Número de horas:</strong><h5>250 horas (200 horas técnicas y de acompañamiento vocacional+50 horas de inglés)</h5><br />
+              <strong>Horario:</strong><h5>Lunes, martes, miércoles y viernes de 3:00 pm a 6:00 pm o 6:30 pm</h5><br />
+              <strong >Requisitos:</strong><h5>Interés por la tecnología y contar con una mente analítica</h5><br />
+              <strong>Modalidad:</strong><h5>100% remoto sincrónico (clases en vivo)</h5><br />
+              <strong>Título otorgado:</strong><h5>Certificación de competencias como Desarrollador web front end nivel junior</h5><br />
             </p>
             
             {/*Program logos*/}
@@ -95,9 +95,9 @@ export const Benefist = () => {
               DESARROLLO WEB FRONT END </h3>
             <p className="mx-4 mt-8 font-Nunito lg:text-lg text-right">
               Adquirirás las destrezas necesarias para desempeñarse como Desarrollador Web Frontend, a  través de lenguajes de programación de vanguardia que permitirán páginas web y plataformas digitales innovadoras. <br /><br />
-                <strong className="text-yellow">Front end:</strong><h4>Creación de interfaces web  a partir del diseño y la experiencia de usuario</h4> <br /> 
-                <strong className="text-yellow">Sitios web:</strong><h4>Creación de contenido, incluyendo textos  gráficos,  animaciones entre otros, que permitan navegar de forma  funcional en el entorno web.</h4> <br />
-                <strong className="text-yellow">Aplicaciones web:</strong><h4>Creación de contenido  basado en la  experiencia de usuario para mejorar la navegabilidad.</h4>
+                <strong>Front end:</strong><h4>Creación de interfaces web  a partir del diseño y la experiencia de usuario</h4> <br /> 
+                <strong>Sitios web:</strong><h4>Creación de contenido, incluyendo textos  gráficos,  animaciones entre otros, que permitan navegar de forma  funcional en el entorno web.</h4> <br />
+                <strong>Aplicaciones web:</strong><h4>Creación de contenido  basado en la  experiencia de usuario para mejorar la navegabilidad.</h4>
               <br />
 
               
