@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import defaultApi from '../../apis/index';
 import DataTable from 'datatables.net-dt';
-import jwt_decode from "jwt-decode";
 
 const UsersTable = () => {
 

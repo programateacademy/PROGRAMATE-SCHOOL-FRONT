@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsCheck } from 'react-icons/bs';
-import jwt_decode from "jwt-decode";
 
 const StudentPhases = () => {
     return (

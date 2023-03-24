@@ -2,7 +2,6 @@ import {React, useState} from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import defaultApi from '../../apis/index';
 import swal from 'sweetalert2';
-import jwt_decode from "jwt-decode";
 
 function Modal({ visible, onClose }) {
 

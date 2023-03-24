@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import defaultApi from '../../apis/index';
 import { BarChart, Bar, PieChart, Pie, Tooltip, Legend, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Sector, Cell, LabelList, Label } from 'recharts';
-import jwt_decode from "jwt-decode";
 
 const Statistics = () => {
 

@@ -3,7 +3,6 @@ import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs';
 import { MdEditSquare } from 'react-icons/md'
 import Modal from './EditorCreationAnnouncement';
 import defaultApi from '../../apis/index';
-import jwt_decode from "jwt-decode";
 
 const CreationAnnouncement = () => {
 
