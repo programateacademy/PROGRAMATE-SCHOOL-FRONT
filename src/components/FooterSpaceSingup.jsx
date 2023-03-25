@@ -56,7 +56,6 @@ const FooterSpaceSingup = () => {
                             <GrLinkedinOption className='text-light text-3xl md:text-2xl hover:scale-150 hover:text-yellow' /></a>
                     </div>
                 </section>
-            </section>
         </footer>
     )
 }
