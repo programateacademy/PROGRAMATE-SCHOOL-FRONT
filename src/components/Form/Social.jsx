@@ -58,7 +58,7 @@ const Social = () => {
             <Link to='/Register/Student'>
                 <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
             </Link>
-            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Informacion Social</h2>
+            <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Información Social</h2>
             <form onSubmit={handleSubmit} className=' font-Poppins' >
                 <div className='mx-12 sm:mx-5 md:mx-16 lg:mx-28 pb-4 grid md:grid-cols-2'>
                     
@@ -101,8 +101,8 @@ const Social = () => {
                             className={errors.ethnicGroup && touched.ethnicGroup ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>Selecciona una opción </option>
                             <option className='font-medium text-dark'>Palenquero</option>
-                            <option className='font-medium text-dark'>Afrocolombiano o Afrodecendiente</option>
-                            <option className='font-medium text-dark'>Indigena</option>
+                            <option className='font-medium text-dark'>Afrocolombiano o Afrodescendiente</option>
+                            <option className='font-medium text-dark'>Indígena</option>
                             <option className='font-medium text-dark'>Gitano</option>
                             <option className='font-medium text-dark'>Raizal</option>
                             <option className='font-medium text-dark'>Ninguna de las anteriores</option>
@@ -130,8 +130,6 @@ const Social = () => {
 
                     {/* the break line in the form */}
                     <hr className=" mb-4 border-2 border-yellow rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
-                    <hr className=" border-2 border-yellow mb-2 rounded w-full max-w-7xl flex justify-center items-center md:mx-6 md:col-span-2" />
-                    
 
                     {/* question 20 id disability */}
                     <div
@@ -176,7 +174,7 @@ const Social = () => {
                             <option className='font-medium text-dark'>Intelectual / Cognitiva</option>
                             <option className='font-medium text-dark'>SordoCegera</option>
                             <option className='font-medium text-dark'>Pisicosocial</option>
-                            <option className='font-medium text-dark'>Multiple</option>
+                            <option className='font-medium text-dark'>Múltiple</option>
                             <option className='font-medium text-dark'>Otra </option>
                             <option className='font-medium text-dark'>Ninguna</option>
                         

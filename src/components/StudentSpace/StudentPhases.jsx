@@ -1,7 +1,66 @@
-import React from 'react'
-import { BsCheck } from 'react-icons/bs'
+import React, { useState, useEffect, createContext } from 'react';
+import { BsCheck } from 'react-icons/bs';
+import defaultApi from "../../apis/index"
+import jwt_decode from "jwt-decode";
+
+export const StageAnnouncement = createContext()
+export const NAnnouncement = createContext()
 
 const StudentPhases = () => {
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"));
+
+    const idPerson = decodedToken._id;
+
+    const [statsStudent, setStatsStudent] = useState([]);
+
+    useEffect(() => {
+        defaultApi
+            .post("/getstagestudent", idPerson)
+            .catch((err) => {
+                console.log(err);
+            })
+            .then((res) => {
+                setStatsStudent(res.data.data)
+            });
+    }, [])
+
+    const StudentStage = parseFloat(statsStudent) * 100
+
+    const [oneAnnoun, setOneAnnoun] = useState([])
+
+    useEffect(() => {
+        defaultApi
+            .post("/getoneannouncement", idPerson)
+            .catch((err) => {
+                console.log(err)
+            })
+            .then((res) => {
+                setOneAnnoun(res.data)
+            })
+    }, [])
+
+
+    if (StudentStage == 5) {
+        // INDICATE ONLY THE FIRST SECTION "Registro en la plataforma: 5%, primera parte"
+    }
+    if (StudentStage == 40) {
+        // console.log("Inscripción en una convocatoria: 40%, segunda parte")
+        // INDICAR HASTA LA SEGUNDA SECCIÓN
+    }
+    if (StudentStage == 65) {
+        // console.log("Entrevista: 60%, tercera parte")
+        // INDICAR HASTA LA TERCERA SECCIÓN
+    }
+    if (StudentStage == 80) {
+        // console.log("Legalización de la beca: 80%, cuarta parte")
+        // INDICAR HASTA LA CUARTA SECCIÓN
+    }
+    if (StudentStage == 95) {
+        // console.log("Prueba de diagnóstico de ingles: 95%, quinta parte")
+        // INDICAR HASTA LA QUINTA SECCIÓN
+    }
+
     return (
         <main>
             {/* presentation of the student process */}

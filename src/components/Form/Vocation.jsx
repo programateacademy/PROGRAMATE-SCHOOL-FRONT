@@ -304,7 +304,7 @@ const Vocation = () => {
                                     value="A"
                                     className="accent-red focus:accent-yellow"/>A.
                             </label>
-                            <h3 className=' font-Nunito font-semibold indent-4'>Elaboración del guion.</h3>
+                            <h3 className=' font-Nunito font-semibold indent-4'>Elaboración del guión.</h3>
                         </div>
                         <div className='flex flex-row'>
                             <label className='flex justify-center font-Poppins font-extrabold text-center'>

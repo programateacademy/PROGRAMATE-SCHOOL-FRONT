@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import defaultApi from '../../apis/index'
 import swal from 'sweetalert2'
+import jwt_decode from "jwt-decode"
 
 function Modal({ visible, onClose }) {
 
@@ -9,9 +10,11 @@ function Modal({ visible, onClose }) {
         if (e.target.id === 'box')
         onClose()
     }
-
-    // THIS INFO MUST BE OBTAIN FROM THE COOKIES
+    
+    const decodedToken = jwt_decode(localStorage.getItem("token"))
+    // THIS INFO MUST BE OBTAIN FROM THE TOKEN
     //const documentPerson = something
+    const adminId = decodedToken._id
 
     const [ nameAnnouncement, setNameAnnouncement ] = useState("");
     const [ descriptionAnnouncement, setDescriptionAnnouncement ] = useState("");
@@ -21,6 +24,7 @@ function Modal({ visible, onClose }) {
 
     function createAnnouncement() {
         var createAnn = {
+            adminId: adminId,
             nameAnnouncement:  nameAnnouncement,
             descriptionAnnouncement: descriptionAnnouncement,  
             placesAnnouncement: placesAnnouncement,
