@@ -5,7 +5,6 @@ import { studentSchema } from '../../schemas/formSchema';
 import defaultApi from "../../apis/index"
 import jwt_decode from "jwt-decode";
 
-
 const onSubmit = async (values, actions) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -163,7 +162,7 @@ const Student = props => {
                             value={values.agePerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='number'
+                            type='number' min="1" max="10000" 
                             placeholder='00'
                             className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
@@ -216,7 +215,7 @@ const Student = props => {
                             value={values.documentPerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='number' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
+                            type='text' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
                         {errors.documentPerson && touched.documentPerson && <p className='text-red text-xs font-Poppins'>{errors.documentPerson}</p>}
                     </div>
 
