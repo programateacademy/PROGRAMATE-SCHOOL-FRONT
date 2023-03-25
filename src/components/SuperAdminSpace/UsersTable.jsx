@@ -39,7 +39,9 @@ const UsersTable = () => {
 
     const listStudents = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/getUsers');
+
+            const response = await fetch("http://localhost:3000/api/getallquestionaries");
+
             const students = await response.json();
 
             let content = ``;
@@ -75,9 +77,8 @@ const UsersTable = () => {
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Documento</th>
-                                <th>Edad</th>
                                 <th>Correo</th>
-                                <th>Institución</th>
+                                <th>Puntaje Total</th>
                             </tr>
                         </thead>
                         <tbody id='tableBody_students'></tbody>
@@ -85,9 +86,10 @@ const UsersTable = () => {
                 </div>
             </div>
         </div>
-    )
 
-}
+    );
+};
+
 
 
 export default UsersTable
