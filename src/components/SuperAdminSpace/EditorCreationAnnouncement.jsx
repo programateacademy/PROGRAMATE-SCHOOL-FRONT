@@ -112,7 +112,7 @@ function Modal({ visible, onClose }) {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Modal
