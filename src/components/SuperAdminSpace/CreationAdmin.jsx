@@ -63,7 +63,7 @@ const CreationAdmin = () => {
                     <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                         <div className='w-full p-6 flex justify-end'>
                             {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}
-                            <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button>
+                            {/* <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button> */}
                             <Modal onClose={handleOnClose} visible={showModal}/>
                         </div>
                         <div className='w-full mx-auto flex flex-col justify-center'>

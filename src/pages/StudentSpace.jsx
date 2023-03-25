@@ -14,7 +14,7 @@ const StudentSpace = () => {
         <div className='md:col-span-3'>
           <Announcement/>
         </div>
-        <div className='m-4 md:m-0 md:col-span-1'>
+        <div className='m-4 md:m-0 hidden md:block md:col-span-1'>
           <HelpNotice/>
         </div>
       </section>
@@ -23,7 +23,7 @@ const StudentSpace = () => {
           <StudentProgress/>
           <StudenPhases/>
         </div>
-        <div className='m-4 md:m-0 md:col-span-1'>
+        <div className='m-4 md:m-0 md:col-span-1 block md:hidden'>
           <HelpNotice/>
         </div>
       </section>
