@@ -44,7 +44,7 @@ const Student = props => {
     console.log(idPerson)
 
     defaultApi
-        .get("/getonestudent", ipPerson)
+        .get("/getonestudent", idPerson)
         .then(res => json(res.data))
         console.log(res.data)
     
