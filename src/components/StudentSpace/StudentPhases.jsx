@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsCheck } from 'react-icons/bs';
+import { MdOutlineCelebration } from 'react-icons/md'
 
 const StudentPhases = () => {
     return (
