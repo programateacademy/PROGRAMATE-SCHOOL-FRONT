@@ -1,7 +1,8 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import defaultApi from "../../apis/index";
-import jwt_decode from 'jwt-decode';
+import jwt_decode from "jwt-decode";
+
 
 export const ContextListAnnouncement = createContext();
 
@@ -37,7 +38,7 @@ const Announcement = () => {
             </section>
 
             {/* Announcements cards */}
-
+            <div className='grid md:grid-cols-2 justify-center gap-5'>
             {dataOpenAnnoun.map((item) => {
 
                 function buttonfunction() {
@@ -47,8 +48,8 @@ const Announcement = () => {
 
                 {/* este li es quien contiene el indice para poder iterar a todos los elementos */ }
                 return (
-
-                    <section key={item._id} className='px-4 grid md:grid-cols-2 justify-center gap-8'>
+                    
+                    <section key={item._id} className='px-4'>
                         <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                             <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>{item.nameAnnouncement}</h2>
 
@@ -84,9 +85,11 @@ const Announcement = () => {
                                 <button onClick={buttonfunction} className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Aplicar</button>
                             </section>
                         </div>
+                        <br/>
                     </section>
                 )
             })}
+            </div>
         </main>
     );
 }
