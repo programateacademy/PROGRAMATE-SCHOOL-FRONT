@@ -8,9 +8,9 @@ import FooterSpaceSingup from '../components/FooterSpaceSingup';
 
 const StudentSpace = () => {
   return (
-    <div className='mx-4 md:mx-14'>
+    <div className=''>
       <Navbar/>
-      <section className='pt-28 grid md:grid-cols-4'>
+      <section className='mx-4 md:mx-14 pt-28 grid md:grid-cols-4'>
         <div className='md:col-span-3'>
           <Announcement/>
         </div>
@@ -18,7 +18,7 @@ const StudentSpace = () => {
           <HelpNotice/>
         </div>
       </section>
-      <section className='grid md:grid-cols-4'>
+      <section className='mx-4 md:mx-14 grid md:grid-cols-4'>
         <div className='md:col-span-3'>
           <StudentProgress/>
           <StudenPhases/>

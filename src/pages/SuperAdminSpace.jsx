@@ -15,7 +15,7 @@ const SuperAdminSpace = () => {
     ];
 
     const decodedToken = jwt_decode(localStorage.getItem("token"));
-    const ProfilePerson = decodedToken.ProfilePerson;
+    const profilePerson = decodedToken.profilePerson;
 
     return (
 
@@ -26,12 +26,12 @@ const SuperAdminSpace = () => {
                     <Outlet />        
                     </div> 
                 <div className='lg:col-span-1'>
-                <VerticalNavbar Routes={AdminRoutes} profile={ProfilePerson}/> 
+                <VerticalNavbar Routes={AdminRoutes} profile={profilePerson}/> 
                 </div>
             </section>
             <FooterSpaceSingup /> 
         </div>
-        </div>
+        
     );
 };
 

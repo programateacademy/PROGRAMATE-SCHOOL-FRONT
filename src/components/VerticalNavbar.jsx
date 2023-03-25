@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import { HiOutlinePaintBrush, HiOutlineWallet } from 'react-icons/hi2';
 import { SlGraduation } from 'react-icons/sl';
 import { TfiMouse } from 'react-icons/tfi';
+
 
 const VerticalNavbar = (props) => {
     
@@ -12,20 +13,20 @@ const VerticalNavbar = (props) => {
     const UsersTable = Routes[1];
     const Statistics = Routes[2]
     const CreationAdmin = Routes[3];
-
     const profile = props.profile
 
-    const [disableButton, setDisableButton] = useState(true)
-
-    if (profile === 'SuperAdmin') {
-        setDisableButton(true)
-    } else if (profile === 'Admin') {
-        setDisableButton(false)
-
-    }
-
-console.log(profile)
-
+    const [disableButton, setDisableButton] = useState(false)
+    
+    useEffect(() => {
+        if (profile === 'SuperAdmin') {
+            setDisableButton(false)
+        } else if (profile === 'Admin') {
+            setDisableButton(true)
+        }
+    }, [profile])
+    
+    console.log(disableButton)
+    
     return (
         <div className='fixed'>
             <div className=' hidden lg:flex lg:flex-col lg:w-full lg:gap-3 lg:pl-10 items-end'>
