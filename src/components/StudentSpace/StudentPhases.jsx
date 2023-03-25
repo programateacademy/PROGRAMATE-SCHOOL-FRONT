@@ -1,5 +1,6 @@
 import React, {useState, useEffect, createContext} from 'react';
 import { BsCheck } from 'react-icons/bs';
+import { MdOutlineCelebration } from 'react-icons/md'
 import defaultApi from "../../apis/index"
 import jwt_decode from "jwt-decode";
 
@@ -136,9 +137,8 @@ const StudentPhases = () => {
                 <p></p>
             </div>
             <br/>
-            <p className=' font-Poppins font-semibold text-center text-3xl mx-3 mb-2 md:text-3xl md:my-8 flex flex-row justify-center'> Felicidades ya eres parte del programa!</p>
-
-
+            <br/>
+            <p className=' font-Poppins font-semibold text-center text-3xl mx-3 mb-2 md:text-3xl md:my-8 flex flex-row justify-center'><MdOutlineCelebration className='text-4xl text-center'/> Felicidades ya eres parte del programa!</p>
         </main>
     )
 }

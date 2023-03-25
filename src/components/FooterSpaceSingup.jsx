@@ -55,13 +55,7 @@ const FooterSpaceSingup = () => {
                         <a href='https://www.linkedin.com/company/educam%C3%A1s/' target={'_blank'}>
                             <GrLinkedinOption className='text-light text-3xl md:text-2xl hover:scale-150 hover:text-yellow' /></a>
                     </div>
-                    {/* Social network Spotify */}
-                    <div>
-                        <a href='' target={'_blank'}>
-                            <ImSpotify className='text-light text-3xl md:text-2xl hover:scale-150 hover:text-yellow' /></a>
-                    </div>
-            </section>
-            
+                </section>
         </footer>
     )
 }
