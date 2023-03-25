@@ -5,6 +5,7 @@ import { HiChevronDoubleRight, HiChevronDoubleLeft } from 'react-icons/hi'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Modal from '../SuperAdminSpace/EditorCreationAdmin'
 import defaultApi from '../../apis/index'
+import jwt_decode from "jwt-decode";
 
 const CreationAdmin = () => {
 
@@ -24,6 +25,11 @@ const CreationAdmin = () => {
                 console.log(err)
             })
     }, [])
+
+    // THIS INFO MUST BE OBTAIN FROM THE TOKEN
+    //const documentPerson = something
+    const decodedToken = jwt_decode(localStorage.getItem("token"))
+    const adminId = decodedToken._id
 
     return (
         <div className='pb-4'>
@@ -51,7 +57,7 @@ const CreationAdmin = () => {
             <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAdmin.map((admin) => {
                     console.log()
-                    {/* este li es quien contiene el indice para poder iterar a todos los elementos */}
+                    {/* This li is the one that contains the index to be able to iterate to all the elements */}
                     return(
                 <section key={admin._id} className='px-4'>
                     <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
