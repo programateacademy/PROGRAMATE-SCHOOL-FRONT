@@ -51,10 +51,10 @@ function LoginPerson() {
                 console.log(decodedToken);
 
                 if (decodedToken.profilePerson === "SuperAdmin") {
-                    navigator("/Superadminspace");
+                    navigator("/Superadminspace/CreationAnnouncement");
                 }
                 if (decodedToken.profilePerson === "Admin") {
-                    navigator("/Adminspace");
+                    navigator("/Adminspace/CreationAnnouncement");
                 }
                 if (decodedToken.profilePerson === "Student") {
                     navigator("/Studentspace");

@@ -58,37 +58,37 @@ const Requirements = () => {
             <div className='flex justify-around items-center'>
                 <section className=''>
                     {/* first process */}
-                    <article className='flex flex-row mb-8 mx-4 pt-14'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
                             <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A11-amarilla.png?raw=true' /> 
                         </div>
                         <div>
-                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2 '> Fase 1: Registro en la plataforma </h5>
+                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2'> Fase 1: Registro en la plataforma </h5>
                             {/*<p className=' font-Nunito text-sm mx-3 mb-2 md:text-xl md:my-2'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
                             </p>
                             <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
+                        {/* <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>
                             15 min
-                        </h5>
+                        </h5> */}
                     </article>
 
                     {/* second process */}
-                    <article className='flex flex-row my-8 mx-4'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
                             <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A12-amarilla.png?raw=true' />  
                         </div>
                         <div>
-                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2 '> Fase 2: Cuéntanos un poco sobre ti queremos conocerte </h5>
+                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2'> Fase 2: Cuéntanos un poco sobre ti queremos conocerte </h5>
                             <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Para empezar tu proceso de selección, deberás responder algunas preguntas sobre ti. Queremos conocerte, te tomará de 5 a 10 minutos diligenciar todo el formulario.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>5 a 10 min</h5>
+                        <h5 className='flex items-center justify-end font-Poppins font-extrabold sm:m-5 md:text-center'>5 a 10 min</h5>
                     </article>
 
                     {/* third process */}
-                    <article className='flex flex-row my-8 mx-4'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
                             <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A13-amarilla.png?raw=true' />  
                         </div>
@@ -97,11 +97,11 @@ const Requirements = () => {
                             <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Para empezar tu proceso de selección, deberás responder algunas preguntas sobre ti. Queremos conocerte, te tomará de 10 a 20 minutos diligenciar todo el formulario.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>10 a 20 min</h5>
+                        <h5 className=' flex items-center justify-end font-Poppins font-extrabold sm:m-5 md:text-center'>10 a 20 min</h5>
                     </article>
 
                     {/* fourth process */}
-                    <article className='flex flex-row my-8 mx-4'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
                             <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A14-amarilla.png?raw=true' />
                             </div>
@@ -110,32 +110,32 @@ const Requirements = () => {
                             <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Es hora que nos demuestres que quieres participar en el programa, esta entrevista tendrá una duración de 15-20 minutos.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 a 20 min</h5>
+                        <h5 className='flex items-center justify-end font-Poppins font-extrabold sm:m-5 md:text-center'>15 a 20 min</h5>
                     </article>
                     {/* fifth process */}
-                    <article className='flex flex-row mt-8 mx-4 pb-14'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
-                            <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-5 ' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
                             </div>
-                        <div>
-                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2 '>Fase 5: ¿Te gustan los idiomas?</h5>
-                            <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Para ingresar al programa no requieres tener ningún nivel de inglés pero queremos cuantificar cuanto sabes para adaptar nuestro material y las clases que se desarrollaran de inglés.</p>
+                        <div className=''>
+                            <h5 className=' text-dark font-bold text-2xl mx-3 my-2'>Fase 5: ¿Te gustan los idiomas?</h5>
+                            <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 sm:text-xs md:text-xl md:my-2'>Para ingresar al programa no requieres tener ningún nivel de inglés pero queremos cuantificar cuanto sabes para adaptar nuestro material y las clases que se desarrollaran de inglés.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 min</h5>
+                        <h5 className=' flex items-center justify-end font-Poppins font-extrabold sm:m-5 md:text-center'>15 min</h5>
                     </article>
 
                     {/* Sixth process */}
-                    <article className='flex flex-row mt-8 mx-4 pb-14'>
+                    <article className='flex flex-col mt-8 mx-4 md:flex-row'>
                         <div className='flex items-center'>
-                            <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A15-amarilla.png?raw=true' />
+                            <img className='md:mr-3 lg:mr-5' width={50} src='https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A16-amarilla.png?raw=true' />
                             </div>
                         <div>
                             <h5 className=' text-dark font-bold text-2xl mx-3 my-2 '>Fase 6: Inicio de Clases </h5>
-                            <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2'>Felicidades ya eres parte del programa!.</p>
+                            <p className=' font-Nunito max-w-4xl text-sm mx-3 mb-2 md:text-xl md:my-2 font-medium'>Felicidades ya eres parte del programa!.</p>
                             {/* <button className=' button mx-3 '>button-Primary</button> */}
                         </div>
-                        <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 min</h5>
+                        {/* <h5 className=' flex items-center font-Poppins font-extrabold sm:m-5 text-center'>15 min</h5> */}
                     </article>
                     <br/>
                     {/* <div className='flex justify-end pb-14'>

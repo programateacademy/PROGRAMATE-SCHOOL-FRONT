@@ -1,9 +1,8 @@
 import React from 'react';
-import jwt_decode from "jwt-decode";
 
 const HelpNotice = () => {
     return (
-        <figure className='mx-auto md:py-6 grid grid-cols-1 gap-4 md:gap-5 justify-center' >
+        <figure className='mx-auto md:py-6 grid grid-cols-1 gap-4 md:gap-5 justify-center ml-6' >
 
             {/* contact ad if the user has any doubt or problem */}
             <h1 className='mt-4 font-Poppins font-semibold mx-auto text-center text-lg md:text-xl lg:text-2xl'>¿Tienes algún problema o dificultad con tu proceso?</h1>

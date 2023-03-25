@@ -1,27 +1,34 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
-import CreationAnnouncement from '../components/SuperAdminSpace/CreationAnnouncement';
-import UsersTable from '../components/SuperAdminSpace/UsersTable';
-import Statistics from '../components/SuperAdminSpace/Statistics';
+import FooterSpaceSingup from '../components/FooterSpaceSingup';
+import jwt_decode from 'jwt-decode';
 
 const AdminSpace = () => {
+
+    const AdminRoutes = [
+        '/Adminspace/CreationAnnouncement',
+        '/Adminspace/UsersTable',
+        '/Adminspace/Statistics',
+        '/Adminspace/CreationAdmin',
+    ];
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"));
+    const profilePerson = decodedToken.profilePerson;
+console.log(decodedToken);
     return (
-        <div className='mx-4 md:mx-14'>
+        <div className='relative '>
             <Navbar/>
-            <section className='grid md:grid-cols-4'>
-                <div className='md:hidden'>
-                    <VerticalNavbar/>
+            <section className='pt-28 flex flex-col lg:grid lg:grid-cols-4'>
+                <div className='mx-4 md:mx-14 pb-10 lg:col-span-3'>
+                    <Outlet /> 
                 </div>
-                <div className='md:col-span-3'>
-                    <CreationAnnouncement/>
-                    <UsersTable/>
-                    <Statistics/>
-                </div>
-                <div className='hidden md:block md:col-span-1'>
-                    <VerticalNavbar/>
+                <div className='lg:col-span-1'>
+                    <VerticalNavbar Routes={AdminRoutes} profile={profilePerson}/>
                 </div>
             </section>
+            <FooterSpaceSingup /> 
         </div>
     )
 }
