@@ -62,9 +62,6 @@ export const Footer = () => {
                             {/* Social network Linkedin */}
                             <a href='https://www.linkedin.com/company/educam%C3%A1s/' target={'_blank'}>
                             <GrLinkedinOption className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
-                            {/* Social network Spotify */}
-                            <a href='' target={'_blank'}>
-                            <ImSpotify className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
                         </section>
                     </div>
                 </section>
