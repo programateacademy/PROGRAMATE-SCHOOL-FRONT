@@ -235,6 +235,7 @@ const Student = props => {
                             <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
                             <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
                             <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
+                            <option className='font-medium text-dark'>IED Asunción Silva este es el otro colegio</option>
                         </select>
                         {errors.institutionPerson && touched.institutionPerson && <p className='text-red text-xs font-Poppins'>{errors.institutionPerson}</p>}
                     </div>
