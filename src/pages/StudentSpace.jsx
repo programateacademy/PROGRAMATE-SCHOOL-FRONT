@@ -26,6 +26,9 @@ const StudentSpace = () => {
         <div className='m-4 md:m-0 md:col-span-1'>
           <HelpNotice/>
         </div>
+        <div>
+          <FooterSpaceSingup/>
+        </div>
       </section>
       <FooterSpaceSingup /> 
     </div>

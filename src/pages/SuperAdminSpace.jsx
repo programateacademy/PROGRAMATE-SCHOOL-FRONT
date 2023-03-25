@@ -1,10 +1,9 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import VerticalNavbar from '../components/VerticalNavbar';
 import FooterSpaceSingup from '../components/FooterSpaceSingup';
 import jwt_decode from 'jwt-decode';
-
 
 const SuperAdminSpace = () => {
 
@@ -19,6 +18,7 @@ const SuperAdminSpace = () => {
     const profilePerson = decodedToken.profilePerson;
 
     return (
+
         <div className='relative'>
                 <Navbar />
             <section className='pt-28 flex flex-col lg:grid lg:grid-cols-4'>  
@@ -30,6 +30,7 @@ const SuperAdminSpace = () => {
                 </div>
             </section>
             <FooterSpaceSingup /> 
+        </div>
         </div>
     );
 };
