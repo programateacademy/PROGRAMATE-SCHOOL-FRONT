@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import defaultApi from "../../apis/index";
+import jwt_decode from "jwt-decode";
+
+export const ContextListAnnouncement = createContext();
 
 const Announcement = () => {
 
@@ -36,7 +39,6 @@ const Announcement = () => {
             {/* Announcements cards */}
 
             {dataOpenAnnoun.map((item) => {
-                console.log()
 
                 function buttonfunction() {
                     localStorage.setItem('idAnnouncement', item._id)
@@ -48,30 +50,33 @@ const Announcement = () => {
 
                     <section key={item._id} className='px-4 grid md:grid-cols-2 justify-center gap-8'>
                         <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
-                            <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>Desarrollador Frontend Web Jr</h2>
+                            <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>{item.nameAnnouncement}</h2>
 
                             <label className='hidden'>{item._id}</label>
-                            <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>{item.nameAnnouncement}</h2>
 
                             {/* ... */}
                             <figure className='px-4 pb-4 flex gap-2'>
-                                <label className='w-full text-dark font-Poppins font-medium text-base'>Estado de la aplicación</label>
-                                <input placeholder='En progreso' type="text" name="task" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold' />
+                                <h2 className='w-full text-dark font-Poppins font-medium text-base'>Estado de la aplicación</h2>
+                                <h3 className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'>Disponible</h3>
                             </figure>
 
                             {/* selection stages */}
                             <figure className='px-4 pb-4 flex gap-2'>
-                                <label className='w-full text-dark font-Poppins font-medium text-base'>Etapas de selección</label>
-                                <label className='w-full text-dark font-Poppins font-medium text-base'>{item.descriptionAnnouncement}</label>
-                                <input placeholder='40%' type="text" name="task" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold' />
+                                <h2 className='w-full text-dark font-Poppins font-medium text-base'>Etapa de selección</h2>
+                                <h3 className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'>5 %</h3>
                             </figure>
+
                             <hr className="mx-auto mb-6 mt-2 w-11/12 border-[1px] rounded border-yellow border-dotted" />
 
                             {/* selection process */}
                             <figure className='px-4 pb-4 flex gap-2'>
-                                <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>Proceso de selección</label>
-                                <label className='w-full text-dark font-Poppins font-medium text-base inline-block'>{item.placesAnnouncement}</label>
-                                <input placeholder='Activo' type="text" name="task" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold' />
+                                <h2 className='w-full text-dark font-Poppins font-medium text-base inline-block'>Proceso de selección</h2>
+                                <h3 className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'>Activo</h3>
+                            </figure>
+
+                            <figure className='px-4 pb-4 flex gap-2'>
+                                <h2 className='w-full text-dark font-Poppins font-medium text-base inline-block'>Cupos totales</h2>
+                                <h3 className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'>{item.placesAnnouncement}</h3>
                             </figure>
 
                             {/* button to apply or continue */}
