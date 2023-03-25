@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import defaultApi from "../../apis/index";
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 
 export const ContextListAnnouncement = createContext();
 
@@ -53,7 +53,7 @@ const Announcement = () => {
                             <h2 className='p-4 font-semibold font-Poppins text-dark text-lg'>{item.nameAnnouncement}</h2>
 
                             <label className='hidden'>{item._id}</label>
-
+                            
                             {/* ... */}
                             <figure className='px-4 pb-4 flex gap-2'>
                                 <h2 className='w-full text-dark font-Poppins font-medium text-base'>Estado de la aplicación</h2>
@@ -78,7 +78,7 @@ const Announcement = () => {
                                 <h2 className='w-full text-dark font-Poppins font-medium text-base inline-block'>Cupos totales</h2>
                                 <h3 className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'>{item.placesAnnouncement}</h3>
                             </figure>
-
+                            
                             {/* button to apply or continue */}
                             <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
                                 <button onClick={buttonfunction} className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Aplicar</button>
