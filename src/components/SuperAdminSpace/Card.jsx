@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Card = ({ tarjeta, index, editarTarjeta, eliminarTarjeta }) => {
     {
@@ -48,7 +48,7 @@ const Card = ({ tarjeta, index, editarTarjeta, eliminarTarjeta }) => {
                 <label>Perfil:
                     <input type="text" value={perfil} onChange={handlePerfilChange} />
                 </label>
-                <label>Inscriptos:<input type="text" value={inscriptos} onChange={handleInscriptosChange} />
+                <label>Inscritos:<input type="text" value={inscriptos} onChange={handleInscriptosChange} />
                 </label>
                 <label>Fecha de inicio:<input type="date" value={fechaInicio} onChange={handleFechaInicioChange} />
                 </label>

@@ -4,12 +4,13 @@ import HelpNotice from '../components/StudentSpace/HelpNotice';
 import Announcement from '../components/StudentSpace/Announcement';
 import StudenPhases from '../components/StudentSpace/StudentPhases';
 import StudentProgress from "../components/StudentSpace/StudentProgress";
+import FooterSpaceSingup from '../components/FooterSpaceSingup';
 
 const StudentSpace = () => {
   return (
     <div className='mx-4 md:mx-14'>
       <Navbar/>
-      <section className='grid md:grid-cols-4'>
+      <section className='pt-28 grid md:grid-cols-4'>
         <div className='md:col-span-3'>
           <Announcement/>
         </div>
@@ -25,7 +26,11 @@ const StudentSpace = () => {
         <div className='m-4 md:m-0 md:col-span-1'>
           <HelpNotice/>
         </div>
+        <div>
+          <FooterSpaceSingup/>
+        </div>
       </section>
+      <FooterSpaceSingup /> 
     </div>
   );
 };

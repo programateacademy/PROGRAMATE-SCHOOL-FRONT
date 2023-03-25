@@ -8,6 +8,7 @@ import { GrLinkedinOption } from 'react-icons/gr';
 import { ImSpotify } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 
+
 export const Footer = () => {
     return (
         <div id="footer">
@@ -42,15 +43,15 @@ export const Footer = () => {
                         </section>
                         <section className='flex justify-center md:justify-start items-center gap-4 pb-10'>
                             <BsFillTelephoneFill className='fill-light'/>
-                            <a href='https://wa.me/573114508935?'>
+                            <a href='https://wa.me/573114508935?' target={'_blank'}>
                             <h5 className='text-sm text-light font-Nunito font-light'>311 450 8935</h5>
                             </a>
                         </section>
 
                         {/*social media icons*/}
-                        <section className='flex justify-between'>
+                        <section className='flex justify-between items-center'>
                         {/* Social network Facebook */}
-                        <a href='https://www.facebook.com/programateacademy' target={'_blank'}>
+                        <a href='https://www.facebook.com/camila.educamas' target={'_blank'}>
                             <MdFacebook className='text-light text-3xl hover:scale-150 hover:text-yellow'/></a>
                             {/* Social network Instagram */}
                             <a href='https://www.instagram.com/somoseducamas/' target={'_blank'}>

@@ -112,7 +112,7 @@ function Modal({ visible, onClose }) {
                     <input value={positionPerson} onChange={(e) => {setPositionPerson(e.target.value)}} placeholder='Cargo' type="text" className='w-full mx-auto px-1 text-dark/70 text-sm font-Poppins font-semibold'/>
                 </div>
                 <div className='grid grid-cols py-4'>
-                    <button onClick={buttonFunction} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Crear</button>
+                    <button onClick={buttonFunction} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-purple text-center text-yellow hover:text-light font-Poppins font-medium'>Crear</button>
                 </div>
             </div>
         </div>

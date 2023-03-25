@@ -1,5 +1,5 @@
-import React from 'react'
-import { BsCheck } from 'react-icons/bs'
+import React from 'react';
+import { BsCheck } from 'react-icons/bs';
 
 const StudentPhases = () => {
     return (
