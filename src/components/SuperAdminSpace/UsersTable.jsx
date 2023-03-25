@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import defaultApi from '../../apis/index'
 
 const UsersTable = () => {
@@ -39,19 +39,18 @@ const initDataTable = async() => {
 
     const listStudents = async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/getUsers');
+        const response = await fetch("http://localhost:3000/api/getallquestionaries");
         const students = await response.json();
 
     let content = ``;
     students.forEach((student, index) => {
         content += `<tr>
             <td>${index + 1}</td>
-            <td>${student.name1Person}</td>
-            <td>${student.lastname1Person}</td>
-            <td>${student.documentPerson}</td>
-            <td>${student.agePerson}</td>
-            <td>${student.emailPerson}</td>
-            <td>${student.institutionPerson}</td>                  
+            <td>${student.q1_name1Person}</td>
+            <td>${student.q3_lastname1Person}</td>
+            <td>${student.q9_documentPerson}</td>
+            <td>${student.q14_emailPerson}</td>
+            <td>${(student.ScoreTotal).toFixed(1)}</td>                  
         </tr>`
     })
     tableBody_students.innerHTML = content;
@@ -75,9 +74,8 @@ return (
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Documento</th>
-                                            <th>Edad</th>
                                             <th>Correo</th>
-                                            <th>Institución</th>
+                                            <th>Puntaje Total</th>
                                         </tr>
                                     </thead>
                                     <tbody id='tableBody_students'></tbody>
@@ -85,9 +83,8 @@ return (
                             </div>
                         </div>
                     </div>
-)
-
-}
+    );
+};
 
 
 export default UsersTable
