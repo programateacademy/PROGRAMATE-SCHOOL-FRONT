@@ -31,7 +31,7 @@ const SuperAdminSpace = () => {
             </section>
             <FooterSpaceSingup /> 
         </div>
-        </div>
+        
     );
 };
 
