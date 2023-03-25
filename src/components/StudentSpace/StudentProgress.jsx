@@ -8,12 +8,11 @@ export const NAnnouncement = createContext()
 const StudentProgress = () => {
 
   const decodedToken = jwt_decode(localStorage.getItem("token"));
-
   const NameStudent = decodedToken.name1Person;
-
   const idPerson = decodedToken._id;
-
   const [statsStudent, setStatsStudent] = useState([]);
+  const [studentProgress, setStudentProgress] = useState(0);
+
 
   useEffect(() => {
     defaultApi
@@ -22,10 +21,11 @@ const StudentProgress = () => {
         console.log(err);
       })
       .then((res) => {
-        setStatsStudent(res.data.data)
+        setStatsStudent(res.data.data);
+        setStudentProgress(parseFloat(res.data.data) * 100);
       });
-  }, [])
-
+  }, []);
+  
   const StudentStage = parseFloat(statsStudent) * 100
 
 
@@ -41,6 +41,7 @@ const StudentProgress = () => {
         setOneAnnoun(res.data)
       })
   }, [])
+  
 
   return (
     <main>
@@ -50,7 +51,8 @@ const StudentProgress = () => {
         <h3 className="mx-6 mb-6 text-yellow">{oneAnnoun}</h3>
         <h2 className="mx-6 mb-3 text-sm md:text-lg">Tu progreso</h2>
         <div className="flex items-center mx-6 bg-white rounded-full h-2 md:h-4 dark:white">
-          <div className="bg-purple w-[50%] h-1 md:h-2 rounded-full mx-1"></div>
+          <div className="bg-purple w-[50%] h-1 md:h-2 rounded-full mx-1"
+              style={{ width: `${studentProgress}%` }}></div>
         </div>
         <p className="mx-6 mt-3 mb-6 text-end text-sm">{StudentStage} %</p>
       </section>
