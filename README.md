@@ -59,6 +59,14 @@ What things do you need to install the software and how to see it on the local d
   ```
 <div>
 
+<h3> Page flow 📼</h3>
+<p>A video was made with the flow of the page, depending on the role (Admin, SuperAdmin) that one has within it, thus showing the entry routes and accessibility within the page </p>
+
+```bash
+   https://www.youtube.com/watch?v=iSyNyKpyGZE
+  ```
+<div>
+
 
 <div>
 <h2> Authors✒️ </h2>
