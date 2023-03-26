@@ -43,7 +43,7 @@ const CreationAdmin = () => {
             </section>
 
             {/* Search and filter bar */}
-            <section className='w-full md:pl-4 mb-6 md:mb-8 flex justify-between gap-3 md:gap-6'>
+            {/* <section className='w-full md:pl-4 mb-6 md:mb-8 flex justify-between gap-3 md:gap-6'>
                 <div className='relative w-[75%]'>
                     <input type='search' className='w-full py-2 rounded border-[1px] border-yellow text-dark/50 text-xs font-Poppins' />
                     <button className='absolute top-2.5 right-2 px-1'><AiOutlineSearch className='text-yellow' /></button>
@@ -51,7 +51,7 @@ const CreationAdmin = () => {
                 <select className='w-[25%] px-2 rounded border-[1px] border-yellow text-dark/50 text-xs font-Poppins'>
                     <option className='font-medium text-dark'>Filtrar</option>
                 </select>
-            </section>
+            </section> */}
 
             {/* Editable cards to create Administrators */}
             <div className='grid md:grid-cols-2 justify-center gap-8'>
@@ -89,14 +89,14 @@ const CreationAdmin = () => {
             </div>
 
             {/* Search index */}
-            <section className='w-full my-4 md:my-8 flex justify-center gap-2 md:gap-6 font-Poppins font-bold text-xl text-dark'>
+            {/* <section className='w-full my-4 md:my-8 flex justify-center gap-2 md:gap-6 font-Poppins font-bold text-xl text-dark'>
                 <button className='bg-yellow shadow-md shadow-dark/50 rounded px-3 md:px-5 py-1'><HiChevronDoubleLeft className='md:scale-[1.5] mx-auto' /></button>
                 <button className='bg-light shadow-md shadow-dark/50 border-[1px] border-dark/50 rounded px-2 md:px-5 py-1'>1</button>
                 <button className='bg-light shadow-md shadow-dark/50 border-[1px] border-dark/50 rounded px-2 md:px-5 py-1'>2</button>
                 <button className='bg-light shadow-md shadow-dark/50 border-[1px] border-dark/50 rounded px-2 md:px-5 py-1'>3</button>
                 <button className='bg-light shadow-md shadow-dark/50 border-[1px] border-dark/50 rounded px-2 md:px-5 py-1'>...</button>
                 <button className='bg-yellow shadow-md shadow-dark/50 rounded px-3 md:px-5 py-1'><HiChevronDoubleRight className='md:scale-[1.5] mx-auto' /></button>
-            </section>
+            </section> */}
             {/* <CreationPagination/> */}
         </div>
     )

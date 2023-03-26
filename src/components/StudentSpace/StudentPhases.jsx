@@ -89,7 +89,7 @@ const StudentPhases = () => {
                         <p className='w-[50px] h-[50px] flex justify-center items-center'>2</p>
                     </div>
                 </div>
-                <h2 className="font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl">Fase 2:   Prueba tecnica</h2>
+                <h2 className={Phase2 ? "font-bold font-Poppins text-sm text-purple mx-4 md:text-lg lg:text-3xl" :"font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl"}>Fase 2:   Prueba tecnica</h2>
                 <p></p>
             </div>
             {/* Phase 3 */}
@@ -99,7 +99,7 @@ const StudentPhases = () => {
                         <p className='w-[50px] h-[50px] flex justify-center items-center'>3</p>
                     </div>
                 </div>
-                <h2 className="font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl">Fase 3: Entrevista</h2>
+                <h2 className={Phase3 ? "font-bold font-Poppins text-sm text-purple mx-4 md:text-lg lg:text-3xl" :"font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl"}>Fase 3: Entrevista</h2>
                 <p></p>
             </div>
             {/* Phase 4 */}
@@ -109,17 +109,17 @@ const StudentPhases = () => {
                         <p className='w-[50px] h-[50px] flex justify-center items-center'>4</p>
                     </div>
                 </div>
-                <h2 className="font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl">Fase 4: ¡Ya estás dentro! </h2>
+                <h2 className={Phase4 ? "font-bold font-Poppins text-sm text-purple mx-4 md:text-lg lg:text-3xl" :"font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl"}>Fase 4: ¡Ya estás dentro! </h2>
                 <p></p>
             </div>
             {/* Phase 5 */}
             <div className="flex justify-between items-center mt-8 mx-6 gap-5 md:mx-10">
-                <div className=" flex justify-center items-center bg-dark rounded-full h-[150px] w-[10px]">
-                    <div className="bg-dark w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-3xl">
+                <div className={Phase5 ? "flex justify-center items-center bg-purple rounded-full h-[150px] w-[10px]" :"flex justify-center items-center  bg-dark rounded-full h-[150px] w-[10px] "}>
+                    <div className={Phase5 ? "bg-purple w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-3xl":"bg-dark w-[50px] h-[50px] rounded-full mx-1 flex justify-center items-center text-light font-bold text-3xl"}>
                         <p className='w-[50px] h-[50px] flex justify-center items-center'>5</p>
                     </div>
                 </div>
-                <h2 className="font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl">Fase 5: ¿Te gustan los idiomas?
+                <h2 className={Phase5 ? "font-bold font-Poppins text-sm text-purple mx-4 md:text-lg lg:text-3xl" :"font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl"}>Fase 5: ¿Te gustan los idiomas?
                 </h2>
                 <p></p>
             </div>
@@ -130,7 +130,7 @@ const StudentPhases = () => {
                         <p className='w-[50px] h-[50px] flex justify-center items-center'>6</p>
                     </div>
                 </div>
-                <h2 className="font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl">Fase 6: Inicio de Clases
+                <h2 className={Phase6 ? "font-bold font-Poppins text-sm text-purple mx-4 md:text-lg lg:text-3xl" :"font-bold font-Poppins text-sm text-dark mx-4 md:text-lg lg:text-3xl"}>Fase 6: Inicio de Clases
                 </h2>
                 <p></p>
             </div>

@@ -59,8 +59,8 @@ const Vocation = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Guardian'>
-                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+            <Link to='/Register/Guardian'>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Test Vocacional</h2>
             <form onSubmit={handleSubmit}>
@@ -335,7 +335,7 @@ const Vocation = () => {
                                     name="stake"
                                     id="stake"
                                     value="D"
-                                    className="accent-redfocus:accent-yellow"/>D.
+                                    className="accent-red focus:accent-yellow"/>D.
                             </label>
                             <h3 className=' font-Nunito font-semibold indent-4'>Publicidad y marketing.</h3>
                         </div>
@@ -399,7 +399,7 @@ const Vocation = () => {
                     {errors.webMotivation && touched.webMotivation && <p className='text-center font-Nunito text-red text-sm'>{errors.webMotivation}</p>}
                 </section>
                 <div className='flex justify-end'>
-                    <Link className='mr-8 col-span-2 w-28' to='/Motivation'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Motivation'>
                         <button
                             onClick={vocationP}
                             disabled={!(isValid && dirty)}
