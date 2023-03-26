@@ -67,7 +67,7 @@ What things do you need to install the software and how to see it on the local d
    https://www.youtube.com/watch?v=vLzsv-gcA5E
   ```
    
-<h4>student process</h4>
+<h4>Student process</h4>
 <p>The student interested in the program must carry out the steps shown in the following video where they will fill in their information and register in the Programate School calls </p>
 
    ```bash
