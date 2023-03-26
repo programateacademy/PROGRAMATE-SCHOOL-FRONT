@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
 import defaultApi from "../../apis/index"
+import jwt_decode from "jwt-decode";
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -44,9 +46,9 @@ const Student = props => {
     console.log(idPerson)
 
     defaultApi
-        .get("/getonestudent", ipPerson)
+        .get("/getonestudent", idPerson)
         .then(res => json(res.data))
-        console.log(res.data)
+//         console.log(res.data)
     
 
     function studentP() {
