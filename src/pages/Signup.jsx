@@ -60,7 +60,7 @@ const handleOnClose = () => setShowModal(false)
                     });
                 } else if (err.response.status === 408) {
                     swal.fire({
-                        text: 'Ya existe un usuario con este Correo',
+                        text: 'Ya existe un usuario con este correo',
                         confirmButtonText: 'OK',
                         timer: '3000',
                         color: '#262425',

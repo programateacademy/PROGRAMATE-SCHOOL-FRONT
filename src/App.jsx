@@ -144,7 +144,10 @@ function App() {
               path="/Register/Motivation"
               element={<Motivation />}
             ></Route>
-            <Route exact path="/Register/Logic" element={<Logic />}></Route>
+            <Route 
+              exact
+              path="/Register/Logic"
+              element={<Logic />}></Route>
           </Route>
 
           {/* Email verification */}

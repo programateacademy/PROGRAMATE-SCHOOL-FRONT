@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 export const Benefist = () => {
+
   return (
 
     <main className="mx-6 md:mx-24">
