@@ -21,11 +21,10 @@ function LoginPerson() {
         defaultApi
             .post("/auth/login", loginP)
             .catch((err) => {
-                if (err.response.status === 401) {
+                if (err.response.status === 404) {
                     swal.fire({
                         text: "Usuario no encontrado",
                         confirmButtonText: "OK",
-                        timer: "3000",
                         color: "#262425",
                         confirmButtonColor: "#FBC209",
                         background: "#FFFFFF",
@@ -34,7 +33,6 @@ function LoginPerson() {
                     swal.fire({
                         text: "Contraseña incorrecta",
                         confirmButtonText: "OK",
-                        timer: "3000",
                         color: "#262425",
                         confirmButtonColor: "#FBC209",
                         background: "#FFFFFF",

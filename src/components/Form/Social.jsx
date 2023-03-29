@@ -56,7 +56,7 @@ const Social = () => {
                 </div>
             </div>
             <Link to='/Register/Student'>
-                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Información Social</h2>
             <form onSubmit={handleSubmit} className=' font-Poppins' >
@@ -168,12 +168,12 @@ const Social = () => {
                             data-te-select-init data-te-select-filter='true'
                             className={errors.typeDisability && touched.typeDisability ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
                             <option className='font-medium text-dark'>Selecciona una opción </option>
-                            <option className='font-medium text-dark'>Fisica</option>
+                            <option className='font-medium text-dark'>Física</option>
                             <option className='font-medium text-dark'>Auditiva</option>
                             <option className='font-medium text-dark'>Visual</option>
                             <option className='font-medium text-dark'>Intelectual / Cognitiva</option>
                             <option className='font-medium text-dark'>SordoCegera</option>
-                            <option className='font-medium text-dark'>Pisicosocial</option>
+                            <option className='font-medium text-dark'>Psicosocial</option>
                             <option className='font-medium text-dark'>Múltiple</option>
                             <option className='font-medium text-dark'>Otra </option>
                             <option className='font-medium text-dark'>Ninguna</option>

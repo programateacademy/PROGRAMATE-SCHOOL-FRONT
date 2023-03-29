@@ -5,6 +5,8 @@ import { useFormik } from 'formik';
 import { signupSchema } from '../schemas/formSchema';
 import swal from 'sweetalert2';
 import { AiOutlineEye } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -53,16 +55,14 @@ const handleOnClose = () => setShowModal(false)
                     swal.fire({
                         text: 'Ya existe un usuario con este documento',
                         confirmButtonText: 'OK',
-                        timer: '3000',
                         color: '#262425',
                         confirmButtonColor: '#FBC209',
                         background: '#FFFFFF',
                     });
                 } else if (err.response.status === 408) {
                     swal.fire({
-                        text: 'Ya existe un usuario con este Correo',
+                        text: 'Ya existe un usuario con este correo',
                         confirmButtonText: 'OK',
-                        timer: '3000',
                         color: '#262425',
                         confirmButtonColor: '#FBC209',
                         background: '#FFFFFF',
@@ -71,9 +71,8 @@ const handleOnClose = () => setShowModal(false)
             })
             .then((res) => {
                 swal.fire({
-                    text: 'Se ha registrado en PROGRAMATE SCHOOL',
+                    text: 'Te has registrado en PROGRAMATE SCHOOL',
                     confirmButtonText: 'OK',
-                    timer: '3000',
                     color: '#262425',
                     confirmButtonColor: '#FBC209',
                     background: '#FFFFFF',
@@ -242,9 +241,9 @@ const handleOnClose = () => setShowModal(false)
                         <option className='font-medium text-dark'>IE El Jardín - Ibagué</option>
                         <option className='font-medium text-dark'>El Olivo School - Santa Marta</option>
                         <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
-                        <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
-                        <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
-                        <option className='font-medium text-dark'>IED Asunción Silva este es el otro colegio</option>
+                        <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlántico</option>
+                        <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlántico</option>
+                        <option className='font-medium text-dark'>IED Asunción Silva</option>
                     </select>
                     {errors.institutionPerson && touched.institutionPerson && <p className='px-1 text-red text-[0.65rem] font-Poppins'>{errors.institutionPerson}</p>}
                 </div>
@@ -264,7 +263,9 @@ const handleOnClose = () => setShowModal(false)
                         {errors.termsAndConditions && touched.termsAndConditions && <p className='text-red text-[0.65rem] font-Poppins'>∗ {errors.termsAndConditions} </p>}
                     </div>
                 </div>
+                <Link to={"/Login"}>
                 <button type='submit' onClick={signUp} className='flex button md:text-base'>Regístrarse</button>
+                </Link>
             </form>
         </div>
     );

@@ -53,8 +53,8 @@ const Motivation = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Psychological' className=' mr-8 col-span-2 w-28'>
-                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+            <Link to='/Register/Vocation' className=' mr-8 col-span-2 w-28'>
+                <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Test Motivacional</h2>
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>Ser parte de “PROGRÁMATE SCHOOL”</h2>
@@ -100,7 +100,7 @@ const Motivation = () => {
                                         value="C"
                                         className="accent-red focus:accent-yellow flex items-center" />C.
                                 </label>
-                                <h3 className=' font-Nunito font-semibold indent-4'>No estoy seguro de que es La programación, pero es una oportunidad que nos da el colegio.</h3>
+                                <h3 className=' font-Nunito font-semibold indent-4'>No estoy seguro de que es la programación, pero es una oportunidad que nos da el colegio.</h3>
                             </div>
                     </article>
                     {errors.why && touched.why && <p className='text-red text-xs font-Poppins'>{errors.why}</p>} 
@@ -232,4 +232,4 @@ const Motivation = () => {
     )
 }
 
-export default Motivation
+export default Motivation;

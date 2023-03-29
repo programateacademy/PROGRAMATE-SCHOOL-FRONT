@@ -13,33 +13,33 @@ export const signupSchema = yup.object().shape({
     documentPerson: yup.string().required('Campo obligatorio'),
     emailPerson: yup.string().email('Escribe un correo válido').required('Campo obligatorio'),
     agePerson: yup.number().positive('Ingresa un valor válido').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
-    institutionPerson: yup.string().required('Campo obligatorio').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlántico', 'Colegio Campo de la Cruz - Atlantico'], 'Ingresa una opción válida'),
+    institutionPerson: yup.string().required('Campo obligatorio').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlántico', 'Colegio Campo de la Cruz - Atlántico', 'IED Asunción Silva'], 'Ingresa una opción válida'),
     termsAndConditions: yup.boolean().oneOf([true], 'Debes aceptar los T&C'),
 });
 
 export const studentSchema = yup.object().shape({
-    name1Person: yup.string().required('Ingresa tu primer nombre'),
-    lastname1Person: yup.string().required('Ingresa tu primer apellido'),
+    //name1Person: yup.string().required('Ingresa tu primer nombre'),
+    //lastname1Person: yup.string().required('Ingresa tu primer apellido'),
     birthdate: yup.string().required('Ingresa tu fecha de nacimiento'),
-    agePerson: yup.number().required('Ingresa tu edad').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
+    //agePerson: yup.number().required('Ingresa tu edad').min(1,'Ingresa un valor válido').max(99,'Ingresa un valor válido'),
     gender: yup.string().required('Selecciona tu género').oneOf(['Femenino', 'Masculino', 'Otro'], 'Selecciona tu género'),
     document: yup.string().required('Selecciona tu tipo de documento').oneOf(['Cédula de Ciudadania', 'Cédula de extranjería', 'Tarjeta de identidad', 'Pasaporte', 'PEP', 'PTP'], 'Selecciona tu tipo de documento'),
-    documentPerson: yup.string().required('Ingresa tu numero de documento'),
-    institutionPerson: yup.string().required('Selecciona la institución donde estudias').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlántico', 'Colegio Campo de la Cruz - Atlántico'], 'Selecciona la institucion donde estudias'),
+    //documentPerson: yup.string().required('Ingresa tu numero de documento'),
+    //institutionPerson: yup.string().required('Selecciona la institución donde estudias').oneOf(['IE El Jardín - Ibagué', 'El Olivo School - Santa Marta', 'Colegio Integrada La Candelaria', 'Técnica Agropecuaria Luruaco - Atlántico', 'Colegio Campo de la Cruz - Atlántico'], 'Selecciona la institucion donde estudias'),
     course: yup.string().required('Selecciona el grado que estás cursando').oneOf(['11°', 'Otro'], 'Selecciona el grado que estás cursando'),
     sena: yup.string().required('Selecciona si estas cursando en el sena o estas en horas sociales'),
     availability: yup.string().required('Selecciona si tienes o no disponibilidad de tiempo'),
-    emailPerson: yup.string().email('Escribe un correo válido').required('Ingresa tu correo personal'),
+    //emailPerso n: yup.string().email('Escribe un correo válido').required('Ingresa tu correo personal'),
     phone: yup.number().required('Ingresa tu numero de telefono'),
     // phoneTwo: yup.string().required('Ingresa tu numero de telefono segundario o fijo'),
 });
 
 export const socialSchema = yup.object().shape({
     sisben: yup.string().required('Selecciona si perteneces a el sisben'),
-    ethnicGroup: yup.string().required('Selecciona si perteneces a algun grupo étnico').oneOf(['Palenquero', 'Afrocolombiano o Afrodecendiente', 'Indigena', 'Gitano', 'Raizal', 'Ninguna de las anteriores'], 'Selecciona si perteneces a algun grupo étnico'),
+    ethnicGroup: yup.string().required('Selecciona si perteneces a algun grupo étnico').oneOf(['Palenquero', 'Afrocolombiano o Afrodescendiente', 'Indígena', 'Gitano', 'Raizal', 'Ninguna de las anteriores'], 'Selecciona si perteneces a algun grupo étnico'),
     nationality: yup.string().required('Selecciona tu nacionalidad').oneOf(['Venezolan@', 'Colombian@', 'Otra'], 'Selecciona tu nacionalidad'),
     disability: yup.string().required('Selecciona si estas en situación de discapacidad'),
-    typeDisability: yup.string().required('Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna').oneOf(['Fisica', 'Auditiva', 'Visual', 'Intelectual / Cognitiva', 'SordoCegera', 'Pisicosocial', 'Multiple', 'Otra', 'Ninguna'], 'Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna'),
+    typeDisability: yup.string().required('Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna').oneOf(['Física', 'Auditiva', 'Visual', 'Intelectual / Cognitiva', 'SordoCegera', 'Psicosocial', 'Múltiple', 'Otra', 'Ninguna'], 'Si estas en situación de discapacidad selecciona cual y si no selecciona ninguna'),
 })
 
 
@@ -62,7 +62,7 @@ export const guardianSchema = yup.object().shape({
     // phoneGuardianTwo: yup.string().required('Ingresa el numero de telefono segundario o fijo de tu acudiente'),
     addressGuardian: yup.string().required('Ingresa la direccion de tu acudiente'),
     departmentGuardian: yup.string().required('Ingresa el departmento donde vive tu acudiente').oneOf(['Atlántico', 'Bogotá', 'Magdalena', 'Tolima'], 'Ingresa el department donde vive tu acudiente'),
-    educationLevelGuardian: yup.string().required('Selecciona el nivel académico de tus padres').oneOf(['Pregrado - completo', 'Pregrado - incompleto', 'Formación tecnológica - completo', 'Formación tecnológica - incompleto', 'Formación tecnica - completo', 'Formación tecnica - incompleto', 'Bachillerato - completo', 'Bachillerato - incompleto', 'Primaria - completo', 'Primaria - incompleto', 'Ninguna'], 'Selecciona el nivel academico de tus padres'),
+    educationLevelGuardian: yup.string().required('Selecciona el nivel académico de tus padres').oneOf(['Pregrado - completo', 'Pregrado - incompleto', 'Formación tecnológica - completo', 'Formación tecnológica - incompleto', 'Formación técnica - completo', 'Formación técnica - incompleto', 'Bachillerato - completo', 'Bachillerato - incompleto', 'Primaria - completo', 'Primaria - incompleto', 'Ninguna'], 'Selecciona el nivel academico de tus padres'),
     economic: yup.string().required('Selecciona la actividad económica de tus padres').oneOf(['Empleado tiempo completo', 'Empleado medio tiempo', 'Generando ingresos de manera informal (sin contrato)', 'Independiente', 'Desempleado/a'], 'Selecciona la actividad economica de tus padres'),
     family: yup.string().required('Selecciona cuantas personas conforman tu familia').oneOf(['1 - 2', '3 - 4', '5 o más', 'Ninguna'], 'Selecciona cuantas personas conforman tu familia'),
 });
