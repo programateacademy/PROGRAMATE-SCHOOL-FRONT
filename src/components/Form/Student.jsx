@@ -2,7 +2,6 @@ import { React, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
-import jwt_decode from "jwt-decode"
 import defaultApi from "../../apis/index"
 import jwt_decode from "jwt-decode";
 
