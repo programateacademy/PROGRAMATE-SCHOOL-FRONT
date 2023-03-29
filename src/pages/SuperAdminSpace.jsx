@@ -20,7 +20,7 @@ const SuperAdminSpace = () => {
     return (
         <div className='flex flex-col min-h-screen'>
             <Navbar />
-            <section className='pt-28 flex flex-col lg:grid lg:grid-cols-4'>
+            <section className='flex-1 pt-28 flex flex-col lg:grid lg:grid-cols-4'>
                 <div className='mx-4 md:mx-14 pb-10 md:col-span-3'>
                 <Outlet />
                 </div>
