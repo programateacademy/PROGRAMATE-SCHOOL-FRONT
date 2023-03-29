@@ -81,7 +81,6 @@ const CreationAnnouncement = () => {
                     }
 
                     return (
-
                         <section key={announ._id} className='px-4'>
                             <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
 
