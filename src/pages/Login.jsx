@@ -58,10 +58,11 @@ function LoginPerson() {
                     navigator("/Studentspace");
                 }
             });
-    }
-    
+        }
+        
     return (
         <div className='relative'>
+
             <Link to='/'><img className='absolute w-1/6 left-6 top-4 hidden md:block' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-negros.png?raw=true'} alt='Imagen personalizados' /></Link>
             <div className='h-screen grid grid-rows-3 md:grid-rows-1 md:grid-cols-2'>
                 <div className='row-span-1 bg-[url("https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/foto-header.png?raw=true")] bg-cover bg-center'>

@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 export const Benefist = () => {
+
   return (
 
     <main className="mx-6 md:mx-24">
       <section className="flex items-end justify-end absolute right-4">
-        <Link to="/Login" >
+        <Link to="/Singup" >
           <button className="button fixed bottom-4 right-4 z-40 border-2 border-dark">Participa ya!</button>
         </Link>
       </section>

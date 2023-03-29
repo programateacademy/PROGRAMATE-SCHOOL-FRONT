@@ -6,6 +6,7 @@ import Requirements from '../components/Home/Requirements';
 import Footer from '../components/Footer';
 
 function Home() { 
+
     return (
         <div>
             <Navbar/>
