@@ -1,9 +1,11 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
+import jwt_decode from "jwt-decode"
 import defaultApi from "../../apis/index"
-import jwt_decode from "jwt-decode";
+import axios from 'axios';
+
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -12,47 +14,75 @@ const onSubmit = async (values, actions) => {
 }
 
 const Student = props => {
+
+    const idAnnouncement = localStorage.getItem('idAnnouncement')
+    console.log(idAnnouncement)
+
+    const decodedToken = jwt_decode(localStorage.getItem("token"))
+    const idPerson = decodedToken._id
+    //console.log(idPerson)
+
+    const [studentObject, setStudentObject] = useState([])
+
+    var idreq = {
+        idPerson: idPerson
+    }
+
+    useEffect(() => {
+        defaultApi
+            .post("/getonestudent", idreq)
+            .then((res) => {
+                console.log(res.data)
+                setStudentObject(res.data)
+            })
+    }, [])
+    const idStudent = studentObject._id
+
+    const N1Person = studentObject.name1Person
+    //console.log(N1Person)
+    const N2Person = studentObject.name2Person
+    //console.log(N2Person)
+    const L1Person = studentObject.lastname1Person
+    //console.log(L1Person)
+    const L2Person = studentObject.lastname2Person
+    //console.log(L2Person)
+    const APerson = studentObject.agePerson
+    //console.log(APerson)
+    const EPerson = studentObject.emailPerson
+    //console.log(EPerson)
+    const DPerson = studentObject.documentPerson
+    //console.log(DPerson)
+    const IPerson = studentObject.institutionPerson
+    //console.log(IPerson)
+    
     // formk validations
     const { values, handleChange, handleBlur, handleSubmit, errors, touched, isValid, dirty } = useFormik({
         initialValues: {
-            name1Person: '',
-            name2Person: '',
-            lastname1Person: '',
-            lastname2Person: '',
+            name1Person: 'N1Person',
+            name2Person: 'N2Person',
+            lastname1Person: 'L1Person',
+            lastname2Person: 'L2Person',
             birthdate: '',
-            agePerson: '',
+            agePerson: 'APerson',
             gender: '',
             document: '',
-            documentPerson: '',
-            institutionPerson: '',
+            documentPerson: 'DPerson',
+            institutionPerson: 'IPerson',
             course: '',
             sena: '',
             availability: '',
-            emailPerson: '',
+            emailPerson: 'EPerson',
             phone: '',
             phoneTwo: '',
         },
         validationSchema: studentSchema,
         onSubmit
     });
-    // console.log(errors);
-    // backend connection
-
-    const decodedToken = jwt_decode(localStorage.getItem("token"))
-    //console.log(decodedToken)
-
-    const idPerson = JSON.stringify(decodedToken._id)
-    console.log(idPerson)
-
-    defaultApi
-        .get("/getonestudent", idPerson)
-        .then(res => json(res.data))
-        // console.log(res.data)
     
 
     function studentP() {
         var view1 = {
-            idStudent: id,
+            idStudent: idStudent,
             idAnnouncement: idAnnouncement,
             name1Person: values.name1Person,
             name2Person: values.name2Person,
@@ -101,7 +131,8 @@ const Student = props => {
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres: <small className='text-red/80'>*</small></h3>
                         <input
                             id="name1Person"
-                            value={values.name1Person}
+                            //value={values.name1Person}
+                            value={N1Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             type='text'
@@ -111,7 +142,8 @@ const Student = props => {
                         {/* question 2 id name2Person */}
                         <input
                             id='name2Person'
-                            value={values.name2Person}
+                            //value={values.name2Person}
+                            value={N2Person}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             type='text'
@@ -125,7 +157,8 @@ const Student = props => {
                         <h3 className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos: <small className='text-red/80'>*</small></h3>
                         <input
                             id='lastname1Person'
-                            value={values.lastname1Person}
+                            //value={values.lastname1Person}
+                            value={L1Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='1er apellido' className={errors.lastname1Person && touched.lastname1Person ? 'px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'}
                         ></input>
@@ -133,7 +166,8 @@ const Student = props => {
                         {/* question 4 id lastname2Person */}
                         <input
                             id='lastname2Person'
-                            value={values.lastname2Person}
+                            //value={values.lastname2Person}
+                            value={L2Person}
                             onChange={handleChange}
                             onBlur={handleBlur} type='text' placeholder='2do apellido' className='px-2 py-1 rounded border-2 border-yellow text-dark/50 text-xs font-Poppins'></input>
                         {errors.lastname1Person && touched.lastname1Person && <p className='text-red text-xs font-Poppins'>{errors.lastname1Person}</p>}
@@ -159,10 +193,11 @@ const Student = props => {
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad: <small className='text-red/80'>*</small></h3>
                         <input
                             id='agePerson'
-                            value={values.agePerson}
+                            //value={values.agePerson}
+                            value={APerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='number' min="1" max="10000" 
+                            type='number'
                             placeholder='00'
                             className={errors.agePerson && touched.agePerson ? 'w-full px-2 py-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>
                         {errors.agePerson && touched.agePerson && <p className='text-red text-xs font-Poppins'>{errors.agePerson}</p>}
@@ -212,10 +247,11 @@ const Student = props => {
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento: <small className='text-red/80'>*</small></h3>
                         <input
                             id="documentPerson"
-                            value={values.documentPerson}
+                            //value={values.documentPerson}
+                            value={DPerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type='text' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
+                            type='number' placeholder='123456789' className={errors.documentPerson && touched.documentPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'} ></input>
                         {errors.documentPerson && touched.documentPerson && <p className='text-red text-xs font-Poppins'>{errors.documentPerson}</p>}
                     </div>
 
@@ -226,7 +262,8 @@ const Student = props => {
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Institución educativa a la que Pertenece? <small className='text-red/80'>*</small></h3>
                         <select
-                            value={values.institutionPerson}
+                            //value={values.institutionPerson}
+                            value={IPerson}
                             onChange={handleChange}
                             onBlur={handleBlur} id='institutionPerson' data-te-select-init data-te-select-filter='true'
                             className={errors.institutionPerson && touched.institutionPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}>
@@ -236,7 +273,7 @@ const Student = props => {
                             <option className='font-medium text-dark'>Colegio Integrada La Candelaria</option>
                             <option className='font-medium text-dark'>Técnica Agropecuaria Luruaco - Atlantico</option>
                             <option className='font-medium text-dark'>Colegio Campo de la Cruz - Atlantico</option>
-                            <option className='font-medium text-dark'>IED Asunción Silva este es el otro colegio</option>
+                            <option className='font-medium text-dark'>IED Asunción Silva</option>
                         </select>
                         {errors.institutionPerson && touched.institutionPerson && <p className='text-red text-xs font-Poppins'>{errors.institutionPerson}</p>}
                     </div>
@@ -244,7 +281,7 @@ const Student = props => {
                     {/* the birth input with the id course */}
                     {/* question 11 id course */}
                     <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6'>
-                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Que grado estás cursando Actualmente? <small className='text-red/80'>*</small></h3>
+                        <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>¿Qué grado estás cursando Actualmente? <small className='text-red/80'>*</small></h3>
                         <select
                             id='course'
                             value={values.course}
@@ -344,7 +381,8 @@ const Student = props => {
                         <h3 className='pb-1.5 text-dark text-sm font-Nunito font-black'>Correo: <small className='text-red/80'>*</small></h3>
                         <input
                             id="emailPerson"
-                            value={values.emailPerson}
+                            //value={values.emailPerson}
+                            value={EPerson}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             type='email' placeholder='correo@correo.edu.co' className={errors.emailPerson && touched.emailPerson ? 'w-full p-1 rounded border-2 border-red text-dark/50 text-xs font-Poppins' : 'w-full p-1 bg-light rounded border-2 border-yellow text-dark/50 text-xs font-Poppins font-medium'}></input>

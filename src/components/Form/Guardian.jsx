@@ -71,7 +71,7 @@ const Guardian = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Residence'>
+            <Link to='/Register/Residence'>
                 <button className=' m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb -5 text-2xl'>Información de acudiente</h2>
@@ -319,7 +319,7 @@ const Guardian = () => {
                     {errors.family && touched.family && <p className='text-red text-xs font-Poppins'>{errors.family}</p>}
                 </div>
                 <div className='flex justify-end'>
-                    <Link className='mr-8 col-span-2 w-28' to='/Vocation'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Register/Vocation'>
                         <button
                             onClick={guardianP}
                             disabled={!(isValid && dirty)}
@@ -333,4 +333,4 @@ const Guardian = () => {
     )
 }
 
-export default Guardian
+export default Guardian;
