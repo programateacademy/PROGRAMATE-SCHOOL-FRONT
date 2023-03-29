@@ -92,7 +92,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's names (variables: name1Person and name2Person) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
-                    <label htmlFor='names' className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Nombres:</label>
+                    <label htmlFor='names' className='col-span-2 pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Nombres:</label>
 
                     {/* name1Person */}
                     <div>
@@ -122,7 +122,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's last names (variables: lastname1Person and lastname2Person) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-2 gap-x-2'>
-                    <label htmlFor='lastnames'className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Apellidos:</label>
+                    <label htmlFor='lastnames'className='col-span-2 pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Apellidos:</label>
 
                     {/* lastname1Person */}
                     <div>
@@ -152,7 +152,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's email (variable: emailPerson) */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-                    <label htmlFor='emailPerson'className='col-span-2 pb-1.5 text-dark text-sm font-Nunito font-black'>Correo:</label>
+                    <label htmlFor='emailPerson'className='col-span-2 pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Correo:</label>
                     <div>
                         <input
                         value={values.emailPerson}
@@ -168,8 +168,8 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's age and document in media query greater than 768px (variables: documentPerson and agePerson) */}
                 <div className='hidden md:grid mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid-cols-2 gap-x-2'>
-                    <label htmlFor='documentPerson' className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
-                    <label htmlFor='agePerson'  className='col-span-1 pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
+                    <label htmlFor='documentPerson' className='col-span-1 pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>N° de Documento:</label>
+                    <label htmlFor='agePerson'  className='col-span-1 pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Edad:</label>
 
                     {/* documentPerson */}
                     <div>
@@ -200,7 +200,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's document in media query smaller than 768px (variable: documentPerson) */}
                 <div className='md:hidden mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-                    <label htmlFor='documentPerson' className='pb-1.5 text-dark text-sm font-Nunito font-black'>N° de Documento:</label>
+                    <label htmlFor='documentPerson' className='pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>N° de Documento:</label>
                     <input
                     value={values.documentPerson}
                     onChange={handleChange}
@@ -214,7 +214,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's age in media query smaller than 768px (variable: agePerson) */}
                 <div className='md:hidden mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-4 grid grid-cols-1'>
-                    <label htmlFor='agePerson' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Edad:</label>
+                    <label htmlFor='agePerson' className='pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Edad:</label>
                     <input 
                     value={values.agePerson}
                     onChange={handleChange}
@@ -228,7 +228,7 @@ const handleOnClose = () => setShowModal(false)
 
                 {/* Applicant's institution  */}
                 <div className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 grid grid-cols-1'>
-                    <label htmlFor='institutionPerson' className='pb-1.5 text-dark text-sm font-Nunito font-black'>Institución:</label>
+                    <label htmlFor='institutionPerson' className='pb-1.5 text-dark text-sm md:text-base font-Nunito font-black'>Institución:</label>
                     <select
                     value={values.institutionPerson}
                     onChange={handleChange}
@@ -256,7 +256,7 @@ const handleOnClose = () => setShowModal(false)
                         type='checkbox'
                         onBlur={handleBlur}
                         className='accent-purple' />
-                        <label htmlFor='termsAndConditions' className='flex gap-2 ml-2 text-center text-dark text-sm font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='flex items-center gap-2 text-purple hover:text-dark underline decoration-2 underline-offset-4'><b>términos y condiciones</b><AiOutlineEye className='scale-[1.5]'/></button></label>
+                        <label htmlFor='termsAndConditions' className='flex gap-2 ml-2 text-center text-dark text-sm md:text-base font-Nunito'>He leído y acepto los <button onClick={() => setShowModal(true)} className='flex items-center gap-2 text-purple hover:text-dark underline decoration-2 underline-offset-4'><b>términos y condiciones</b><AiOutlineEye className='scale-[1.5]'/></button></label>
                         <Modal onClose={handleOnClose} visible={showModal}/>
                     </div>
                     <div className='pt-1'>
