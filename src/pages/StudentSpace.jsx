@@ -4,7 +4,7 @@ import HelpNotice from '../components/StudentSpace/HelpNotice';
 import Announcement from '../components/StudentSpace/Announcement';
 import StudenPhases from '../components/StudentSpace/StudentPhases';
 import StudentProgress from "../components/StudentSpace/StudentProgress";
-import FooterSpaceSingup from '../components/FooterSpaceSingup';
+import Footer from '../components/Footer';
 
 const StudentSpace = () => {
   return (
@@ -27,7 +27,7 @@ const StudentSpace = () => {
           <HelpNotice/>
         </div>
       </section>
-      <FooterSpaceSingup /> 
+      <Footer /> 
     </div>
   );
 };

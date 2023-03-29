@@ -56,37 +56,36 @@ const CreationAdmin = () => {
             {/* Editable cards to create Administrators */}
             <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAdmin.map((admin) => {
-                    console.log()
                     {/* This li is the one that contains the index to be able to iterate to all the elements */}
                     return(
-                <section key={admin._id} className='px-4'>
-                    <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
-                        <div className='w-full p-6 flex justify-end'>
-                            {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}
-                            {/* <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button> */}
-                            <Modal onClose={handleOnClose} visible={showModal}/>
-                        </div>
-                        <div className='w-full mx-auto flex flex-col justify-center'>
-                            <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1+smile.png?raw=true'} className='w-[33%] mx-auto'></img>
-                            <h2 className='w-full pt-2 pb-4 font-semibold font-Poppins text-center text-dark text-2xl'>{admin.name1Person} {admin.lastname1Person}</h2>
-                        </div>
-
-                                {/* ... */}
-                                <div className='px-6 pb-4 flex gap-2 items-center'>
-                                    <h2 className='text-dark font-Poppins font-medium text-base'>Correo:</h2>
-                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.emailPerson}</h3>
+                        <section key={admin._id} className='w-screen px-4'>
+                            <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
+                                <div className='w-full p-6 flex justify-end'>
+                                    {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}
+                                    {/* <button ><MdEditSquare className='scale-[2.3] text-[#40A014]'/></button> */}
                                 </div>
-
-                                {/* ... */}
-                                <div className='px-6 pb-4 flex gap-2 items-center'>
-                                    <h2 className='text-dark font-Poppins font-medium text-base'>Cargo:</h2>
-                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.positionPerson}</h3>
-                                </div>
+                            <div className='w-full mx-auto flex flex-col justify-center'>
+                                    <img src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/%C3%A1+smile.png?raw=true'} className='w-[33%] mx-auto'></img>
+                                    <h2 className='w-full pt-2 pb-4 font-semibold font-Poppins text-center text-dark text-2xl'>{admin.name1Person} {admin.lastname1Person}</h2>
                             </div>
-                        </section>
+
+                            {/* ... */}
+                            <div className='px-6 pb-4 flex gap-2 items-center'>
+                                <h2 className='text-dark font-Poppins font-medium text-base'>Correo:</h2>
+                                <h3 className='overflow-hidden px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.emailPerson}</h3>
+                            </div>
+
+                            {/* ... */}
+                            <div className='px-6 pb-4 flex gap-2 items-center'>
+                                <h2 className='text-dark font-Poppins font-medium text-base'>Cargo:</h2>
+                                <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{admin.positionPerson}</h3>
+                            </div>
+                        </div>
+                    </section>
                     )
                 })}
             </div>
+            <Modal onClose={handleOnClose} visible={showModal}/>
         </div>
     )
 }
