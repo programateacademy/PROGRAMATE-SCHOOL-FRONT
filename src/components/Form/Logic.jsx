@@ -1,10 +1,10 @@
-import { React, useState } from 'react'
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
-import { logicSchema } from '../../schemas/formSchema'
-import defaultApi from '../../apis/index'
-import swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
+import { logicSchema } from '../../schemas/formSchema';
+import defaultApi from '../../apis/index';
+import swal from 'sweetalert2';
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -48,14 +48,14 @@ const Logic = () => {
             .post("/registertoannouncement", view1to7)
             .then((res) => {
                 swal.fire({
-                    text: 'Se ha inscrito a la convocatoria EXITOSAMENTE',
+                    text: 'Te has inscrito a la convocatoria EXITOSAMENTE',
                     confirmButtonText: 'OK',
-                    timer: '3000',
                     color: '#262425',
                     confirmButtonColor: '#FBC209',
                     background: '#FFFFFF',
-                    font: 'Poppins'
+                    font: 'Poppins',
                 });
+                console.log(res);
                 //  navigator("/")
             })
             .then(err => {
@@ -80,7 +80,7 @@ const Logic = () => {
                     <img width={300} className='bg-light/80 rounded-lg p-2 md:p-4 shadow-2xl backdrop-saturate-200' src={'https://github.com/MariaHerrera03/ImageBank/blob/main/Progr%C3%A1mateSchool/programate-school-color.png?raw=true'} />
                 </div>
             </div>
-            <Link to='/Motivation'><button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button></Link>
+            <Link to='/Register/Motivation'><button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button></Link>
             <h2 className=' font-Poppins font-extrabold text-2xl text-center'>Prueba Lógica</h2>
             <p className='mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 font-Nunito text-dark/70'>Ahora no te asustes, esta pequeña prueba de lógica lo que busca es ver la manera en la que dar solución a diversas problemáticas no cuenta con calificación, pero si te recomendamos que la respondas a conciencia, ya que con esto podremos saber la mejor manera de apoyarte en u aprendizaje</p>
             <form onSubmit={handleSubmit}>
@@ -115,7 +115,7 @@ const Logic = () => {
                         <option className='font-medium text-dark sm:mx-40'>Selecciona una opción </option>
                         <option className='font-medium text-dark sm:mx-40'>Seis tiburones no son completamente ciegos y tres son completamente ciegos</option>
                         <option className='font-medium text-dark sm:mx-40'>Tres de los tiburones son completamente ciegos y tres no son completamente</option>
-                        <option className='font-medium text-dark sm:mx-40'>Tres tiburones no son completamente ciegos y Seiscon completamente ciegos</option>
+                        <option className='font-medium text-dark sm:mx-40'>Tres tiburones no son completamente ciegos y seis son completamente ciegos</option>
                     </select>
                     {errors.logic2 && touched.logic2 && <p className='text-red text-xs font-Poppins'>{errors.logic2}</p>}
                 </div>
@@ -257,7 +257,7 @@ const Logic = () => {
                     </div>
                 </div>
                 <div className='flex justify-end'>
-                    <Link className='mr-8 col-span-2 w-28' to='/'>
+                    <Link className='mr-8 col-span-2 w-28' to='/Studentspace'>
                         <button
                             onClick={logicP}
                             disabled={!(isValid && dirty)}
@@ -271,4 +271,4 @@ const Logic = () => {
     )
 }
 
-export default Logic
+export default Logic;

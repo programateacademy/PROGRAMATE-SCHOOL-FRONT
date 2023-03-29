@@ -3,9 +3,10 @@ import Navbar from '../components/Home/Navbar';
 import Header from '../components/Home/Header';
 import Benefits from '../components/Home/Benefits';
 import Requirements from '../components/Home/Requirements';
-import Footer from '../components/Footer';
+import Footer from '../components/Home/Footer';
 
 function Home() { 
+
     return (
         <div>
             <Navbar/>

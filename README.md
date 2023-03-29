@@ -77,7 +77,6 @@ What things do you need to install the software and how to see it on the local d
 
 </div>
 
-
 <div>
 <h2> Authors✒️ </h2>
        

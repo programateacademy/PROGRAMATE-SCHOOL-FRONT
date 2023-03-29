@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs'
+import React, { useState, useEffect } from 'react';
+import { BsFillPlusSquareFill, BsFillTrashFill } from 'react-icons/bs';
 import { MdEditSquare } from 'react-icons/md'
-import Modal from './EditorCreationAnnouncement'
-import defaultApi from '../../apis/index'
+import Modal from './EditorCreationAnnouncement';
+import defaultApi from '../../apis/index';
+import axios from 'axios';
 
 const CreationAnnouncement = () => {
 
@@ -10,7 +11,7 @@ const CreationAnnouncement = () => {
 
     const handleOnClose = () => setShowModal(false)
 
-
+// ...
     const [todo, setTodo] = useState({
         task: '',
         deadline: '',
@@ -42,9 +43,8 @@ const CreationAnnouncement = () => {
         setTodo(editedTodo);
         setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
     }
-
+// ...
     const [dataAnnouncement, setDataAnnouncement] = useState([])
-    console.log(dataAnnouncement)
 
     useEffect(() => {
         defaultApi
@@ -72,11 +72,15 @@ const CreationAnnouncement = () => {
             {/* Editable announcements cards */}
             <div className='grid md:grid-cols-2 justify-center gap-8'>
                 {dataAnnouncement.map((announ) => {
-                    console.log()
-                    {/* este li es quien contiene el indice para poder iterar a todos los elementos */ }
+                    {/* This li is the one that contains the index to be able to iterate to all the elements */ }
+                    let state = ""
+                    if (announ.stateAnnouncement == "DISABLED") {
+                        state = "Inhabilitado"
+                    } else if (announ.stateAnnouncement == "ENABLED") {
+                        state = "Habilitado"
+                    }
 
                     return (
-
                         <section key={announ._id} className='px-4'>
                             <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
 
@@ -109,15 +113,15 @@ const CreationAnnouncement = () => {
                                 {/* ... */}
                                 <div className='px-6 pb-4 flex gap-2 items-center'>
                                     <h2 className='text-dark font-Poppins font-medium text-base'>Estado:</h2>
-                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{announ.stateAnnouncement}</h3>
+                                    <h3 className='px-1 text-dark/70 text-sm text-start font-Poppins font-medium'>{state}</h3>
                                 </div>
 
-                                {/* ... */}
-                                <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
-                                    <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Inhabilitar</button>
-                                    <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Editar</button>
+    {/* ...buttons to change status and edit the Announcement */}
+                                {/* <section className='mx-auto flex justify-center px-4 pt-6 pb-5 gap-8'>
+                                    <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Cambiar Estado</button>
+                                    <button className='px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-yellow text-center text-light hover:text-dark text-sm md:text-medium font-Poppins font-semibold'>Editar</button> */}
                                     {/* <button onClick={handleAddTodo}><MdEditSquare className='z-0 scale-[2.3] text-[#40A014]' /></button> */}
-                                </section>
+                                {/* </section> */}
                             </div>
                         </section>
 

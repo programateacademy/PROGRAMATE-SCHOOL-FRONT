@@ -22,6 +22,7 @@ import Motivation from "./components/Form/Motivation";
 import Logic from "./components/Form/Logic";
 import EmailVerificationWindow from "./components/EmailVerificationWindow ";
 import UnauthorizedWindow from "./components/UnauthorizedWindow ";
+import PasswordRecoveryWindow from "./components/PasswordRecoveryWindow";
 import Auth from "./middlewares/Auth"
 
 function App() {
@@ -144,7 +145,10 @@ function App() {
               path="/Register/Motivation"
               element={<Motivation />}
             ></Route>
-            <Route exact path="/Register/Logic" element={<Logic />}></Route>
+            <Route 
+              exact
+              path="/Register/Logic"
+              element={<Logic />}></Route>
           </Route>
 
           {/* Email verification */}
@@ -157,6 +161,12 @@ function App() {
           <Route
             path="/Unauthorizedwindow"
             element={<UnauthorizedWindow />}
+            exact
+          ></Route>
+          {/* Password Recovery */}
+          <Route
+            path="/PasswordRecoveryWindow"
+            element={<PasswordRecoveryWindow />}
             exact
           ></Route>
           

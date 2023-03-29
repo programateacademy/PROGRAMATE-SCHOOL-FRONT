@@ -57,7 +57,7 @@ const Residence = () => {
                 </div>
             </div>
             <Link to='/Register/Social'>
-                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atras</button>
+                <button className='m-5 px-6 py-1 bg-yellow shadow-md shadow-dark/50 hover:bg-dark text-center text-dark hover:text-light text-sm font-Poppins font-bold'>Atrás</button>
             </Link>
             <h2 className=' font-Poppins font-semibold flex justify-center mb-5 text-2xl'>Información de Residencia</h2>
             <form
@@ -82,7 +82,7 @@ const Residence = () => {
                 {/* question 23 id departmentStudent */}
 
                 <div className=' mx-12 sm:mx-40 md:mx-16 lg:mx-28 pb-6 '>
-                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>departmento de residencia <small className='text-red/80'>*</small> </label>
+                    <label className='pb-1.5 text-dark text-sm font-Nunito font-black'>departamento de residencia <small className='text-red/80'>*</small> </label>
                     <select
                         id='departmentStudent'
                         name='departmentStudent'
@@ -189,4 +189,4 @@ const Residence = () => {
     )
 }
 
-export default Residence
+export default Residence;
