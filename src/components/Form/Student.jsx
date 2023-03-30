@@ -2,8 +2,8 @@ import { React, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
-import jwt_decode from "jwt-decode"
 import defaultApi from "../../apis/index"
+import jwt_decode from "jwt-decode";
 
 const onSubmit = async (values, actions) => {
     console.log(values);
@@ -76,8 +76,7 @@ const Student = props => {
         validationSchema: studentSchema,
         onSubmit
     });
-    
-
+ 
     function studentP() {
         var view1 = {
             idStudent: idStudent,

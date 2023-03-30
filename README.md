@@ -51,6 +51,32 @@ What things do you need to install the software and how to see it on the local d
   ```
 <div>
 
+<h3> Documentation 📃</h3>
+<p>The entire development process was documented, containing all the dependencies and tools that were implemented in the project. </p>
+
+```bash
+   https://honorable-fisherman-c88.notion.site/Documentaci-n-Progr-mate-School-6b9a798332554f5b8cf54b706148369b
+  ```
+</div>
+
+<h3> Page flow 📼</h3>
+<h4>Administrative Roles</h4>
+<p>A video was made with the flow of the page, depending on the role (Admin, SuperAdmin) that one has within it, thus showing the entry routes and accessibility within the page </p>
+
+```bash
+   https://www.youtube.com/watch?v=vLzsv-gcA5E
+  ```
+   
+<h4>Student process</h4>
+<p>The student interested in the program must carry out the steps shown in the following video where they will fill in their information and register in the Programate School calls </p>
+
+   ```bash
+   https://www.youtube.com/watch?v=iSyNyKpyGZE
+  ```
+
+
+</div>
+
 <div>
 <h2> Authors✒️ </h2>
        
