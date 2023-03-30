@@ -4,8 +4,6 @@ import { useFormik } from 'formik';
 import { studentSchema } from '../../schemas/formSchema';
 import jwt_decode from "jwt-decode"
 import defaultApi from "../../apis/index"
-import axios from 'axios';
-
 
 const onSubmit = async (values, actions) => {
     console.log(values);

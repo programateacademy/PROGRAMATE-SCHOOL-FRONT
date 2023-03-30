@@ -58,7 +58,7 @@ const CreationAdmin = () => {
                 {dataAdmin.map((admin) => {
                     {/* This li is the one that contains the index to be able to iterate to all the elements */}
                     return(
-                        <section key={admin._id} className='w-screen px-4'>
+                        <section key={admin._id} className='px-4'>
                             <div className='bg-light shadow-md shadow-yellow/50 border-[1px] border-yellow/50 rounded'>
                                 <div className='w-full p-6 flex justify-end'>
                                     {/* <button><BsFillTrashFill className='scale-[2] text-red' /></button> */}

@@ -25,7 +25,7 @@ export default function Modal({ visible, onClose }) {
                     <input placeholder='correo@correo.edu.co' type="text" className='px-1 text-dark/70 text-sm text-center font-Poppins font-semibold'/>
                 </div>
                 <div className='grid grid-cols pb-4'>
-                    <button className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-red text-center text-yellow hover:text-light font-Poppins font-medium'>Enviar</button>
+                    <button className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-purple text-center text-yellow hover:text-light font-Poppins font-medium'>Enviar</button>
                 </div>
             </div>
         </div>
