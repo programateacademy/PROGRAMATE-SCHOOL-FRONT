@@ -8,7 +8,7 @@ import { GrLinkedinOption } from 'react-icons/gr';
 
 const Footer = () => {
     return (
-        <footer className='bg-dark grid grid-cols-1 pb-16 md:grid-cols-4 md:pb-20 lg:pb-6 border-t-8 border-yellow justify-self-center'>
+        <footer id="footer" className='bg-dark grid grid-cols-1 pb-16 md:grid-cols-4 md:pb-20 lg:pb-6 border-t-8 border-yellow justify-self-center'>
             <section className='gap-6 pt-4 justify-self-center self-center'>
                 <img src='https://i.ibb.co/j4GBFg6/programate-school-blancos-2.png' alt='programate-school' className='w-52 md:w-40' /> <br />
             </section>
