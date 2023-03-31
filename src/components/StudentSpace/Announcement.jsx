@@ -17,7 +17,7 @@ const Announcement = () => {
 
     useEffect(() => {
         defaultApi
-            .get("/openannouncements", idPerson)
+            .get("/getannouncements", idPerson)
             .then(res => {
                 console.log(res.data)
                 setDataOpenAnnoun(res.data)
