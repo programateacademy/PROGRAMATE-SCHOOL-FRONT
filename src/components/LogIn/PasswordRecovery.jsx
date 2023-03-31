@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import defaultApi from '../../apis/index'
+import { useNavigate } from 'react-router-dom';
 
 export default function Modal({ visible, onClose }) {
+
+    const Navigate = useNavigate();
 
     const handleOnClose = (e) => {
         if (e.target.id === 'box')
             onClose()
+    }
+
+    const [emailPerson, setEmailPerson] = useState('')
+
+    function buttonFunction() {
+
+        var emailP = {
+            emailPerson: emailPerson
+        }
+        console.log(emailP)
+        defaultApi
+            .post("passwordrecovery/:emailPerson", emailP)
+            .then((res) => {
+                Navigate("/PasswordRecoveryWindow"),
+                onClose()
+            })
+            .catch((err) => {
+                console.logo(err)
+                onClose()
+            })
     }
 
     if (!visible) return null
@@ -22,10 +46,10 @@ export default function Modal({ visible, onClose }) {
                 </h3>
                 <div className='px-8 md:px-20 pb-4 flex gap-2 justify-center'>
                     <label className='text-dark font-Poppins font-medium text-base'>Correo:</label>
-                    <input placeholder='correo@correo.edu.co' type="text" className='px-1 text-dark/70 text-sm text-center font-Poppins font-semibold'/>
+                    <input id="emailPerson" placeholder='correo@correo.edu.co' type="text" className='px-1 text-dark/70 text-sm text-center font-Poppins font-semibold' value={emailPerson} onChange={(e) => {setEmailPerson(e.target.value)}}></input>
                 </div>
                 <div className='grid grid-cols pb-4'>
-                    <button className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-purple text-center text-yellow hover:text-light font-Poppins font-medium'>Enviar</button>
+                    <button onClick={buttonFunction} className='flex mx-auto px-6 py-1 rounded bg-dark shadow-md shadow-dark/50 hover:bg-purple text-center text-yellow hover:text-light font-Poppins font-medium'>Enviar</button>
                 </div>
             </div>
         </div>
