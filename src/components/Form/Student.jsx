@@ -5,7 +5,6 @@ import { studentSchema } from '../../schemas/formSchema';
 import defaultApi from "../../apis/index"
 import jwt_decode from "jwt-decode";
 
-
 const onSubmit = async (values, actions) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));

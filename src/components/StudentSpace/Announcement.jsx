@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import defaultApi from "../../apis/index";
 import jwt_decode from "jwt-decode";
 
-
 export const ContextListAnnouncement = createContext();
 
 const Announcement = () => {
@@ -18,7 +17,7 @@ const Announcement = () => {
 
     useEffect(() => {
         defaultApi
-            .get("/openannouncements", idPerson)
+            .get("/getannouncements", idPerson)
             .then(res => {
                 console.log(res.data)
                 setDataOpenAnnoun(res.data)
