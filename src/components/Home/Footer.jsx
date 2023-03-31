@@ -12,7 +12,7 @@ export const Footer = () => {
     return (
         <div>
             {/* Phrase of Educamas */}
-            <footer >
+            <footer id="footer" >
                 <div className='flex justify-center items-center bg-yellow p-0 md:p-1 '>
                     <h1 className='mx-7 text-center text-lg md:text-2xl font-Poppins font-semibold text-light py-3'>La tecnología esta revolucionando nuestro presente, pero tu eres nuestro futuro</h1>
                 </div>
