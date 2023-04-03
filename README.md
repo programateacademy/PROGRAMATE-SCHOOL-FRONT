@@ -59,7 +59,14 @@ What things do you need to install the software and how to see it on the local d
   ```
 </div>
 
-<h3> Page flow 📼</h3>
+<h2> Page flow 📼</h2>
+<h3>full page flow</h3>
+<p>In this video you can see the operation of the entire page where the responsive design, the alerts, all the content of the page is shown </p>
+
+```bash
+   https://www.youtube.com/watch?v=Xq3-Lu1mPi8
+  ```
+
 <h4>Administrative Roles</h4>
 <p>A video was made with the flow of the page, depending on the role (Admin, SuperAdmin) that one has within it, thus showing the entry routes and accessibility within the page </p>
 
